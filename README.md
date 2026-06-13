@@ -1,2 +1,2 @@
-# horary_website
+# aeonicarts.com
 the landing page for everything I'm doing
