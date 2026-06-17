@@ -1,0 +1,48 @@
+rules_version = '2';
+
+// Aevum — readings collection security rules with anonymous authentication.
+//
+// Multi-user app with Firebase Anonymous Auth. Each visitor gets a unique uid.
+// Documents must carry the userId field matching request.auth.uid.
+//
+// This ensures:
+//   * Each tester can only read/write their own readings
+//   * Firestore project ID is not enough to access data — auth uid is required
+//   * Impossible to impersonate another user by reading the bundled JS
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Each user owns their own profile document (consent + preferences)
+    match /users/{userId} {
+      allow read, write: if request.auth != null
+                        && request.auth.uid == userId;
+    }
+
+    match /readings/{readingId} {
+      // Public readings (isPublic == true) are readable by anyone without auth
+      allow read: if resource.data.isPublic == true;
+
+      // Owners can always read their own readings
+      allow read: if request.auth != null
+                  && resource.data.userId == request.auth.uid;
+
+      // Users can only create readings for themselves
+      allow create: if request.auth != null
+                    && request.resource.data.userId == request.auth.uid;
+
+      // Users can only update their own readings
+      allow update: if request.auth != null
+                    && resource.data.userId == request.auth.uid
+                    && request.resource.data.userId == request.auth.uid;
+
+      // Don't allow deletes from client — manage from Firebase console
+      allow delete: if false;
+    }
+
+    // Deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+# Render Blueprint for Aevum.
+# Production URL: https://aevum-plp9.onrender.com
+# When you connect this repo to Render, this file defines the service automatically.
+# Free tier sleeps after 15 min idle; first request after sleep is slow (~30s cold start).
+# Firebase authorized domains must include: aevum-plp9.onrender.com
+#   → Firebase Console → Authentication → Settings → Authorized domains
+services:
+  - type: web
+    name: aevum
+    runtime: node
+    plan: free
+    region: oregon            # change to ohio, frankfurt, singapore if you want closer
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NPM_CONFIG_PRODUCTION
+        value: false          # needed so devDeps (vite, etc) are installed during build
+      - key: ANTHROPIC_API_KEY
+        sync: false           # you set this in the Render dashboard, not in the file
+      - key: SENTRY_DSN
+        sync: false           # server-side Sentry DSN — set in Render dashboard
+      - key: VITE_SENTRY_DSN
+        sync: false           # client-side Sentry DSN — set in Render dashboard (must be set at build time)
+      # Firebase web config — safe to expose; Firestore rules protect the data.
+      # These must be available AT BUILD TIME because Vite inlines them into the bundle.
+      - key: VITE_FIREBASE_API_KEY
+        value: AIzaSyCuHcTSLOtKP_SNE3dP2g9D0bqF85TKs18
+      - key: VITE_FIREBASE_AUTH_DOMAIN
+        value: gen-lang-client-0022917921.firebaseapp.com
+      - key: VITE_FIREBASE_PROJECT_ID
+        value: gen-lang-client-0022917921
+      - key: VITE_FIREBASE_STORAGE_BUCKET
+        value: gen-lang-client-0022917921.firebasestorage.app
+      - key: VITE_FIREBASE_MESSAGING_SENDER_ID
+        value: "73011906525"
+      - key: VITE_FIREBASE_APP_ID
+        value: 1:73011906525:web:10e99e628475d69c5b1834
+    autoDeploy: true          # redeploy on every push to main

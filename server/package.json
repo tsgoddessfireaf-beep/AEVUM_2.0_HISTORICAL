@@ -1,0 +1,29 @@
+{
+  "name": "aevum-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.102.0",
+    "@sentry/node": "^10.53.1",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.5.2",
+    "firebase-admin": "^13.10.0",
+    "node-fetch": "^3.3.2",
+    "resend": "^6.12.4",
+    "stripe": "^22.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "vitest": "^4.1.6"
+  }
+}

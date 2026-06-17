@@ -1,0 +1,4 @@
+# Swiss Ephemeris data files are binary — never apply line-ending normalization.
+*.se1 binary
+*.se2 binary
+*.se1 -text

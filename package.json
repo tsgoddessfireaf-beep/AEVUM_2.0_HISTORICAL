@@ -1,0 +1,16 @@
+{
+  "name": "aevum-app",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n ephem,server,client -c magenta,cyan,green \"npm run dev:ephemeris\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev:ephemeris": "cd ephemeris-service && .venv\\Scripts\\python -m uvicorn main:app --port 8000 --reload",
+    "build": "cd client && npm run build",
+    "start": "cd ephemeris-service && .venv/bin/python -m uvicorn main:app --port 8000 & cd server && npm start",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install && cd ../ephemeris-service && python -m venv .venv && node ../scripts/install-python-deps.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

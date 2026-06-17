@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Lato:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep:    #0E2C27;
+  --bg-surface: #123A33;
+  --bg-panel:   #16433A;
+  --copper:     #BE6B3D;
+  --copper-bright: #D17C49;
+  --silver:     #AEB6B8;
+  --bone:       #EDE7D3;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--bone);
+  font-family: 'Lato', system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle star field */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(237,231,211,0.15) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 70%, rgba(237,231,211,0.10) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 40%, rgba(237,231,211,0.12) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 10%, rgba(237,231,211,0.10) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 55%, rgba(237,231,211,0.13) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 90%, rgba(190,107,61,0.10) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 80%, rgba(237,231,211,0.08) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 35%, rgba(237,231,211,0.09) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Prose styling for AI markdown output */
+.prose-astro h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--copper-bright);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(190, 107, 61, 0.25);
+  padding-bottom: 0.25rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.prose-astro p {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+  color: var(--silver);
+}
+
+.prose-astro strong {
+  color: var(--bone);
+  font-weight: 700;
+}
+
+.prose-astro em {
+  color: rgba(174,182,184,0.8);
+}
+
+/* Inline markdown inside chat bubbles */
+.chat-prose p { margin: 0; }
+.chat-prose p + p { margin-top: 0.6rem; }
+.chat-prose strong { color: var(--bone); font-weight: 700; }
+.chat-prose em { color: var(--silver); font-style: italic; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--bg-panel); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #1E5248; }
+
+@keyframes wheelSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* AstroScript by Jason Davies — traditional astrology glyphs.
+ * Files live at client/public/fonts/AstroScript.woff2 (regular + bold). */
+@font-face {
+  font-family: 'AstroScript';
+  src: url('/fonts/AstroScript.woff2') format('woff2');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AstroScript';
+  src: url('/fonts/AstroScript-Bold.woff2') format('woff2');
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal;
+}
+.astro-glyph {
+  font-family: 'AstroScript', system-ui, sans-serif;
+  letter-spacing: 0;
+  font-feature-settings: normal;
+}
+.astro-glyph-unicode {
+  font-family: 'Segoe UI Symbol', 'Apple Color Emoji', system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Print / PDF export */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Lato', Georgia, serif;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove decorative star field */
+  body::before {
+    display: none !important;
+  }
+
+  /* Hide screen-only interactive layout elements */
+  .screen-only,
+  button,
+  nav,
+  [role="navigation"],
+  .no-print {
+    display: none !important;
+  }
+
+  /* Force display of our custom print container */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Font Styling */
+  .print-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    color: #0E2C27 !important;
+    margin: 0 0 10pt 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .print-subheading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #0E2C27 !important;
+    margin: 18pt 0 8pt 0;
+    border-bottom: 1.5pt solid #0E2C27;
+    padding-bottom: 3pt;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .print-body {
+    font-family: 'Lato', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #000000 !important;
+    margin-bottom: 10pt;
+  }
+
+  .print-caption {
+    font-family: 'Lato', Georgia, serif;
+    font-size: 10pt;
+    font-style: italic;
+    color: #444444 !important;
+  }
+
+  .print-mono {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10pt;
+  }
+
+  /* Print Layout Page Margins & Sizes */
+  @page {
+    size: letter portrait;
+    margin: 0.75in;
+  }
+
+  /* Strict Page Break controls */
+  .print-page {
+    page-break-after: always;
+    break-after: page;
+    position: relative;
+    width: 100%;
+    min-height: 9.5in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .print-page:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Technical tables */
+  .print-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5pt;
+    margin-bottom: 10pt;
+  }
+
+  .print-table th {
+    font-family: 'Lato', sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #0E2C27 !important;
+    background-color: #f0f4f3 !important;
+    border-bottom: 1.5pt solid #0E2C27;
+    padding: 5pt 6pt;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .print-table td {
+    font-family: 'Lato', Georgia, serif;
+    font-size: 10pt;
+    border-bottom: 0.5pt solid #e0e0e0;
+    padding: 5pt 6pt;
+    color: #000000 !important;
+  }
+
+  .print-table tr {
+    background: none !important;
+  }
+
+  /* Footer on every page */
+  .print-footer {
+    border-top: 0.5pt solid #dddddd;
+    padding-top: 5pt;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Lato', sans-serif;
+    font-size: 8pt;
+    color: #666666 !important;
+    width: 100%;
+  }
+
+  /* Large Wheel Chart container */
+  .print-chart-container {
+    width: 6.2in !important;
+    height: 6.2in !important;
+    margin: 15pt auto;
+    display: block;
+  }
+
+  /* Custom high-contrast vector overrides for printing */
+  .print-chart-container svg {
+    stroke: #333333 !important;
+  }
+
+  .print-chart-container .wheel-ring {
+    stroke: #333333 !important;
+    stroke-width: 1.5px !important;
+  }
+
+  .print-chart-container .cusp-line {
+    stroke: #333333 !important;
+    stroke-width: 1.2px !important;
+  }
+
+  .print-chart-container .spoke-line {
+    stroke: #e0e0e0 !important;
+    stroke-width: 0.5px !important;
+  }
+
+  .print-chart-container .house-sector {
+    fill: none !important;
+    stroke: #e0e0e0 !important;
+    stroke-width: 0.5px !important;
+  }
+
+  .print-chart-container .zodiac-sector {
+    fill: none !important;
+    stroke: #cccccc !important;
+  }
+
+  .print-chart-container .tick-line {
+    stroke: #888888 !important;
+  }
+
+  .print-chart-container .center-hub {
+    fill: #ffffff !important;
+    stroke: #333333 !important;
+  }
+
+  .print-chart-container text {
+    fill: #000000 !important;
+    font-weight: bold !important;
+  }
+
+  .print-chart-container .zodiac-glyph {
+    fill: #000000 !important;
+  }
+
+  .print-chart-container .planet-glyph {
+    fill: #000000 !important;
+  }
+
+  .print-chart-container .retro-symbol {
+    fill: #000000 !important;
+  }
+
+  .print-chart-container .dignity-symbol {
+    fill: #444444 !important;
+    font-weight: normal !important;
+  }
+
+  .print-chart-container .aspect-line {
+    stroke: #666666 !important;
+    stroke-width: 1px !important;
+  }
+
+  .print-chart-container .cardinal-label {
+    fill: #0E2C27 !important;
+  }
+
+  .print-chart-container .dual-source-verified-badge-print {
+    border: 1pt solid #0E2C27 !important;
+    color: #0E2C27 !important;
+    background-color: #f0f4f3 !important;
+  }
+}

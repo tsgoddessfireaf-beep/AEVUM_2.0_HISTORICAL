@@ -1,0 +1,23 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+client/.env.local
+server/.env
+dist/
+client/dist/
+.DS_Store
+*.log
+server/conversations.json
+/tmp/
+.vite/
+.cache/
+*.tsbuildinfo
+.claude/settings.local.json
+
+# Python virtual environment and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv-service/

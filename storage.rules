@@ -1,0 +1,24 @@
+rules_version = '2';
+
+// Aevum — Firebase Storage rules for reading-package voice narration.
+//
+// Narration files live at readings/{readingId}/slide-{n}.{ext}. Clients play
+// them through tokenized download URLs stored on the (public) reading doc, so
+// public read here is safe and simple. Writes are locked to the practitioner
+// account — only Dolores records narration, so no other signed-in user can
+// upload to or overwrite a reading's audio. To add practitioners, extend the
+// condition (e.g. `in ['a@x.com', 'b@x.com']`).
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /readings/{readingId}/{file} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.auth.token.email == 'tsgoddessfireaf@gmail.com';
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
