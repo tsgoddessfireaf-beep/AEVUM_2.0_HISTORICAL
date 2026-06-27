@@ -52,6 +52,8 @@ export default function LandingPage() {
 
   useEffect(() => {
     let active = true;
+    // Force-enable after 45s regardless — prevents permanent block on cold starts
+    const giveUpTimer = setTimeout(() => { if (active) setCalibrated(true); }, 45000);
     async function checkHealth() {
       try {
         const res = await fetch('/api/health');
@@ -70,7 +72,7 @@ export default function LandingPage() {
       }
     }
     checkHealth();
-    return () => { active = false; };
+    return () => { active = false; clearTimeout(giveUpTimer); };
   }, []);
 
   return (

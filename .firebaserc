@@ -1,5 +1,13 @@
 {
   "projects": {
-    "default": "gen-lang-client-0022917921"
+    "default": "flutter-ai-playground-f880c"
+  },
+  "targets": {
+    "flutter-ai-playground-f880c": {
+      "hosting": {
+        "landing": ["flutter-ai-playground-f880c"],
+        "app": ["aevum-app"]
+      }
+    }
   }
 }

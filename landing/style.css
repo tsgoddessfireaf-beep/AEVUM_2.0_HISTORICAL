@@ -1,0 +1,87 @@
+/* Aeonic Arts — horary_website
+   Brand: Deep Teal / Copper / Platinum Silver / Bone White
+   Headlines Orbitron, body Lato */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Lato:wght@400;700&display=swap');
+
+:root{
+  --teal-bg:#123A33;
+  --teal-panel:#16433A;
+  --teal-deep:#0E2C27;
+  --copper:#BE6B3D;
+  --copper-bright:#D17C49;
+  --silver:#AEB6B8;
+  --bone:#EDE7D3;
+  --max:1080px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Lato',system-ui,sans-serif;
+  background:var(--teal-bg);
+  color:var(--bone);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
+
+h1,h2,h3,.brand,.btn,nav a,.eyebrow{font-family:'Orbitron',sans-serif;letter-spacing:.04em}
+
+a{color:var(--copper-bright);text-decoration:none}
+a:hover{color:var(--bone)}
+
+header{border-bottom:1px solid rgba(174,182,184,.18);background:var(--teal-deep);position:sticky;top:0;z-index:50}
+header .container{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px;flex-wrap:wrap;gap:12px}
+.brand{font-size:1.25rem;color:var(--bone);font-weight:700}
+.brand span{color:var(--copper)}
+nav ul{list-style:none;display:flex;gap:26px;flex-wrap:wrap}
+nav a{font-size:.82rem;color:var(--silver);text-transform:uppercase;font-weight:500}
+nav a:hover{color:var(--copper-bright)}
+
+.hero{text-align:center;padding:88px 0 64px;position:relative}
+.eyebrow{color:var(--copper);text-transform:uppercase;font-size:.8rem;letter-spacing:.22em;margin-bottom:18px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);color:var(--bone);line-height:1.1;margin-bottom:22px}
+.hero p.lead{font-size:1.15rem;color:var(--silver);max-width:640px;margin:0 auto 34px}
+.tagline{font-family:'Orbitron',sans-serif;color:var(--copper);font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;margin-top:26px}
+
+.btn{display:inline-block;background:var(--copper);color:var(--teal-deep);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;padding:16px 34px;border-radius:4px;border:1px solid var(--copper);transition:.2s}
+.btn:hover{background:transparent;color:var(--copper-bright);border-color:var(--copper-bright)}
+.btn.ghost{background:transparent;color:var(--silver);border-color:var(--silver)}
+.btn.ghost:hover{color:var(--bone);border-color:var(--bone)}
+
+section.block{padding:64px 0;border-top:1px solid rgba(174,182,184,.12)}
+.section-head{text-align:center;margin-bottom:46px}
+.section-head .eyebrow{margin-bottom:10px}
+.section-head h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--bone)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:var(--teal-panel);border:1px solid rgba(174,182,184,.16);border-radius:8px;padding:30px 26px}
+.card h3{color:var(--copper-bright);font-size:1.05rem;margin-bottom:12px}
+.card p{color:var(--silver);font-size:.98rem}
+
+.cta-band{background:var(--teal-deep);text-align:center;padding:72px 0;border-top:1px solid rgba(190,107,61,.4)}
+.cta-band h2{color:var(--bone);font-size:clamp(1.5rem,4vw,2rem);margin-bottom:16px}
+.cta-band p{color:var(--silver);max-width:560px;margin:0 auto 30px}
+
+.prose{max-width:720px;margin:0 auto}
+.prose h2{font-size:1.5rem;color:var(--copper-bright);margin:38px 0 14px}
+.prose p{margin-bottom:18px;color:var(--bone)}
+.prose ul{margin:0 0 18px 22px;color:var(--silver)}
+.prose li{margin-bottom:8px}
+
+.posts{display:grid;gap:18px;max-width:760px;margin:0 auto}
+.post{background:var(--teal-panel);border:1px solid rgba(174,182,184,.16);border-radius:8px;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.post h3{font-size:1.05rem;color:var(--bone)}
+.post p{color:var(--silver);font-size:.92rem;margin-top:4px}
+
+footer{background:var(--teal-deep);border-top:1px solid rgba(174,182,184,.18);padding:48px 0 40px;text-align:center}
+footer .brand{font-size:1.1rem;display:block;margin-bottom:14px}
+.social{list-style:none;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:14px 0 20px}
+.social a{color:var(--silver);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-family:'Orbitron',sans-serif}
+.social a:hover{color:var(--copper-bright)}
+footer .email{color:var(--copper-bright);font-weight:700}
+footer small{display:block;color:var(--silver);opacity:.7;margin-top:18px;font-size:.78rem}
+
+.geo{display:block;margin:0 auto 30px;width:54px;height:54px;opacity:.9}
+@media(max-width:560px){.hero{padding:60px 0 44px}nav ul{gap:16px}}

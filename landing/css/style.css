@@ -1,0 +1,202 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif; /* A more traditional, classic font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f7f1; /* Slightly parchment-like background */
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+a {
+    color: #b8860b; /* Dark goldenrod for a mystical feel */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1.5rem 0;
+    border-bottom: 4px solid #b8860b;
+}
+
+header h1 {
+    color: #f9f7f1;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: #ecf0f1;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+nav a:hover, nav a.active {
+    color: #b8860b;
+    text-decoration: none;
+}
+
+/* Main Content Area */
+main {
+    padding: 3rem 0;
+    min-height: 70vh;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #fff;
+    border: 1px solid #e0d8c3;
+    border-radius: 4px;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #b8860b;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #8a6508;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Features (Homepage) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #e0d8c3;
+    border-top: 3px solid #2c3e50;
+    border-radius: 4px;
+}
+
+/* About Page Styles */
+.master-profile {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #b8860b;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.mission {
+    background: #2c3e50;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.mission h3 {
+    color: #b8860b;
+}
+
+/* Blog Page Styles */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-card {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #e0d8c3;
+    border-radius: 4px;
+    position: relative;
+    padding-bottom: 3rem; /* Space for link/tag */
+}
+
+.read-more {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    font-weight: bold;
+}
+
+.tag {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: #e74c3c;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 4px solid #b8860b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}

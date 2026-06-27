@@ -31,7 +31,16 @@ app.disable('x-powered-by');
 const PORT = process.env.PORT || 3001;
 
 const allowedOrigins = process.env.NODE_ENV === 'production'
-  ? ['https://aevum-plp9.onrender.com']
+  ? [
+      'https://app.aeonicarts.com',
+      'https://aeonicarts.com',
+      'https://aevum-app.web.app',
+      'https://aevum-app.firebaseapp.com',
+      'https://flutter-ai-playground-f880c.web.app',
+      'https://flutter-ai-playground-f880c.firebaseapp.com',
+      'https://gen-lang-client-0022917921.web.app',
+      'https://gen-lang-client-0022917921.firebaseapp.com',
+    ]
   : true; // allow all localhost origins in dev
 
 app.use(compression());
@@ -77,8 +86,20 @@ if (process.env.SENTRY_DSN) {
   app.use(Sentry.expressErrorHandler());
 }
 
-app.listen(PORT, () => {
-  console.log(`Aevum server running on http://localhost:${PORT}`);
-  // Start background calibration check
+// FUNCTION_TARGET is set by Firebase at actual Cloud Function runtime (not during CLI analysis).
+const isFirebaseRuntime = !!process.env.FUNCTION_TARGET;
+const isMain = process.argv[1] && process.argv[1].includes('server/index');
+
+if (isMain) {
+  // Local dev / Render: start server normally
+  app.listen(PORT, () => {
+    console.log(`Aevum server running on http://localhost:${PORT}`);
+    warmupAndCalibrate();
+  });
+} else if (isFirebaseRuntime) {
+  // Firebase Cloud Function runtime: trigger calibration on cold start
   warmupAndCalibrate();
-});
+}
+// Firebase CLI analysis phase: just export the app, do nothing else
+
+export default app;

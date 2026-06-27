@@ -1,8 +1,54 @@
 {
+  "functions": [
+    {
+      "source": ".",
+      "codebase": "default",
+      "ignore": ["client/**", "ephemeris-service/**", "**/node_modules/**", ".git/**", "deploy-log*.txt"]
+    }
+  ],
   "firestore": {
     "rules": "firestore.rules"
   },
   "storage": {
     "rules": "storage.rules"
-  }
+  },
+  "hosting": [
+    {
+      "target": "landing",
+      "public": "landing",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "cleanUrls": true,
+      "trailingSlash": false
+    },
+    {
+      "target": "app",
+      "public": "client/dist",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "/api/**",
+          "function": "api"
+        },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|woff2|woff|ttf)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
+        },
+        {
+          "source": "**",
+          "headers": [
+            { "key": "X-Frame-Options", "value": "DENY" },
+            { "key": "X-Content-Type-Options", "value": "nosniff" }
+          ]
+        }
+      ]
+    }
+  ]
 }

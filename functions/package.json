@@ -1,0 +1,10 @@
+{
+  "name": "aevum-functions",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "engines": { "node": "22" },
+  "dependencies": {
+    "firebase-functions": "^6.0.0"
+  }
+}
