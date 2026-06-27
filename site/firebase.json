@@ -1,0 +1,19 @@
+{
+  "firestore": {
+    "database": "ai-studio-a5598360-139b-4f05-891b-74252700773f",
+    "location": "us-east1",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "site": "flutter-ai-playground-f880c",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "firestore.rules",
+      "firestore.indexes.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+rules_version = '2';
+
+// aeonicarts.com — static marketing site.
+// No Firestore reads or writes from the client. Lock down everything.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
