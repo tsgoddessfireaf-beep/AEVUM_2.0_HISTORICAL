@@ -21,3 +21,6 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .venv-service/
+
+# Firebase deploy cache
+.firebase/
