@@ -82,6 +82,10 @@ export default function SharedReadingPage() {
           time: '12:00:00',
           timezone: reading.dateTime?.timezone,
           location: loc,
+          latitude: reading.dateTime?.latitude || null,
+          longitude: reading.dateTime?.longitude || null,
+          topocentric: true,
+          elevation: 0.0,
           house_system: reading.dateTime?.houseSystem || 'Regiomontanus',
         }),
       });

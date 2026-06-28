@@ -87,7 +87,7 @@ export default function DateTimePage() {
     setLocationError('');
 
     if (!navigator.geolocation) {
-      setConfirmData({ date, time, timezone, location: form.location });
+      setConfirmData({ date, time, timezone, location: form.location, latitude: null, longitude: null });
       setShowConfirm(true);
       return;
     }
@@ -116,13 +116,13 @@ export default function DateTimePage() {
           setLocationError('Could not detect your city — please confirm or type it below.');
         }
         setLocating(false);
-        setConfirmData({ date, time, timezone, location });
+        setConfirmData({ date, time, timezone, location, latitude, longitude });
         setShowConfirm(true);
       },
       () => {
         // Permission denied or timeout
         setLocating(false);
-        setConfirmData({ date, time, timezone, location: form.location });
+        setConfirmData({ date, time, timezone, location: form.location, latitude: null, longitude: null });
         setShowConfirm(true);
         setLocationError('Location access was denied — please enter your city manually.');
       },
@@ -302,7 +302,11 @@ export default function DateTimePage() {
             <input
               type="text"
               value={form.location}
-              onChange={(e) => patch('location', e.target.value)}
+              onChange={(e) => {
+                patch('location', e.target.value);
+                patch('latitude', null);
+                patch('longitude', null);
+              }}
               placeholder="City, Country — e.g. Tampa, USA"
               className="w-full bg-teal-900/60 border border-teal-600 rounded-xl px-4 py-2.5
                          text-bone placeholder:text-silver/40 focus:outline-none focus:border-copper-400/60 transition-colors"

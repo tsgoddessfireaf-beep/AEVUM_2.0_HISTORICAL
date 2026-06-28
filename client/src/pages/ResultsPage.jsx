@@ -275,6 +275,10 @@ export default function ResultsPage() {
             time: dateTimeData.time + ':00',
             timezone: dateTimeData.timezone,
             location: dateTimeData.location,
+            latitude: dateTimeData.latitude || null,
+            longitude: dateTimeData.longitude || null,
+            topocentric: true,
+            elevation: 0.0,
             house_system: dateTimeData.houseSystem || 'Regiomontanus',
           }),
         });
@@ -284,6 +288,14 @@ export default function ResultsPage() {
         }
         chartData = await res.json();
         setEphemerisData(chartData);
+
+        // Save resolved coordinates back to the store if they weren't already there
+        if (chartData.chart_meta && chartData.chart_meta.resolved_latitude && chartData.chart_meta.resolved_longitude) {
+          setDateTimeData({
+            latitude: chartData.chart_meta.resolved_latitude,
+            longitude: chartData.chart_meta.resolved_longitude
+          });
+        }
       } catch (e) {
         setError(e.message);
         setPhase('error');
