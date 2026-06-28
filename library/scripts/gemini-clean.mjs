@@ -11,7 +11,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 const [shelf, out, ...rest] = process.argv.slice(2);
 const flag = (k, d) => { const i = rest.indexOf(k); return i >= 0 ? rest[i + 1] : d; };
-const PROJECT = 'gen-lang-client-0022917921', LOC = 'us-central1', MODEL = 'gemini-2.5-flash';
+const PROJECT = 'flutter-ai-playground-f880c', LOC = 'us-central1', MODEL = 'gemini-2.5-flash';
 const TOKEN = process.env.GAUTH;
 if (!TOKEN) { console.error('Set GAUTH=$(gcloud auth print-access-token)'); process.exit(1); }
 
