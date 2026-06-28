@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Aevum Source Library — passage record",
+  "description": "One record = one semantically coherent passage (a chapter section, a numbered Consideration, or a single aphorism). This is the unit that gets embedded for retrieval AND keyed for the existing deterministic matcher.",
+  "type": "object",
+  "required": ["id", "author", "work", "language", "license", "text", "source_url", "retrieved_at"],
+  "properties": {
+    "id":            { "type": "string", "description": "stable slug, e.g. lilly-ca-b1-ch08-aspects, bonatti-anima-c028" },
+    "author":        { "type": "string", "enum": ["Lilly", "Bonatti", "Dorotheus", "Masha'allah", "Ptolemy"] },
+    "tradition_tag": { "type": "string", "description": "maps to TRADITION_METHODS keys in chat.js: classic|lilly|bonatti|arabic|dorotheus" },
+    "work":          { "type": "string", "example": "Christian Astrology" },
+    "source_edition":{ "type": "string", "example": "London 1647 (Brudenell for Partridge & Blunden)" },
+    "language":      { "type": "string", "enum": ["en", "la", "ar", "grc"], "description": "language of `text`" },
+    "license":       { "type": "string", "enum": ["public-domain", "our-translation", "licensed", "do-not-use"] },
+    "section_ref":   { "type": "string", "example": "Book 1, Ch. 8 / Consideration 28" },
+    "title":         { "type": "string" },
+    "text":          { "type": ["string", "null"], "description": "VERBATIM passage in `language`. null = not yet extracted." },
+    "translation":   { "type": ["string", "null"], "description": "our own EN translation of a non-English `text` (license=our-translation). null for already-English sources." },
+    "topics":        { "type": "array", "items": { "type": "string" }, "description": "free tags, e.g. via_combusta, moon, dignity, prohibition" },
+    "condition_keys":{ "type": "array", "items": { "type": "string" }, "description": "bridges the deterministic matcher in chat.js (e.g. via_combusta, voc_moon, saturn_7th, retrograde)" },
+    "source_url":    { "type": "string" },
+    "retrieved_at":  { "type": "string", "format": "date" },
+    "_status":       { "type": "string", "enum": ["verbatim", "pending_extraction", "pending_translation"], "description": "ingestion bookkeeping; drop before loading to Firestore" }
+  }
+}
