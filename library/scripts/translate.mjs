@@ -29,22 +29,22 @@ let text = readFileSync(shelf, 'utf8')
 const from = parseInt(opt.from || '0', 10);
 text = text.slice(from);
 
-// Chunk on paragraph boundaries, ~22k chars each.
-const CHUNK = 22000, chunks = [];
+// Chunk on paragraph boundaries, ~8k chars each to prevent output token truncation
+const CHUNK = 8000, chunks = [];
 for (let i = 0; i < text.length; ) {
   let end = Math.min(i + CHUNK, text.length);
-  const br = text.lastIndexOf('\n\n', end); if (br > i + 5000) end = br;
+  const br = text.lastIndexOf('\n\n', end); if (br > i + 2000) end = br;
   chunks.push(text.slice(i, end)); i = end;
 }
 const maxChunks = parseInt(opt.max || String(chunks.length), 10);
 
 const schema = { type: 'ARRAY', items: { type: 'OBJECT', properties: {
   number: { type: 'INTEGER', description: "Original numbering if present in text, otherwise omit" }, 
-  title: { type: 'STRING' }, text: { type: 'STRING' },
-  translation: { type: 'STRING', description: "English translation if the text is in another language" },
+  title: { type: 'STRING' },
+  translation: { type: 'STRING', description: "English translation of the entire input text" },
   topics: { type: 'ARRAY', items: { type: 'STRING' } },
   condition_keys: { type: 'ARRAY', items: { type: 'STRING' } },
-}, required: ['title', 'text'] } };
+}, required: ['title', 'translation'] } };
 
 const author = opt.author || 'Bonatti';
 const work = opt.work || 'Anima Astrologiae (146 Considerations)';
@@ -54,23 +54,45 @@ const type = opt.type || 'Consideration';
 const urlVal = opt.url || 'https://archive.org/details/astrologersguide00lill';
 
 const url = `https://${LOC}-aiplatform.googleapis.com/v1/projects/${PROJECT}/locations/${LOC}/publishers/google/models/${MODEL}:generateContent`;
-const sys = opt.prompt || `You are restoring a public-domain horary astrology text (${author}'s ${work}, ${src}) from noisy OCR.
-For each distinct "${type}" in the input, output one card:
-- number: the ${type.toLowerCase()}'s number (if explicitly numbered in the text; otherwise omit).
-- title: a short (<=8 word) descriptive title you write.
-- text: the FULL ${type.toLowerCase()}, VERBATIM. Fix obvious OCR scan errors (e.g. "tlie"->"the", "v/ith"->"with", "wdiich"->"which") and remove page headers, running titles, page numbers, and footnote artifacts. DO NOT modernize, paraphrase, summarize, or add words. Preserve the author's exact wording, spelling of names (Zael, Bonatus), and punctuation style.
-- topics: 1-4 lowercase free tags.
+const sys = opt.prompt || `You are translating and restoring a historical horary astrology text (${author}'s ${work}, ${src}) from noisy Latin OCR.
+For the input text, output exactly one card:
+- number: the section number (if explicitly numbered).
+- title: a short (<=8 word) descriptive title in English.
+- translation: The FULL English translation of the entire input text. Translate accurately, preserving the astrological meaning.
+- topics: 1-4 lowercase free tags in English.
 - condition_keys: 0-3 from EXACTLY this list (else empty): ${CONDITION_VOCAB.join(', ')}.
-Only output complete ${type.toLowerCase()}s fully present in the input; skip fragments cut off at the edges.
-Crucially, keep each card focused on a specific astrological rule or judgment (under 500 words). If a section is long, split it into multiple coherent cards.`;
+Do NOT output the original Latin text in your response. Only output the English translation and metadata.`;
 
 let existingCards = [];
 if (existsSync(out)) {
   existingCards = readFileSync(out, 'utf8').split('\n').filter(Boolean).map(JSON.parse);
   console.error(`Loaded ${existingCards.length} existing cards from ${out}`);
 }
+let completedChunks = 0;
+const totalChunks = Math.min(chunks.length, maxChunks);
+
+function writeProgress(status = 'PROCESSING') {
+  const percent = totalChunks > 0 ? (completedChunks / totalChunks) * 100 : 0;
+  const progressData = {
+    tag,
+    work,
+    percent: Math.min(100, percent),
+    completed: completedChunks,
+    total: totalChunks,
+    status
+  };
+  try {
+    writeFileSync(`library/progress-${tag}.js`, `window.translationProgress_${tag} = ${JSON.stringify(progressData)};`);
+  } catch (e) {
+    console.error(`Failed to write progress file: ${e.message}`);
+  }
+}
+
+// Write initial 0% progress
+writeProgress();
+
 const cards = [...existingCards];
-const CONCURRENCY = 5;
+const CONCURRENCY = 8;
 for (let i = 0; i < Math.min(chunks.length, maxChunks); i += CONCURRENCY) {
   const batch = chunks.slice(i, i + CONCURRENCY);
   const promises = batch.map(async (chunk, idx) => {
@@ -78,23 +100,58 @@ for (let i = 0; i < Math.min(chunks.length, maxChunks); i += CONCURRENCY) {
     const body = {
       system_instruction: { parts: [{ text: sys }] },
       contents: [{ role: 'user', parts: [{ text: chunk }] }],
-      generationConfig: { responseMimeType: 'application/json', responseSchema: schema, temperature: 0 },
+      generationConfig: { 
+        responseMimeType: 'application/json', 
+        responseSchema: schema, 
+        temperature: 0, 
+        maxOutputTokens: 8192,
+        thinkingConfig: { thinkingBudget: 0 }
+      },
     };
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 60000);
-    let res;
-    try {
-      res = await fetch(url, { method: 'POST', headers: { Authorization: `Bearer ${TOKEN}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body), signal: controller.signal });
-    } catch (e) {
-      console.error(`chunk ${c} fetch error: ${e.message}`); return [];
-    } finally {
-      clearTimeout(timeout);
+    
+    let attempts = 3;
+    while (attempts > 0) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 300000); // 5 mins
+      try {
+        const res = await fetch(url, { 
+          method: 'POST', 
+          headers: { Authorization: `Bearer ${TOKEN}`, 'Content-Type': 'application/json' }, 
+          body: JSON.stringify(body), 
+          signal: controller.signal 
+        });
+        
+        if (!res.ok) {
+          console.error(`chunk ${c} HTTP ${res.status} (attempts left: ${attempts - 1}): ${(await res.text()).slice(0, 150)}`);
+          attempts--;
+          if (attempts > 0) await new Promise(r => setTimeout(r, 2000)); // wait 2s before retry
+          continue;
+        }
+        
+        const j = await res.json();
+        const arr = JSON.parse(j.candidates[0].content.parts[0].text);
+        
+        // Inject the original Latin chunk into each card
+        for (const card of arr) {
+          card.text = chunk;
+        }
+        
+        console.error(`chunk ${c + 1}/${Math.min(chunks.length, maxChunks)}: +${arr.length} (Success)`);
+        
+        completedChunks++;
+        writeProgress();
+        
+        clearTimeout(timeout);
+        return arr;
+      } catch (e) {
+        console.error(`chunk ${c} error: ${e.message} (attempts left: ${attempts - 1})`);
+        attempts--;
+        clearTimeout(timeout);
+        if (attempts > 0) await new Promise(r => setTimeout(r, 2000));
+      }
     }
-    if (!res.ok) { console.error(`chunk ${c} HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`); return []; }
-    const j = await res.json();
-    let arr; try { arr = JSON.parse(j.candidates[0].content.parts[0].text); } catch { console.error(`chunk ${c} parse fail`); return []; }
-    console.error(`chunk ${c + 1}/${Math.min(chunks.length, maxChunks)}: +${arr.length}`);
-    return arr;
+    console.error(`chunk ${c} FAILED permanently after 3 attempts.`);
+    return [];
   });
   const results = await Promise.all(promises);
   for (const arr of results) {
@@ -125,4 +182,13 @@ const recs = [...seen.values()].sort((x, y) => x._num - y._num).map(a => ({
   source_url: urlVal, retrieved_at: '2026-06-27', _status: 'gemini_cleaned',
 }));
 writeFileSync(out, recs.map(r => JSON.stringify(r)).join('\n') + '\n');
+const englishFile = out.replace('-cards.jsonl', '-english.txt');
+const latinCleanedFile = out.replace('-cards.jsonl', '-latin-cleaned.txt');
+writeFileSync(englishFile, recs.map(r => r.translation).filter(Boolean).join('\n\n') + '\n');
+writeFileSync(latinCleanedFile, recs.map(r => r.text).filter(Boolean).join('\n\n') + '\n');
+
+writeProgress('DONE');
+
 console.error(`\nDONE: ${recs.length} cards -> ${out}`);
+console.error(`      Full English translation -> ${englishFile}`);
+console.error(`      Full Cleaned Latin     -> ${latinCleanedFile}`);

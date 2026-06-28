@@ -1,0 +1,4835 @@
+(BnF Gallica
+Ad astrorum judicia facilis
+introductio, Claudio
+Darioto... authore. Ejusdem
+tractatus de electionibus
+principiorum [...]
+Source gallica.bnf.fr / Bibliothèque nationale de France
+
+(BnF Gallica
+Dariot, Claude (1533-1594). Auteur du texte. Ad astrorum judicia
+facilis introductio, Claudio Darioto... authore. Ejusdem tractatus
+de electionibus principiorum idoneorum rebus inchoandis.
+Quibus accessit fragmentum de morbis et diebus criticis ex
+astrorum motu cognoscendis.... 1557.
+1/ Les contenus accessibles sur le site Gallica sont pour la plupart des reproductions numériques d'oeuvres tombées
+dans le domaine public provenant des collections de la BnF. Leur réutilisation s'inscrit dans le cadre de la loi n°78-
+753 du 17 juillet 1978 :
+- La réutilisation non commerciale de ces contenus ou dans le cadre d'une publication académique ou scientifique
+est libre et gratuite dans le respect de la législation en vigueur et notamment du maintien de la mention de source
+des contenus telle que précisée ci-après : « Source gallica.bnf.fr / Bibliothèque nationale de France » ou « Source
+gallica.bnf.fr / BnF ».
+- La réutilisation commerciale de ces contenus est payante et fait l'objet d'une licence. Est entendue par réutilisation
+commerciale la revente de contenus sous forme de produits élaborés ou de fourniture de service ou toute autre
+réutilisation des contenus générant directement des revenus: publication vendue (à l'exception des ouvrages
+académiques ou scientifiques), une exposition, une production audiovisuelle, un service ou un produit payant, un
+support à vocation promotionnelle etc.
+CLIQUER ICI POUR ACCÉDER AUX TARIFS ET À LA LICENCE
+2/ Les contenus de Gallica sont la propriété de la BnF au sens de l'article L.2112-1 du code général de la propriété
+des personnes publiques.
+3/ Quelques contenus sont soumis à un régime de réutilisation particulier. Il s'agit :
+- des reproductions de documents protégés par un droit d'auteur appartenant à un tiers. Ces documents ne peuvent
+être réutilisés, sauf dans le cadre de la copie privée, sans l'autorisation préalable du titulaire des droits.
+- des reproductions de documents conservés dans les bibliothèques ou autres institutions partenaires. Ceux-ci sont
+signalés par la mention Source gallica.BnF.fr / Bibliothèque municipale de ... (ou autre partenaire). L'utilisateur est
+invité à s'informer auprès de ces bibliothèques de leurs conditions de réutilisation.
+4/ Gallica constitue une base de données, dont la BnF est le producteur, protégée au sens des articles L341-1 et
+suivants du code de la propriété intellectuelle.
+5/ Les présentes conditions d'utilisation des contenus de Gallica sont régies par la loi française. En cas de
+réutilisation prévue dans un autre pays, il appartient à chaque utilisateur de vérifier la conformité de son projet avec
+le droit de ce pays.
+6/ L'utilisateur s'engage à respecter les présentes conditions d'utilisation ainsi que la législation en vigueur,
+notamment en matière de propriété intellectuelle. En cas de non respect de ces dispositions, il est notamment
+passible d'une amende prévue par la loi du 17 juillet 1978.
+7/ Pour obtenir un document de Gallica en haute définition, contacter
+utilisation.commerciale@bnf.fr.
+
+V
+1092
+Source gallica.bnf.fr/ Bibliothèque nationale de France
+
+==Start of OCR for page 1==
+85-453
+A
+V1443
+Rés.p. V.
+1092
+8791
+==End of OCR for page 1==
+
+==Start of OCR for page 2==
+AD ASTRORVM
+IVDICIA FACILIS INTRO.
+DVCTIO CLAVDIO DARIO.
+to Pomarcenfi Medico ac
+Mathematico
+authore.
+EIVSDEM TRACTATVS
+De Electionibus Principiorum idoneorum
+rebus inchoandis.
+QVIBVS ACCESSIT FRAG-
+mentum de morbis & diebus Criticis
+ex aftrorum motu cognofcendis,
+codem authore:
+Ad illustrißimum & eruditißimum uirum dominum Anthonium
+Thomam Sauium doctorem medicum Lugdunenfem.
+THE CA
+REGIA
+VIRTVTI SIC
+V.
+1443.
+CEDIT INVIDIA.
+LVGDVN 1,
+Apud Mauricium Roy,et/ Ludouicum Peſnot.
+1557.
+Miquelcamarena
+==End of OCR for page 2==
+
+==Start of OCR for page 3==
+IN ARTEM IVDICIARIAM D
+Claudij Darioti Pomarcenſis Martialis
+Caſſagno Cambonius De.
+caſtichon.
+Qui volet occultas rerum cognofcere caufas,
+Quid ftrata cælorum fydera ſignificent.
+An bona portendant, mala vel mortalibus:ille
+Me legat,ft) voti tunc bene compos erit.
+Omnibus occlufas nam res fic reddit apertas,
+Sic reddit faciles Claudius ipse meus.
+Vt verè poßint docti pradicere multos
+Astrorum fluxus, qui, Ioue Rege,fluunt.
+Me fpernant nulli, quamuis fim corpore paruus:
+Ni fimul ingrati ſpernere magna velint.
+IDEM IN LIVOREM.
+Ni præcepta legas mea iudiciaria,liuor:
+Ni tua constituas nofcere fupplicia.
+IOAN. CHEVIGNARDI
+Belnenfis ad lectorem
+Epigramma.
+Quos mores naſcentum animis errantia ſeptem
+Mollibus instillent fydera lector habe.
+Quæ varios nostro generet in pectore fenfus:
+Quæ grauis immoti cordis t effe iubent.
+Quæ celer ingenium (t) penetrabile mentis acumen,
+Quæ faciant tardum, degener atque rude.
+Diuitias alijs adimunt, facéſque ſuperbos,
+Vt fceptro feruos, ut folióque beent.
+Ad ſtudia hos,illos violenta in prelia raptant:
+Imbelles alios otia, fomnus,habent.
+Hac (t) plura vide paruo hoc digesta libello,
+Immenſis alibi fcripta voluminibus.
+C
+ge
+L
+qu
+4
+te
+emy
+te
+tes
+==End of OCR for page 3==
+
+==Start of OCR for page 4==
+CLARISSIMO VIRO DO-
+MINO ANTONIO THOMAE SA
+S
+uio Lugdunenfi Medico peritifsimo
+Claudius Dariotus Pomar
+me
+cenfis. S. P. D.
+6
+AEPENVMER O`' mihi tuorum in
+officiorum magnitudinem memoria re-
+colenti, vir clarißime, venit in mentem fub
+vereri, ne ea fatis honestètueri ac ſustinere
+poßim. Cùm enim de referēda gratia cogito, inferiorem me
+eſſe ſentio quàm ut tibi foluendo eſſe quea. Sin verò (quod
+facilius eft) agere gratias inftituo, nihilominus proficio: quo
+niam toties, quoties id facere vellem & deberem, noua nõ
+occurrit forma qua id faciam. Quoniam igitur nec planè
+referre, nec satis cumulatè tibi gratias agere poſſum: hoc
+unum mihi relictu est, ut memoria teneam, téque tanta
+obferuantia colam, quata par est eum quem ego studiorum
+meoru fautorem, & fortuna melioris authore primùm ha-
+hui. Ego enim ingenuè fateor ac præ me fero, ab eo tépore
+quo me in gratiam tuam recepisti, nihil quod ab homine
+amantißimo expectari poßit, mihi à te defuiſse. Imò verò
+te mihi ſepius verenti beneficium ultro obtrudiſse. Nunc
+verò cùm pro tot tantiſque tuis in me meritis, mea par-
+tes eße videantur aliquo officij genere testatiorem meum
+erga te animu relinquere. Dolet mihi, & multum quidem
+dolēt, quòd mihi vltro citróą animo difcurrenti,nihil om-
+ninò occurrat, quò id satis commodè perficere poßim: nifi for
+tè in eo me fubleues, & cumulatè tibi relatam gratiam pis
+tes,cū id quod potero præstabo. Relinquitur enim hoc unū
+mihi, vir clarißime, ut huius fciētiæ (qua tuo auxilio no-
+a ij
+==End of OCR for page 4==
+
+==Start of OCR for page 5==
+nihil ni me adoleuit) faciam te participe: & hunc librum
+de iudicijs ex astrorum afpectu faciendis,tuo nomini con-
+ſacrem. Non fanè quod fit aliquid tale, ut inlucem exi-
+re, & in tuo nomine aparere debeat : fed ſalten quod grati
+& memoris animi ſignificationem obtineat. Neque fanè
+ſum veritus, ne tibi nostri muneris exilitas ſodefceret, cū
+(fi bene te cognou :) non is ſis, qui munus magis quàm ani-
+mum soleas ponderare. Neque fanè mirum tibi videri de-
+bet, quòd post infinitam ſcriptorum multitudinem qui de
+hac re ſcripſerunt, nunc actum agere & in eorum vestigijs
+pedem imprimere videar: non enim eo animo ha: aggres-
+ſus sum, ut ſperam quicquam à me melius quàm ab alijs
+poſse dici, fed ut amicorum meorū precibus satisfacerem,
+qui me quotidie ut id facerem hortabantur. Quod cùm ne
+que amici nomen,neque meum in eos ſtudium negare per-
+mitteret: eo aggreſſus sum audacius, cùm quia eorum au-
+thoritas huius mei laboris nõ pænitēdi fidem faciebat, tum
+quia hos nouos nostri ingenij fructus (quod sæpius tuæ libe
+ralitatis fucco irrigasti) tibi non ingratos forè confidebam.
+Malui enim officij ac beneuolētiæ onere opprimi, quàm id
+quod ab amicis impofitum est, turpiter abijcere. Itaq cum
+hi nullam apud me conquerendi ceſſationem facerent, de-
+Speratam sibi effe hanc cognitione, quia certa methodo, quæ
+eos ad eam introduceret, orbatos ſe eſſe dicerent: ut eorum
+Studia leuarẽ,ea quæ de hac arte mihi uſus attulit, in com
+pendiariam quendam introductionem incluſi: qua ego per
+certa capita digesta,primum artis principia & tanquam
+incunabula præcipio,tum deinde quarumcunque quæstio-
+num propofitarum rationem reddere ostendo, his ad duode-
+cim cæli domos reductis, ut earum significator reperiatur.
+Cuine
+CONF
+a
+eora
+50
+fac
+ter
+tern
+==End of OCR for page 5==
+
+==Start of OCR for page 1==
+れ
+Ati
+de
+間
+Cui ne quicquam pratermiſiſſe videar, quod à me posted
+poffet requiri:tractatum de temporibus eligendis,principijs
+actionum instituendarum idoneis adieci. Quod quidem
+opus exiguum, cum eis quibus authoribus id fufcepera com-
+municaffem, tum eo lecto, me vehemétius hortati funt, ut
+quantulumcunque effet, cæteris non inuiderë, fed in lucem
+emitterem. Quod feci, ac ut in eos officiofus effem, nouasq
+eorú preces mea diligentia prauenire. Huic ad extremum
+adieci fragmentum aliquod de cognofcendis morborum ge
+neribus, eorúmque ſitu &/natura, ex astrorum afpectu pe-
+nitus perfpicienda: fcilicet an diuturni vel breues, letales
+aut fecus futuri fint. Qui nonnunquam huius funt generis,
+ut eoru fit cognitio difficilis:quales funt, qui pestifera labe
+contagione totum corpus inficiut, tt innumerabiles alij
+qui ab influxu astrorum prouenientes non ſe produnt, fed
+penitus in corporibus abstrusi, non apertè ſed tanquam per
+cuniculos homines interimunt. Si verò medicus mature
+futuri morbi exitum prænuntiet, omni ſe fufpicione culpe li
+berabit:eiq morbi caufam adferenti, ſe multò confidentius
+(ut inquit Hipp.i.prognoft.) eger comittet. Itaque ut ab
+omni parte tutior fit, tt) omnis culpa cõtumelia declinet, in
+hoc libri frustulo breuiter rationem deprehendendi dies cri
+ticos,indicantes (t/intercidentes ex ipfius Lune motu pra-
+Scripfimus:quibúsque fcripfimus:quibúsque diebus morbus grauior (t) vehemen
+tior, quibus remißior futurus fit:quibuſque interna vel ex
+terna medicamenta adhibere cõueniat. Qua fi non ingrata
+fuiffe tibi ac lectoribus intellexero, mea in posterum ad
++ Scribendum augebitur industria.
+-
+VALE Lug.3.cal.Maij.1556.
+a iij
+1
+==End of OCR for page 1==
+
+==Start of OCR for page 2==
+gra
+rum
+VOC
+lariu
+min
+Cap
+char
+A
+raty
+tine
+Min
+==End of OCR for page 2==
+
+==Start of OCR for page 3==
+3
+1
+AD ASTRORVM
+IVDICIA FACILIS IN-
+troductio Claudio Darioto
+Pomarcenfi Medi-
+co authore.
+De Zodiaci & fignorum diuifione
+CAP.
+1.
+ODIACVS eſt circulus ex magnis
+in celo, diuidens ſpheram in duas par-
+tes æquales, cuius latitudo eſt duodecim
+graduum. Longitudo verò graduum trecento-
+rum & fexaginta, vt mox dicetur apertiùs. Diuidi
+tur auté hic circulus in partes duodecim, quæ figna
+vocantur, & nomina à proprietate quadam aut ſtel-
+larú diſpoſitione talia acceperunt. Aries, Taurus, Ge
+mini, Cacer, Leo, Virgo, Libra, Scorpius, Sagittarius,
+Capricornus, Aquarius, Pifces. Quæ figna quibufda
+characteribus notantur. Characteres autem in hunc
+figurantur modum.
+Aries, Taurus 8, Gemini II, Cancer 5, Leo, Virgo ny, Libra
+Scorpius, Sagittarius, Capricornus A, Aquarius, Pisces X.
+Vnumquodque rurfus illorum fignorum diuidi-
+tur in triginta partes, quæ gradus vocantur. Hácque
+ratione totus circulus 360 gradus in longitudine có
+tinet, Gradus item in ſexaginta minuta ſequatur. Seeah
+Minutum rurfus in fexaginta fecúda. Secundum in
+==End of OCR for page 3==
+
+==Start of OCR for page 4==
+.
+INTRODVCT. AD ASTROR. IVDIC.
+ſexaginta tertia, Tertium in ſexaginta quarta parti
+tur,ac fic per fexagenariam multiplicationem pro-
+cedendo in infinitumvſque. Signorum rufus multi-
+plex eſt diuifio. Primò enim in ſeptētrionalia, & me
+ridionalia figna diuiduntur:quæ fic dicuntur, quo-
+niam ab æquatoreverfus eam cæli partem vergunt.
+A
+Septentrionalia.
+V. 8, II, 5, 2, 1,
+Meridionalia.
+, m, X.
+Secundò in rectè, & obliquè aſcédentia diuiduntur.
+Signa rectè
+afcendentia
+funt,
+Signa obli-
+què afcéden
+tia funt,
+H
+વા રૂડ
+X
+X
+κα
+Dicuntur autem rectè
+oriri fiue afcedere:quo
+niam cum eis maior
+pars æquatoris quam
+zodiaci peroritur fiue
+afcendit.
+Quæ obliquè afcende
+re fiue oriri dicuntur:
+quia cum eis æquato-
+ris medietas non afce
+dit:maior enim arcus
+zodiaci quàm æquato-
+ris peroritur.
+Inferiora fex oblique a
+ſcendentia, fuperioribus
+rectè afcendentibusobe
+diunt, hoc eft, ex duobus
+fignis æquidiftentibus
+principio,,vel, ob
+liquè afcendens rectè a
+ſcendenti obedit.
+Tertio in quatuor triplicitates ſecantur f
+æream,igneam,terream & aqueam.
+C
+dion
+ma
+&
+de
+cur
+bor
+01
+man
+Igneæ triplicita-
+is funt,
+Quæ funt calida & ficca biliofa,amara, di-
+urna, mafculina & orientalia.
+du
+4
+dic
+&
+Terreæ triplicita
+tus funt,
+Quæ funt frigida & ficca melancolica,
+acıda,nocturna, feminina, & meridionalia.
+tu
+▲ Ereç triplicita-
+tis funt,
+Quæ funt calida & humida fanguinea,dul
+cia, diurna mafculina & occidentalia.
+lem
+25
+Aquca
+==End of OCR for page 4==
+
+==Start of OCR for page 5==
+me
+0
+tur
+de
+ob
+emb
+AVTHORE CLAVD. DARI OTO MEDI.
+Aqueæ triplicita,
+tis funt,
+69
+Quæ funt frigida & humida pituitofa,in-
+capida, fœminina nocturna, & feptentrio
+nalia.
+Quartò in mobilia fixa, & media fiue cora diuidūtur.
+Mobilia funt,
+Ap
+Fixa funt,
+Communia fiue
+media tunt,
+S
+४
+252
+525
+4
+Sicdicta: quoniam qui ea in afcendente, hoc eſt
+prima domo hora naquitatis habuerit corum cô.
+plexionem tortueur: vel quia eorum tempora
+int mobilia.
+sic dicta:quia illorum tempora fint fixa, vel quia
+homines in quorum natiuitate orientem fiue pra
+mam domum tenent, fint fixi, ac in fermonibus fa
+&iſque ſtabiles.
+Qua hoc nomine vocantur:quia illorum tempo-
+ra anni, quidpiam cum præcedenti & fequenti có.
+mune habentvel quia, vt dictum eft, homines in
+quorum nativitate afcendunt, in termombus fatif
+que communes funt.
+Signorum demùm alia orientalia funt, alia meri
+dionalia, alia occidentalia, & alia borealia. Item alia
+mafculina.feminina verò alia:denique alia diurna,
+& nocturna alia vocantur. Quæ autem ea fint, cùm
+de triplicitatibus fermonem fecimus, docuimus.Di-
+cuntur aut orientalia, meridionalia, occidentalia, &
+borealia, q has mundi partes refpiciant. Aliave-
+rò mafculina, quoniam fi in mulieris natiuitate pri-
+mam domum habeant,robuftiorem mulierem red-
+dunt, & virum fortiorem. Feminina contrarium pe
+nitùs agunt, quia virum effæminat. Diurna demum
+dicuntur, quonia pulchriorem & clariorem reddunt
+natum. Nocturna verò difformiorem, nigriorémq;
+ac obfcuram faciem pariunt. Signa iterum in qua-
+tuor quartas, vernalem ſcilicet, æſtiualem, autumna
+lem & hiemalem diuidūt. Que quartę figna hęc an-
+ni tempora conftituétia cóprehendunt vt fequitur,
+b
+==End of OCR for page 5==
+
+==Start of Page 1==
+4
+INTRODVC. AD ASTRO. IVDIC.
+αλ
+ഒ
+119
+Quarta vernalis quæ &
+ſanguinea, dicitur ſiue
+puerilis, comprehendit
+Autunnalis quæ melacho
+lię particeps eft, & quæ ad
+tertiam ætatem refertur,
+continet
+II
+4
+Aeftiualis quarta, quę bilioſa aciu-
+uenilis appellatur, hæc fi gna con
+tinet
+Hiemalis, quæ ſenili ætati compara-
+ta, pituitámq; referens, cõſtituitur
+W
+X
+Hactenus de zodiaci & ſignorú diuiſione dictum
+eſt. Nunc ad tractatū de planetis accedo: tum dein-
+de quas in ſignis dignitates habeant planetæ, breui-
+ter attingam.
+De planetis, eorum motibus & natura.
+C A P.
+11.
+EPTEM ſub Zodiaco ſidera erratia
+ſiue planetę proprio & continuo motu
+mouentur, diuerſisq; temporum ſpatijs
+ipſum metiūtur: vt Saturnus in triginta
+annis: Iupiter in duodecim: Mars in duobus: Sol in
+365. diebus, & propemodum ſex horis: Venus & Mer-
+curius ſimiliter: Luna verò in vigintiſeptem diebus,
+& ferè octo horis. Secundum autem illorum plane-
+tarum & ſignorum qualitates, diuerſos motus, & va-
+rios adinuicem aſpectus, animi tempora mutantur,
+variáſq; in hæc inferiora effectiones habent. Que-
+quidem vt dignoſci valeant, planetarum omnium
+naturam noſſe oportet, quam ſtatim dicere conabor.
+A' Saturno (quod planetarũ omnium ſuperior ſit)
+ſumpto initio, de ijs ſecúndum ſphærarum ordinem,
+ſermonem faciam.
+Saturnus itaque frigidus eſt & ſiccus, melancho-
+licus, naturæ humanæ inimicus & vitam deſtruans,
+maſculinus, diurnus, maleuolus & infortuna maior.
+C
+Iupiter
+diu
+po
+mu
+for
+co
+ſiue
+pro
+nes
+tom
+Ca
+nis
+==End of Page 1==
+
+==Start of Page 2==
+or.
+-(0)
+cho
+ans,
+ilor.
+iter
+er
+us,
+ne
+-
+2
+m
+AVTHO. CLAV. DARIOTO MEDI.
+5
+Iupiter calidus eſt & humidus, ſanguineus, natu-
+ræ amicus, maſculinus, diurnus. & fortuna maior.
+Mars calid eſt immoderatè & ſiccus, coleric, ma
+ſculinus, nocturnus, maleuolus & infortuna minor.
+Sol calidus eſt & ſiccus moderatè, maſculinus,
+diurnus, fortuna per aſpectum, & infortuna per cor-
+poralem coniunctionem.
+Ven' frigida eſt & humida téperatè, phlegmatica,
+fortuna minor, fœminina, nocturna & bonę naturę.
+Mercurius in omnibus communis eſt, & conuerti
+bilis, maſculinus cum maſculinis, fœmininus cü fœ
+mininis, cum calidis calidus, cum humidis humidus
+fortuna cum fortunis pręcipuè laudabili aſpectu vel
+corpore coniunctus aut applicans.
+Luna denique frigida eſt & humida, quamuis pa
+rum calefaciat: magis tamé humectat. Natura ſuam
+ſiue qualitatem per quartas ſuas, non ſecus ac Sol in
+quartis & anni temporibus commutat. Fœminina
+eſt etiam & nocturna, & omnium virtutum & im-
+preſsionum aliorum planetarum delatrix. Nam om
+nesinfluetiæ per orbem ipſius ad nosvltimo deſcen-
+dunt. Hęc de naturis planetarum quod ad inſtitu-
+tum noſtrum attinet, ſatis dictum ſit. Sed capitis &
+caudæ draconis naturas hic annectere, nó mihi pre-
+ter inſtitutum videtur.
+Caput igitur draconis veluti Mercurius cũ bonis
+bonú eſt, cu malo malú. in cõiunctione namq; bono
+rum bonitatem, malorú verò eorum malitia auget.
+Cauda verò capiti pænitùs aduerſatur: cum bo-
+nis enim mala eſt, & cum malis bona: ita vt boni bo
+nitatem, & mali malitiam minuat. Omnes autem
+bij
+==End of Page 2==
+
+==Start of Page 3==
+9
+INTRODV. AD ASTRO. IVDIC.
+planetę, caput & cauda draconis characteribus qui
+bufdam proprijs figurantur: qui ſe in hunc modum
+habent.
+5
+20
+♀
+☿
+Saturnus, Iupiter, Mars, Sol, Venus, Mercurius, Luna
+☊
+☋
+Caput Draconis, Cauda Draconis.
+De dignitatibus eſſentialibus planetarum.
+C A P.
+III.
+P
+LANET Æ in aliquibus zodiaci locis
+ſuas vires ac poteſtates magis exerunt,
+quàm in alijs. & in his proptereà fortio
+res ac fortunatiores eſſe dicuntur. quod
+fit, quia natura illorum, vel ſtellarū in his ipſis locis
+exiſtentium, naturę planetarum ſit conuenientior:
+ſitq; alterius ad alterum mutua naturę affinitas: vn-
+de etiam planetarum eſſentiales dignitates priſci vo
+carunt. Cuius generis ſunt domus, exaltatio, triplici
+tas, terminus, & facies eis dicatę. Ac de earum ſingu
+lis dicendum,
+De prima dignitate eſſentiali, ſcilicet de domo.
+SO L atque Luna luminaria duo à Deo códita,
+vnus vt diei, alter vt nocti pręeſſet: quia in rerum ac
+corporum generatione & dominatu principatum
+obtinent, illis pro domibus tributa ſunt duo ſigna
+fuis qualitatibus conuenientia, atque naturis. Nem-
+pè Lunę Cancer, Soli verò Leo, ſigna certè noſtro
+vertici propinquiora, ac maiorem æſtatis parte con
+ſtituen-
+fit
+CO
+ga
+gn
+dia
+qur
+Car
+doc
+vero
+ſus
+Satu
+cet
+PH
+ſul
+Sun
+gna
+Pret
+La
+dom
+qu
+go
+Diar
+==End of Page 3==
+
+==Start of Page 4==
+ocis
+int,
+110
+001
+OCIS
+10:
+AVTHO. CLAV. DARIOTO MEDI.
+7
+ſtituentia. Qualitatibus autem ſiue naturis inter ſe
+cóueniunt: quia Cancer frigidus eſt & humidus, fœ
+mininus, nocturnus & mobilis vt Luna. Leo verò ſi-
+gnum eſt calidum & ficcum, maſculinum, fixum, &
+diurnum vt ipſe Sol. Supradicti planetę vnicum ſi-
+gnum habent pro domo. Reliqui autem quinque ſi-
+gna duo poſsident, vnum ſcilicet diurnum, alterum
+nocturnum. Vnde ſignum diurnum domus diurna
+dicitur. Nocturnum verò nocturna. Saturnus itaque
+quia naturæ eſt inimicus, oppoſitas domos obtinuit,
+Capricornú ſcilicet & aquarium. Capricornus enim
+domus eſt nocturna, Aquarius verò diurna. Iupiter
+verò quoniam naturę eſt parens & amicus domos
+ſuas habuit, Solis & Lunę domos trino aſpectu aſpicie
+tes: qui quia Saturnú ſubſequitur, ſignú vnum ante
+Saturni domos, alterum verò poſt, Sagittarius ſcili
+cet & Piſces obtinuit. Sagittarius diurna domus eſt,
+Piſces verò nocturna. Nunc autem Mars proximè
+ſubſequitur, qui ferè veluti Saturnus naturę eſt ini-
+micus: ita ipſius domus Solis & Lunę domos aſpectu
+inimicitię imperfecte quadrato, ſcilicet reſpiciunt.
+Sunt igitur Martis domus, Arietis & Scorpionis ſi-
+gna. Aries diurna, Scorpius verò nocturna. Veneris
+pręterea domus ſunt, Taurus & libra: Taurus noctur
+na, Libra diurna. Atq; vt eſt bonę benigneq; naturæ
+domus eius Solis ac Lunę domos ſextili, hoc eſt im-
+perfectæ amicitię aſpectu reſpiciunt. Vltimo ſubſe-
+end quitur Mercurius, cuius domus funt Gemini & Vir-
+go. Gemini diurna, Virgo auté nocturna. Quę quo-
+niam Mercurius naturæ comunis exiſtit, nullo aſpe-
+ctu cum Solis ac Lunæ domibus cõiunguntur. Hæc
+2
+odita
+Nem-
+altro
+olici
+==End of Page 4==
+
+==Start of Page 5==
+8
+INTRODVC AD ASTROR. IVDIC.
+ſunt igitur vniuſcuiuſque planetarú domus, in qui-
+bus quando ſunt collocati, fortunati eſſe dicuntur,
+ac fortiores quàm in alijs dignitatibus. Quæ autem
+dignitates alijs ſuperiores ſint, numeris agnoſcitur.
+Quare planetę domus dignitates obtinet quinque.
+Loci verò in Zodiaco domibus oppoſiti in planeta-
+rum perniciem iurant.
+De exaltatione.
+SECVNDA eſſentialis dignitas planetarum
+eſt exaltatio. Eſt autem planetæ exaltatio, locus in
+Zodiaco in quo virtus illius ſiue poteſtas, naturali
+quada ſublimitate multú erigitur: id qd Soli in Arie-
+te accidit iuſta Ptholomei ſententia: ſed precipuè in
+decimonono gradu, vt alijs placet. Illhîc autem ele-
+uatur, quia tunc Sol vergere incipit ad ſeptentrione,
+& creſcere dies incipiunt. Supprimitur verò ſiue ca-
+dit in loco huic oppoſito, hoc eſt decimonono gra-
+du Librę. Hoc autem eſt ſignum eleuationis Satur-
+ni, qui vt eſt naturę euerſor, ita cadit in ſigno eleua-
+tionis naturę conſeruatoris, & in eius caſu eleuatur.
+Iupiter autem Cancri decimumquintum gradú pro
+ſua altitudine petit: & deprimitur in decimoquinto
+gradu Capricorni. Mars verò in Capricorni vigeſi-
+mooctauo gradu exaltatur: ſed in eodé Cancri gra
+du caſum ſuum poſsidet. Veneris etiã vigeſimusſe-
+ptimus gradus Piſcium exaltatio exiſtit. Quemad-
+modum caſus vigeſimusſeptimus gradus virginis.
+Mercurij item altitudo in decimoquinto Virginis
+gradu ponitur, & eius depreſsio in gradu oppoſito
+ſcilicet, decimoquinto Piſcium. Luna demúm loco
+ſuę eleua-
+ſue e
+fert
+pur
+Da
+enim
+grad
+frent
+in cal
+IN
+rum
+o rel
+planet
+blicita
+mode
+s do
+==End of Page 5==
+
+AVTHO. CLAV. DARIOTO MEDI.
+و
+ſuę eleuationis tertium Tauri gradum peroptat, atq;
+tertium Scorpionis, veluti locum depreſsionis. Ca-
+put & cauda Draconis in locis quibufdam Zodiaci
+pariter attolluntur, & in alijs deprimuntur. Caput
+enim in Geminorum gradu tertio:Cauda auté ter..
+tium Sagittarij gradum capit. Cadit verò in tertio
+gradu Geminorum, & caput in tertio Sagittarij.
+Planetę in his gradibus imperij ſui poteftatem
+exercere dicuntur. Quoniam fi quis naſcitur ijs exi-
+ſtentibus in talibus locis, vel eorú pars maxima, for-
+tunam ac fœlicitatem nato impartiunt.Contraverò
+in cafibus fortunę ac fœlicitati aduerſantur, &infor
+tunium ferunt. Hęc denique dignitas quaternario
+equatur numero.
+De triplicitate.
+INTER eſſentiales dignitates planetarű, tertiú
+obtinet locű triplicitas, de qua q ad diuifioné figno-
+rum attinet, in præcedétibus fatis dictú eſt. Núc ve-
+rò reliquű eſt, vt de earū pręſidibus fiue dominis lo-
+quamur. Vnaquæq; igitur ſignorû triplicitas tribus
+planetis regitur:vna diei prefecta, altera nocti, tertia
+hijs interiecta & vtrique communi. Prima itaque tri
+plicitas, cui igneæ nomen eſt, Sole, Ioue, & Saturno
+moderatur:Sole diei tempore, Nocte Ioue, & noctis
+dieiq; tempore Saturno: atq; ob id cõmunis dicitur.
+Secunda triplicitas, hoc eſt terrea, Venerem, Lu-
+nam & Martem dominatores poſsidet. Venerem de
+die, Lunam de nocte. Mars autemvtriufque tempo.
+xis dominium habet.
+L
+Saturnus, Mercurius & Iupiter tertiæ triplicitatis,
+
+10
+INTROD. AD ASTRO. IVDIC.
+id eſt æreę principatum habent. Dies tamen à Satur
+no:nox vero à Mercurio gubernatur, ac tandem Iu-
+piter eos coadiuuat.
+Aquça deniq; triplicitas, quæ & quarta vocatur,
+Venerem, Martem & Lunam rectores vocauit. Ve-
+nerem nempè diurnum, Martem auté nocturnum,
+& Lunam duobus his temporibus cómunem. Hac
+autem dignitas tria valet.
+De terminis fiue planetarum finibus.
+ETSI ingenioſa quadam diuifiõe vnumquod-
+que ſignum pro alicuius planetę proprio domicilio
+habeatur: Nihilominus tamen ipforum partes ali-
+quę planetis fingulis,pro terminis fiue finibus tri-
+buuntur. Ægiptij autem terminorum hanc ſecuti
+funt diuifionem: tribuentes ſex primos Arietis gra-
+dus Ioui, pro finibus fiue terminis fuis:fequentes ve-
+rò ſex gradus ipſius ſigni, Veneris finibus accommo
+dant.pofteà octo ſequentes Mercurio. Reliqui verò
+gradus decē, duobus planet is tributi funt: quinque,
+ſcilicet Marti, alij quinque Saturno. Sic etiam in a-
+lijs fignis, illi planetæ ſuos in varijs gradibus termi-
+nos habent. Sed quoniam tediofum effet omnes eos
+numerare:hos in tabulam redigimus:in qua omnes
+planetarum dignitates comprehenduntur. Illud
+tamen non eſt prętereundum duobus luminaribus
+nullos eſse conſtitutos fines: ſed ſingulum eorum,
+fingula medietate Zodiaci vice terminorum inclu-
+di. Sol nempè medietate quæ à ſua domo accipit
+initium, hoc eſt à principio Leonis, & in fine Ca-
+pricorni definit, clauditur. Luna verò altera quæ, à
+principio
+
+AVTHO. CLAVD. DARIOTO MEDI,
+ZZ
+principio Aquarij, vſque ad finem Cácri ſe porrigit.
+Sunt igitur luminaria in illis medietatibus, veluti a-
+lij planetę in ſuis finibus. Terminus deniq; duas nu-
+mero dignitates obtinet.
+De fignorum faciebus.
+IN precedentibus zodiacus in figna duodecim
+diuiſus fuit. Signum etiá quodlibet in triginta gra-
+dus diuifum eſt. Illi autem gradus triginta, iterùm
+in tres portiones æquales, quas facies nominant, fe-
+cantur:ac fic quęlibet facies denos continet gradus.
+Quibus in locis planetę dominium habent finguli,
+ſcilicet in fingulis faciebus locum poſsident. Mars
+tamē principium obtinet: quia prima Arietis facies
+Marti tribuitur, ſecūda Soli,tertia Veneri.
+Primam iterùm Tauri faciem Mercurius poſsi-
+det, ſecundam Luna, tertiam verò Saturnus. Prima
+item Geminorum Iouis eſt locus, ſecūda Martis, ac
+fic deinceps pergendo ſecúdum planetarú orbium,
+& facierum fignorum ſucceſsionem,vt clariùs tabu
+la explicabit. Faciesverò, in dignitatum numero mi
+nimum obtinet, atque ob id vnitatis loco ſumitur,
+Sequitur tabula omnes planetarum di-
+gnitates complectans.
+C
+
+Tabule declaratio.
+SVPRA POSITA tabula multáque variáq;
+interualla circulis diſtincta comprehendit. Quorum
+primum ſignorum gradus continet. Secundum au-
+tem numeri graduum, arithmeticis literis ſignatum
+oftendit. In tertio ſignorum nomina atque chara-
+cteres funt
+
+AVTHO. CLAV. DARIOTO MEDI.
+13
+teres funt. In quarto ſignorum facies diſtinctę ap-
+parent,illiſq; adfcripti ſunt domini. Pariter in quin-
+to planetarum termini lineis diſtincti ſunt, atque in
+ter lineas terminorum gradus diſtìnguetes, ipforum
+domini characteribus proprijs notantur.Sextum au
+tem triplicitatum dominos cóprehendit. Septimum
+exaltatiões. Octauum domos. Nonum planetarum
+caſum, ſeu detrimentum. Decimum denique plane
+tarum gaudia complectitur. In medio autem fiue
+centro eſt index, dignitatum planetarum titulos ſe-
+cum ferens. Cùm quis ergo ſcire voluerit, an plane-
+ta aliquis in ſuis dignitatibus fuerit, vel alicuius do-
+mus dominum elucidare, appoſito indice ſuprà gra
+dum lociipſius, fub indice, & in directo lineę fiducię
+omnes planetę dignitates ſtatim apparebunt. Eſt &
+alia tabula in figurę medio, dies criticos indicatiuos
+& intercidentes complectens, cuius vſus in tertioli-
+bro capite vndecimo dicetur.
+De masculinis & fœmininis gradibns, ac lucidis,
+fumofis, tenebrosis, vacuis, putealibus, fortunam au
+gentibus, ijs qui corporis imbecili-
+tatem adferre creduntur quos
+azemena vocant.
+CAP. 1111.
+SIGNORVM prętereà gradus quidem funt
+qui maſculini, alij verò qui fœminini dicuntur.
+Maſculini autem dicuntur, quoniam planetam
+maſculinum in his exiſtentem fortiorem reddunt.
+Fæminini ide in planetis fœmininis agunt. Sunt
+C
+ij
+
+14
+INTROD. AD ASTRO. IVDIC.
+& alij qui lucidi,fumofi, tenebrofi, & vacui vocatur,
+propter ſtellas fixas ibi exiſtentes. Alijitem Putea-
+les, qui gradus fortunio infortunioue planetas affi-
+ciunt. Lucidi,fcilicet fortunio, fumofi verò, tene-
+brofi & puteales infortunio. Vacui autem neque
+boni neque mali caufam adferunt. Augentes for-
+tunam funt in locis in quibus ſtellę fixę naturę for-
+tunarum planetarum exiftunt, aut locum eleuatio-
+nis bonorum occupat, aut terminos, aut eum in quo
+bonorum fines colligantur, qui fortunati dicuntur,
+quoniam fortunam augent. Sunt denique & alij qui
+corporis imbecillitatem aut partis, vel detrimétum
+aut diminutione adferre putantur, vel ob ſtellarum
+fixarum illis in locis exiſtentium prauitatem, aut ali-
+quam aliam caufam. Cùm ergo in alicuius natiui
+tate aut queſtione, Luna aut fignificator principalis,
+in aliquo illorum graduum reperitur, niſi is in angu
+lo & in ſua domo aut exaltatione fuerit, & orienta-
+lis à Sole, alicuius membriiacturam nato adfert,aut
+rei quæfitę deperditionem. Hij autem omnes gra
+dus ſuppoſita tabula habentur, cum indice, illorum
+nomina ſecum ferete. Indice itaque appoſito ſuper
+gradum figni propoſitū, è directo lineę fiduciæ om-
+nes gradus eluceſcunt. Gradus enim maſculini om-
+nes nigri funt. Fœminini verò albi. Lucidi auté tene
+brofi, Fumofi & vacui funt lineis diſtincti. primáq;
+dictionis litera notati:vt lucidı literal, notantur, ac
+fic in alijs. Reliqui verò Puteales, ſcilicet azemena
+& fortuna augentes, arithmeticis literis ſcripti funt.
+veluti Arietis ſextus, vndecimus,decimusſextus, vi-
+gefimustertius, & vigefimus nonus gradus puteales
+funt,ac
+
+16
+INTRODY. AD ASTRO.IVDIC.
+A
+NTIQVI diem artificialem in æqua
+les partes duodecim diuiferút: eadémq;
+diuifione funt nocté partiti: illas autem
+partes inequales horas vocarút. Inçqua-
+les autem dicutur, quia cùm dies artificiales incqua-
+les fint, propter zodiaci obliquitatem, & fignorum
+aſcenſione, horę pariter inequales funt. Horcenim
+vnius diei, maiores funt vel minores horis diei ſequé
+tis, vel noctis eiuſdem diei. Horę tamen horologij
+fiue æquatoris, & horæ inæquales, æquales & pares
+funt quando Sol alterutrum punctorum equinoctia
+lium tenet:quonia tunc dies artificialis, nocti æqua-
+lis eft. Eas autem horas, luminarium & reliquarú ſtel
+larum errantium dominatu, prifci & pręcipuè Babi-
+lonij ac eorum imitatores tribuebant Saturno inter
+aſtra errantia ſupre um obtinete orbem ac ſedem
+primam ſabati horam temporalem dicauêre, ſecun-
+dam Ioui, tertiam Marti, quartam Soli, quintam Ve
+neri, ſextam Mercurio, ſeptimam Lune, octauam ite
+rùm Saturno tribuunt:ac fic ordine ſecundum pla-
+netarum orbium ordinem pergendo vfque ad horas
+vigintiquatuor, horas, ſcilicet diei duodecim,&toti-
+dem noctis. Quinta autem & vigefima hora, hoc eſt
+diei ſequentis prima, quarti ex ordine planetę domi
+nio fubiacet. Quartus autem à Saturno eſt Sol, qui
+diei dominicę horam primă gubernat: Venus verò
+Yecundam, & Mercurius tertiam : ac fic ordine iam
+dicto procedendo, facilè quis planetarū, quauishora
+diei dominiű habeat, elicitur. Nos tń doctrinæ cla-
+rioris gratia tabulā hîc appofuimus, diei horas duo-
+decim, & noctis totidem cóplectentur, cum planetis
+dominium
+
+AVTHO. CLAV. DARIOTO MEDI.
+17
+dominium illarum habentibus in quolibet die. Co
+gnita igitur hora inęquali, ac indice ſupra eam appo
+fito, è directo diei propofiti in indice ſcripti, planeta
+temporis dominium habens oftenditur.
+HORAE
+Domimca-
+Lune.
+martis.
+horce
+mercury
+Veneris
+Sabati
+SMOE
+NOCTIS
+DIEI
+HORAE
+De radiationibus fiue afpectibus.
+CAP. VI.
+SPECTVS quinque funt, Coniun-
+Ctio fiue congreſſus, Sextilis, Quadratus
+Trinus & Oppofitio. Quorum alij funt
+amicitię, inimicitię alij. Amicitię ſunt
+ſextilis & trinus:inimicitię autem quadratus &oppo
+fitio. Coniunctio verò eſt anceps, bonorum quippe
+
+18 INTRODV. AD ASTRO. IVDIC.
+bona, malorum autem mala. Eſtigitur coniunctio,
+quú duo planetæ, fiue per longitudinë, fiue per lati-
+tudinem vnico tantùm gradu diſtent à ſe inuicem,
+vel ſexdecim minutis, que verior eſt coniunctio.Sed
+tamen propriè dicuntur coniuncti, quando funt in
+eodem gradu & minuto. Sextilis aſpectus eſt cùm
+centra duorum corporum planetarű, duobus fignis
+fiue ſexta zodiaci parte, hoc eſt gradibus ſexaginta,
+diſtét:vnde ſextilis dicitur, qui mediocris & imper-
+fectę amicitię dicitur.quoniam figna eo aſpectu co-
+municantia vna tantú qualitate concordant. Qua-
+dratus ſeu tetragonus, eſt quando planetę quarta zo
+diaci parte, id eſt tribus ſignisvel gradibus nonagin-
+ta remoti funt.qui quia figna ſeſe illo aſpectu reſpi-
+cientia vna qualitate diſconueniunt, (aliquando ta
+men id fit duabus qualitatibus) imperfecte inimici-
+tię vocatur. Trinus verò tertiam circuli ſignorum
+parté,id eſt quatuor ſigna vel gradus 120. inter pla-
+netas comprehendit. Et dicitur perfecte & integræ
+amicitiæ:quia figna cum ſignis qualitatibus omni-
+buscoëunt. Oppoſitio demùm fit, quando inter pla
+netarú corpora ſex ſigna remanent, hoc eſt 180.gra
+dus. Hic autem aſpectus, quoniam ſigna ſuis qualita
+tibus & fitu contraria funt, perfecte inimicitię appel
+latur. Horum porrò (vt Iulio Firmico libr.2.mathe-
+ſeos,cap.25. placet) ſextilis trinus & quadratus du-
+plex exiſtit, dexter & finiſter. Dexter aſpectus à po-
+ſteriori ſigni parte, à quo numerus incipit, ſumitur.
+Siniſter verò à parte anteriore. vt (gratia exempli)
+Aries ſextilem dextrum ad Aquarium, finiſtrum ad
+Geminos habet. Pariter trinum dextrum ad Sagitta
+rium fini-
+
+AVTHO. CLAV. DARIOTO MEDI.
+19
+torium, finiftrum ad Leonem.ac fic de ceteris iudican
+dum eft. Durant autem hij afpectus, quátum per-
+feuerant planetarum radij: vnde fiunt applicationes
+(quæ pro aſpectibus in quibufdam capiuntur, & de
+quibus in fequentibus dicetur.) & feparationes. No-
+tantur afpectus proprijs characteribus & geometri-
+cis figuris vt fequitur.
+σ
+*
+Δ
+Coniunctio, Sextilis.Quadratus.Trinus. Oppofitio.
+Signorum omnium radiationes & afpectus adinui-
+cem hoc fchemate noti funt.
+De applicatione & feparatione.
+CAP.
+V11.
+d
+20
+INTRODV. AD ASTRO. IVDIC.
+APPLICATIO eſt quando orbes ra-
+diorum planetæ per medium ſemidia-
+metri ipforum orbium aſpectu aliquo
+commiſcét:vel cùm per gradus ſex, aut
+medietatem radiorum afpicientis alteri adheret.Sed
+orbes varij ſunt ac diuerſi: quonia alij funt amplio-
+res,breuiores verò alij. Saturnus quippè circulariter
+nouem gradibus ante & retro ſuos iaculat radios:vn
+de femidiameter orbis radiorum Saturni noue: dia-
+meter verò graduum decem & octo. Eiufdem quan
+titatis eſt orbis radiorum Iouis. Martis auté diame-
+tri orbis radiorum quatitas, eſt ſexdecim graduum:
+ſemidiametri verò octo. Sol radios fuos circulariter
+quindecim gradus mittit:vnde fit manifeftum dia-
+metri totius quantitatem eſſe graduum triginta, ſe-
+midiametri graduum quindecim. Venus autem &
+Mercurius vndequaque fuos radios in ſeptem gra-
+duum longitudiné expendunt. Luna denique fuos
+radios circulariter ad duodecim graduum quantita
+tem fundit:vnde ipſius orbis diameter gradus qua-
+tuor & viginti complectitur, ſemidiameter gradus
+duodecim. Lunæ itaque cũ Saturno applicatio, ſex-
+tili aſpectu dextro eft, quando inter duorum corpo-
+rum centra, quadraginta nouem gradus cum minu
+tis triginta interiecti funt, vel quatuor&quinquagin
+ta:ſiniſtro verò cùm gradus ſeptuaginta & minuta
+triginta, aut ſex & ſexaginta. Quoniam dimidium
+femidiametri orbis: Saturni eſt quatuor graduum&
+triginta minutorum: dimidium verò ſemidiametri
+orbis radiorum Lunæ ſex gradus continet. Illæ au-
+tem duæ quantitates fimul collectę, gradus decem,
+minuta
+AVTH. CLAV. DARIOTO MED I.
+21
+minuta triginta efficiunt. Qui ſi in aſpectu dextro
+exgradibus ſexaginta auferantur, vel in ſiniſtro gra
+dibus ijfde addantur, manifeſta erit applicatio. Atq;
+hac ratione de omnibus aſpectibus & radiationibus
+planetarum eſt iudicandum. Separatio autem di-
+citur, quádo vno gradu à vero aſpectu planetavnus,
+alterum relinquit:& femper ſeparari dicitur quouf-
+que alterius radios euaferit.vt (gratia exempli) Luna
+a Iouis congreſſu ſeparari dicitur,quádo eum vnico
+gradu relinquit:& femper ſeparari dicitur, quoufq;
+à Ioue gradibus decem, minutis triginta remota fit:
+& tunc feparata dicitur. Illud tamen non eft pręte-
+reundum, quòd inferiores ad ſuperiores applicant,
+atque ab eis feparantur: non autem cotra ſuperiores
+inferioribus applicant, ac ab illis ſeparantur,propte-
+reà quòd motu tardiores & grauiores inferioribus
+exiſtunt.
+De accidentibus planetarum, tum inter fe, tum
+in femetipfis.& primò de prohibitione.
+CAP.
+V111.
+ORVM quę planetis accidunt, in pri-
+mis eſt prohibitio. Prohibitio autem
+eſt, quę planetarum aſpectus, coniun-
+Ctiones, aut radiationes impedit.Id au-
+tem tripliciter, corpore ſcilicet, aſpectu & retrogra-
+datione. Corpus enim planetæ alterius aſpectum im
+pedit, dum propius planetæ, qua ille qui afpicit,fue-
+rit:vt in ſequenti themate cernere licet. Sol in pri-
+mo gradu Tauri, Martis trinum ad Venerem prohi-
+bet. Vel quando gradus tam corpore applicantis,
+dij
+22
+INTRODV. AD ASTRO. IVDI.
+quam afpicientis æquè pares funt: vt in iam dicto
+exemplo Sol eſt in gradu Tauri:Mars verò in primo
+Capricorni. Afpectu autë fit dum Planetę radij pro-
+piùstertio, quam afpicientis vel corpore applican-
+tis fuerint, veluti Luna in fecundo gradu Cancri, So
+lis & Veneris coniunctionem ſextili aſpectu prohi-
+bet. Luna enim propiùs eſt Veneri quam Soli. Sol
+namq; eft in primo Tauri: Venus verò in tertio. Re-
+greſsione fit, quando planeta alteri applicans,regre-
+ditur, antequa eidé coniugatur, aut eum perfecte re
+fpiciat. Quemadmodú fi Mercurius Soli corporali
+ter applicás regrediatur. Et talis refrenatio dicitur.
+De tranſlatione luminis (t) nature.
+TRANSLATIO luminis vel naturę fit duo-
+bus modis. Primò cùm leuis planeta à grauiori fe-
+paratur, dehinc alteri iungitur:túc primus transfert
+lumen vel naturam fecundi ad tertium, fiue tertius
+fecundo grauior, fiue leuior sit: veluti quando Mer-
+curius à Sole ſeparabitur, & Veneri applicabit:lumé
+vel naturamSolis in Venerem tranferet. Superio-
+res inferioribus grauiores funt: vt Saturnus Ioue, Iu-
+piter Marte, Mars Sole, Sol Venere, Venus Mercu-
+rio, Mercurius Luna grauior exiftit. Grauiores verò
+inferioribus dicuntur:quoniam illis tardius mouen
+tur. Secundò fit tranflatio,quádo leuis ſe grauiori
+iungitur, hic adhuc fe grauiori: tunc enim medius
+naturam aut lumen primi in tertium traducit.veluti
+quádo Sol Marti applicat:Mars verò Saturno: Mars
+Solis lumen in Saturnum mittit & tranſportat.
+De receptione.
+Duplex
+AVTHO. CLAV. DARIOTO MEDI.
+23
+DVPLEX eft receptio, fortis & debilis. Fortis
+fiue potens eft, cùm planeta domino domusvel exal
+tationis in qua eft, aut aliaru maiorum dignitatum
+effentialium applicat, & pariter ipſe aliquod domi-
+nium in loco prædicto habet. Verùm quando vnus
+alterius dignitates tenet & econuerfo, & applicatio
+ex trino aut ſextili, melior & perfectior receptio cre
+ditur. Debilis verò fiue impotens sit, quando plane-
+ta domino termini aut faciei in qua eft,applicat.ve-
+luti Luna in Cancro exiſtens, Venerem aſpectu ſex-
+itili in eleuatiõe ſua recipit, ſcilicet in Tauro: Venus
+èconuerfo Lunam in triplicitate ſua.
+De redditu.
+REDDITVS duplex eſt, virtutis & lu-
+minis. Virtutis eft quando planeta ex propria domo
+aut dignitate alia, combusto vel retrogrado exiſten-
+ti iungitur. Hic enim propter ſui imbecilitatem vir-
+tutem, quam retinere non potuit, afpicientı reddit.
+veluti in figura fequenti, Venus combufta virtutem
+Lunæ quam propter imbecilitatem combuftione fa
+ctam retinere nő poteft, reddit. Hic autem redditus
+quando illi in angulis aut fuccedentibus fortunati
+funt, aut vnus eorum bonus eft. Redditus autem lu-
+minis eft, cùm duo planetæ inter ſe diſtentes, alicui
+tertio iunguntur. Tertius enim illorum lumen colli
+git, ac ad eofdem, vel alia Zodiaci loca quodam afpe
+tu mittit. Quemadmodum in figura poſthabita.
+Mars Solis & Saturnilumina colligit, & ad eofdem
+mittit: id autem luminis redditus putatur. Quòd fi
+tertius duobus prioribus grauior sit, ac lumé corum
+
+==Start of OCR for page 1==
+24
+INTRODV. AD ASTRO. IVDIC.
+colligat, luminis collectio dicitur.
+De contrarietate.
+QVANDO planeta grauis in duorum le-
+uium medio fitus eft, & primus fecundo,hoc eft gra-
+uiori applicans,tertius regressione medio ac primo
+copulatur, tunc fit cótrarietas: quoniam non folùm
+primi cum fecúdo congreſſus impeditur, veruetiam
+tertius cum primo iungitur: vt ſequenti themate pa-
+tet in Venere, Sole, & Mercurio:quando ſcilicet Ve-
+nus regreditur Soli: deinde Mercurio coniungitur,
+ac Solis & Mercurij coïtum impedit.
+De luminis abſciſione / frustratione.
+ABSCISIO luminis parum à contrarieta-
+te diffet. Fit autem ea dupliciter. Primò, quando ter-
+tius pleneta priorem & fecundum aliquot gradibus
+in aliud fignú antecedit: regrefsione medio, non ta-
+men priori copulatur:veluti ſequéti figura cernere li
+cet. Si enim Venus regrediatur, & Soli coniungatur,
+abſciſio luminis fiet. Secundò autem fit, cùm tertius
+ponderofioris coniunctionem petens, hicque ponde
+rofus alterius grauioris aſpectum inheat, antequam
+illi prior coniungatur:tunc enim tertius cógreffum
+prioris cum fecundo prohibet. Veluti dum Mercu-
+rius Solis coïtum petens, Sol Ioui quadrato afpectu
+copulatur, Iupiter ita Mercurij cum Sole coïtum im
+pedit:idque quoniam fecundus aliud fignum iniens
+ac grauioris afpectum petens accidit, luminis fru-
+ſtratio dicitur.
+Sequitur figura predicta accidentia complectens.
+De his
+==Start of OCR for page 2==
+AVTHO. CLAV. DARIOTO MEDI.
+25
+De his quæ planetis cum luminaribus ac in ſe-
+metipfis accidunt:ac primò de combustione.
+CAP. IX.
+Q
+VANDIV planeta orbe ac radijs
+Solis tegitur, ita vt noftris minimè ſe of-
+ferat oculis, combuſtus appellatur.Id au
+tem accidit, quoufq; Solis congreſſum
+egrediens ab eo gradibus quindecim remotus fit.
+Cùm verò infrà gradus duodecim remanferit:tunc
+præcipue combuſtus abſconſus ac oppreſſus dicitur.
+Almugea planetæ dicitur, quando inter eum & So-
+lem,vel Lunam, tot funt ſigna, quot ſunt in Solis aut
+Lunæ domum & domum ipfius, modo ſit occidenta
+==Start of OCR for page 3==
+26
+INTROD. AD ASTRO. IVDI.
+lis à Sole, aut orientalis à Luna. veluti, cùm Sole exi-
+ſtente in Virgine, Venus Sagittarium tenet: tunc eft
+almugea:quoniam à Tauro in Leone ſigna duo in-
+tercidūt: & inter Virginem & Sagittarium totidem.
+Velfi Venus Leonem, Luna verò Librá teneat, erit
+almugea:quia cùm Venus à Luna orientalis fit, & fi-
+gnum vnum Cancri & Tauri medium poſsideat,
+idem inter Libram & Leonem euenit.
+Orientales planetæ dicuntur, cum noctu ante So
+lem oriuntur: ac econuerfo in die ante Solem occi-
+dunt.
+Occidentalesverò ſunt, quádo d'iei tempore poft
+Solem oriútur, & noctis tépore po ſft eum occidunt.
+De his quæ in femetipfis accidunt.
+EORVM quę planetis in ſemetipfis accidunt,
+primò ſeſe offert curſus vacuitas. Eft autem cùm ali-
+quis planeta ab vno ſeparatur:ſed nulli alteri appli-
+cat, donec in.co ſigno remanferit: tunc enim vacuus
+curfu vocatur.
+Dum verò planeta aliquis ſignű tenet, quod nul-
+lus planeta refpicit:is ferinus fiue agreftis putatur.
+Peregrinus autem eft, qui extra omnes dignitates
+fuas fitus eft.
+In ſuo haym demùm eſſe dicitur, maſculinus, in
+figno maſculino:Diurnus etiam diei tempore ſuper
+terram, in figno & gradu maſculino:Nocturnus ve-
+rò & fœmininus contra.
+De fortitudine, fiue fortunijs plane-
+tarum accidentalibus.
+CAP.
+==Start of OCR for page 4==
+AVTH. CLAVD. DARIOTO MEDI,
+CAP. X.
+27
+PLANETARVM fortuna augetur
+in angulis fuccedentibus, vel quando
+aſcendentem aſpiciunt. Fortitudo
+item eorum roboratur, quando funt in
+dignitatibus fuis eſſentialibus, in fignis qualitatibus
+eorum conuenientibus, vel in domibus fui gaudij.
+vtpote Mercurius in prima, Lunain tertia, Venus in
+quinta, Mars in ſexta, Sol in nona, Iupiter in vndeci-
+ma. & denique Saturnus in duodecima gaudet. Vir-
+tus etiam eorum roboratur, cú in circulo ſuę augis,
+& feptentrionales afcendentes funt.
+In gradibus pariter maſculinis & quarta cęli ma-
+ſculina gaudent maſculini planetæ : fœminini verò
+in fœmininis gradibus & parte cęli fœminina:qué-
+admodum quando funt à Sole orientales:fœminini
+autem cùm funt occidentales.
+Attollitur item diuturnorum virtus in die ſuprà
+terram, nocte autem ſub terra. Nocturnorum verò
+cótra, diei tempore ſub terra, nocte ſuprà robur eo-
+rum confirmatur.
+Quando etiam motu augetur, vel aucti funt, aut
+funt directi, vel ſaltem in ſtatione ſecunda, fortuna-
+ti eſſe putantur. Iuuatur item eorum virtus trino,
+ſextili, aut faltem quadrato aſpectu bonorum pla-
+netarum.
+Fortiores etiã euadunt Solis in eodem gradu con
+iunctione, & eius ſextili, vel trino, atque cùm à Solis
+radijs exeunt.
+Fortunati denique ſunt,quádo à malis liberi exi-
+ſtunt, & quando à quibufdam recipiuntur.
+c
+==Start of OCR for page 5==
+28
+INTRODV. AD ASTRO. IVDIC.
+Luna particulares fortitudines.
+LVNA lumine & numero aucta fiue motu, non
+curſu vacua, hoc eft aliquam aſpiciat, fortis eft &
+fortunata.
+De planetarum infortunijs.
+CAP. XI.
+INFORTVNIO afficiuntur plane-
+tæ,quádo funt cadentes ab angulis, ne-
+que aſcendentem refpiciunt. Quando
+etia funt extra dignitates fuas eſſentia-
+les, vel dignitatibus malorum, vt termino Saturni
+vel Martis, aut in proprijs cafibus, & domorum ſua-
+rum oppofitione. Deprimitur etiam eorum virtus
+regreſsione, vel quando funt in ſtatione prima, aut
+meridionales præcipuè deſcendentes.
+Maſculinorum item fortuna minuitur in gradi-
+bus fœmininis, & quando à Sole occidentales funt,
+ac in quarta celi fœminina.
+Fæmininorum verò quando in maſculinis gradi
+bus & parte cæli maſculina, ac orientales exiſtunt.
+Atque quando diei tempore diurni ſub terra, & no-
+cturni ſupra reperiuntur. Infælices redduntur pla-
+netæ motus tarditate, & caudę Draconis preſentia.
+Quotiefcuque pariter inter duos malos exiftunt,
+hoc eft dum à malo ſeparātur, alteri malo applicant,
+infortunio afficiútur. Dum etiam combuſti funt, id
+eſt ſub Solis radijs,vt iam anteà patuit, aut viam co-
+buſtam percurrunt (via autem combuſta ſumitur à
+decimotertio gradu Libræ,vfque ad nonu Scorpio-
+nis gradum
+
+AVTHO. CLAV. DARIOTO MEDI.
+29
+nis gradum) pari infortunio affecti funt. Infortu-
+nium etiam recipiunt malorum aſpectu, quadr at o
+pręcipuè oppoſitione & coniunctione. Quadrato
+pariter, & oppoſitione Solis aſpectibus labefactatur
+corum poteftas. Eodem capiuntur detrimëto, quan-
+do mali fuper bonos funteleuati, aut boni malis re-
+trocedentibúſue applicant.
+
+Particularia impe dimenta Lune.
+LVNA curſuvacua, motu ac lumine diminuta,
+malo afficitur. Quando etiam fignum à domo duo-
+decimum motu percurrit:hoc eſt fignum Gemino-
+rum, quod à Cancro duodecimum eſt, vel ex fuo lo-
+co Cancrum non refpicit, aut eſt in prima &duode-
+cima domibus, pari detrimento afficitur.
+Cùm denique eclipſim patitur, aut in fui incre-
+mento cum Marte, aut decremento cum Saturno
+perambulat, aut è ſuo loco locum coniunctionis vel
+oppoſitionis immediatè precedentis non refpiciat,
+infortunio laborat.
+
+De duodecim celi domibus.
+CAP. XII.
+NTIQVI qui de Aſtrologia ſcri-
+pſerút, vanè domos cæleſtes partiti funt.
+Nos tamé breuitatis gratia, opiniones va
+rias relinquetes, ac Ioannem Regiomon
+tanum ſecuti, eas quatuor circulis diſtinximus (vna
+cum meridiano & horizonte) tranſeuntibus per in-
+terſectiones duas, meridiani horizontis, ac cælum di
+uidentibus in duodecim partes inæquales, quas do-
+e ij
+
+INTROD. AD ASTRO. IVDI.
+30
+mos vocant. Primò itaque horizonte meridianóq
+tota cæli ſphera in quatuor partes diuiditur:quarū
+principia cęli angulos fiue cardines nominant. Per
+cardines verò intelligunt, quatuor eclipticæ gradus
+qui meridianú tam in media nocte, quam meridies
+& horizontem tam exortiuum, quàm occiduum ſta
+ta hora pertingunt. Hiíque gradus primæ, quartę, ſe-
+ptimæ, & decimæ domorum ſunt cufpides & exor-
+dia. Reliquę domos habentur quatuor iam dictis cir
+culis tranſeuntibus per interfectiones duas meridia-
+ni circuli & horizōtis: quorum omnium in æquato-
+re æqualis eſt diſtentia. Ipfarū igitur domorum prin
+cipia ab illis ducuntur circulis. Prima namque exor-
+dium fumit ab horizonte exortiuo, ſecundum figno
+rum ordinem finem facit ac terminatur circulo fuc-
+cedenti, vbi ſecunda incipit, ac ſic pergendo reliquę
+domus habentur. Harum autem quatuor cardines
+appellantur.Quatuor verò illis ſuccedétes, &.caden
+tes totidem:vt ſequenti ſchemate patebit.
+De domo-
+
+AVTH. CLAV DARIOTO MEDI.
+31
+maſculina.
+Vndecima fuccedens.
+Bonus dæmon.
+Gaudium.
+Duodecima cadens.
+Malus dæmon.
+Gaudium.
+Quarta cęli
+Nona cadens.
+Religio.
+Gaudium.
+Decima, angulus
+medij cæli.
+M. C.
+Figura & nomina
+duodecim domo-
+rum cæli.
+Prima domus an-
+gulus orientis.
+Vita.
+Gaudiũ.
+Secunda ſuccedes.
+Subſtantia fiue
+fpes.
+feminina.
+Tertia cadens.
+Fratres.
+Gadium.
+Quarta cęli
+feminina.
+Septuma angulus
+occidentis.
+Coniunx.
+Liberi.
+Quinta ſuccedés.
+Gaudium.
+Sexta cadens.
+Valetudo.
+Gaudium.
+Quarta angulus
+terræ.
+Parentes.
+Octaua ſuccedens.
+Mors.
+Quarta cęli
+De domorum ſignificationibus.
+CAP. XIII.
+NAQVAEQV E domus ſuas habet
+proprias ſignificationes, & pariter domi
+ni triplicitatis domorum. Per dominos
+autem triplicitatis domorú intelligun-
+tur, domini triplicitatis ſigni domum conſtituentis,
+de quibus anteà dictum eſt. Significationes igitur
+dominorum triplicitatum, atq; domorum, hîc ordi
+ne exprimuntur.
+
+De prima domo, que dicitur vita.
+PRIMA domus quæ orientis angulus & ho-
+roſcopus eſt:vitam corpúſque nati & interrogantis,
+
+INTRODV. AD ASTRO. IVDI.
+32
+ac omnium rerum electionum, vitę & natiuitatis
+principium ſignificat, cuius nomen eſt vita. Primus
+triplicitatis dominus, vitam & naturam nati ſeu in-
+terrogantis ſignificat. Ex eo item, quid diligat, & ha-
+bet in vitæ ſuę exordio,cognofcitur. Ex ſecundo de
+vita, corpore, fortitudine ac vitę medietate iudiciū
+facimus. Tertius eaſdem cum primis ſignificationes
+habet, finémque vitę regit.
+
+De ſecunda, quę ſpecies vocatur.
+SECVNDA eſt ſubſtantiæ, diuitiarum & mi-
+niſtrorum domus:atq; ideò nomen ſpes, ei inditum
+eſt. Fortior autem qui fuerit ex primo & ſecundo tri-
+plicitatis dominis, is ſubſtantię author eſt. Primusta
+men in vitæ principio, ſecundus in media ætate,ter-
+tius in fine eam adfert.
+
+De tertia, qua Dea vel fratres appellatur.
+TERTIA domus de fratribus, ſororibus, ami-
+citijs,fide ac religiõe, mutationibus itineribus mino
+ribus, ac cóſobrinis nobis cūcta refert: cuius nomen
+eſt Dea, & triplicitatis eius domini eas habent ſigni-
+ficationes. Primus dominus triplicitatis fratres maio
+res oſtendit. Secundus de mediocribus fratribus do-
+cet. Tetius cuncta de minoribus profert.
+
+De quarta, nomine Parentes.
+E X quarta domo quę parentes vocatur, de pa-
+tribus, domibus, terris, hereditatibus antiquis (non
+tamen de hereditatibus mortuorum) omnibuſque
+immobili-
+
+AVTHO. CLAV. DARIOTO MEDI.
+33
+immobilibus, vt de caſtris & ſimilibus, ac de abſcon-
+ditis theſauris, & omnibus ſepultis, ac ſine rerum, cer
+tum verúmque iudicium elicimus. Ex dominis verò
+triplicitatis quę ſequútur. Ex primo de patribus iudi
+ciú profertur, ex ſecúdo de caſtris & ciuitatibus cun
+cta cognofcimus:ex tertio rerum fines iudicamus.
+
+De quinta que dicitur filij.
+QUINTA nomine filij liberis, dilectionibus, le
+gatis & donationibus pręceſt. Primus triplicitatis do
+minus vitam & filios ſignificat. Secúndus dilectioné:
+tertius verò legatos.
+
+De ſexta domo quę vocatur valetudo.
+SEXTA domus infirmitates, ſeruos & ancillas
+ſignificat. A' ſexta item quicquid ante ſenectutem
+venturum eſt,elicitur : mutationes etiam de loco in
+locum, & animalia parua denotat. A'primo autem
+triplicitatis domino infirmitates, langores ac triſti-
+tię ex infirmitatibus prouenientes cognofcuntur: à
+ſecundo ſerui à tertio vtilitates ex ſeruis pendentes
+prędicuntur. Ex eo item de animalibus corúmque
+multitudine cuncta dicuntur.
+
+De ſeptima que vocatur coniunx.
+SEPTIMA nuptiarum,mulierum,contentio-
+num,bellorum,inimicorum, latronum, exulum &
+medietatis finis vitæ domus eſt. Eſt quoque emendi,
+vendendi & fugitiuorum domus. Primus triplicita-
+tis dominus de mulieribus iudicat. Secundus de con
+
+4
+INTROD. AD ASTRO. IVDI.
+tentionibus. Tertius autem de commixtionibus &
+participationibus iudicium profert.
+De octaua domo, que mors vocatur.
+OCTAVA domus morté, laborem, triſtitiam,
+mortuorum hereditates, ac vitę fine nobis pręſagit.
+Huic mortis nomen tributum eft. Primus dominus
+triplicitatis octauę domus, mortem regit ac modera
+tur. Secundus precepta, aut res antiquas docet. Ter-
+tius mortuorum hereditates oftendit.
+De nona domo,cuius nomen eft reli-
+gio vel Deus.
+NONA domo religio, fides, viſio, fapiétia, dei-
+tas, cultura, rumores, fomnia, legati, futurorum nar-
+ratio, dimidium vitæ, & longera itinera pręgnoſcun-
+tur. Atque nomine religiovel Deus vocatur. Primus
+triplicitatis dominus peregrinationes, & ea que in ip
+ſis accidunt, docet. Secundus fidei ac religionis &
+eius accidentium rector eſt. Tertius fomniorum in-
+terpres & fapientię gubernator.
+De decima,nomine M.C.
+DECIMA regia domus eft. Ab hac enim de
+imperijs,dignitatibus, officijs, artibusexercédis, ma-
+tribus & fubftantia furtım fublata cuncta diſcimus.
+Hecque medium cęli fiue angulus appellatur. Pri-
+mus triplicitatis dominus, operum & exaltatióis eſt
+moderator. Secundus imperij vocem & auda am
+tribuit. Tertius in dignitatibus ſtabilitaté & perma
+nentiam fignificat.
+De vndeci-
+
+AVTHO. CLAV. DARIOTO MEDI. 35
+De undecima, quæ bonus demon dicitur.
+VNDECIMA ſpei, fortunæ, fiducię, peditum
+regis adiutorium, & eius qui proximè ad regé acce-
+dit domus eft.ab ea etiam de laudibus iudicium ca-
+pitur,& dicitur bonus demon.
+Primus triplicitatis dominus fiducię promiffor eft.
+Secundus laborum. Tertius autem vtilitatum à
+laboribus prouenientium, fundamentum exiſtir.
+De duodecima domo,nomine malus demon.
+DVODECIMA domus, quæ malus demon
+vocatur, de inimicis occultis, deceptoribus, inuidis,
+mæroribus,carceribus, malis cogitationibus, fufur-
+rationibus, maioribuſq; animalibus, ac de his omni-
+bus fiue bonis, fiue malis, quæ in partu mulieribus ac
+cidunt, verű definitúmq; dat iudiciū. Primus triplici
+tatis duodecimę domus dominus, occultorú inimi-
+corú dominus eft.Secūdus, laború. Tertius verò ani-
+malium princeps eſt, ac gubernator exiſtit. He ſunt
+breuiter de domorú duodecim ſignificationibus, &
+magna cum diligentia memoriæ mandanda.
+Qua ratione alie domorum duodecim ſignificationes
+inueniende funt.
+CAP.
+X1111.
+OGNITIS & penitùs perceptis pri-
+mis domorum ſignificationibus, in pro
+cliuij eft reliquas inuenire. Numerando
+itaque eas ordine ac ſucceſsiue ſecun-
+dum naturalem fignorum progreſsionem & ordine.
+Secúd ſemper de precedentis domus ſubſtantia cer
+f
+
+36
+INTRODV. AD ASTRO. IVDIC.
+tum dat iudicium: Tertia auté de fratribus : Quarta
+de patribus & hæreditatibus, ac alijs fignificationi-
+bus quartę domus:Quinta de filijs: Sexta de infirmi
+tatibus ac feruis: Septima de vxoribus fiue mulieri-
+bus: Octaua de morte: Nona de religione: Decima
+de regno ac imperio: Vndecima de amicis: Duode-
+cıma de inimicis occultis iudicat. Vnde his nomini
+bus denominate ſunt: Vita, Spes, Dea, vel Fratres, Pa-
+rentes, Liberi, Valetudo, Coniunx, Mors, Religio vel
+Deus, M. C. Bonus demon, malus demon. Per hęc
+enim nomina & loca (vt inquit Iulius Firmicus) to-
+tiùs geniturę fit iudiciū. Quę ſi diligenter reſpician-
+tur, & quale in his ſit planetarum dominium, nihil
+eſt de quo verum non proferatur iudicium. Illę auté
+fignificationes non ſolùm accipiuntur ſumendo ab
+aſcédente initium:verumetiam ab vnaquaq; domo
+ducendo exordium. Quo fit vt alę domus, plures
+alias fignificationes ac propemodum infinitas ha-
+bent. Tamen vt clarior doctrina euadat, exemplum
+de vna atque altera domo dabimus.
+De prima domo.
+QVVM prima domus ſecunda fit à duodeci-
+ma, de ſubſtantia ac diuitijs & famulis inimicorum
+occultorum meritò iudicabit. Et quoniam tertia eft
+ab vndecima domo, de fratribus amicorum, & reli-
+quis quę tertia domus denotat, iudicium feret: quia
+verò quarta eſt à decima, patres Regum, eorúmque
+hereditates & caftra gubernat. Significat etiam rai-
+gioforum liberos, eo quod à nona quintafit. Et de fa
+miliarium inimicorum publicorum, vxorúmqcum
+virs non
+
+AV THO. CLAV. DARIOTO MEDI. 37
+viris non morantium feruis, & ægritudinibus cun-
+ta dicit:quia ab octaua ordine ſexta reperitur. Ini-
+micorum prętereà vxores comprehendit : quoniam
+à ſeptima, Septima numeratur. De morte feruorum
+iudicat, eo quòd octauo loco à ſexta ponitur. Cun-
+cta item de filiorum religione ac longa itinera reci-
+tat, vtpote quod fit domus religiõis fiue nona à quin
+ta inchoando. Dignitates item ac imperia patrum,
+ex ea cognoſcútur, cùm fit decima à quarta. De ami
+cis fratrum recitat, quod fit vndecima à tertia. Inimi
+cos occultos miniftrorum deniq; arguit, proptereà
+quòd duodecima eſt à ſecunda,
+De fecunda domo.
+EADEM ratione & ordine fecunda de fratri-
+bus & fororibus inimicorú occultorú iudicat : quia
+numerando ordine tertia eſt à duodecima. Patres
+etiam amicorum repreſentat:quonia quarta domus
+eſt ab vndecima. Filios pariter Regum gubernat, eo
+quòd quinta fit à decima. De feruis item & infirmi-
+tatibus religioforum iudicat, vt ea quę naturali do-
+morum ordine, à nona ſextum locum tenet. Abea
+inſupervxores familiarium inimicorum agnofcun-
+tur:quoniam ſeptima eſt ab octaua. (Octaua autem
+domus inimicorú familiares, non per ſe primariaue
+fignificatione, regit:fed quoniam ſecunda eft à ſepti
+ma, que inimicos ac vxores primariè fignificat.) Pre-
+tered vxorum mortis cauſa ab ea petitur:quoniam à
+foptima octauum locum tener. Religio item feruorú
+ac'ongua eorum itinera ex fecunda domo cogno-
+ſcuur: quoniam nona eſt à ſexta. Domini ac digni
+fij
+
+38
+INTRODV. AD ASTRO.IVDIC.
+tatis filiorum cauſa ab ea petitur: quia decima eſt à
+quinta. Amicos prętereâ ac fortunam patrum figni-
+ficat, vt quę à quarta vndecima fit. Occultos deniq;
+inimicos fratrum fignificat: vtpote quod fit duode-
+cima à tertia. Atque ita de ceteris domibus iudican-
+dumeſt. Illę tamen fignificationes longius adhuc
+protenduntur:veluti ſi quis quęrat in qua domo pa-
+truum ſubſtantia ponenda fit. Primò videndum eft
+quænam domus patruŭ dominium habet, id quod
+vt ſciatur, videndum eft quæ domorum duodecim
+tertia fit à quarta, quia quarta patrem denotat. & ter
+tia domus ab aliqua domo fratres ſignificat. Igitur
+ſexta domus quę tertia eſt à quarta domo, patruos re
+preſentat. Patruus enim frater patris eft. Subſtantia
+autem patruum ſeptima domo cotinetur: quoniam
+ſecunda eſt à ſexta. Poffunt multe ac diuerſę in vna-
+quáque domo inueniri ſignificationes, quas qui ritè
+predicta perceperit, facilè inueniet:idcirco compen
+diosè breuitatis cauſa ad reliqua ipſi conuertimur.
+De inuentione domini alicuius domus, qui
+Arabibus Almutem dicitur.
+CAP.
+XV.
+VOD Arabes Almutem vocant, lati
+ni dominum appellant. Almutem enim
+vt teftatur Alcabitius idem eft quod vin
+cens. Dominus ergo afcendentis aut alı
+cuius alterius domus, eſt planeta plures in eo loco Ai
+gnitates habens, & fortior exiftens. Si itaque ſcirecu
+pis, quiſnam planetarum dominus fit aſcendents:vi
+de quod
+
+AVTH. CLAV. DARIOTO MEDI.
+39
+de quod fignum, & quis figni gradus primę domus
+principium tenet. Cum eo enim figno & gradu fi in
+tabulam dignitatum planetarum intraueris, atque
+indice appoſito ſuper gradum ſigni inuenti, ſtatim
+fub indice è directo lineę fiducię, planetarum om
+nės dignitates apparebunt:vt gratia exemplı. Si quę-
+*ſtio aliqua propoſita fuerit, cuius afcendens fit quin
+tus gradus Arietis: ac afcendentis dominum inqui-
+rere placet. Appoſito indice ſuper quintum Arietis
+gradum, in tabula dignitatū planetarum: video So-
+lem in Ariete habere exaltationem, atque ob id qua-
+tuor virtutes. (Vides ergo quòd quamuis Solis exal-
+tatio fit in nono & decimo gradu Arietis tamen per
+totum Arietis fignum transfertur, quemadmodum
+alię planetarum eleuationes) habet item triplicitatis
+dignitatem: quoniam queſtio diurna eſt, & ob id
+tres fortitudines pofsidet. Quoniam verò Martis do
+mus eſt Aries. Mars ibi ex domo quinque dignitates
+habet, & vnam ex facie. Iupiter demùm propter ter-
+minum, duabus pręditus eſt dignitatibus. Soligitur
+dominus eft fiue almutem aſcendentis, vtpote quòd
+pluribus dignitatibus poleat. Polet enim exaltatio-
+nis & triplicitatis dignitatibus:vnde ſeptem nume-
+ro habet.quatuor, ſcilicet exaltationis,tres verò tri-
+plicitatis caufa. Marti verò ſex funt dignitates, quin
+que ex domo, & vna ex facie. Iupiter denique duas
+tantummodò propter terminum dignitates habet.
+Quòd fi duo reperiantur planetę eodé in loco æqua
+libus dignitatibus pręditi:tumvidendum eſt an alter
+eorun ſit in aſcédente ad duos tres vel quatuor gra-
+dus popè principiú primę domus: quonia is quam-
+
+40
+INTRODV. AD ASTRO. IVDIC.
+uis duas tantummodò dignitates haberet, dominus
+erit. Alter autem qui eodem in loco omnes quas ha
+bere pofsit dignitates habet: ob id tamen dominus
+non eft. Si verò nullus fit in aſcendente: videndum
+eſt an aſcendentem afpiciat:is enim qui meliori for-
+tioríque aſpectu eum afpicit, dominus erit. Si autem
+aſcendente non afpiciant, aut aſpectu æquales fint:
+tunc qui eorum fortior in celo fuerit, id eſt ſi vnus
+fuerit in angulo, alter in fuccedente domo: vel vnus
+in ſuccedente,alter in cadente:dominus fiue vincés
+exiſtimatur. Quòd fi adhuc æquales fuerint: refpice
+quis eorum fit in gradu ſfibi conuenienti, hoc eft ma
+ſculinus in maſculino:fœmininus in fœminino, vel
+in lucido, tenebroſo, putealı, vacuo, azemena, & for-
+tunam augente gradibus:quia qui fortior fuerit, do
+minus vocabitur. Si deniq; in omnibus ambo funt
+æquales:túc domus alijs dignitatibus præeft, & exal-
+tatio triplicitati termino & faciei preponitur. Veluti
+(exempli gratia) ſi in quæſtione propofita diei tem-
+pore, cuius aſcendens ſit ſecundus & vigefimus gra-
+dus Arietis, afcendentis dominum inquirere lubet.
+Appoſito indice ſuper gradum Arietis vigefimum-
+fecundum, in dignitatum tabula, ſtatim fub indice
+apparet quòd Aries Martis domus eſt, & quòd in his
+gradibus terminum fuum Mars ipſe poſsidet: atque
+ob id in eo loco dignitates ſeptem obtinet, quinque
+ſcilicet à domo, & duas à termino. Solis pariter fe-
+ptem ſunt dignitates: quatuor nempè exaltation's,
+&tres diurnę triplicitatis gratia. Venus autem vram
+tantùm propter faciem ibi pofsidet. Iam verò in du
+bium vocatur, quis duorum dominus afcéderis vo
+abitur:
+
+AVTHO. CLAV. DARIOTO MEDI.
+41
+cabitur. Sed quoniam Sol in decimæ domus princi-
+pio inuentus eft, aſcédentem quadrato aſpectu afpi-
+ciens, & Mars in domo ſexta nullam cum afcenden-
+te communionem habens, Sol afcendentis dominus
+erit. Mars tamen cum Sole particeps eft, ob eius pluri
+mas in Ariete dignitates, & in aſcendente cum Sole
+dominium obtinet: quáuis Sol principatum teneat.
+Hac igitur ratione reliquarum domorum domini
+inquirendi funt.
+
+Qua ratione tabularum in ephemeride pofita-
+rum adiumento,domus cæli erigenda funt
+in qualibet hora diei.
+CAP. XVI.
+TSI diuerſa ſint tempora ad quę figu-
+rę celeſtes erigi poſſunt: tamé ea ad duo
+reducimus. Meridianū ſcilicet, & pome-
+ridianum. Tempus autem pomeridia-
+num fumitur à meridie dieivnius ad alterius diei ſe-
+quentis meridiem:hoc eft numerando ab vna hora
+vfque ad horas quatuor & viginti. Primò igitur de
+domorú erectiõe in meridie, quonia minus dificul-
+tatis habet, dicemus:deinde in pomeridiano tépore.
+Si igitur meridici tépore celithema fiue domos erige
+replacet:delineata priùs (aſtronomico more)figura,
+locus Solis meridiei propoſiti in ephemeridú tabulis
+perquiratur.Inuenietur aut in directo diei tui propo
+fin & in tabula tuo anno feruiente. Ipfe auté gradus
+inutus, cum minutis (fique ſint) in decimę domus
+principiofiue cufpide ponatur, vna cu fignicharacte
+re fub quo tunc Sol exiſtit. Hoc facto queratur inter
+vo
+biture
+
+42
+INTRODV. AD ASTRO. IVDI.
+tabulas domorú, tabula altitudini poli regionis tuæ
+ſuppoſita, in quaquidem tabula quęrēda eſt colum-
+nula domorum cui prefixum eſt ſignum in quo Sol
+inuentus eft:& fub titulo decimæ domus, gradus in-
+tegri reperiuntur (additis, aut omiſsis aliquibus mi-
+nutis) in quibus gradus Solis inuétus ad dextram in
+recta linea,gradus ponendos cum fuis fignis in vn-
+decima, duodecima, prima, ſecunda & tertia domi-
+bus vt fuprapoſitus titulus admonet, indicabit:& fic
+ſex domos figurę erectas habebit. Reliquę verò per
+ſigna oppofita cum ſuis gradibus inuenientur. Si au
+tem tempus datum poſt meridiem fuerit:codem mo
+do gradus Solis hora propoſita inuentus,quęrendus
+eſt in tabula domorum tuo loco feruiente, & in co-
+lumnula cui ſignum loci Solis præfixum eſt ſub titu
+lo decimę domus, cui ad finiſtram in columnula, cui
+titulus infcribitur tempus à meridie, refpondent ho
+ræ & minutę temporis pomeridiani: quibus horis &
+minutis,horę& minutę téporis oblati addendę funt:
+ac etiam quoniam Sol ſex horarum ſpacio, quinde-
+cim minutas gradus figni, motu proprio conficit, &
+illis quindecim minutis, quarta vnius æquatoris gra
+dus pars correfpódet:quçquidem quarta pars vnum
+minutum temporis valet. Ideò pro quibuflibet ſex
+horis pomeridianis, agregato vnum minutum tem-
+poris addendum eft. Si autem horas vigintiquatuor
+gregatum feu horarum & minutorum fumma ſupe
+rat:ab ea auferendę funt vigintiquatuor horæ Ref-
+duum autem fic æquatum aut agregatum quęrein
+eadem tabula domorum, & columnula cui titulus
+infcribitur tépus à meridie. Quod fieum numcum
+nomnue-
+
+AVTHO. CLAV. DARIOTO MEDI.
+43
+non inueneris:tum proximè minorem ſi acceperis,
+leuifsimum committes peccatú, & è directò ad dex-
+tram in recta linea tranſuerfali reſpondebüt ſex do-
+morū gradus & figna: reliquę verò per ſigna fignis
+oppofita & gradus oppofitos inueniétur facilè. Non
+contendo fi quis arithmeticę peritus eas modo exa-
+tiori velit erigere:id illi per me licebit. Rudioribus
+enim & artem diſcentibus hîc ſtudeo, integros gra-
+dus pręfigens, ne dificultate eorum ad minutias &
+ſecundas reducendas ingenia onerem.
+
+De collocandis planetis in figura.
+CAP. XVII.
+RECTA figura planetæ omnes vna
+cum capite & cauda draconis, in ipſa a-
+ptendi funt:id quod hac ratione fiet. Lo
+cus planetæ in ephemeride hora propo-
+fita inuentus, in domibus perquiratur: quo reperto,
+ibi planetam locabis. Sed fignum loci planetę ali-
+quando (idque ſepiſsimè) in aliqua domo notatur,
+in qua non eft planeta ponendus: quoniam gradus
+loci ipfius in alia funt: in qua (vt exemplo ſequenti
+patebit) planeta cum gradu minuto atque ſigni,in
+quo inuentus fuit, charactere, collocandus eft. Cha-
+racter autem ſigni ſcribitur, cum in domus princi-
+pio aliud fignum fcriptum eft.
+g
+
+44
+INTROR. AD ASTRO. IVDI.
+11
+26.51
+Ⅱ.7
+311
+10
+26
+و
+h432
+15
+$19.57)
+Anno Domini 1555
+die 26 Martij hora
+meridiana minuta
+41.
+0025.
+17:35 8
+ера.
+per
+14
+7
+~10
+tre 1
+5.34.
+Z
+He 25.
+3
+70.10.1
+26.
+4
+10
+万14.
+5.26.51
+5
+6
+SOL in decimoquinto gradu, & quinta minuta
+Arietis inuentus eft:qui in ea domo in qua gradus 15
+prędicti ſigni inuenietur, collocādus eft. Ipfe autem
+gradus eft, non in decima domo, quamuis ibi Arie-
+tis character ſcriptus fit, ſed in nona:quoniam prin-
+cipium ducit à 25 gradu Piſciu, & Arietis gradu vi-
+gefimofexto terminatur. Igitur eadem in domo So-
+lem locabis cum gradibus & minutis ac figni Arie-
+tis charactere: vt in exemplo ſuprapofito patet. Ea-
+dem in domo poſiti funt Saturnus & Mercurius cum
+gradibus &minutis, in quibus reperti funt. Venus in
+17.grad.& 31. minut. Piſciú inuenta in octaua domo
+poſita apparet:quoniã domus octaua à primo Piſciū
+gradu exorditur, & eorundem gradu quinto & yige
+fimo finem facit. Hoc igitur ordine reliqui planetę
+poſite ſunt,
+
+AVTH.CLAV. DARIOTO MEDI.
+45
+poſite ſunt, cum m capite & cauda Draconis. Caput in
+ephemeride notatur, fed non cauda: verumea ſem-
+per in oppoſitione capitis eft.
+De partibus quibufdam,earúmque inuentione.
+CAP.
+P
+XV111.
+ARS fortune ſimiliter in figura aptan
+da eft, & fi de ægro queſtio fiat, pars vitę
+vna cum mortis & planetæ interficien-
+tis partibus, vt poſteà dicetur in tertio li
+bro.ted tamen earum inuétionem in preſentiarum
+docebimus. Pars vitę diei tempore à Ioue in Satur
+num fumitur.Noctis autem tempote contra, & ab
+afcendente vtroque tempore proijcitur. Pars for-
+tunę, in die à Sole in Lunam,in nocte autem à Luna
+in Solem fumitur,& vt pars vitæ tam diei quâm no-
+Etis tempore aſcendenti additur. Pars mortis,no-
+ête diéque à Luna in graduni domus octauauę capi
+tur:ac à ſigno in quo eſt Saturnus, proijcitur.
+planetę interficientis, diei tépore à domino aſcéden
+tis in Lună numeratur. Cotra verò à Luna in domi-
+nú aſcédentis accipitur, & ab aſcendente proijcitur.
+Cùm ergo partis alicuius locú indagare placuerit, re
+ductis priùs fignis ad numeros ordine, ita vt Aries
+primum locum teneat : Taurus verò ſecundum, ac
+fic deinceps
+ita vt Piſces duodecim reperiantur,
+ſequitur.
+Pars
+r, v
+Aries. Taurus. Gemini. Cancer. Leo. Virgo. Libra.
+I
+2
+3
+4
+5
+6
+7
+Scorpius. Sagittarius. Capricornus. Aquarius. Pifces.
+8
+2
+10
+II
+12
+gij
+
+46
+INTRODV. AD ASTRO. IVDI.
+Tum aufer locum illius planetę à quo pars vſque in
+alterum fertur, & differentiam gradui vel afcenden
+ti, vel alicui ſigno, vt in partis illius expofitione dici-
+tur,addas. Si verò demi non poteft:tunc ſigna duo-
+decim fignis &gradibus à quibus ſubſtractio fieri de
+bet, addenda funt:facto enim initio ab Ariete, vbi
+numerus definet,pars ponenda erit. V eluti (exempli
+gratia) (i partis fortune locum in precedenti figura
+inuenire lubet:quoniam diurna eft figura,locus So-
+lis à loco Lunę auferēdus eſt. Locus autem Lunę eſt,
+duorum fignorum,graduum trium & minutorum
+vndecim. Solis verò locus eft, quindecim graduum
+tantú, & quinque minutorú. Si ergo à fignis 2 grad.
+3 minut. 11 aſtronomica ſubductione gradus 15 &
+minut. 5 demantur. Signum vnum, gradus 18 &
+minutę 6 ſupererunt: que ſi aſcendenti gradui ad-
+dantur ſigna s gradus 28 & minutę 6 prouenient:
+quoniam afcédens eft fignorum 4, & graduum 10.
+Facto igitur ab Ariete initio, partis fortunæ locus in
+28 gradu & ſexta minutorum virginis erit. Hoc ita-
+que ordine in aliarum partium hoc loco pofitarum,
+&aliarum inueſtigatione procedendum eft. Verum
+illud neminem laterevehm, quòd in in omnibus diffe-
+rentia gradui afcendenti addenda no eſt: (vt in par-
+te mortis in qua differentia loco Saturni addenda
+eſt) fed tamen in omnibus ab Ariete ducendum eft
+principium.
+Quæ funt obferuanda priusquam de re qua
+fita iudicium fiat.
+CAP. XIX.
+Iam verò
+
+AVTH O. CLAV. DARIOTO MEDI.
+47
+AM VERO' (erecta figura, ac in ipſa
+planetis collocatis cum partibusvt mon
+ſtratum eſt) iudiciū de re propoſita da-
+turi,animaduertenda quędam ſunt an-
+tequam proferatur iudiciu, ne in eo fit error. Primò
+itaque ſeptima domus ac eius dominus animaduer-
+tendi funt:quoniam ſi ſeptima domus impedita fue
+rit malorum aſpectu vel preſentia, aut eius dominus
+impeditus fuerit, hoc eſt fuerit vel in ſuo cafu, vel re-
+trogradus aut combuſtus, aut alio modo impeditus
+infortunijs iam anteà predictis, tuto non eft iudican
+dum, ne error iudicando committatur. Nam Ptholo
+meus verbo 14 centiloquijinquit. Quantis in erro-
+ribusverfatur aſtrologus, cùm locus ſeptimus ac eius
+dominus afflicti ſunt. Prętereà anımaduertendum
+eſt diligenter, an queſtio fit radicalis necne. Id quod
+cognofcitur, fi dominus aſcendentis & dominus ho-
+ræ idem fint, vel eiuſdem triplicitatis aut naturę. Exi
+ſtente enim hac conſtellatione, radicalis eſt queſtio.
+Contra verò minimè:ideo de abſoluto iudicio dubi
+tandum eft.
+De ſignificatoribus, ac earum inuentione.
+CA P.
+XX.
+RIVSQVA'M adiudiciaveniamus,
+de ſignificatoribus diſcendum eft : vt-
+pote quinam, & quid fint. Eſt Eſt igitur fi-
+gnificator,tum domus rem ſignificans,
+tum planeta plures habes in ea domo dignitates:qui
+dominus domus appellatur, de cuius inuentione in
+precedentibus dictum eſt. Cùm igitur aliqua in me-
+
+43
+INTRODV. AD ASTRO.IVDIC.
+dium adfertur quæftio: afcendens cum ſuo rectore
+dandus eſt querenti, aut queſtionis authori. Domus
+autem rem queſitam ſignificás, ac eius dominus, rei
+de qua quęritur, queritur, tr tribuendus eſt. Luna verò omnibus
+quæftionibus cómunis,quærenti ſemper cum afcen
+denti ac eius domino tribuenda venit. (vt exempli
+cauſa) fi aliquis de fratris ſtatu queſtionem moueat:
+afcendens & afcendentis dominus, & Luna quęrēti.
+Tertia verò ac eius dominus fratri ſuo dabitur. Vel
+fi quis quærat de cuiufdam hominis ægretudine: a-
+fcendens eius dominus & Luna laboranti: ſexta verò
+cum ſuo domino, morbo ſunt tribuendi. Acfic de
+alijs queſtionibus eft agédum. Interim tamen ſcien-
+dum eft, aliquando ſignificatores multos accipien-
+dos effe: quemadmodum in his rebus quæ fiunt in-
+teruenientibus legatis, vel aliquibus alijs: vt véditio-
+slegatis.vel
+nes, pacis tractationes, coniugia, & plura ſimilia. In
+his enim cum afcendente eius domino & Luna, mi-
+ſcendus eſt planeta, à quo ſeparatur Luna. Planeta
+aut cui applicat Luna, rei de qua quęritur cum alijs
+ſignificatoribus ſuis ſupradictis dandus eft. Additur
+etiam ipfis ſignificatoribus planeta qui cú rei ſignifi
+catione, aliquid commune habet. Vt(exemplicaufa)
+quando de coniugio futuro aliquis queſtionem pro
+ponit: querenti afcendens dominus afcendentis &
+Luna, ac planeta à quo ipſa ſeparatur, dandı ſunt:fe-
+ptimam verò domum, eius dominum ac planetam
+cui Luna applicat, ei de quo quęritur dabis. Si aute
+vir quęrens fuerit, ſignificatoribus ſuis Solem adiun
+ge:quia Solvirum ſignificat. Significatoribus autem
+illius de quo quęritur Venerem tribuas. Si verò mu-
+lier queſtio-
+
+AVTH. CLAV. DARIOTO MEDI.
+49
+lier queſtione faciat, ſignificatoribus fuis Venerem,
+quæ muliere regit:alijs verò Solem prebebis. Atque
+fic de alijs faciédum eſt. Habitus enim illorum tum
+ad inuicé, tum ad fortunatos aut infortunatos, quid
+de re futurum fit, oftédit. Quare de ſignificatoribus
+hactenus dictum fit : ad iudicia fauſte properádum
+videtur.
+Quot modis res perficiuntur.
+CAP.
+XXI.
+BSOLVTO fermone de principijs
+huius fciétiæ & obferuationibus necef
+(arijs: Nunc recta preceptorú ſeries, nos
+ad rectam rerú efficiédarum rationem
+tradendam inuitat. Dicamus igitur quot modis res
+omnes perficiuntur.Quodquidem contingit qua
+tuor fieri modis. Coniunctione ſcilicet, fiue congref
+fu, luminis & naturæ tranſlatione, colectione lumi-
+nis,& in domibus exiſtentia. Cùm ergo dominus a-
+ſcendentis, fignificator rei queſite & Luna iungun-
+tur, vel per cõiunctionem, vel afpectum:res omninò
+abfoluitur:precipuè ſi in aſcédente coniunctio fiat.
+Fit tamen cum difficultate aliqua, quando in domo
+rem quęſitam fignificante coniunguntur. Secun-
+dò luminis & naturæ tranſlatione abſoluitur, id eft
+ſi predicti ſignificatores non iungatur coniunctio-
+ne, neque afpectu adfit aliquis planeta qui abvno ſi-
+gnificatorum ſeparetur, fueritque ab eo receptus,
+& alterı ſignificatori applicetur, antequam alicui
+alteri applicet:quia tunc vun & natură ab alio acce-
+ptam in alterum trasfert:is enim qui lumen recipit,
+Perfectionis rei author eft. Hac ratióe cum euenit,
+
+50
+INTROD. AD ASTRO. IVDIC.
+quærés cum eo à quo quęritur hominis alicuius, vel
+legati vel iudicis interuentu de re quæfita conuenit.
+Tertio modo res perficiuntur, cũ à planeta grauiori
+domino aſcédétis & fignificatore rei queſitę, fit ipſo
+rum luminis collectio, hoc eft vt dominus aſceden-
+tis & rei quęſitę fit ipforu luminis collectio, hoc eft
+vt dominus aſcendentis & rei queſitæ ſignificator,
+planetam eis grauiorem reſpiciat, precipuè cum re-
+ceptione:quoniam is eſt (veluti iudex) qui rem om-
+ninò & integrè peragit. Quarto denique modo
+rerum finis eluceſcit ac abſoluitur planetarū in do-
+mibus manſione. Veluti ſi alicui rei ſignificatores in
+prima domo fuerint, rem ſine vllo labore, pręcipuè
+ſi fuerint recepti, facturam iri arguunt. Si verò horo
+ſcopi dominus vel Luna, aut aliqui ex quærentis ſi-
+gnificatoribus, domum rei teneant: rem futuram
+pronuntiant, ſed tamé cum labore immodico. Hęc
+exemplo clariora reddi poterunt. Exemplum igitur
+tale fit. Anno domini 1555 die ſexto Iunij hora 21
+minut.56.à meridie, quæſtio à quodá propoſita fuit,
+an poſſet fratris ſui quoddam prædiű adipiſci. qua
+hora figura cæli talis fuit.
+MERCV-
+
+AVTH. CLAV DARIOTO MEDI.
+51
+MERCVRIVS dominus eſt aſcendentis,
+Mars autem rei ſignificator: quia cùm ſit dominus
+quartæ domus, quæ fratrum ſubſtantiam cuſtodit,
+eo quòd domui tertię ſuccedit, meritò rem optatam
+ſignificabit. Nunc itaque videndum eſt, an aliquo
+modo prędium conſequi quęrés poſsit. Quamrem
+animaduertens, nulla coniunctio domini aſcenden
+tis, domini rei optatę, & Lunæ mihi apparet : ideò
+coniunctione res minimè perficietur:ſed luminis &
+naturæ ſignificatoris rei, per Lunam ad dominum
+horoſcopi, tranſlationem fieri video. Luna enim à
+Marte trino aſpectu ſeparatur, quam Mars in eleua-
+tione ſua receperat, & Mercurio applicatur. Id aute
+querentem adipiſci poſſe prędium arguit, idque fa-
+h
+
+52
+INTROD. AD ASTRO. IVDI.
+ciliùs quàm ſi è conuerfo tranſlatio fieret. Tertio au
+tem modo, hoc eft luminis collectione, res fieri non
+poterat: quoniam nullus eis grauior planeta ambos
+reſpicit. Quarto modo eam abſolui poſſe conſen
+taneum eſt:quoniam rei ſignificator in aſcendente
+locum habet ideò iudicamuseum prędium habitu-
+rum, quoniam rei ſignificator aſcédentem poſsidet,
+&ipſius lumen ad horoſcopi dominum transfertur.
+Hac ratione de omnibus propoſitis queſtionibus iu-
+dicandum eſt. Animaduertedo ſemper habitum fi-
+gnificatorum cum fortunatis & infortunatis, ac ap-
+plicationes & ſeparationes bonorum vel malorum
+aſpectuum. Habitus enim cum bonis bonn arguit:
+cum malis vero malum. Et applicationes habitum,
+ſeparationes autem priuationem denotēt. Applica-
+tiones prętereà quæ trinovel ſextili fiunt, rem perfa-
+cilè abſoluunt. Quæ autem quadrato aut oppoſitio-
+ne adueniunt, rem dificultatibus implicant. Hęcigi
+tur in queſtionibus varijs foluendis ſufficiunt. Nos
+tamen doctrinę facilioris gratia, exemplum de vna-
+quaque domorum explicabimus. Facto exordio ab
+exemplo ſiue queſtione ad primam domum relata,
+reliquas ordine perfequemur.
+An abſens aliquis mortuus sit aut viuus.
+CAP.
+XXII.
+VLTAE ac varię queſtiones in me-
+dium adferri ſolent, quę ad aliquam do
+morú duodecim referuntur, ſecundum
+ipſarum ſignificationes. Verum quia
+vniufcuiufque domus, innumeras ſerè ſignificatio-
+nes pofsi-
+
+AVTH. CLAVD. DARIOTO MEDI,
+53
+nes poſsider.fieas omnes perſequi & in vnum vol u-
+men cogere optaremus:ingés noſter labor facilè ex-
+crefceret. Quare propoſita &in medium adducta de
+vnaquaque domo vnica queſtione, de reliquis (mo-
+dò percipiantur prędicta) facilè iudicabitur. Pri-
+ma itaque domus de vita diſcernit : ideò queſtio de
+abſente quodam propoſita, an ſcilicet mortuus ſit,
+aut viuat, ad primam domum refertur. Cum ergo ta
+lem queſtione ſoluere cupis:vide an dominus aſcen-
+dentis, Luna& octauę domus dominus, ſimul iuncti
+ſint, illud enim hominem èviuis diſceſsiſſe arguit.
+Vide item an ſit tranſlatio lumin's domini aſcéden
+tis ad octauę dominum, aut contra: vel an ſit octauę
+dominus in aſcendente,vel aſcendentis dominus in
+angulo terræ ſit collocatus. Omnia enim hæc homi
+në vită finiuiſſe dicút. Animaduertédus eft protereà
+ha qitus domini aſcédentis cum fortunatis aut infor
+tunatis: vtpote quod applicationes cum bonis vita:
+cum malis verò detrimentum mortemq; adferunt.
+Idem de aſcédente ac parte fortunę iudicadum eft.
+Preſentia enim malorum in aſcendente, vel cú par-
+te fortunæ mortem adfert, bonorum verò vitam.
+Verum aliquis ſubstantiam poßidebit, & quando.
+CAP.
+XXIII.
+V'M QVIS in medium queſtionem
+adfert, an poſsit ſubſtantiam quandam
+poſsidere:& ſi id fieri poſsit, quado illud
+fiet ſcire deſiderat:nec tamen dicere ve-
+lit,à quo ſe habiturum ſperat. Tamen reſpoſum da-
+turi videndum eft, an ſit applicatio quędam inter do
+hij
+
+54
+INTRODV. AD ASTRO. IVDIC.
+minum domus fecundæ, Lunam & dominum afcen
+dentis:vel ſi non ſit applicatio, videndum eſt an fit
+tranſlatio luminis & naturę inter eos: vel ſi eorú lu-
+men ab aliquo ſuperiori colligatur, aut dominus fe-
+cundæ domus fit in aſcendente fortunatus, ac parte
+fortunæ reſpiciens, vel aſcendentis dominus fortu-
+natus fit & in ſecunda domo ſitus:quoniam ſi illorú
+aliquod, aut plures fuerint, querentem ſubſtantiam
+habiturum fore denotent. Si autem nó reperiantur,
+contrarium eueniet:niſi Luna in domo ſecunda ſe-
+dem habeat. Tempus autem quo id eueniet ſcies, ſi
+gradibus ſingulis interceptis inter eorú coniunctio-
+nem vel aſpectum ad Iouem vel parté fortunæ, aut
+vnius ſignificatoris ad alterum, diem vnum, hebdo-
+madam,menſem vel annum ſecundum ſigni quali-
+tatem tribueris. Signa enim mobilia horas aut dies
+ſignificant:comunia verò menſes vel hebdomadas,
+& fixa annos aut menſes tribuunt. Hac ergo ratione
+tempus quo res aliqua quęſita eueniet, cognofcitur..
+R
+De fratrum inquiſitione.
+CAP. XX1111.
+ESITA ſehabent in rerű natura, vt
+complexiones hominum qualitatéſque
+variæ fint. Quidā ciuit ates ac ac regiones
+perpetuò diſcurrút:alij verò nunquam
+vel rarò è ſua patria & ſua ſede dimouentur. Viato-
+ribus autem & terras peragrātibus varia accidentia
+euenire ſolent: vnde etiam varię de illis queſtiones
+proponuntur. Cùm ergo à quodam de fratris ſui ha
+bitu queſtio mouebitur: videnda eſt tertia domus
+que
+don
+hab
+dilo
+rado
+dde
+lum
+tore
+tem
+dom
+cat
+frat
+info
+啊
+dom
+pat
+Pre
+
+AVTHO. CLAV. DARIOTO MEDI..
+55
+que de fratribus iudicat:& animaduertédus eſt eius
+dominus, & dominus triplicitatis. Quonia illorum
+habitus cum fortunatis vel infortunatis, qualis eius
+diſpoſitio fit oftendit. Si enim tertię dominus in ſex
+pate ta domo fuerit, vel dominus ſextę in tertia, aut vnus
+applicationem aſpectumue cum altero habuerit: ip-
+fum morbo teneri arguunt. Si verò fratris ſignifica-
+intores in ſeptima domo fuerint, vel Luna, aut ſepti-
+mæ dominus in tertia, aut applicatio inter eos fue-
+rit, ipſum vxorem duxiffe vel ducere indicant. Siau.
+tem hæ diſpoſitiones cum domino octauę domus,
+aut ipſa domo fuerint, vel tertię dominus in quarta
+domo fuerit, eum mortuum eſſe ſignificant. Appli-
+catio item vel aſpectus aut coniunctio ſignificatorú
+fratris cum fortunatis eum bene valere indicant: cũ
+infortunatis verò contrarium agunt. Hoc modo de
+habitu fignificatorum fratris cum aliorú domorum
+to dominis,atq; de alijs queſtionibus propoſitis fiue de
+patre, ſiue de matre, ſiue devxore, ſiue de filijs, vel de
+alijs que varie & diuerſe eſſe poſſunt, iudicandú eſt.
+giones
+aquam
+Viato-
+dential
+tiones
+delta
+atio
+aut
+bdo
+An aliquis terram aut domum quam
+emere deſiderat,poßidebit
+C. A P. XXV.
+I QVIS queſtionem de emenda do-
+mo proponat, vtrum eam obtinere pof-
+ſit necne. Querenti aſcendentem eius
+dominum & planetam à quo ſeparatur,
+Luna tribuas:agro quartam dominú eius & Lunam:
+precio autem decimam cum ſuo domino. Quod ſi
+dicere nolit qui ſuam fit iplius agri venditor: vendi-
+ziank b
+
+56
+INTROD. AD ASTRO. IVDI.
+tori optimam, eius dominum &planetam cui Luna
+applicat, dabis. Si tamen venditoris nomen dicere
+vellet:alius ſignificator ei dandus eſſet:vt ſi fratris a-
+grum emere optaret:tertiam ac eius dominum ven-
+ditori daremus. Attamem quoniam venditoris no-
+men (vel eo quod ignorat, aut alia de cauſa) dicere
+non placet:ei vt dictum eſt, ſeptima cum ſuo domi-
+no, &planeta cui Luna applicat, dabitur. Iamverò vt
+quid de re futurum ſit agnoſcamus: videndum eſt
+quenam fit omnium illorum ſignificatorum diſpo-
+ſitio. Si enim dominus aſcendentis & dominus ſepti
+mæ fimul iuncti ſint, vel inter eos applicatio quedá
+fuerit, aut luminis traſlatio, rem facilè obtinebit,prę-
+cipuè ſi receptio adfit, & applicatio aut aſpectus ami
+citiæ fuerit. Quod Quo ſi hæc non ſint: videndum eſt an
+dominus ſeptime ſit in aſcendente, vel aſcendentis
+dominus in ſeptima:id enim perfectionis rei author
+eſt. Pariter iudicadum eſt, ſi cóiunctio quædam aut
+applicatio aut luminis tranſlatio, inter planetam à
+quo ſeparatur Luna, & eum cui applicat, reperta fit:
+modo per Lunam tranſlatio no fiat. Aut etiam fi ille
+à quo ſeparatur Luna in ſeptima, vel ille cui applicat
+in prima collocatus ſit: quęrēs rem quęſita habebit.
+Si autem nihil omnium horú inueniatur: animad-
+uertendum eſt,an aſcendentis dominus &dominus
+quartę & Luna ſimul iuncti ſint, aut inter eos appli-
+catio quędam,aut luminis tranſlatio fuerit:vel ſi do
+minus quartę aut Luna in aſcendente reperiantur,
+aut aſcendentis dominus in quarta: hæc enim alio-
+rum vice rem abſoluunt. Eodem modo iudicandum
+eſt, de domini decimę domus diſpoſitione cũ aſcen-
+dentis
+děti
+niat
+cem
+100
+fuer
+nese
+Lon
+tian
+p
+log
+den
+di
+mi
+Pre
+Py
+vide
+
+AVTH. CLAV. DARIOTO MEDI.
+57
+- détis domino. Quod ſi horum omniŭ aliquid inue-
+niatur, quærens obtatum habebit: aliás aút minimè.
+SEL
+00
+pre
+entis
+cere
+ven
+no
+An mulier utero gerat necne, ac de genere fœtus.
+CAP.
+XXVI.
+VONIAM mulieres aliquádo ſe vte-
+ro gerere aiunt, aut negat, vel ignorant
+ſciréque cupiunt: cuius rei gratia ſępiſsi
+mè nobis adfertur queſtio. Quavt breui
+ter ſoluamus, animaduertendus eſt habitus domini
+quintæ domus, domini aſcendentis & Lunę adinui
+cem, aut cum fortunatis ac angulis. Si igitur domi-
+nus aſcendentis & Luna in domo quinta ſunt, vel
+quintę dominus in aſcendente ab infortunis liber
+fuerit, mulierem vtero gerere oftendunt. Diſpoſitio
+nes etiam ſignificatoris cum domino aſcendentis &
+Luna, de quibus ſępiùs anteà dictű eſt, idem denun-
+tiant. Si etiam aſcendentis dominus aut ſignificator
+planetam in angulo exiſtentem aſpicit, conceptum
+denuntiat. Contrà verò quando planetam ab angu
+lo cadente aſpicit, aut ſi vtero gerit, abortű patietur:
+id quod etia ſignú mobile in aſcédente, vel infeſtus
+planeta promittit. Signum autem fixum in aſcéden
+dte, & in codem fortunatus planeta veram conceptio
+nem portendit. Planeta item plures in quinta domo
+dignitates habens, & in ea ſitus,&à Luna aſpectus, ve
+ram conceptionem prenuntiat. Fortitudo etiam do-
+mini quintæ domus in aſcendente aut decima idem
+minus
+ido
+predicat. Cùm verò mulier vtero gerit, ſciréque de-
+nam ſideras vtrum maſculum,
+an verò fœmellam pariet:
+len
+dentis
+vide an dominus aſcédentis Luna, & dominus quin
+
+58
+INTRODV. AD ASTRO.IVDIC.
+tæ domus, in ſigno maſculino ſedem habeat, vel plu
+res eorum:quoniam mulierem vtero marem gerere
+denuntiant. Si autem ſigna fœminina tenuerint, fœ
+mellam arguunt. Aut ſimili modo vide an dominus
+horæ & dominus domus filiorú & Luna, aut ex hijs
+duo, in maſculinis ſignis fuerint, quia marem addu-
+cunt:in fœmininis verò fœminam.
+Aliquam domus ſexte queſtionem propoſuiſſem
+eámq; explicauiſſem, niſi tertius noſtri operis tracta
+tus ad hac propemodum totus referretur. Quare de
+hac dictum ſatis, queſtionem vnicam domus ſepti-
+mæ aggrediar.
+An uxorem, quam quis ducere optat,poßidebit.
+CAP.
+XXVII.
+X HAC quæſtione à viro propoſita
+eam etiam quam mulier adferet ſoluere
+fas erit: vnicuique tamen ſignificatorem
+proprium tribuédo: ſoluitur autem hęc
+hac ratione. Querenti in primis aſcendentem,domi
+num aſcendentis, Lunam Planetam à quo ſepara-
+tur Luna, & Solem ſignificatores tribue.Mulieriverò
+ſeptımam, eius dominum planetam cui Luna appli-
+cat, & Venerem. Deinde animaduerte qualis fit di-
+ſpoſitio domini aſcendentis & Lunę cum ſeptimę
+domus domino:& planetæ à quo Luna ſeparatur, cú
+eo cui applicat, ac ſolis cũ Venere. Applicatio enim
+ſextilis vel trini effectum facilem ſignificat:quadrati
+verò &oppoſitionis difficilem:feparatio autem dimi
+nutionem & abolitionem arguit. Si itaque aſcéden-
+tis dominus aut Luna ſeptimam domum teneat, aut
+planeta à
+ap
+tr
+te
+fac
+obi
+nes
+p
+aqu
+2U
+66
+20
+ner
+flat
+P
+m
+id
+el
+
+AVTHO. CLAV. DARIOTO MED I. 59
+planeta à quo ſeparatur Luna, planetam cui Luna
+applicat, afpiciat aut ei applicat, aut Sol Veneri,ma
+trimonium futurum (cum labore tamen & dificulta
+te) arguunt:idque maximè ſi applicatio inimicitię
+fuerit. Hæc enim inimicitias & odium pariunt,atq;
+ob id opus deftruunt, niſi meliores alię ſignificatio-
+nes interueniant. Cùm verò ſeptimę dominusin
+prima domo eft collocatus, aut cum afcendentis do
+mino coniunctus, aut cui Luna applicat planeta, eŭ
+à quo ipſa ſeparatur trino autſextili afpectu refpicit,
+aut eodé aſpectu ei applicat,aut Venus Soli:muliere
+facilimè quęrēs invxoré ducet. Ægrètamen idfiet ſi
+nulla adfit receptio & replicatio quadrati aut oppo-
+ſitionis fuerit. Dominus etiam aſcédentis receptus,
+actione ſignificat. Quod ſi aut nihil predictorú inue
+neris, animaduerte an fit quędá inter eos luministra
+flatio, aut collatio: quoniam hec non minus quàm
+predicta, querenti vxorem quam ducere cupit, pro-
+mittunt:illud tamen interuenientibus legatis perfi-
+cietur. Luna denique ab infortunijs libera &recepta
+idem promittit.
+Utrum quærens mulieris bona poßidebit.
+C A P. XXVIII.
+OLET aliquando talis queſtio in me-
+dium adferri,an ſcilicet quęrens aliquis
+vxoris bona poſsit obtinere. Quæ folui-
+tur ſecundú diſpoſitioné aſcendentis ac
+eius domini & Lunę, cú octaua domo & eius domi-
+no:quoniam domus octaua mulierum ſubſtantiam
+continet. Si igitur dominus primæ domus Luna &
+i
+
+60 INTRODV. AD ATSRO. IVDIC.
+dominus octauę iuncti fint fimul aſpectu coniun-
+tione aut applicatione, mulieris bona quęrens ob-
+tinebit. Vel ſi applicatio quędam inter eos cum rece
+ptione, aut luminis tranflatio aut collectio reperia-
+tur:quęfitum querenti dabitur. Quod fi hec non re-
+periantur, vide an dominus afcendentis vel Luna in
+octaua domo ſedem habeant: quia quęrēti mulieris
+bona, cum laboribus tamen & precibus multis tri-
+buunt. Dominus autem octauæ domus in aſcenden
+te, rem facilè perficit. Horú verò nullo interuenien-
+te, irritum fiet quęſitum.
+De celeri aut tardo reditu illius, qui iter aggre-
+ditur,ac de ijs quæ illi in itinere euenient.
+C A P. XXIX.
+VM à quodam qui iter aggreffurus eft,
+interrogatus fueris, de ijs quę in via ei
+accident, ac de ipfius celeri aut tardo re-
+ditu. Attende diligenter ad fignificato-
+rem itineris acdominum afcendentis & Lunam. Si
+enim fignificator itineris, hoceſt nonę domus domi
+nus, & dominus afcendentis aut Luna fimul iuncti
+fint, aut vnus alteri applicat, aut luminis tranflatio
+collectione inter eos adfit, & maior eorum pars mo-
+bilia figna teneat, perficietur iter ftatim &breui tem
+pore. Si verò fixa figna teneant, longo tempore iter
+suum perficiet. Si demùm figna communia,medio-
+cri tempore & ex via vna aliam aggredietur : afcen-
+dentis autem de nonæ domini infortunativel retro-
+gradi aut cobuſti, viam im pediunt, detrimentúmq;
+adferunt. Quòd fi dominus afcendentisaut nonæ
+fortunati
+
+AVTHO. CLAV. DARIOTO MEDI. 61
+fortunati funt, aut domino vndecimę domus appli-
+cant, vel in nona fortunatus sit, iter proſperum fore
+ſignificant: denotantque querentem quęſita habitu
+rum. Si Luna in ſexta domo,aut duo decima, aut cũ
+domino ſextę iuncta fuerit, eáq; infortunata, aut a-
+ſcédentis dominus nonę, à ſextę domino affecti funt
+morbum iter facienti adferunt. Atq; hac ratione de
+fortunijs vel infortunijs fecundum ſignificatorum
+habitum cum fortunatis vel infortunatis & domorū
+dominis iudicandum eft.
+Verum aliquis dignitate officiúmue quod optat, poßidebit.
+C A P. XXX.
+I ALIQVIS quæſtionem moueat
+de dignitate quadá, vel officio quodam
+quod obtinere ſperat, vtrum cum pofsi-
+debit necne. Vide an dominus aſcéden-
+tis & dominus decimę domus fimul iuncti fint, aut
+vnus alteri applicat trino aut ſextili cum receptione
+& iudica cum habiturum officium. Idem dic fi inue
+neris afcendentis dominum & dominú decimæ do
+mus in angulis, non interueniéte aliquo infortunio.
+Quòd ſi aſcédentis dominus cadens à decimę dño
+fuerit, nec eu afpiciat, & decimę dominus cadés à do
+mo decima, nec eam afpiciat: nifi adfit fortunatus
+planeta lumen vnius in alterum deferens, officium
+non confequetur:hocque officium à principe ſepa-
+ratum effe innuit. Si dominus aſcendentis in deci-
+ma domo, aut Luna recepta fuerit, aut decimę domi
+nus in aſcendente receptus fuerit, officium quęrenti
+promittunt. Si autem planeta aliquis afcendentis &
+iij
+
+62 INTROD. AD ASTRO. IVDI.
+decime dominis grauior, ipforu lumen colligat:non
+ſecus querentem, vt fignificationes aliæ in officium
+collocat. Quod fi dominus domus fiduciæ infortu-
+na fuerit, & Lunam infortunatam afpiciat, aut in vn
+decima Luna infortunata fit, officium queréti non
+dabitur. Sed fi vndecimę domus dominus fortuna-
+tus fuerit, & Lunam fortunatam aut aſcendentis do
+minum, aut dominű decimæ bono afpectu afpiciat,
+aut vni applicat, vel in decima ſedem habet:dignita
+tem quęrenti promittit & impartitur. Si tamen for-
+tuna vndecimę domus dominus fuerit, & Luna in-
+fortunata, & vndecimę dominus in optimo loco fi-
+tus fit, & Luna à fortunatis, & vndecima cadens re-
+perta:rei partem abfoluit. Illud autem infortunium
+Lune, ſi à Marte illatum fuerit, atq; Mars in celo po-
+tens fit,ac dominum vndecimę & afcendentis alpi-
+ciens:necem quęrēti poſt conſecutum officium ad-
+fert: nifi illud malum fortuna aliqua interueniens
+prohibeat. Dominus decimę &vndecimę fortuna-
+ti: ac ſeſe afpicientes cum receptione, (quauis Luna
+à Saturno infortunata fuerit) officium quęrēti pro-
+mittunt:qui tamen propter Lune infortunium à Sa
+turno illatum, in dignitate ipſa prauis moribus præ-
+ditus erit, neque amicitiam, imò verò odium & di-
+ſcordiam fibi pariet.
+De quadam re quam quis habere ſpectat.
+C A P. XXXI.
+IFO RTE' aliquis in medium quæ-
+ſtionem adferat, de quadam re, feu di-
+gnitas fit aut alia res quępia, an ſcilicet
+eam obtinebit necne. Quid autem sit
+quod ſperat
+
+AVTHO. CLAV. DARIOTO MEDI. 63
+quod ſperat,dicere nolit. Vide ac fignificatorem ac-
+cipe ab vndecima. Si enim vndecimæ dominus afcé
+dentis domino applicuerit, aut aſcédentis dominus
+vndecimæ domino, vel eum afpexerit : rem quam
+quærens ſperat, confequetur. Idq; facilè ſi applicatio
+trini aut ſextilis fuerit. Idem faciet cùm dominusvn
+decimę in angulum receptus fuerit. Cùm etiam di-
+ſpoſitionis Lunæ receptor receptus erit, ac eius reci-
+pies receptus, eam integrè ac facilè habebit. Eodem
+modo de domino afcendentis iudicándum eft. Cùm
+verò diſpoſitionis Lunę receptor ſignum commune
+tenuerit, de re quęſita minimam partem habebit:ve
+luti etiam cùm in ſigno mobili fuerit. Cùm verò in
+fixo ſigno ſedem habebit, res integra ei adueniet. Id
+etiam fiet quando applicationes aut luminis tranfla
+tiones collectionéſue fuerint, de quibus ſępiſsimè
+anteà loquuti ſumus. Eodem modo iudicándum eft,
+cùm quis quęrit, an alicuius hominis amicitia quam
+inire vult, acquiret. Si enim dominú afcédentis Lu-
+nam & dominum vndecimę fimuliunctos inuene-
+ris, aut alterum horú alteri applicátem, iudica quod
+cupit, futurum: idque precipuè ſi applicationes aut
+aſpectus amicitię fuerint. Si autem inimicitię ante-
+quam inter fe coueniant, aut etiam poſtea quam có-
+uenerint, lis & difcordia inter eos mouebitur:atque
+ob id ægrè concordabunt.
+De quodam occulto inimico
+C A P. XXXII.
+
+64
+INTROD. AD ASTRO. IVDIC.
+VANDO quærit aliquis de ſtatu ini-
+mici occulti. Vide quiſnam fit dominus
+duodecimę domus cum alijs domibus
+ac planetis habitus : quia fecundü illius
+habitum, de inimico occulto ſentétiam proferimus.
+Si enim duodecimæ domus fit in ſexta, vel cum ſex-
+tę domino iunctus, id inimicu morbo teneri arguit:
+vel etiam ſi ſextæ dominus fit in duodecima. Quod
+fi inimici occulti fignificatorem, decimę domus do-
+mino iunctum inuenias: iudicat eum eſle vel in re-
+gia domo vel regiiuncto, vt aliquid ex eo habeat,
+idque quęrenti damno foreſi aſcendentem vel eius
+dominum quadrato aſpectu aut oppoſitiõe afpiciat,
+iudicabis. Si autem duodecimę domus dominum in
+quarta collocatū inueneris, vel in domo mortis, vel
+domino mortis iunctű, hoc eft domino domus octa-
+uæ,eum mortuum eſſe vel breui moriturum iudica-
+bis. Hac ergo ratione de inimici occulti ſtatu ſecun
+dum ipfius fignificatoris habitum,iudicabis. Quòd
+fi inimici nomen quęrens dicere velit, aut occultus
+inimicus non fit, imò manifeſtus, illius ſtatum à ſe-
+ptima domo ac eius domino quere. Quoniá quum
+domus feptima inimico aſpectu cú aſcendente iun-
+gatur: meritò ab ea de inimicis haud occultis iudi-
+cium petitur. Hac ratióe de omnibus propofitis quę-
+ſtionibus,iudicium quęrere licebit: quare de illispro
+compendi
+compendij ratione hactenus dictum fit. Plura enim
+de queſtionibus fingulis, Guido Bonatus, Hali Aben
+ragel,alij plerique docent.Si quis tamen prędicta di
+ligenter legerit & intellexerit de omnibus queſtioni
+bus, certum definitúmq; iudicium faciet.
+FINIS.
+D
+
+65
+TRACTAVS
+DE ELECTIONIBVS PRIN-
+CIPIORVM IDONEORVM
+bus inchoandis Claudio Dario-
+to Pomarcenfi medi-
+co authore.
+
+RE
+RTIS totius principia fiue elemen
+ta iam anteà monftrata funt : & quo
+modo, quáue ratione ad eam perue-
+nire oportet:& queſtiones omnes pro
+poſitę ad domos duodecim referri
+reduciue poffunt, vt earum fignificator inuenia-
+tur. Núc autem vt nihil intactum relinquamus,pref-
+ſo cótractóq; ſtilo tractatum quendam vniuerfalem
+de temporalibus eligendis principijs inſtituédarum
+actionu idoneis breuiter perftringam. Dicam itaq;
+qua ratione in rerum principio obferuanda eſt debi
+ta cæli corporúmq; ſuperiorů conſtitutio. Non enim
+quęlibet hora diei omnibus operibus incipiédis apta
+eſt:imò vnius hore conſtellatio, principio cuiufdam
+operis conuenit, alia verò alijs. Idcirco in magnis fal
+tem & in his rebus quę ex naturali elementorum có
+plexione & fyderum curſu eueniunt, debita cæli có
+ſtellatio eligenda eſt. Quare de his quę in vnaquaq;
+electione obferuanda funt, ac de electionum funda-
+mentis in ſequentibus dicturi sumus.
+
+Electionum radices (t) fundamenta.
+CAP. 1.
+
+66
+DE PRINCIPIOR. ELECTI. TRAC.
+LECTIO PRO eo cuius natiuitas,
+aut anni reuolutio, aut quæftionis ho-
+ra afcendénſue ignoratur, non eft fa-
+cienda. Quoniam fortaſsîs aſcendens
+afcendenti radicis ſuę natiuitatis contrarius dare-
+tur. Fortefortuna nempè duodecima domus aut
+ſexta vel octaua ſuę radicis aſcendere cogetur: ex
+quo damnum ei adueniet. Videmus enim quen-
+dam aliquando in bona coſtellatione opus aliquod
+aggredi, ex quo tamen nihil aliud pręter damnum
+& infortunium recipit. Alium verò qui prauę con-
+ſtellationis tempore rem quandam incipit, ex eo ta-
+men aliquid boni fortuniíque adfert. Vel (vt ſępiùs
+aduenit) duos aut plures fimul & vna ac eadem ho-
+ra iter ſuſcipere, vel nauim ingredi videmus:quorú
+alij domum cum lucro & fortuna redeunt: alij verò
+periclitantur, & alij domum cum damno & infortu
+nio reuertuntur. Id autem alia de cauſa non adue-
+nit, nifi ob eorum natiuitatum radicú diuerfitatem.
+Electio enim bona malum quod in natiuitatis ra-
+dice promiferunt planetę, auertere non potuit. At di
+cet aliquis, electiones nihil profunt. Prodeft quidem
+bona electio quádo ſignificatores radicis electionis
+bonitatem iuuant. Quòd fi ijdem boni aut medio-
+cres aut faltem non admodum praui funt, tuncele-
+Ctio prodeft. Cùm enim aliquid boni aut mali nati-
+uitatis fignificatores in re quapiam promiferunt, bo
+na electio bonum adiuuat, aut malum vetat vel di-
+minuit. Ptholemeus enim verbo quinto cétiloquij
+inquit. Poteft qui fciens eft multos ftellarum effectus auer
+tere:quando earum naturam nouerit, & ſeipsum ante illo-
+rum euen
+
+67
+AVTHO. CLAV. DARIOTO MEDI.
+rum euentum præparare. Et dicit Salomon, Vir ſapiens
+dominabitur astris. Is ergo qui futura præuidet, fa-
+piens putatur, iſque venturum malum aut prohibet
+aut faltem minuit. Aliâs enim electionis locus non
+relinquitur. Veluti ſi quis ſtudio prolis habendę ele-
+tionem faciat:is autem liberorum ſignificatores in
+natiuitatis radice damnatos habuerit, atque libero-
+rum ob id priuationem ſignificantes, ei electio non
+proficiet. Quoniam illud damnum quod radicis fi-
+gnificatores attulerunt, demere non poteſt:nifi opti
+ma ſit electio, & damnum fœlicitati æquale.
+Quæ in fignis electionis tempore animaduertenda funt.
+CAP. II.
+
+SIGNA quædam mobilia sunt, alia fi-
+xa,alia verò media:vt iam anteà apertè
+ſatis dictum fuit. Cuilibet operi quodli
+bet fignum aptű haud eſſe poteſt. Signa
+enim fixa in rebus ſtabilitatem adferunt. Que ergo
+funt, vt diu durent, vt domus, caſtra, arborum alia-
+rúmq; plantarum ſatio, matrimonium & huiufmo-
+di alia, aſcendentibus ſignis fixis principium fu-
+mere debent. Signa autem mobilia penitùs contra-
+rium agunt. Ita vt quicquid aſcédentibus illis exor-
+dium ſumit, breui tempore & celeriter finem ducit.
+Illis igitur ortum ſeu horoſcopum tenentibus ſemi-
+nare, vendere, emere ac fidem matrimonij mulieri
+dare, & alia his ſimilia incipere bonú eſt. Commu-
+nia denique fiue media mixta ex duabus prioribus
+qualitatem habent. In hijs igitur id quod duobus
+aut pluribus commune eſt, incipere par eſt. Veluti
+ſocietate cum aliquo boni lucríue cauſa facere opti
+k
+
+68
+DE PRINCIPIO. ELECTIO. TRAC.
+mum eſt. Res enim quæ in illis fiunt mutationem ac
+cipiunt: vt in eis morbus curatur, poſteà reuertitur,
+reſidíuamque facit, faciunt etiã vt qui in illis iter fu-
+ſcipiunt,ex vno aliud aggrediantur. Hac igitur ra-
+tione rerum qualitatibus cóuenientia ſignaeligen-
+da ſunt. Id autem non folùm in mobilibus, fixis &
+communibus ſignis: verumetiam in qualitatibus a-
+lijs animaduertédum eſse duco. Inter fixa enim ter-
+rea conuenientiſsima funt. Inter mobilia verò aërea
+vel ignea. Cùm quis itaque citò & celeriter igne me
+diante agere cupit:ſigna communia & ignea aut fal
+tem ærea eligere fas eſt. Cùm verò vel arborem plan
+tare, aut domum ædificare, aut aliquid ſimile aliquis
+agere cupit, fixa ſigna precipuè terrea eligat. Vel quū
+aliquis iter per aquam facturus eſt, ſignum mobile
+& aqueum ſumat. Et fic in alijs prout ſignorú qua-
+litates operibus reſpondent, eligere conuenit. Nunc
+verò de operum electionibus canones ſequuntur.
+In operum electionibus Canones.
+CAP. III.
+
+HABITA natiuitate aut anni reuolu-
+tione, vel interrogatione Domus atque
+natiuitatis queſtioníſue rei ipſius inci-
+piendę ſignificator aptandus eſt. Si auté
+he ignoretur, hora inceptionis rei domus rem ſigni-
+ficans ac eius dominus aptandi fortunandique ſunt.
+Veluti ſi aliquis ad regem iter arripere vellet, nona
+& eius dominus aptandi eſſent, & ſi fieri poſſet deci-
+ma domus na tiuitatis reuolutioníſue aut queſtionis
+aſcendere cogeretur, & eius dominus in aſcendente
+aut decima domo fortificaretur. Aſcendensitem
+dominus
+
+AVTHO. CLAV. DARIOTO MEDI.
+cmad dominus afcendentis & dominus domus ipfius dili-
+genter acuratéque aptandi funt: fitque afcendentis
+fignum natura & qualitate rei ipfius incipiendę con
+ueniens:vt de illis in precedentibus dictum fuit. Ve-
+luti pro bello incipiédo, Martis ſigna funt eligenda.
+ac fic in ceteris, vt iam dictum eſt. Si tamen aſcéden
+tis dominus infortunatus fit, eum aſcendentem tri-
+no aut ſextili, afpicere cogas. Luna pariter quia re-
+bus omnibus communis eft, & eius dominus, hoc eft
+dominus figni vel domus quam tenet, corroboran-
+di aptandique ſunt. Lunam tamen aſcendere non
+permittas: quia in afcendente infortunio afficitur.
+tet
+erea
+me
+Dian
+QUIS
+Solem etiam in afcendente aut domo rem figni-
+ficante, aut Ariete vel Leone conſtitues, qui aliter
+malus effe putatur. Aptandus item eſt planeta rem
+naturaliter fignificās: veluti, fi quis nuptias celebra-
+re cupit, Venus roboranda eſt: Mars auté ſi pręlium
+exercere intendit:in ſubſtantia verò Iupiter ſumen-
+dus eft. Illi enim has res naturaliter regunt, ac domi-
+nantur, ac fic in alijs agendum eſt. Locus prętereà
+coniunction's vel oppofitionis luminarium imme-
+at diatè præcedentis,
+necnon dominus eius aptandi
+na- funt. Domus ſimiliter fiducię & eius dominus, de-
+2002 cima domus ac eius dominus, & is qui rei finem at-
+cam
+tendit, optimè collocandi funt. Is autem qui finem
+rei attendit, eſt dominus quarte domus, quado
+100 afpicit vel tenet: aliter enim erit dominus domus Lu
+næ, fi Lunam afpexerit, vel planeta, cui primű Luna
+sconiungitur, poſt eű dominus partis fortune quádo
+eam afpicit fignificationem ſumit, aut Lune, eiuſque
+domino precipuè ſignificatio remanet, vel quarto
+kij
+
+70
+DE PRINCIPIOR. ELECTI. TRAC.
+figno ab eo in quo tunc Luna fuerit, aut (vt quibuf-
+dam placet) domino quarti ſigni à loco partis fortu
+næ. Hęc funt quę in rerú electiõibus obferuada funt.
+Quòd ſi auté omnia prędicta adaptari non poffunt:
+nitandum tamen eſt pro viribus, vt quę obferuari
+poterunt, obſeruentur. Significator itaq; rei, aſcen-
+dens,eiuſq; dominus & Luna ad minus aptādi funt.
+Si verò Luna infortunata fuerit, eam ab afcendente
+cadere faciet. Planetam autem damnum Lunę infe
+rantem dominum afcendentis eliges. Ita enim cùm
+horofcopus fub illius potétia poſitus erit, ſibi ipſi nó
+nocebit ſit tamen interım ab infortunijs liber. Si au
+tem primam domum regere nequeat, decimam vel
+vndecimam aut quintam regat. At fi interim Luna
+ab eo reciperetur:nihil aut parum infortunij pręſta-
+ret, eiuſque malitia minueretur. Fortunati etiá hoc
+eſt Iupiter vel Venus in afcendente aut decima col-
+locandi funt. Aut ſaltem ſi horę dominus adaptare-
+tur,ex eo aliquod in re auxilium adueniet. Hęcigi-
+tur breuiter quę in electionibus optanda & obferua-
+da à nobis dicta funt. Nunc autem que vitanda ſunt
+paucis ac breuiter attingam.
+Qua in electionibus fugienda sunt.
+CAP.
+1111.
+N PRINCIPIO alicuius operis, di-
+ligenter cauédum eſt, ne dominus aſcé-
+dentis fit retrogradus: quádo enim hoc
+modo diſpoſitus eft, quicquid agit in
+malum potiùs quàm in bonum agit:ac omnem rem
+penitùs in cótrarium abfoluit. Quamuis enim om-
+nes alij ſignificatores optimè diſpoſiti ſint:restamen
+aut cum
+au
+0
+gr
+ite
+221
+do
+de
+&
+Se
+Ille
+de
+de
+be
+ill
+re
+fe
+க
+eff
+d
+
+AVTH. CLAV. DARIOTO MEDI.
+71
+aut cum maximo labore, aut minimè perficietur.
+Quoniam omnes omnium rerum operationes re-
+greſsio retardat, aut prohibet. Animaduertendum
+item diligenterque cauendum eft, ne afcendentem
+aut medium cęli aliúmue angulum maleuoli plane-
+tæ & infortunati teneant:precipuè ſi alicuius prauæ
+domus fint domini,videlicet ſextę, octauę vel duo.
+decimę, neque etiam in his locis precipuè aſcédente
+& decima ſtellę fixę naturę malorú fedem habeant.
+Sexta item, octauavel duodecima domus natiuitatis
+queſtioníſue in operis principio aſcédere non debet.
+Illę enim domus nulla cum afcendente cómunioné
+nullúmq; aſpectú habét:ideò prauę funt & peruerſe,
+detrimétúmq; adferút, & ob id iurè & meritò vitan
+b. de ſunt. Tempore prętereà cõiunctionis, oppofitio
+níſue luminariŭ nullum opus principiú ſumere de-
+bet: precipuè fi cum capite vel cauda Draconis fint.
+illorum autem alterutru in aſcédente atq; in domo
+rei quęſitę, vel cum parte rei fugiendum eft. Cauda
+tamen capite deterior eft. Luna etiam in ſecunda,
+ſexta, octaua vel duodecima domo ſita mala eſt &
+iniqua, atque ob id in his locis fugienda eſt. Pars
+deniq; fortunæ in rei alicuius principio à Lunæ aſpe
+Etibus aut cõiunctione remota, aut cadés ab angulo
+effe non debet. Verum fi eam afcendenti domino có
+iungas, aut in illius aſpectu ſtatuas, magná operatiói
+tuę vtilitaté exhibebis. Hęc igitur de electiõibus bre
+uiter dictafufficiat. Rem exéplis aliquibusluſtraſlem
+niſi in tertiūlibrú omniatrasferretur. quoquotpeme
+dicaměta, ta externa, quá interna adhibere cóueniat,
+docemus. quare ad eu beneuolos lectores relego.
+CUM
+isdi-
+alce
+hoc
+tu
+FINIS..
+
+72
+FRAGMENTVM
+DE MORBIS ET DIE-
+BVS CRITICIS EX ASTRORVM
+motu cognofcendis, Claudio
+Darioto Pomarcenſi
+medico au-
+thore.
+6
+dol
+Ari
+NM
+EDICI PRÆCIPVVM
+officium eft morbos depellere.
+Id aut ante quam morbus,eiuſq;
+cauſa & pars laborans cognofca
+tur ægrè fit. Morborum verò alij
+fua natura infanabiles funt:vtpo
+te qui hominem ad mortévſque
+concomitantur: vtelephantiafis cófirmata:alij verò
+fanabiles. Alij item ea ſunt qualitate pręditi:vt intro
+latitantes homines tandem interimunt, & quorum
+cauſa atq; ortus ſepiſsimè ignorantur. Quare quum
+eorum cognitio fit difficilis: dicam qua ratione ex
+aftrorum motibus pars laborans, morbus, eiufq; cau
+fa & morbi finis dignofci queant: vt ſaltem ſimor-
+bus curari nõ poteft, eius finem medicus prenuntiet.
+Hac enim ratione omni ſuſpitionis crimine vacare
+poterit Dica itaque in primis quibus corporis parti-
+bus quibufq; morbis ſigna, domus&planetę preſunt:
+deinde ad fignificatores & reliqua progrediar.
+In quas corporis partes signa tt/ domus im-
+perium habeant, & quibus
+morbis præsint.
+DO
+hem
+om
+120
+fupe
+Ca
+Ph
+te
+Tit
+CAP.
+
+olca
+al
+foue
+vero
+atio
+neex
+IV
+AVTH. CLAVD. DARIOTO MEDI,
+CAP.
+1.
+73
+RIMA domus & Aries caput totum
+& facie regunt. Omnes pręterea capitis
+ægritudines, vt epileptia, apopletia,au-
+rium,oculorum,narium, detium & oris
+dolores, & reliqui morbi in capite prouenientes
+Arieti fubijciuntur.
+28
+3Ⅱ
+Secunda cum Tauro collum & gutturis nodum
+poſsidet. Taurus item in omnes gutturis & colli in-
+firmitates vt anginam,dominatur.
+Tertia cum Geminis humeris, brachijs, manibus,
+omnibuſq; morbi in his partibus (pręcipuè à ſangui-
+ne) prouenientibus præeft.
+45 Pectus, ventriculus, coſtæ, pulmones & lien, quar-
+tæ domus & Cancri dominio ſubiacent.Pruritus in
+fuper, ſcabies, lepra, puncturæ faciei, capilorum de
+fluuium, puftulæ, impetigines & ſerpigines morbi à
+Cancro reguntur.
+5 Quinta cum Leone dorfum, cor, hepar, latus &
+ſcapulas obtinet.Morbipræterea omnes qur in dia-
+phragmate ac omnibus ijs partibus proueniút, Leo-
+nis imperio ſubduntur.
+06 11y
+acare
+Sexta ac Virgo ventrem, epiploom, graciliáque
+inteſtina dirigit. Virgo item morbos omnes in parti
+bus his prouenientes ad ſe allicit.
+2017 Septima atque Libra lumbos, renes, craſſa inteſti-
+na, pectinem & vmbilicum regunt. vrinę inſuper re
+tentio, ſanguinis fluxus per inferiora, & vifus obfcu-
+ritas, Libræ imperio ſummittuntur.
+8 Scorpius & octaua domus inguinibus, veſicę, te-
+ſtibus, vuluę, ano & natibus prafunt. Omnes etiam
+
+74
+DE MORBIS ET DIEBVS CRETICIS.
+morbi Cancri dominio fubiecti cum ijs, qui in parti
+bus Scorpioni fubiectis proueniunt, Scorpione re-
+guntur.
+9. Nona cum Sagittario femora, coxáſque cuſto-
+diunt. Harum denique partium morbos cum cæci-
+tate, febre, caſu ab alto, morbis ab animalium ictu
+prouenientibus, & membrorum abfcifione, Sagitta-
+rius fouet.
+10 Genua autem cum poplitibus Capricorno & de-
+cima domo reguntur. Morbi item omnes ingeni-
+bus & poplitibus prouenientes cum ſcabie, pruritu,
+elephantiafi, puftulis, impetigine, ſerpigine, ſurdita-
+te, fubloquendi impotentia, quartana febre, & ocu-
+lorú caligine à Capricorno incrementú ſuſcipiunt.
+11 Cruribus ité & tibijs vndecima & Aquarius æquè
+prædominant. Aquarius etiam melancholiâ mor-
+bum, icteritiam nigram, venarum incifionem, &
+morbos tibias cruraque affligentes regit.
+12 X Duodecima deniq; & Piſces, pedibus & tallis pa-
+riter dominantur. Piſces pręterea morbos in his par
+tibus prouenientes cum ſcabie, lepra, pruritu, puſtu-
+lis, impetigine & ferpigine regit ac moderatur. Hęc
+igitur de zodiaci ſignis & cęli domibus pro noſtri in
+ſtituti ratione ſatis dicta funt. Nunc autem reſtat, vt
+de planetis ſeptem pariter dicamus.
+
+	Quibus corporis partibus, quibúsque mor-
+	bis, & quibus facultatibus pla-
+	netæ imperant.
+
+CAP. II.
+Ii primo
+
+AVTHO. CLAV. DARIOTO MEDI.
+75
+IN PRIMO noſtri opuſculi libro, pla
+netarum omnium naturâ, prout noſtri
+inſtituti ratio poftulabat, breuiter ex-
+preſsimus. Nunc autem reliquum eſt, vt
+in quas corporis partes &morbos imperiú habeant,
+paucis ac breuiter dicamus.
+Saturnus itaque dextram (ex corporis partibus)
+aurem, ſplenem & veſicam obtinet. Ex morbis phti-
+ſim, catharum, paraliſim, hidropé, quartanam,ecti-
+cham, podagram, elephantiaſim, morpheam, can-
+crum, diarheam, ſplenicam paſsionem & alios mor-
+bos frigidos & ficcos, & ex his qualitatibus ortos, fo-
+uet. Ex facultatibus autem, retentricem adiuuat.
+Iupiter hepati, pulmonibus, coſtis, cartilaginibus,
+ſanguini & ſpermati pręeſt. Anginam item, pleuriti
+dem, peripneumoniam, apoplexiam ſanguineam,
+ſpaſmum, cephalalgiam, cardiacâ, & reliquas ægri-
+tudines à flatibus, vel ſanguine ortum habentes mo
+deratur. Digeſtiuam etiam nutritiuam & concoctri-
+cem ex facultatibus fouet:quoniam calore tempera-
+to & humiditate perficiuntur.
+Marti verò auris finiſtra, chiſtifellis, venæ & teſti-
+culi ſubijciuntur. Tertiana item febris peſtilens &
+cótinua, eriſipetas, emicranea, putredo, abortus, ve-
+narum ruptura, omnéſq; dolores ac morbi quorum
+bilis cauſa eſt, à Marte reguntur.
+Sol ex membris humanis cerebrum, medullam,
+neruos, oculum dextrum viri & mulieris finiſtrum
+poſsidet. Ex morbis item oris læſio, ad oculos deflu-
+xio, omnéſque morbi calidi & ficci, non tamé à bile
+geniti, atque vitalis facultas Solis influxu incremen-
+	1
+
+76
+DE MORBIS ET DIEBVS CRITIC.
+tum ſuſcipiunt.
+♀ Lumbi, renes, nates, venter, pecten & matrix Vene-
+	ris imperio parent. Omnes prętereà hepatis, cordis&
+ventriculi frigidas & humidas intéperies, omnéſque
+morbos ex frigiditate & humiditate ortos: precipuè
+qui mulieribus iuxta pudenda eueniunt. Attractri-
+cem denique facultatem ſuo influxu Venus fouet.
+☿ Mercurius linguam, memoriam, cogitationem,
+manus & crura gubernat. Ex morbis autem phrene-
+ſim, maniam, melancholiam, epileptiam, tuſsim &
+ſputi abundantiam fouet. Cogitatio denique ex fa-
+cultatibus à Mercurio ſuſtinetur.
+☾ Luna demùm cerebro, finiſtro viri oculo, & mu-
+lieris dextro, vuluę, ſtomacho vtriuſque ſexus, vētri,
+& in omnibus finiſtrę partis portioni imperat. Para-
+lyſim denique, torturam, membrorum commotio-
+nem, reliquoſque morbos ex neruorum obſtructio-
+ne, frigiditate & humiditate ortos ſuſtinet.
+
+	Quam corporis partem planeta quilibet in quo-
+	libet figno reſpicit.
+
+CAP. III.
+VAM humani corporis partë, quóſq;
+morbos ſigna, domus, & planetę regunt,
+ſuperiùs monſtratum eſt. Nunc autem
+quam parte corporis quilibet planeta,
+in quolibet ſigno reſpiciat, dicédum eſt:vt ſi de ægri
+tudine quadam propoſita fuerit queſtio, pars labo-
+rans inueniri poſsit. Pars enim quæ à ſignificatore
+ægrotantis in aliquod uodecim ſignorum exiſtente
+tunc temporis regitur, ea eſt quę morbo laborat. Sed
+	quoniam
+
+AVTHO. CLAV. DARIOTO MEDI. 77
+quoniam planetę ſinguli varias corporis partes in ſi-
+gnis diuerſis regunt:quenam illæ ſint, tabula ſequen-
+ti comprehenduntur.
+
+| | ♄ | ♃ | ♂ | ☉ | ♀ | ☿ | ☾ |
+| :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
+| ♈ | Pectori | Cordi | Capiti | Teſtibus | Pedibus | Tibijs | Genibus |
+| ♉ | Cordi | Ventri | Collo | Genibus | Capiti | Pedibus | Tibijs |
+| ♊ | Ventri | Inguinibus | Spatulis & manibus. | Cruribus | Collo | Capiti | Pedibus |
+| ♋ | Inguinibus | Verendis | Pectori | Pedibus | Manibus & humeris | Collo | Capiti |
+| ♌ | Verendis | Teſticulis & coxis | Cordi | Capiti | Pectori | Manibus & humeris | Collo |
+| ♍ | Teſticulis & coxis | Genibus | Ventri | Collo | Cordi | Pectori | Manibus & humeris |
+| ♎ | Genibus | Tibijs | Inguinibus | Manibus & humeris | Ventri | Cordi | Pectori |
+| ♏ | Tibijs | Pedibus | Verendis | Pectori | Inguinibus | Ventri | Cordi |
+| ♐ | Pedibus | Capiti | Teſticulis & coxis | Cordi | Verendis | Inguinibus | Ventri |
+| ♑ | Capiti | Collo | Genibus | Ventri | Teſtibus & coxis | Verendis | Inguinibus |
+| ♒ | Collo | Manibus & humeris | Tibijs | Inguinibus | Genibus | Teſtibus & coxis | Verendis |
+| ♓ | Manibus & humeris | Pectori | Pedibus | Verendis | Tibijs | Genibus | Teſtibus & coxis. |
+
+Omnes igitur illæ ſignorum, domorum & plane-
+tarum ſignificationes diligenter notandę ſunt: vt cũ
+ſignificatores (de quibus mox dicetur) morbi,in ali-
+qua domorum, vel aliquo ſignorú reperiantur, pars
+affecta dignoſci valeat.
+Lij
+
+==Start of Page 1==
+AVTHO. CLAV. DARIOTO MEDI.
+79
+& dominus domus Lunę de accidentibus animę.
+Quando itaque in morbi inſultu corporis ſignifica-
+tores infortunati erút, morbus in corpore erit : five-
+rò animæ fignificatores, in ſpiritibus & anima affe-
+ctus reſultabit:fi denique & corporis & animæ figni
+ficatores, detrimentum patiantur: & corpus & ani-
+ma etiam morbo laborabunt. Oſtenſis ſignificatori-
+bus, nunc qua ratione morbi, eorúmque cauſe inue-
+niantur, paucis perftringam.
+
+Qua ratione partes laborantes,morbi,corúmq;
+cause dignofci poffunt.
+C A P. V.
+
+RACTATV de principijs abſoluto,
+nunc quomodò partes affecte & morbi
+inueftigentur,&quibus ex caufis ducan
+tur, dicendum eft. Partes igitur affectæ,
+morbi eorúmque cauſę duplici via cognofcuntur:
+quarum prima expoſita ad ſecundam me conuerta.
+Prima itaque talis eſt. Vide quis planetarum à domi
+no aſcédentis, vel à quo ipſe ſeparatur, aut eum afpi-
+cit. Si enim maleuolus is fiue corruptor ſua natura
+fuerit, vt funt Saturnus & Mars, & dominus domus
+mortis, ac etiam bonus, fed aliundè impeditus:mor-
+bum oftendit. Quoniam pars illa quę à domo in
+qua fedem habet, reſpicitur, ea eft quæ morbo labo-
+rat. Cuius figni qualitas quòd aſpectu fortiori corru
+ptor ex domibus fuis afpicit, caufa eft. Quod fi nul-
+lam ex fuis domibus corruptor, vel vtráſque domos
+afpexerit,ipfius qualitas, vel qualitas fuę domus cû
+qua magis conuenit, cauſa morbi erit. At quia non
+==End of Page 1==
+
+==Start of Page 2==
+80
+DE MORBIS ET DIEBVS CRITIC.
+ſolùm pars laborans, neque morbi cauſe queruntur,
+ſed etia morbi nomé. Vt hoc igitur dignoſci queat,
+animaduertendum eft, qui morbus ex morbis corru
+ptori ſubiectis, huic parti ac caufis conuenit: talis
+enim morbus erit. Veluti ſi (exempli gratia) Mars
+corruptor fuerit,propterea quòd aſcendentis domi-
+nus ab eo ſeparatur, & in quarta domo collocatus fit
+quęquidem domus pectus atq; pulmones regit:mor-
+bum effe in pectore oftendit naturę Martis, qui ru-
+pturas venarum ſignificat: quare patientem ſangui-
+nis ſputo laborare dicemus. Prętereà in hac parte vi-
+dendum eſt an fit planeta aliquis in aſcendente mul
+tas habens dignitates: ob id tamen aſcendentis do-
+minus non fit, fed alicuius alterius domus in qua ſe-
+dem habeat, dominus fit.Pars enim ea quæ à domo
+illa reſpicitur, morbo laborabit. Morbus autem pla-
+nete & figni domus qualitatibus concordabit. Vt ſi
+aſcendens fit Piſcium gradus vigefimusquartus:Iu-
+piter in aſcendente domus dignitatem habet: Sed ta
+men dominus aſcendentis non exiftente in Cancro
+& domo quinta collocatus fit, & in ea dominus &
+vincens vocetur:ſanguinem habundare in hepate ra
+tione Iouis, &pituitam ratione Cancri dicemus:atq;
+ob id hepar obſtructionibus tentari vel tentaturum
+iri. Hęc igitur de prima ratione dicta, ad ſecundę ex-
+plicationem accedo.
+Secundo modo dignoſci poterit morbus, ſi ſextá
+domum animaduertamus, & eius dominum digni-
+tatum multiplicatione perquiramus. Et videamus in
+quo ſigno ſextę domus dominus collocatus fit: quia
+pars quæ ſigno illo ſubiacet, morbo laborabit: cuius
+qualitas
+==End of Page 2==
+
+==Start of Page 3==
+AVTHO. CLAV. DARIOTO MEDI.
+81
+qualitas ſigni ſextę domus cauſa erit. Veluti ſi ſexta
+domus à Leonis gradu decimo initium ſumat: ſexte
+autem Sol dominus fit, qui tunc temporis Arietem
+tenet:caput à caliditate & ficcitate laborare dicemus
+ibíq; fanguiné biliofum abundare: quia Leonis qua-
+litas eſt caliditas cum ficcitate iuncta. Sed notandű
+eſt quòd fi alicuius figni gradus ſeptimus & vigefi-
+mus, vel vigefimus octauus ſextę domus principium
+conſtitua:, ab eo ſigno denominari non debere, ſed
+à ſigno ſequéte. Vt ſi Leonis 27 vel 28 gradus prin
+cipium ſextę domus tenet, non à Leone denomina-
+bitur, fed à Virgine ſequente. In hac parte prętereà
+diligenter animaduertédum eſt, an fit aliquis plane-
+ta in ſexta domo multas dignitates habés: non fit ta-
+men ſextę dominus, fed fit in alio ſigno, in quo ma-
+gnum dominiu poſsidet. Quoniam pars que ſigno
+ſummittitur, qualitatis planetæ morbo laborabit. Si
+igitur dominus aſcendentis ſolus incedat, & á nullo
+alio ſeparetur, vel ipſe morbum ac morbi naturam
+oftendet, vel ad ſextam domum tranſeundum erit
+ordine quo dictum eſt procedédo. Pars item affecta
+inueniri poteſt ex ſitu precipui ſignificatoris fiue fi-
+gurę domini, vel ex ſitu domini aſcendentis hoc mo
+do. Animaduerte diligéter in quo ſignorum duode-
+cim dominus figurę ſitus fit, & cui parti in illo ſigno
+exiſtéte preeſt: pars enim ea tunc temporis afficitur.
+vt fi Saturnus figurę dominus fit, & in Ariete ſitus.
+Pectus quod Saturni imperio, quamdiu Arietem te-
+net, regitur, morbo vexatur, ac fic de domino aſcen-
+dentis iudicandum eſt. Motus deniq; Lunę in ſignis
+Zodiaci diligenter attédendus eſt in morborum co
+==End of Page 3==
+
+==Start of Page 4==
+82
+DE MORBIS ET DIEBVS CRITIC.
+gnitione, & etiam toto morbi decurſu. Secundum
+enim ipſius motum & ad planetas varios aſpectus,
+morbi varij gignútur. Veluti fi quis in morbum inci
+derit Luna in Ariete cum Sole vel Marte exiſtente,
+dolorem capitis pulſatiuú à Solis æſtu patietur æger
+Febre etiam calida cum anxietate laborabit, &vix lo
+quetur. Pectus illius dolore immodico cum pulmo-
+nibus torquetur, & pulfum vehemétiſsimum habet.
+Confert igitur ſanguinis miſsio è cephalica vel me-
+diana, & infrigidante & humectante victu vtatur:
+periculum eſt enim ne in phreneſim incidat,ſecun-
+dum Lunę ad malos coniunctionem: & fecundum
+ad illos aſpectum mors infra ſeptem dies timenda
+eſt. Sed quoniam hęc in eo libro quemquidem Hip-
+pocrati,alij verò Galeno adfcribūt, & cui titulus eſt
+de decubitu infirmorum per aſtrologiam, ſatis aper
+tè traduntur, de his ſatis in preſentia dictum eſt : &
+ad eum librum beneuolos lectores remittimus.
+
+Qua in parte corporis morbus fit dextra ſcilicet,
+an ſiniſtra, an recens aut antiquus,, in toto vel
+in parte ſedem habeat.
+C A P. VI.
+
+I QVÆRATVR an morbus fit in
+dextra aut finiſtra corporis parte, vide
+qua in parte ſignificator morbi fit:qui fi
+ſupra terram fuerit, morbus dextram
+partem corporis: ſi autem ſub terra, finiſtram occu-
+pabit. Ac prętereà ſi in diurnis ſignis fuerit, partem
+anteriorem:ſi verò in nocturnis, poſteriorem mor-
+bus tenebit. An verò recens vel antiquus fit, hac ra-
+tione di-
+==End of Page 4==
+
+==Start of Page 5==
+AVTHO. CLAV DARIOTO MEDI.
+83
+tione dignofcitur. Quando ſignificator morbi, vel
+pars fortunæ tenebroſo, vel puteali, vel azemena
+gradu reperitur, mohum antiquum arguit:fi autem
+in lucidis gradibus fuere recentem eſſe declarat. Si
+prętereà morbi ſignificatoren ſignis multaru aſcen-
+ſionu:vt in Geminis, Cancro, Leone & Virgine fue-
+rit, totum corpus morbus occupasit. Si aute in pau-
+carum aſcenſionum ſignis: vt in Sagittario, Capri-
+corno, Aquario & Piſcibus, morbumin membri di-
+minutione conſiſtere monſtrat. Si deniq in æqualiū
+aſcenſionú ſignis:vt in Ariete, Tauro, Libra & Scor-
+pione fuerit, in corde morbus habetur.
+
+An morbus curabilis ſit necne.
+C A P. VII.
+
+ICT O de morbo, nunc an curabilis fit
+necne dicendum eft. Et quamuis potiùs
+ſalus quam mors requiratur: tamen vt
+omni crimine medicus vacare poſsit, ſa-
+lutem vel mortem prędicere debet. Quonia vt Hip-
+pocrates primo libr. prognoſticorum inquit. Fieri nõ
+poteſt ut omnes agros ſanitati medicus reſtitua:, quauis
+id preſtantius eſſet, quàm futura predicere. Morbi enim
+quidam ita funt pernitioſi ut intro latitantes, hominem iu
+gulent, ut funt febres quedam maligne qualitatis predi-
+cte,tt/ alij morbi ab influxu aſtrorum orti, qui dificilè ſine
+aſtrorum inſpectione cognofcuntur. Quod quum ita fit,
+quanam ratione an ſanabiles ſint necne dignoſci va
+leant, volui oftendere. Ad quod notádum eft, quòd
+quidam morbi incurabiles natura ſua exiſtút, vt ele-
+phantiaſis cófirmata, & fortis apoplexia, de qua etiá
+m
+==End of Page 5==
+
+84
+DE MORBIS ET LIEBVS CRITIC.
+Hippocrates ſectione ſecunda aphorifmorum qua-
+drageſimo ſecundo aphoriſmo his verbis loquitur:
+Apoplexiam fortem ſoluere impoßrle: debilem verò non
+facile. De his autem morbi qui ſuapte natura incu-
+rabiles ſunt, non eſt nous in preſentiarú ſermo. Sed
+de ijs quorum euentus cognitu dificilis exiſtit. Pri-
+mò igitur de ſignis mortis, tum deinde de inſalubri-
+bus, & denique de ſalubribus dicemus.
+Signa lętalia omnia ab aſcédente, à domino aſce-
+dentis, à Luna, à figurę domino ſiue ſignificatore
+principali, à domino domus mortis,&à domino ſex
+tę deſumuntur. Inſalubria ſiue mala ſigna ab aſcen-
+dente, à domino aſcendentis, à Luna, à domino ſex-
+tæ, à fortune, vitę, mortis & planetę interficiétis par-
+tibus colliguntur.Salubria autem ſigna ferè omnia
+à domino aſcendentis principium ſumunt. Quòd
+igitur ad mortis ſigna attinet: vide quomodò aſcen
+dens & eius dominus & Luna cum domino octauæ
+domus, ac cum planetis infortunatis ſe habeant. Si
+enim aſpectu vel cóiunctione cum octauæ domino
+abſq; receptione iungatur:morietur infirmus. Vnde
+notadum eſt, quòd in omnibus malum receptio mi-
+nuit, ac bonum auget. Si verò illi non iungantur, an
+luminis tranſlatio inter eos adſit: hoc eſt an aliquis
+planeta ab vno eorum ſeparetur, & alteri applicetur
+ſedulò animaduertes:id enim morte ſignificat, præ-
+cipuè ſi is qui lumé transfert, ab co à quo ſeparatur,
+receptus fuerit. Quòd ſi hec no inueneris, vide vtrú
+planeta grauior eis lumen eorum colligat, adſit. Si
+enim id quadrato vel oppoſitióe fiat, & is qui lumen
+colligit, maleuolus ſit, aut corum lume planetę ma
+leuolo
+
+85
+AVTHO. CLAV. DARIOTO MEDI.
+leuolo transferat, mortem futuram denuntiat. His
+conſideratis, aſcédens animaduertédus eſt. Si enim
+in eo plures maleuoli fuerint, eúmue aſpiciant, aut
+dís octauę in aſcédente, vel aſcédétis dūs in octaua
+no receptus fuerit, aut in quarta domo que fortune
+domus eſt, collocatus fit, aut planetę in quarta domo
+exiſtēti applicuerit, vel planeta ibi exiſtes aſcédenté
+quadrato vel oppoſitione aſpexerit:hęc enim omnia
+morté propinquá arguût. Item aſcédentis dominus
+retrogradus aut cobuſtus morté ſignificat. A'Lnna
+auté iam dicta ſigna cum ſequétibus capiútur. Si Lu
+na in quarta domo cú Marte abſq; planetę beneuoli
+aſpectu fuerit:mortis ſignú eſt, precipuè ſi beneuoli
+planetę ab angulis cadentes fuerint. Luna item So
+lis radios,id eſt combuſtionem ingrediens, vel com
+buſtam viam peragrans, mortem, precipuè ſi Satur-
+no corrumpatur, venturam denotat. Luna etiam
+in morbi principio & ſui cremento cum Marte, vel
+decremento cum Saturno, aut mortem, aut longam
+infirmitatem portendit. Creſcente enim Luna cali-
+ditas creſcit, que Martis influxu iuuatur.Decreſcen-
+te verò creſcit frigiditas, quę Saturni auxilio auge-
+tur:ac ideò vel morbus prolongatur, vel ægrotum iu
+gulat.Si autem contra fuerit, cótrarium eueniet. Si-
+gna autem lętalia à domino octauę domus ſumpta,
+nunc enumeranda ſunt. Si igitur, vt dictum eſt,
+octauę domus dominus in aſcendente vel quarta do
+mo fuerit, mortem, precipuè ſi infortunatus, hoc eſt
+retrogradus aut combuſtus, vel alijs maleuolis iun -
+Etus fuerit:hoc ſignum arguit. Malus in octaua,
+& octauę dominus malus patientem enecant. De
+m ij
+
+86
+DE MORBIS ET DIEBVS CRITIC.
+ſignis etiam à domino ſexte ſumptis pariter iudican
+dum eſt. Si enim ſextę dominus infortunatus fuerit,
+& aſcédentemvel ipſius dominum aſpectu maligno
+quadrato, ſcilicet vel oppoſitione aſpexerit, mortis
+ſignum eſt. Dominus etiam ſextę in aſcendente
+vel mortis domo malis iunctus necem ſignificat.
+Principalis denique ſignificator cæli ſiue figuræ
+dominus diligenter animaduertendus eſt. Si enim is
+in domo quarta vel octaua, aut in primo loco ſitus
+ſit, vel planetę alicui malè collocato applicuerit, aut
+infortunatus fuerit, aut aliquis planeta illius lumen
+in octauę domus dominum, vel octauę domini lu-
+men in eum transferat, velvnus alterum aſpiciat, vel
+à malis ſeparetur,& malis applicuerit, propinquam
+mortem denuntiat. Hęc de mortis ſigna dicta ſuffi-
+ciant. Si quis enim ea diligenter legerit, reliqua quæ
+in Halı Abenragel, Guidonis Bonati, aliorúmque li
+bris dicuntur, facilia erunt. Omnia enim ad hęc re-
+feruntur.
+De malum omen praſagientibus ſignis.
+CAP. VIII.
+VONIAM, vt in precedendi capite
+dictum eſt, Signa mali à domino aſcen
+dentis, ab aſscendente ipſo, à Luna, & à
+partibus ipſis omnia colligūtur. Primò
+de ijs que ab aſcendente & eius domino deſumun-
+tur dicendum eſt.
+Si malus planeta in a ſcédente, vel dominus aſce-
+dentis malus fuerit:ſibijpſi ægrotus nocebit,ac mali
+regiminis erit:quare etiam malum ſignú portendit.
+Dominus
+
+87
+AVTHO. CLAVD. DARIOTO MEDI.
+Dominus item aſcendentis vel ſextę retrogradus
+aut combuſtus, aut in domo octaua Marti vel Satur-
+no iunctus, aut ab ijs quadrato vel oppoſitione aſpe-
+Ctus, malum ſignificat: & alijs ſignis iunctus, mortem
+prenuntiat. Si etiam aſcédentis dominus in quin-
+ta ſub terra, & vndecima ſupra terram fit: multas an
+xietates ægrotus patietur. Dominus prętereà aſcé
+dentis in putealı, vel tenebroſo gradu vel azemena,
+malum omen preſagit. Ex his autem que à Luna
+ſumuntur,primum tale eſt. Quando in morbi prin-
+cipio Luna malis iuncta eſt, vel octauę domus, id eſt
+domus mortis domina, vel impedita, aut in prauis lo
+cis,vtin quarta, octaua, vel duodecimafita fuerit, aut
+vni ſextę domino dederit: malum omen minatur.
+Luna item in Ariete vel Geminis vel Libra vel Scor-.
+pione vel Capricorno vel Aquario Saturno iuncta
+eo tempore quo vel aſcendunt, aut ſextam domum,
+aut octauam conſtitunt:malum adſert. A' ſexta do
+mo pariter & eius domino ſigna inſalubria,fiue ma-
+la deſumuntur. Veluti ſi ſextę dominusmalus ſir, aut
+in ſexta domo mali collocati ſint, vel ſextę dominus
+impeditus fuerit: malum ſignificat. Quod autem
+ad ea quæ à fortune, vitę, mortis & planetæ interfi-
+ciétis partibus deſumuntur, attinet. Si illę partes ma-
+lè collocatę fuerint, & à planetis maleuolis aſpectæ,
+vel cum eis exiſtút, vel in cadétibus locis, via cobuſta
+vel malorú terminis ſite ſint: malú & aliquando pars
+fortune & pars planetę interficientis, quando ſ. vehe
+meter infortunatæ ſunt, mortem futuram arguunt.
+De ſalubribus ſignis.
+CAP. IX.
+Signa
+
+88 DE MORBIS ET DIEBVS CRITIC.
+S
+IGNA ſalubria ferè omnia à domino
+aſcendentis colliguntur. Si igitur aſcen
+dentis dominus in aliquo angulorum
+& precipuè decima fortunis iunctus ac
+fortunatus fuerit, ſalutem portendit. Quando con
+greſſu vel aſpectu Luna ad aſcendentis dominum,
+eumq; fortunatum peruenerit, futurambonam cri-
+ſim preſagit, que precipuè apparere incipiet, ſi Lu-
+na benè fortunata ad eum antequam alicui alte-
+ri applicet, peruenerit. Quod ſi aſcendentis domi-
+nus fortunatus ſit, & à ſigno vno exeat, ac alterum
+ingrediatur, velox in ſuo motu ipſe exiſtente breui
+tempore morbum finiri debere oftendit: modo ta-
+men non ſit in octaua vel duodecima domo. Si aſcé
+dentis dominus domino domus octauę, id eſt mor-
+tis iunctus eum recipiat:ipſeq; octauę ſiue mortis do
+minus anteà retrogradus fuerit: ſed dirigi incipiat,
+ac in principio directionis ſuę adhuc fuerit, vitam
+(quáuis tamé ſine receptione mortem denuntiaret)
+ſignificat. Item ſi luminis tranſlatio à Luna per Ve
+nerem ad Solem, & ad Iouem adſit, hoc eſt ſi Luna
+Venerem, Venus Solem, Sol Iouem aſpiciat: & Iupi
+ter in aſcédente vel in nona ſitus ſit, figurę dominus
+ſiue almutem erit, idque vitam pręſagit.
+Si prętereà Venus vel Mercurius Lunę lumen ad
+Martem, aut Solem transferat: Mars etiam eum rece
+ptum ad Iouem, vita (quamuis Martis coniunctio
+peruerſa ſit) à Ioue receptore ſignificatur,modo ta-
+men Iupiter in celo ſit. Dominus inſuper aſcen-
+dentis fortis ac fortunatus, & in aliquo angulorum
+ſitus, & quado infortunía fœlicitates non ſuperant,
+ſalutis fi-
+
+AVTHO. CLAV. DARIOTO MEDI. 89
+falutis fignum oftendit. A'Luna item à celi figu-
+ra & ab omnibus partibus, pręcipuè à parte fortunæ
+falutis figna fumuntur. Si enim Luna benè affecta
+fuerit, & in angulis vel ſuccedentibus fita fit, & in ſui
+incremento ac morbi principio cum Marte non fue
+rit:ac ſi pars fortune & alię partes, precipuè pars vitę
+benè collocatę fuerint & fortes, faluté futuram ofté-
+dunt. Cùm denique Iupiter trino aut ſextili afpe-
+Etu Solem refpicit, falutis fpem auget.
+Antequam autem iudicium proferatur,animad-
+uertendum eſt an profperitates infortunia ſuperat,
+aut contra.fi enim æquales fuerint, difficilimum eſt
+iudicium:diligenter ideò confideranda funt.
+An acutus vel cronicus morbus fit.
+CAP.
+X.
+P OSTEA QUA'M an curabilis fit
+morbus necne, monftratum eſt. Si cura-
+bilem effe agnofcamus: reliquum eft vt
+an acutus sit vel cronicus, id est, an bre-
+uis vel longus, videamus. Quod vt agnofcamus ſex-
+ta domus,eius dominus, Luna, dominus aſcenden-
+tis, planeta à quo ſeparatur, &ea cuiapplicat animad
+uertendi funt. Si enim ſextę domus ſignumex fixo-
+rum numero fit, & eius dominus sit in ſigno fixo ſi-
+tus, vel planeta grauis (vt sunt Saturnus & Iupiter)
+fuerit, morbi longitudinem prenuntiant. Si autem
+in mobilibus fignis collocatus fuerit, & in fexta mo-
+bile fignum fuerit, morbi breuitatem facit. Si deni-
+que fixorum & mobilium loco,communia siue me-
+dia adfunt, morbi refidiuam timere iubent. Simili
+قامة
+
+१० DE MORBIS ET DIEEVS CRITIC.
+via & ratione de planeta à quo ſeparatur dominus
+afcendentis iudicandum eft. Luna etiá animaduer-
+tenda eft. Si enim in ſuo motu tardior fit, & lumine
+crefcat, morbi augmentum denuntiat: vt etiam fi in
+morbi principio & in fui incremento cum Marte &
+in decremento cum Saturno ſit : morbi perniciem
+eiúſque longitudinem pręſagit. Idem etiam preſtat
+ſi in ſigno fixo & infortunata, id eſt malè collocata
+fit. Quando item in morbi principio Luna à combu
+ſtione exit, infirmitas creſcit, quouſq; Luna ad loci
+in quoerat, in morbi inſultu oppofitionem veniat,
+quo in loco fi fortunatos planetas inueniat, morbus
+iudicabitur. Si verò infortunatos aut morietur æger
+aut diuturnior morbus erit. Sed de his latiùs in ſe-
+quentibus, cum de criſibus fiet fermo, dicemus. Do-
+minus item domus Lunę animaduertendus est, qui
+ſi infortunatus sit, morbi longitudinem arguit. Mor
+bi etiam longitudo vt Hali inquit, à domini afcen-
+dentis cum fortunatis vel infortunatis vicinitate ſu
+mitur. Sienim aſcendentis dominus ad planetam
+fortunatum fubito coniunctione vel aſpectu perue
+nit, breuem morbum facit: fi autem tardè, longum.
+Partes item fortunę, vitæ, mortis & planetæ interfi-
+cientis (quibus omnibus fortunę pars antecellit) ani
+maduertendæ funt. Quando itaque partes illę benè
+collocate funt, & in fignis mobilibus, morbi breuita
+tem:ſi autem malè && in ſignis fixis, longitudiné pre-
+nuntiat. Tempus autem longitudinis morbi inuenie
+tur, si gradus qui funt inter applicationem ſignifica-
+torú cum fortunatis numerantur, & pro gradu quo-
+libet dies vna fumatur, ſi ſignum mobile fit: si verò
+fit fixum,
+
+AVTHO. CLAV. DARIOTO MEDI. 91
+fit fixum, hebdomadam vel menſem vel annum: fi
+autem comune fit, diem vel hebdomadam vel men
+ſem dabimus:quia cum fignificatores fortunatis ap-
+plicant,tunc morbus iudicatur.
+De criticis indicatiuis, & intercidentibus die-
+bus, ac eorum inuentione.
+CAP. X I.
+VPEREST nunc vt de criticis die-
+bus ac eorum indicatiuis & interciden-
+tibus quidpiam dicamus.Que res vt cla
+riùs intelligatur, quid fit criſis initio di-
+cendum eft. Omnis enim quę à ratione de aliqua re
+inftitutio fufcipitur, à definitione debet proficifci, vt
+intelligatur quid sit de quo diſputatur. Criſin igi
+tur Galenus in commentario 13. ſectione ſecunda
+aphorifmorum & commentario 230. & libro primo
+epidemion commetario 3. & tertio prognofticorum
+commentario primo, dicit eſſe vehementem in mor
+bis mutationem ad falutem vel mortem. Non me la
+tet dictionem iudicium à medicis multis fumi mo-
+dis.Sed nunc in ea ſignificatione à Galeno in iam di
+etis locis accepta, capitur:nëpè pro ſubita mutatio-
+ne in morbo ad falutem vel ad mortem. Criſis aute
+alia est perfecta, alia imperfecta. Perfecta est quádo
+morbus integre & abfolutè iudicatur.eaque duplex,
+perfecta laudabilis, cùm ſcilicet, morbus ad falutem
+iudicatur: & perfecta illaudabilis, cùm morbusinte-
+gre iudicatur, ſed ad mortem. Imperfecta eſt quádo
+integre morbus non iudicatur: fed ex eo quidpiam
+relinquitur, & refidiuam facit:idq; dupliciter. Vel
+
+92 DE MORBIS ET DIEBVS CRITIC.
+enim morbus paulatim ad mortem tendit, & mala
+iudicatio dicitur: vel paulatim ad salutem accedit,
+& laudabilis imperfecta vocatur. Criſium item alia
+eſt salua, quę sine magnis & pernitiofis accidenti-
+bus sit. Alia dubia, que ſcilicet, cú illis aduenit. Alia
+denique eſt iudicata, vt quando die quarta figna co
+ctionis apparet, morbum ſeptimo die iudicaturum
+denuciant. Non iudicata alia, vt illa que ſeptimo die
+aduenit, non tamen die quarta pręlignificata fuit.
+Alia infuper in critico die sit, alia auté minimè. Qui
+verò critici dies ſint in ſequentibus dicetur. Medici
+Hippocraté & Galenum ſequentes, alio modo quá
+aftrologi criticos dies accipiunt. Galenus tamen ter-
+tio libro de decretorijs diebus eos accipiendos eſse à
+motu Lunæ iudicat. Quoniam, vt capite quinto eiuf
+dem libri inquit, mutationes egritudinum à Luna pro-
+ueniunt.Vt si quis in morbum inciderit, Luna in Tauro exi
+ſtente, mutationem dum in Leone crit, vel Scorpione, vel
+Aquario sentiet. Hæc enim ſigna quadrato aſpectu
+& oppofitione Taurum aſpiciunt. Sed quoniam Ga
+lenus viam Ptholomei & rationé adhuc nó affequi-
+tur : Nos rationem tradere cupientes rem ipfam ag-
+gredimur.Ptholemeus aphoriſmo ſexagefimo centi
+loquij inquit. Super ægrotis criticos inſpice, ac Luna pera-
+grationem in angulis figuræ ſexdecim laterum: ubi enim
+eos benè affectos inueneris, benè erit languenti: contra
+verò male ubi affectos inueneris. Si igitur secundum
+hanc doctrinam circulus in quatuor quadrantes
+diuidatur: & quòd signum & quenam signi pars
+quadrantis finem attingat, videatur: dies in qua cri-
+ſis futura eſt facilè dignofcetur. Cum enim Luna ad
+hunc an-
+
+AVTHO. CLAV. DARIOTO MEDI. 93
+hunc angulú (angulű, ſcilicet eum qui quarto afpe-
+Ctu locú in quo Luna in morbi initio erat, afpicit)
+peruenerit:& tunc benè affecta fuerit, id eft cum be-
+neuolis planetis aſpectum habuerit, vel ſtellis primæ
+vel ſecundę magnitudinis naturę Iouis vel Veneris
+iuncta fuerit, eo tempore criſis ad falutem fiet. Si au-
+tem malè affecta fuerit, quadratovel oppofitione Sa
+turni vel Martis, aut ſtellis prime & fecundę magni-
+tudinis naturę eorum iuncta sit : tunc criſis non fiet,
+aut si fiat, ad damnum potiùs quàm ad falutem erit:
+& pręcipuè ſi calidus sit morbus, & Martem Luna
+afpexerit, qui caliditate ſua morbum fouet. Luna au
+tem aliquando celeriùs, aliquando tardiùs dhunc
+angulű peruenit, quo fit, vt criſis aliquando ſexqui-
+quinto die, quádo ſcilicet, Luna celeriter mouetur:
+aliquando etiam ſexto criſis aparere incipiat. Cùm
+verò medio motu Luna mouetur, ſeſquiſexto dievel
+propè ſeptimi diei siné morbus iudicatur. Cum aut
+tardiùs Luna mouetur, criſes vel octauo die vel tar-
+diùs fiunt. Et quoniam in omnibus modus tenendus
+eft, ideò criſes ſeptimo die perfectiores, quâm alijs
+diebus fiunt. Criſis etiam laudabilis aliquádo fit die
+quinto:tunc enim Luna propter motusvelocitatem
+fortunata eft. Quod si contingat criſim nó fieri Lu-
+na in hoc primo exiſtente. Animaduertendum eft
+quo tempore ad oppofitum loci in quo erat, tempo-
+re inceptionis morbi perueniet (Ad eum autem vt
+plurimum die decimoquarto peruenit.) Si enim (vt
+de primo angulo dictum eft) bene affecta Luna sue
+rit:ad salutem criſis fiet. Si autem malè affecta fuerit:
+ad perniciem potius quam salutem fiet, aut non fiet.
+n ij
+
+94
+DE MORBIS ET DIEBVS CRITIC.
+Id verò eo tempore aduenit: quoniam locus initij
+morbi & locus ei oppoſitus qualitatibus lumine &
+aſpectu pugnat, & contrarij ſunt. Et quoniam figna
+quadrato aſpectu ſeſe aſpicientia aliquádo totis qua
+litatibus pugnant:quando Luna ſignum in quo erat
+in morbi inſultu quadrato aſpectu reſpicit, natura
+aduerfus morbū infurgit, & nititur expellere & cua-
+cuare quod fibi noxium eft. Quare ſi eo tempore in-
+ferior radix vna cum fuperiore radice occurrat: túc
+optimum fit iudicium. Signa autem quadrato afpe-
+tu ſeſe aſpicientia aliquando vna tantùm qualitate
+pugnant:atque tunc in quadratis radix ſuperior de-
+bilior eft. Tertius angulus (fi in ſecundo iudicium
+non fiat) confiderandus venit. Quoniam Lunain
+hoc angulo exiſtente, id quod vt plurimùm vigefi-
+ma die fit, fi caufæ fupradictæ occurrant iudicium
+apparere incipiet. Quod ſi no appareat, quartus an-
+gulus, quiidé eſt cú morbi initio,refpiciēdus eft:quia
+túc ad locú in quo erat in morbi principio, Luna per
+uenit.Id aut vigefimofeptimo die & tertiavnius dici
+parte fiet: quo in loco Luna exiftente, ſuperioribus
+& inferioribus caufis occurrentibus iudicium fiet:
+quo loco fi non fiat, morbus in acutorú numero an-
+numerandus non eft: fed in cronicorum numerum
+ponendus eft. Ideò iam ad Solis motum redire con
+uenit. Sol enim morbos cronicos, vt Luna acutos fuo
+motu moderatur. Videndum eft igitur in quo ſigno
+Sol in morbi principio erat:quoniá vt de Luna dixi-
+mus, quando ad primum quadratum huius loci vel
+oppofitionem, aut fecundum quadratum, aut ad lo-
+cum initij morbi peruenerit : morbus iudicabitur,
+modo ea
+mo
+ang
+pars
+&ita
+erit
+grin
+nes
+quat
+parte
+ang
+lucr
+fact
+aut
+mu
+ла
+ang
+&
+
+AVTHO. CLAV. DARIOTO MED I.
+95
+modò ea adfint, quę de Luna diximus. Circulus ergo
+in quatuor æquales partes diuifus, quatuor dies fiue
+angulos criticos oftendit. Hi autem critici ſuos indi
+catiuos habent, qui ſi iterùm quęlibet quarta circuli
+pars in duas æquales partes diuidatur, inuenientur:
+& ita totus circulus in partes æquales octo diuifus
+erit, quarum vna quęlibet gradus quinq; & quadra-
+grinta comprehendit. Totus enim Zodiacus vt om-
+nes alij circuli ſpherę gradus 360 continet, qui fi in
+quatuor partes ſecantur, pars quęlibet gradus nona-
+ginta amplectetur. Si iterùm vna quęlibet quarta ın
+partes duas æquales diuidatur, gradus quadraginta
+quinq; vna continebit. Luna igitur in huiufcemodi
+angulo animaduertenda eſt:cùm enim ad angulum
+illum, qui eſt inter morbi initium & primum angu-
+lú criticú (ſecundú ſignorű ordiné) peruenerit, quid
+factura ſit natura die critico, illo die monftrabit. Id
+autem vt plurimùm quarto die fit: quia inter ſepti-
+mum & morbi initium medius eft. In illo autem die
+ſi ſigna coctionis appareant, futuri iudicij cum Lu
+na adcriticum angulum peruenerit, ſignum eft:mo-
+dò tamen caufe iam dictę adſint. Si verò in primo
+angulo critico iudicium non fiat: cum ad medium
+locum primi & fecundi anguli Luna peruenerit, id
+quod die vndecimo ſepè fit, an criſis decimoquarto
+die futura fit necne, natura oftédet. Quod fi eo loco
+criſis non fiat, in alijs angulis indicatiuis & criticis
+vt dictum iam fuit, Luna animaduertédaeft. Angu
+lus enim qui eſt inter ſecundum angulum criticum
+& tertium, tertij anguli critici, indicatiuus angu-
+lus ad quem ſępiùs decimoſeptimo die Luna perue-
+san
+fbe
+de
+&
+qua
+crat
+ara
+CUA-
+Cin
+túd
+
+96
+DE MORBIS ET DIEBVS CRITIC.
+nit. Angulus autem inter tertiű angulum criticum
+& quartum, quarti anguli critici indicatiuus eft:ad
+quem etiam vigefimoquarto die motu proprio Lu-
+na accedit ad hec notadum eſt diem certum, quo Lu
+na ad angulos peruenit, non poſſe aſsignari. fecun-
+dum enim ipſius motus celeritatem vel tarditatem
+aliquando citiùs: aliquando verò tardius eos attin-
+git. Sed qui arithmetices nő omninò ignari funt, ſup
+putatione & calculo diem & horam, qua ad eos per-
+uenit, facilè agnofcet. & ideò diem & horam iudicij
+facilè prędicere poterit. Accidentia autem eo die fu
+tura ex fortunis vel infortunijs Lunę iudicabit. Hi
+dies & anguli intercidentes ſuos proprios habét: qui
+fi vnaquęlibet ipfarum octo partium circuli in duas
+æquales partes diuidatur,apparebunt.Ita'enim iufta
+Ptholomei doctrinam, circulus totusin partes æqua.
+les ſexdecim, fiue angulos diuiſus erit, & vna quęli-
+bet pars gradus duos & viginti cum minutis trigin-
+ta continebit. Primus autem angulus, inter initium
+morbi & primum indicatiuum intercidens erit. Se-
+cundus angulus prime criſis indicatiuus eft. Tertius
+verò angulus,inter indicatiuum & prima criſim in-
+tercidens erit. Quartus autem angulus, qui & qua-
+dratus dicitur, prima criſis eft. Ita igitur inter morbi
+initium & primam crifim fiue criticú angulum, in-
+tercidentes duo & indicatiuus vnus erunt. Tot itaq;
+in vnaquaque reliquarum trium quartarum anguli
+funt annumerandi. Quatuor ergo funt critici dies,
+& totidem indicatiui, ac intercidentes octo, in qui-
+bus Luna animaduertenda venit: quæ etiam ſingu-
+is diebus non minori negotio animaduertenda eft.
+Eo enim
+A
+Eo
+ag
+fum
+tert
+dica
+сер
+te.C
+appe
+pra
+pol
+direc
+den
+An
+fal
+
+AVTHO. CLAV. DARIOTO MEDI. 97
+Eo enim die quo benè affecta fuerit, benè agetur cũ
+ægro:ſed precipuè in huiufcemodi angulis. Hęc eft
+fumma diuifionis criſium, quare de his dicta fuffi-
+ciant. Nos in ſtudioſorum gratiam tabulam in fine
+tertij capitis primi libri appofuimus, dies criticos in-
+dicantes & intercidentes complectantem, cum indi
+ce planetarum dignitates & ipfos dies demonſtran-
+te. Cùm quis ergo die, quo alicuius morbi iudicium
+frue criſis fiet, notum facere cupit, primò quodnam
+fignum & que ſigni pars Luna in morbi principio te
+nebat, inquirat: tū deinde ſuper illud ſignum, & illá
+figni parte morbi initij indicem in fignorú circulo
+apponat:tum demùm indice criticorum dierum fu-
+pra intercidentes indicatiuos & criticos angulos ap-
+pofito:figna & fignorum partes illos cóftituentes in
+directo lineę fiduciæ apparebunt: quando enim ad
+hęc figna & has figni partes Luna peruenit, interci-
+dentes iudicates & critici dies fole clariùs eluceſcút.
+An fortunata etiam vel infortunata Luna ſit ex fitu
+illius, in dignitatum planetarū tabula his ea de cau-
+ſa ſuppoſita, apparet. Toto igitur morbi decurſu ad
+hanc tabulam recurrandum eſt, vt quo die grauior
+vel leuior fit morbus, facilè dignofci pofsit.
+Que in morbis curandis, (t) humoribus va
+cuandis obferuanda funt.
+CAP.
+X11.
+VA RATIONE morbi, eorú cau-
+ſe & partes laborantes dignoſci queant,
+in precedentibus dictum fuit. An verò
+fanabiles aut infanabiles, acuti aut cro-
+igin
+ertum
+nord
+tirac
+cun
+ttin
+Sper
+H
+duas
+ad
+
+98
+DE MORBIS ET DIEBVS CRITIC.
+nici, & quo tempore iudicari debeant, etiam anteà
+monftratum eft. Nunc autem qua ratione curandi
+funt, & quo tempore remedia funt adhibenda often
+dere conuenit. Igitur vt rem paucis oftendam, nota-
+dum eft corpora inferiora à fuperioribus regi, & prę
+cipuè ipſius Lunæ motu morbi variantur:non quòd
+viribus & potentia reliquis pręſtet:fed quoniam pro
+de Luna, pinquior & motu celerior eft. Videmus enim crefcé
+inin for crefcere. Oſſa in plenilunio medulla repleta: anima-
+corpora bor ha omnia tam in mari quàm in terra humore aucta
+tute
+te Luna humores creſcere:veluti cùm decreſcit, de-
+funt.Cácri,aſtaci, & oſtreæ in plenilunio carne ſunt
+repleti, mare cùm tumefcit:humores in hominis cor
+pore, veluti etiá in arboribus, aucti funt. Contrariú
+autem in nouilunio apparet. Prętereà ſecundum ac-
+ceffum & receſſum Lunæ in Zodiaci fignis mutatio-
+nestemporű fiunt. Cùm enim Sol & Luna in fignis
+calidis funt, augetur caliditas: cùm demùm in frigi-
+dis, frigiditas calidum ſuperat. Meritò igitur in hu-
+morum purgatione Lunę motus per zodiaci ſigna
+animaduertendus eft. & non folùm in humorú pur-
+gatione:verumetiam in morborum curatione, & fa-
+cultatum fiuevirtutum corroboratione. Non Solem
+autem Lunę motus: verumetiam aliorum planeta-
+rum, quorum influxu humores conferuantur, ani-
+de Saber maduertendus eft. Saturnus enim melácholiam au-
+get, conferuat & retinet:quia cùm frigidus fit & fic-
+cus, vt melancholia:ideò eam auget & retinet. Iupi-
+de Jouis ter verò qui calidus eft & humidus temperate, fan-
+guini pręeſt, ipsúmque auget. Melancholię autemvt
+de marh's Saturnus, ſanguini aduerfatur: Mars flauā bilem re-
+git,ac gu-
+UC
+mo
+Ve
+foue
+bol
+1100
+cede
+an
+fua c
+cem
+Vnac
+Ven
+Mar
+rem
+cam
+Sate
+Pe
+an
+DOC
+
+==Start of OCR for page 1==
+tea
+adi
+ota
+Pre
+pon
+pro
+efcé
+de
+200
+ta
+cor
+20-
+110-
+enis
+ng1-
+hu-
+igna
+lem
+meta-
+AVTHO.CLAV. DARIOTO MEDI.
+وو
+git ac gubernat, & retinet: quia vt bilis ipſa calida eſt
+& ficca:fic Mars calidus eſt & ficcus, ac ideò eam fo-
+uet: pituitam autem ſua qualitate cótraria, quemad-
+modum Venus cú Luna bilem expellit. Quum enim
+Venus & Luna frigidę fint & humidę:ideo pituitam
+fouent & regunt. Fortitudo igitur planetarum ſim-
+bolum cum humoribus habentium, in eorumvacua
+tione vitada eft. Sed planetarum illis aduerforū for-
+titudo molienda eft. Vt quando vacuenda eſt bilis,
+Mars in cadenti domo (no autem in angulo vel fuc-
+cedenti) ponendus eft. Venus autem è contrario, in
+angulis vel fuccedentibus fortificanda eſt. Illa enim
+ſua qualitate contraria aduerſus bilem naturam ad-
+iuuat, & ad illius expulfionem facultatem expultri-
+cem roborat. Si etiá in ipſius bilis vacuatione Luna
+vna cum Venere corroboretur, natură ad illius ex-
+pulfionem fortiorem redderet. Quod fi ambę, id eſt
+Venus & Luna fortificari non poffunt: debilitato
+Marte, vna corroboretur. Quando pariter Venerem
+viribus Mars fuperauerit, pituitã depellet. Cùm au-
+tem melancholiam euacuare volumus, Iupiter vt
+eam depellere queat, fortificandus eft: ne auté eam
+Saturnus retineat, ipſum debiliorem reddere cona-
+mus. Contraria penitùs ratio in ſanguine vacuando
+And leruatur. Iupiter enim debilior redditur, & Saturni
+ne
+Tupin
+renive
+mic
+vires roborantur:ne Iupiter ſanguinis vacuationem
+Prohibeat, & Saturnus iuuet. Delectus etiam in ho-
+rarum electione pariter habendus eſt. Iouis enim ho
+ra in melacholiæ euacuatione prodeft: Saturni verò
+nocet. ac eodem modo in fingulis humoribus pur-
+gandis iudicandum eft. Eotamen tempore, quo ſo-
+IMPR
+PERIALE
+0
+==End of OCR for page 1==
+
+==Start of OCR for page 2==
+100
+DE MORBIS ET DIEBVS CRITIC.
+lutiuum medicamétum datur, tutiùs eſt horam be-
+neuolorum planetarum quam maleuolorum elige-
+re,ac in omnibus meliùs eft Saturni & Martis horas,
+ac Lunæ cum eis applicationes fugere. Planetę item
+corporis humani partes quafdam refpiciunt: vtpote
+eas quæ naturis ſuis conueniunt. Vt quia Luna frigi-
+da elt & humida, cerebrum reſpicit. Venus auté quæ
+pariter temperatè humida eſt teſticulos conferuat.
+Mercurius communis eft & conuertibilis.ideò pul-
+mones gubernat. Sol qui calorem conferuatiuum
+adeptus eſt, ſuo influxu cor moderatur. Mars verò
+quoniam calidus eſt & ficcus immoderatè, veficam
+felleam & renes reſpicit & moderatur. Hepar autem
+caliditate & humiditate Iouis, quemadmodum fri-
+giditate & ficcitate Saturni lien regitur. Eo igitur të
+pore quo illi planetę dominatur, partes illę euacuan
+dæ non funt:humorem enim noxium retinerent, &
+curationem impedirent. Eo tamen tempore quo for
+tes ac fortunati in cælo ſunt, illas partes roborare co-
+uenientifsimum erit. Ad rem igitur vnde digreſsi fu
+mus,accedamus.Motũ Lunę noſtri corporis humo-
+res ſequuntur. In prima enim & tertia Lunę hebdo-
+madibus, hoc eft à Solis & Lunæ congreſſu fiue con-
+iunctione ad primam quadraturam, &ab oppoſitio-
+ne fiue plenilunio ad quadraturam ſecundam, à cen
+tro ad circunferentiam humores mouentur: & ideò
+ſanguinis miſsio, balnea, ſtuphæ & medicaméta quæ
+cunque à centro ad circunferentiam humores duce
+re nata funt, in his hebdomadis cóueniunt. In ſecun
+da verò & quarta Lunę hebdomadibus id eſt, à pri-
+ma quadratura Lunæ ad eius cũ Sole oppoſitionem
+fiue pleni-
+ju
+tr
+di
+ſo
+me
+Pre
+ſs
+Iule
+alic
+nes
+7200
+==End of OCR for page 2==
+
+==Start of OCR for page 3==
+mbe
+pote
+que
+vero
+tem
+AVTHO. CLAV. DARIOTO MEDI.
+101
+fiue plenilunium, & à ſecunda quadratura ad con-
+iunctionem, motu contrario à circunferentiaad cen
+trum humores rapiūtur:ideò in illis cathartica me-
+dicamenta exhibere eſt conuenientiſsimum. Non
+folùm quadraturę Lunę in purgadis humoribus ad-
+uertendę funt:ſed etiam ſigna in quibus Luna eft, &
+eius ad planetas varios aſpectus. Purgantia medica-
+menta Luna in aqueis ſignis, vtpote in Cancro, Scor
+pione, & Piſcibus exiſtente, commodiſsimè dantur.
+Pręſtantior item aut deterior purgatio fit, pro diuer-
+ſis Lunæ ad alios atque alios planetas aſpectibus. Pil
+lulę etiam quibufdam téporibus magis conueniút,
+alio autem tempore electuaria, alio demùm potio-
+nes. Quibus autem temporibus conuenient ſeques
+tabula docet.
+In Cancro & cum
+uo tu
+are co
+* aut Δ
+do
+Luna hæc ſigna
+perambulans,&
+Veneris cofert ad bilem
+vacuandam
+Solís vel martis ad phle-
+gmatis vacuationé pro- Cũ electuario.
+deft
+Iouis ad melancholiam
+educendam proficit
+Veneris confert bilis va
+cuatio
+中中中
+&ide
+éta qu
+es du
+nfecu
+hos aſpectus ha In Scorpione & cũ
+bens habendata
+lis eft humorum
+euacuandorum
+ratio.
+Solis aut Martis pituitæ
+aut aſpectu expulfionem iuuat
+Cum potione.
+Iouis melancholiæ pur-
+gationem auget
+Veneris, euacuare bilem
+confert
+In Piſcibus cum
+* aut aſpectu
+Solisvel Martis pituitam
+purgare tempeftiuũ eſt
+Cum pillulis
+itione
+Iouis humorem melan.
+cholicum purgare licet
+==End of OCR for page 3==
+
+==Start of OCR for page 4==
+102
+DE MORBIS ET DIEBVS CRITIC.
+Cùm tamen ſolutiuum medicamentum exhibe-
+tur, Luna Ioui coniuncta non fit. Quamuis enim Iu
+piter bonus ac fortunatus ſit:tamen quoniam natu
+rę parens eft & amicus, eam corroborat, & aduerſus
+medicamentű adiuuat:ita vt medicamétum à natu
+ra ſuperatú, opus ſuum minimè perficit. Iuxta illud
+Ptholemei decimonono aphoriſmo centiloquij: Si
+quis Luna cum Ioue exiſtente laxatiuum acceperit,medi
+cine opus et effectus minuetur. Quoniam autem ple-
+runque ita vrget morbus, vt moram refpuat: cauen-
+dum eſt, ſi fieri poſsit, ne Luna ſit in ſignis ruminan-
+tibus, vt in Ariete, vel Tauro, vel Capricorno, neque
+planetæ retrogrado applicet, vel iuncta ſit: quia hęc
+vomitum prouocant. Illud tamen tempus in vomi-
+tiui medicamenti exhibitione cómodiſsimum eſt:
+ſed aſcendens & dominus eius roborādus eſt & for-
+tunandus. Cauendum à maleuolorum aſpectu,
+quoad fieri poteſt. Dominus autem aſcendentis ſi
+fieri poteſt, vel planetæ ſub terra exiſtenti iunctus
+ſit, aut eidem applicans, vt humores faciliùs deor-
+ſum ducantur. In medicinę prętereà laxatiuæ ex-
+hibitione ſi motu & lumine Luna diminuta ſit, pre-
+ſtantior erit..
+Quemadmodum autem in humorum purgatio
+ne Lunæ motus animaduertitur: ita in corporis fa-
+cultatum fiue virium roboratione animaduerten-
+dus eft hoc modo.
+1000
+gent
+CO
+pręc
+cere
+OCO
+red
+prin
+Luua in his
+mo
+eſt
+==End of OCR for page 4==
+
+==Start of OCR for page 5==
+AVTHO. CLAV. DARIOTO MEDI.
+Luna in
+is fignis gıdıs & ficcis
+In fignis aëreis ca,
+xiftente
+cultates
+quantur.
+In fignis igneis ca
+Ariete
+lidis & ficcis
+Leone
+Sagittario
+Tauro
+In fignisterreis fri
+Virgine
+Capricorno
+?
+Geminis
+Libra
+lidis & humidiıs
+Aquario
+}
+Cancro
+In fignis aqueis
+frigidis & humidis S
+ple-
+man-
+que
+et
+for-
+103
+zer
+catio
+0
+fa
+ten
+in his
+Scorpione
+Piſcibus
+103
+Atractrix virtus roboratur: quoniam ſecun-
+dum loci natura Luna influit, & hæc facultas
+qualitatibus ſimilibus viget.
+Retentrix virtus tuuatur. Iuuatur enim illis
+qualitatibus, quæ illo tempore dominantur.
+Concoctrix facultas cófirmatur:talibus enim
+S
+2 qualitatibus perficitur.
+Expultrix validior redditur, quæ his qualita-
+{tibus potifsimam iuuatur & perſicitur.
+Eo igitur tempore & Luna cum Ioue aut Venere
+iuncta exiſtente, roborantia medicaméta &adſtrin-
+gentia danda ſunt. Cùm auté intéperiem aliquam
+corrigere intendimus, Luna ſit in ſigno ea qualitate
+prędito quam cupimus inducere. Vt quando calfa-
+cere volumus, ignea ſigna eo tempore Luna debet
+occupare: cùm refrigerare, frigida tenebit: cùm hu-
+mectare, humida:cùm demùm ſiccare, ſicca poſside
+re debet. Quæ autem ea ſint precedenti tabula &
+primo capite primi libri maniſeſtum fuit.
+Quo tempore una quælibet corporis pars medi-
+canda,t) à morbo liberanda eſt.
+CAP.
+X111.
+VÆ SIGNA &domus corporis hu-
+mani partes reſpiciant in precedenti-
+bus dictum eft. Prima enim domus &
+Aries caput totum gubernant, quemad
+modum Taurus cum ſecunda domo collum.Gemi-
+ni vna cú domo tertia humeris & brachijs vt dictú
+eſt, preſidet, quæ ſummoperè notanda ſunt. Partes
+==End of OCR for page 5==
+
+104
+DEMORBIS ET DIEBVS CRITIC.
+en m noſtri corporis tali cõſtellatione regnáte me-
+dicantur, & à morbis liberantur. Sed morbi qui cura
+tione egent, aut recentes ſunt, aut inueterati. Si igi-
+tur morbi inueterati funt:cura Luna exiſtente in tri
+plicitate terrea, precipuè in Tauro incipienda eft. Si
+verò recens fuerit, in aquaticis ſignis precipuè pur-
+gationis tempore Luna fit. Attamen quoniam vel
+morbus non finit, vel tempus hoc nolunt ægroti ex-
+pectare. Que ſequuntur tamé ſummoperè animad-
+uertenda funt. Cùm partem aliquam morbo labo-
+rantem ad ſanitatem reducere libuerit:fignum par-
+tem reſpiciens Luna teneat,aut illud fignum aſcen-
+dat. Lunam tamen in aſcédente ponere malum eft:
+ibi enim infortunio afficitur. Veluti fi caput aut ali-
+quam illius partem curare tentes,aut Luna in Arie-
+te collocabis,aut Arietem aſcédere cogas. Si autem
+colli partes ſanitati reſtituédę ſunt, aut Taurus aſcé-
+det, aut eum Luna tenebit. Si demùm humeros ma-
+nus & brachia à morbis liberare cupis, aut geminos
+aſcendere cogas, aut eos Lunam tenere tentabis.Par
+tes igitur quæ funt à capite vſq; ad pectus Luna exi-
+ſtente in tribus fignis ſupradictis, vel aſcendentibus
+illis, à morbo vindicantur. Et partes quæ à pectore
+ſunt vſque ad pudenda, à morbis Luna in Cancro,
+Leone & virgine exiſtente, aut illis aſcendentibus,
+liberantur. Quæ autem ſunt à pudendis vſque ad ge
+nua:cùm Librá, Scorpioné & Sagittarium Lunate-
+nebit,curabuntur. Partes demùm, quæ funt à geni-
+bus vſq; ad pedes, Luna in Capricorno, Aquario &
+Piſcibus exiſtente ad ſanitatem reſtitundę funt. Ca
+uè tamen ne parté ferro tangas, quando Luna ſignú
+hanc par-
+
+AVTHO. CLAV. DARIOTO MEDI.
+105
+hanc partem reſpiciens tenebit ac in omnibus opera
+tionibus quę ferro fiunt, vide ne Luna quadratum,
+aut quadrati vel oppoſitionis (alij enim mediocres
+ſunt) applicationem ad Martem habeat. Non ſolùm
+autem ſigna, verumetiam domus animaduertendæ
+ſunt. Quéadmodum enim de ſignis dictum eft, ita
+domus in corporis humani partesinfluunt. Cùm er-
+go morbi alicuius partis curatio incipitur: domus
+hanc partem reſpiciens, & eius dominus benè affecti
+ſint & fortunati. Veluti cum capitis ægritudo curan
+da eſt:prima domus & eius dominus (quem almu-
+tem Arabi vocant) beneuolorú aſpectu vel pręſen-
+tia, roborandi ſunt, ac fortunadi, ſi futuram curatio-
+nem profperam eſſe cupimus. quéadmodum ſecun-
+da domus & eius dominus, ſi collum:tertia ſi hume-
+ros, manus & brachia: quarta ſi pulmones, pectus &
+mammillas ad priſtinum falutis gradum reducere
+optes.ita enim de ſingulis domibus & earum domi-
+nis faciendum, cùm partes his domibus ſubiecta fa-
+nitati reſtituere velimus. In omnium ergo curatio-
+num principio aſcendens eius dominus, domus par-
+tem reſpiciens& eius dominus fortunandi funt. Iu-
+piter autem ſi fieri poteſt, in aſcendente vel vndeci-
+ma domo, vel decima, aut nona ponendus eft, ac bo-
+nitate augedus. Planeta ſimiliter morbum quem cu-
+rare volumus dominans & partem reſpiciens, fortu-
+nandus eſt, vt ſi phrenitis curanda fit, Mercurius Lu-
+nam trino aut ſextili aſpectu aſpiciet : & optimè ac
+in bono loco collocabitur, ac in ſuis dignitatibus:vt
+(exempli gratia) ſi in ſeptem primis gradıbus virgi-
+nis, in ſua domo, exaltatione & terminis erit. Si aute
+
+106 DE MORBIS ET DIEBVS CRITIC.
+frigidam & humidam ventriculi intemperiem cor-
+rigere velis Venus fortunanda eſt & corroboranda,
+vt ſi in octo primis Tauri gradibus, vel in duodecim
+primis Piſciu ponatur, in ſua domo vel exaltatione
+& terminis erit : vel ſi in Libra ponatur in ſua do-
+mo etiam erit. Patet ergo quòd in humorum pur-
+gatione & morborum curatione, contraria in plane
+tis & ſignis ratio ſeruatur. Nam in alicuius humoris
+purgatione fortitudo planetæ ſimbolum habentis
+cum humore purgando vitatur: ſed ſignum fimbo-
+lum cum eo habens eligitur. In euacuatione bilis,
+ſignum calidum & ficcum ac partem reſpiciens
+eligitur:tempúſq; quo Luna ipſo ſit expectatur, vel
+aſcédere cogitur.Signa verò frigida & humida pro-
+phlegmatis vacuatione coſerunt. Frigida verò &fic-
+ca in melancholico humore purgando: calida de-
+nique & humida in ſanguine extrahendo eligun-
+tur. Illa autem quæ ſint in precedentibus fatis mani-
+feſtum fuit.
+De vena ſectione.
+CAP. XIIII.
+EN Æ ſectio eſt viuerſalis euacuatio
+plenitudinem euacuans. Plura igitur in
+ſanguinis miſsione ſiue venę ſectione
+animaduertenda funt. ſed potiſsimum
+vires corporis, & aëris coſtitutio, & aſtrorum motus,
+de quibus motibus in preſentia ſermo à nobis habe
+tur. Quòd autem ad corporis conſtitutionem & vi-
+res attinet. Pueris ante decimumquartum annum,
+ſanguinem educi haud par eſt: quemadmodum ſe-
+nibus poſt
+
+AVTHO. CLAV. DARIOTO MEDI.
+107
+nibus poft ſeptuageſimum, niſi vires valeant. Qui-
+dem enim funt qui anno ſeptuageſimo vel etiam
+octuageſimo eam admittant, quod aliqui ſexſageſi-
+mo vel quinquageſimo anno ob virum imbecillita-
+tem non faciunt. Macilentis item ac tabidis, vena
+non eſt ſecanda, vt neq; pinguibus:his enim ob pin-
+guedinis copiam à ſectione venę vaſa in ſeſe conci-
+dunt, illis parum admodum eſt ſanguinis qui ad nu
+tritionem omninò requiritur. Morbi tamen in qui-
+bus conueniat aut non animaduertédi funt. Morbi
+enim magni (Galeno libr. quarto methodi teſte) ve-
+nę ſectionem cupiunt, modo vires & ætas permittat.
+In omnibus etiam morbis, qui ortus ſui cauſam ex
+ſanguine habent, vt funt continens febris & omnis
+generis phlegmones, miſsio ſanguinis proficit. Aër
+etiam inſpiciendus eſt, calidúſne aut ſiccus ſit, aut
+frigidus,an verò temperatus. Quando enim aër vel
+ob eius conſtitutionem, vel anni tempus, vel regio-
+nem, nimis calidusvel frigidus fuerit, mittédus haud
+eſt ſanguis:quia calidum nimiŭ diſsſoluit, frigidum
+autem nimium refrigerat. Itaque aër optimè tempe
+ratus fit, & in omnium qualitatum medio conſtitu-
+tus cùm ſanguis mittitur. Aër demùm non ſit nebu-
+lofus, ſed ſerenus. Nec tunc temporis ventus auſtri-
+nus perflare debet, ſed aquilonius aut zephirus fauo-
+nius vtpote qui ab oriente initium ſumens tempera-
+tus ſit. Sed hec à medicis ſatis ſupérq; docentur:qua-
+re ad propofitum adeamus. Quòd itaque ad aſtro..
+rum motus attinet, motus Lunæ &ipſius ad alios pla
+netas aſpectus precipuè attédendi funt. Luua enim
+in quolibet planetarum aſpectu exiſtente, ſanguinis
+P
+
+108
+DE MORBIS ET DIEBVS CRITIC.
+detractio non bona eſt. Primò igitur quòd ad Lunæ
+motum attinet, ſciendum eſt tempus quod à Solis&
+Lunæ coniunctione, id eſt à nouilunio vſque ad pri-
+mam Lunæ quadraturam aptum eſſe iuuenibus pro
+ſanguinis miſsione. A' prima autem quadratura ſi-
+ue quarta vſque ad Solis & Lunę oppoſitionem fiue
+pleniluniű, ſanguinis miſsio iuuenibus ac virilis co-
+uenit. Poſt oppoſitionem fiue plenilunium ad ſecun
+dam Lunæ quadratură, ſanguis ætate florentibus ac
+ſenibus mittédus eſt. A' ſecunda deniq; Lunæ qua-
+draturavſq; ad nouiluniű, venę ſectio ſenibus coue-
+nit. In omnibus tamen cóplexionibusvenę ſectio mi
+nimè cópetit, Luna in omnibus ſignis exiſtente. Sed
+pituitofis,cùm erit in Ariete & Sagittario conuenit:
+cephalica tamen in Ariete excepta:in Sagittario au-
+tem coxarum vena. Melancholicis auté cum Aqua-
+rium & primam Librę medietaté Luna tenebit, ſan-
+guinis miſsio non prohibetur. Aquarius tamen ti-
+bias, Libra nates excipiet. Cùm demùm Cancrú, vel
+piſces Luna peragrabit, ſanguinis vacuatio biliofis
+conferet. Cancer tamen pulmonum venam, Piſces
+pedú incidere prohibet. Iuxta illud Ptholemei apho
+riſmo vigefimo. Tangere partem ferro Luna exiſtente
+in ſigno partem hanc reſpiciente periculosum eſt. Alia au-
+tem ſigna nempè Leo, Gemini,vltima Libræ medie-
+tas & Scorpius, ad ſanguinis miſsione apta non ſunt.
+Leo, ſcilicet propter calore, & quia Solis domus eſt.
+Gemini quoniam brachia reſpiciút, in quibusvt plu
+rimum vena inciditur. Vltima Libræ medietas:quia
+via eſt combuſta, & ibi etiam Luna (quę ab infortu-
+nijs libera eſſe debet) infortunatur. Scorpius deniq;
+quia via
+
+unz
+pri
+po
+AVTHO. CLAV. DARIOTO MEDI.
+109
+quia via combuſta cum vltima Librę medietate vo-
+catur: & quia Martis domus eſt, venę ſectionem ve-
+tat. Triplicitas verò terrea non conuenit, ac rarò eli-
+gitur:nifi in curationis morbi antiqui principio, vt
+iam dictum eſt in precedentibus. Lunę prętereà ad
+alios atque alios planetas diuerſi aſpectus, hanc fieri
+impediunt vel iuuent. Qui autem hanc fieri vetant,
+hîc ordine ſequuntur.
+
+Lunæ cum Sole
+
+Miſsionem fanguinis ante & poft trium dierum ſpacio
+impedit.
+Sanguinis vacuationem per medium diem ab vtraque
+parte prohibet.
+Venæ apertionem diem vnum ante & poft vetat.
+
+Lunæ aut
+
+Diem vnum ante & poſt ſanguinis mifsionem
+impedit.
+
+Infortunato
+Lunæ cum
+Infortunata
+
+Diei vnius ſpacio ab vtraque parte
+venam aperire prohibet.
+
+Venę item apertio Luna curſu vacua exiſtente
+non fiat:neque hoc tempore purgans medicamentū
+dandum eſt. Ab hora malorum Saturni, ſcilicet vel
+Martis, in fanguinis vacuatione cauédum eſt. Luna
+denique eo tempore quo aperitur vena, ſigna com-
+munia fiue media ſi fieri poſsit, no teneat: actionem
+inim impediunt, & ſanguinis fluxum ob erroré pa-
+riunt. Nunc qui- nam Lunæ ad planetas aſpectus mif
+fionem ſanguinis laudabilem faciunt dicendum eft.
+Sunt autem que ſequuntur.
+pij
+
+Ho DE MORBIS ET DIEBVS CRITIC.
+Afpectus laudabiles in ſanguinis mißione.
+
+Lunæ cum
+
+Optima eft pro ſanguinis miſsione, modo ta.
+men Venus combuſta non fit.
+
+Lunæ vel cum
+
+Bonus eft in fanguinis vacuatione, cùm
+autem & optimus.
+
+Lunæ quadratus cum
+
+In ſanguine mit
+conuenit:
+bona eft.
+Oppofitio cum eifdem
+
+Lunæ cum
+
+Mediocres in phlebotomia funt.
+
+Illi igitur afpectus diligenter animaduertendi
+ſunt, ſi miſsionem ſanguinis profperam ac ſalubrem
+fore ſperamus. Denique cauendum eft in ſanguine
+mittendo, ne octauę domus ſiue mortis domino Lu
+na applicet.
+Debalneo & cucurbitulis.
+CAP. XV.
+
+VONIAM (vt iam ſepiſsimè dictum
+eſt) Luna ſecundum loci qualitatem in
+quo eſt, in hęc inferiora influit. Ideò qa
+ſigna terrea frigida ſunt & ficca, ac illo-
+ru eſt coſtringere: Luna in illis, hoc eſt in Tauro, Vir-
+gine & Capricorno exiſtente, tempus ad balneű ido
+neum non eſt. Aptum aut erit balneo diffoluēte: vti
+Luna in Ariete, Leone & Sagittario exiſtente:que ſi-
+gna calida ſunt & ficca, ac calidi fit diffoluere. Cùm
+verò humectare deſideratur, in Gemellis vel Libra
+quę ſigna funt aërea Luna fit, non autemin Aqua-
+rio.quoniam eſt Saturni domus. Quando tamen in
+brachijs,
+
+111
+AVTHO. CLAV. DARIOTO MEDI.
+brachijs, humeris vel manibus apponendę ſunt cu-
+curbitulę, Gemini vitandi ſunt, qui alio tempore vt
+etiam Aquarius conueniunt. Signa demùm frigida
+& humida, vt funt Cancer, Scorpius & Piſces eligun
+tur : cùm refrigeratio & humectatio deſiderantur.
+Cùm etiam diffoluere cupimus, conueniunt: humi-
+dum enim humores ad diſſolutionem præparat, qui
+poſthac balneo diſſoluuntur. Balneum adhuc Lu-
+næ ad maleuolos planetas aſpectus, impediunt : vt
+Lunæ & vel aut ad Saturnum aut Martem.
+Lunę prętereà aſpectus aut applicationes cum domi
+no octauę domus & planetis cobuſtis balneum im-
+pediunt. Lunæ autem ad beneuolos planetas afpe-
+êtus & applicationes, vt eius coniunctio aut ſextilis
+aut trinus aſpectus aut eorundem aſpectuum appli-
+cationes ad Iouem vel Venerem, aut trinus vel ſexti
+lis ad Solem: vel etiam quadratus & oppoſitio Lunæ
+ad Iouem & Venerem Balneum preſtantius ac tem-
+pus ad balneum conuenientiſsimum reddunt. Iam
+verò de cucurbitulis ſermone facturis dicamus eas
+non debere membro alicui apponi: Luna exiſtente
+in ſigno cui pars illa ſiue membrum ſubiacet. Iuxta
+illud Ptholemei iam dictum aphoriſmovigefimo:vt
+plurimum enim cum facrificatione apponútur. Lu-
+nę pariter ad malos aſpectus cucurbitularum appoſi
+tionem prohibent, vt Lunæ coniunctio, quadratus
+aut oppoſitio cum Marte vel Saturno, aut eorúdem
+aſpectuum applicationes. Luna item per alia atque
+alia ſigna diſcurrente complexionibus quibufdam
+conueniunt. Veluti pituitofis Luna in Ariete & Sa-
+gittario exiſtente, cóuenientiſsimè dentur. Excepto
+
+112
+DE MORBIS ET DIEBVS CRITIC.
+tamen capite in Ariete, exceptiſq; coxis in Sagitta
+rio. Bilioſis autem Luna per Cancrum, Scorpionem
+& Piſces diſcurrente, commodè apponútur. Cancer
+verò pectus excipit, Scorpius verenda & femora, Pi-
+ſces deniq; pedes prohibent. Melancholicis demùm
+cùm in Aquariovel Libra Luna fuerit affiguntur:na
+tes tamé in Libra,tibię in Aquario prohibetur. Hęc-
+que omnia optima habentur, quando ad beneuolos
+planetas aſpectus aut applicationes Luna habuerit.
+Veluti Lunæ coniunctio, ſextilis aut trinus aſpectus
+vel eorundem aſpectum applicationes ad Iouemvel
+Venerem, aut etiam quadratus & oppoſitio eorun-
+dem, idonea cucurbitularum appoſitioné pręſtant.
+De vomitu prouocando, anematis iniectione
+& topicorum appoſitione.
+CAP. XVI.
+
+VM QVIS vomitum cupit prouo-
+care, Lunam in ruminantibus ſignis po-
+nat, quę ſua natura hunc prouocant. Ea
+autem ſunt Aries, Taurus & Capricor-
+nus. Bonum eſt etiam, vt applicatione aut aſpectum
+Luna ad planetă retrogradum, vel ſupra terram exi-
+ſtentem, habeat. Hij enim medicamétum ſumptum
+vna cum humoribus ſuapte natura ſurſum ducunt.
+Cauédum tamen eſt, ne domino ſextæ domus (quæ
+domus infirmitatis eſt) vel octauæ domus domino,
+Luna applicet, neque eos aſpiciat. Quæ in vomitu
+prouocando conuenire dicta ſunt:eadem cum ſter-
+nutamentum ciëre volumus, aut gargariſmata im-
+perare, conueniunt.
+In ænema-
+
+113
+AVTHO. CLAV. DARIOTO MEDI.
+In ænematis autem iniectione Scorpioné vel Li-
+bram Luna teneat,ac planetæ ſub terra exiſtēti ap-
+plicet. Ad Iouem prętereà vel Venerem ſextilem aut
+trinum, vel etiam quadratum aut oppoſitionem Lu
+na habeat, aut eiſdem coniuncta ſit. Sed cauendum
+eſt ne aſcendentis dominus domino ſextę iungatur,
+ne ei aliquo aſpectu applicet. A'malorú aſpectu Lu
+na & dominus aſcendentis ſummoperè arcédi funt.
+Topica verò remedia parti apponi debent. Luna
+in ſigno huic parti preſidenti exiſtente. Veluti ſi ca-
+piti topica apponantur, Luna Arietem teneat. ſi au-
+tem brachijs, Geminos poſsideat:ac ſic in alijs. Eo ta
+men tempore, neque ignis, neque ferrum apponan-
+tur, iuxta prędicta. Si autem remedia carnem gene-
+rantia adhibeantur:aucta lumine & numero, aut in
+ſui incremento Luna ſit. Cùm demùm carnem mi-
+nuentia remedia adhibentur, contraria ratio ſerua-
+tur: eo enim tempore quo Luna lumine & numero
+diminuta eſt, debent apponi. Refrigerentia deniq;
+calfacientia & alias qualitates inducentia medica-
+menta, Luna his qualitatibus cóuenientia ſigna di-
+ſcurrente, apponi debent.
+De electione in profligandis morbis oculorum,
+aurium, & febribus curandis.
+CAP. XVII.
+
+VIA VER O non ſolùm in totius
+corporis, ſed etiam in digniorum par-
+tium ſalute recuperanda medici labor
+verſari debet. Ea de cauſa non ab re du
+xì hîc de oculis & auribus ſanandis nonnulla ſubij-
+
+114
+DE MORBIS ET DIEBVS CRITIC.
+cere:quia eorum cura nobis maior effe debet, quo-
+rum vfus magis eft neceffarius & vtilis. Senfus enim
+vifus, vt inquit Ariftoteles primo capite primi me-
+taphiſfices, fcientię in nobis cauſa eſt, qui rerum diffe
+rentias & difcrimina dijudicat. Auditus autem difci
+plinę,ita vt in animalia co fenfu orbata difciplina
+nonquam cadat Non me latet cerebrum, cor & he-
+par à Galeno & Ariftotele partes principaliores vo-
+cari, à quibus non diffentio.fed quoniam partes illæ
+toti animæ, non fecus ac ventriculus & hepar corpo-
+ri inferuiunt, eas digniores vocare placuit. His etiam
+de febribus curádis methodű anneximus:quia mor-
+bus illæ per totas corporis partes fefe infinuas totum
+hominem vehementer agitat, à quo exiftimaui me
+gratiam initurum, ſi huius tam familiaris morbi cu-
+randi nonnulla preſcriberem. Rem igitur fæliciter
+aggredior. Oculorum ac aurium morbi varij funt,
+variáque fimptomata & diuerfe cauſę. Oculorum
+népè ſtrabismus, paraliſis, atrophia, ecpieſmos nicta-
+lops, ophthalmia, pterigium, phlicteme, ægilops, &
+alij qui funt vel totiusvel partis. Aurium autem funt
+otalgia, fırıſmus, furditas, & alij qui à Galeno libro
+quarto de differentijs fimptomatum,&libro quarto
+de locis affectis annumerantur. Illorum auté caufæ
+varię funt. Sunt enimaut propinquę aut remotę Pro
+pinquę funt caliditas, frigiditas, humiditas & ficci-
+tas. Remotę verò funt vel internę, vel externę: inter-
+nevt fanguis, vel pituita, vel bilis flaua,aut bilis atra,
+aut funu eleuati a partibus inferioribus ad cerebrú,
+aut ſpiritus. Externe ſunt aut æſtas, hiems, ver, au-
+tumnu, ira, timor, vel mæſticia, fomnus vel vigilia,
+exercitatio
+
+AVTHO. CLAV. DARIOTO MEDI.
+115
+exercitatio immoderata, otium &labor. Quo pacto
+auté caufe cognofci poſsint anteà docuimus. Cura-
+tio fecundum caufarum diuerfitatem variatur.Cau
+ſe verò à planetis quibufdam illis qualitatibus con-
+uenientibus reguntur, vt fanguis à Ioue: bilis verò
+cum caliditate à Marte gubernatur:fic etia alię cau-
+ſæ à planetis alijs reguntur. Illud tamen non eft pre-
+tereudum,fpiritus & vapores à Mercurio regi & gu-
+bernari. Ergo quando ipforum morborum curam
+aliquis aggreſſurus eft, conuenientem cęli influen-
+tiam eligat. Luna igitur lumine & numero aucta, &
+ab infortunijs libera in Ariete ſita fit. Cauendum ta
+men eſt ne aſcendat:in aſcendente enim, vt dictum
+eft, infortunio afficitur. Dominus autem afcenden-
+tis:quia afcedens caput reſpicit, benè fortunatus fit,
+ac liber à malis:nec in aſcendente mali fint. Cauen-
+dum etiam eſt ne Luna precipuè in ſui incremento
+cum Marte quadrato vel oppoſitione aut etiam cor-
+pore iuncta fit, & in fui decreméto fupradictis aſpe-
+ctibus cum Saturno: Mars enim caliditatem auget:
+Saturnus verò frigiditatem. Mars prętereà oculis in
+omnibus noxius eft. Si tamen Luna in ſui decremen
+to trinum aut ſextilem ad Marté, aut eofdem in fui
+incremento ad Saturnum habuerit:curatio ob id nó
+remorabitur. Hora etiã Martis in curationis princi-
+pio fugienda eft, & cauendum ne afcendentem te-
+neat. Cura demùm (ſi fieri poſsit) incipi debet Luna
+lumine & numero creſcente. His ita confideratis, fi
+morbus humorem peccantem vel in toto corpore,
+vel in parte aut capite, cauſam habeat. Luna exiſten
+te in Ariete, vel in Piſcibus aſcendente Ariete, & pla
+q
+
+116
+DE MORBIS ET DIEBVS CRITIC.
+neta humorem peccátem refpiciens debilis exiſten-
+te purgabitur:modò tamen planeta, qui huic humo
+ri aduerſatur, fortis fit. Corpore purgato topica in
+debita conſtellatione ſupradicta adhibeatur. Luna
+tamen Arietem, aut mobile ſignum, vel commune
+teneat, quando ignis aut ferrum oculo apponendus
+eſt. Sed fi Aries afcendat, preſtantior operatio fiet.
+Curato morbo Luna in eodem figno exiſtente ac à
+malıs libera, caput & oculus corroborentur.
+Quod autem ad morborum aurium profligatio-
+nem attinet,dicédumeft, quòd in cęli influentię e-
+lectione nihil ab oculorum curatióe differt, quia to-
+tum caput ac eius partes Arietis domino fummittű-
+tur. In hoc tamen differunt, quòd quia aures, partes
+oculis ficciores, duriores & robuftiores funt, medica
+menta etiam valentiora optent. Quare cùm de mor
+borum illarum partium curatione fatis dictum fit:
+ad febrium curationem ſtilum cõuertamus. Docen-
+do quid fit febris, ac quot funt febrium differentiæ:
+idque ex Galeno ac bonis authoribus.
+Febris itaque eſt calor preter naturam, qui à cor-
+de initium fumens, per arterias in omne corpus dif-
+funditur, actionéſque eiufdem ledit : quam etiá alij
+fic finiunt. Febris eft calor pręter naturam è corde
+in omne corpus diffufus. Differétia autem febrium,
+etſi vel ab effentia, vel ab accidentibus (vt patet ex
+Galeni libris de febrium differentijs) ſumi pofsit. Ea
+tamen quæ à materia in (quo calor accenditur) peti
+tur, vulgaris eft & communis.Itaque quum tria fint
+in corpore (vt Hippocrati libro fexto epidemiorum
+plac) Continentia nempè, contenta & impetum
+facientia
+
+AVTHO. CLAV. DARIOTO MEDI.
+117
+facientia:hoc eft partes ſolidę, humores & fpiritus.
+Vel enim calor pręter naturam in ſpiritibus accédi-
+tur:& tunc fit ἐφύμερα, quę diaria interpretatur: eáq;
+duplex eſt, vn vna ſcilicet fimplex, cuius acceſsio vno
+die, id eft vigintiquatuor horarum ſpacio termina-
+tur,& ea propriè ἐφήμερα, vocatur. Altera auté, cuius
+accefsio ad tertium vfq; diem vel vltra ad quartum
+nempè, vel quintum vel ſextum aut etiam ad ſepti-
+mű protéditur. Aut in humoribus putrefcentibus ca
+lor immodicus pręter natură accenditur, & fit fecun
+dú febriú genus. Porrò humores biffaria putrefcút.
+Vel enim putrefcit intra vaſa aut extra: intra vaſa
+rurfus dupliciter:népèvel oés ęqualiter in magnis po
+utiſsimű vaſis putrefcunt, & tunc fit finochus fiue co-
+tinens putris:vel vnus duntaxat humor, & fit συνεχής
+Græcis, Latinis autem continua dicitur. Eftq; ea tri-
+plex, quoniável bilis flaua putrefcit, & fit tertiana có
+tinua, fic dicta quòd non fecus ac tertiana intermit-
+tens, tertio quoque die acceſsioné habeat: vel pituita
+caloré pręter natură acquirit, & putrefcit, ac fit quo-
+tidiana cótinua: vel melacholia, & fit cótinua quar-
+tana:eo quòd quamuis continua fit: tamenvt tertia-
+na tertio quoq; die, & quotidiana fingulis diebus ex-
+acerbatrione habent ita etiá quartana quarto quo-
+que die acceſsionem habet. Iam verò ad aliud genus
+de febrium putridarum redeamus. Humores extra vaſa
+putrefcunt ac febres intermittentes fiunt, vt fibilis
+flaua putrefcat, fit tertiana intermittens, exquifita &
+fimplex fi fincera & pura bilis fuerit: notha verò fi-
+ue ſpuria, fi mixta cum pituita fit. Quotidiana au-
+tem fit putrefcente pituita dulci, & dicitur αμφημερ
+q ij
+
+118
+DE MORBIS ET DIEBVS CRITIC.
+dicta quòd fingulo quoq; die acceſsionem habeat.
+Si auté pituita vitrea putrefcat, fit hepiala.Si demùm
+melancholia extra vaſa putrilagınem acquirat, fit in
+termittens quartana. Tertium verò fimplicium fe-
+brium genus eft, cum in partibus ſolidis corporis ca
+lor pręter naturam accenditur: & túc fit hectica: quę
+fi ita increuerit, vt partes ſolidas achumores colli-
+quat, maraſmus appellatur, atque hęc breuiter de fe-
+brium differentijs dicta ſufficiant. Quęlibet autem
+ipfarum febrium ſpecies à quodam planetarű regi-
+tur, cuius fortitudo in ipfius febris curatione vitan-
+da eſt, ne curationem retardat. Qui autem fint illi
+planetę ſequens tabula, omnes febrium differentias
+complectans docet.
+
+AYTHO. CLAV. DARIOTO MEDI.
+119
+Mercurio
+
+Ephimera simpliciter &
+citra adiectionem.
+        Diaria plurium dierum,
+        quæ alio nomine sino-
+        chos no putrida dicitur.
+        Atque illæ diri-
+        guntur à
+        { Ioue.
+
+Spiritibus, & sit
+ἐφήμερα,
+id est,dia-
+ria.estque
+duplex:
+        Omnes æquali
+        ter, & sit sino-
+        chus siue conti-
+        nens putrida,
+        { Quæ Saturni, Martis &
+        Veneris imperio regitur.
+
+        Intra
+        vasa, id
+        que du
+        pliciter,
+        vel
+                Bilis flaua
+                sit tertiana
+                continuæ,ar-
+                dés noiata
+                Marte
+                Vnus tantum, &
+                sit συνεχὸς gre-
+                cis, cõtinua lati-
+                nis dictus: si e-
+                nim putrescit
+                Pituita
+                quotidia-
+                na cõtinua
+                { Quæ
+                regũ-
+                tur à
+                Vene-
+                re &
+                Luna
+                Malacho-
+                lia quarta-
+                na cõtinua
+                Satur-
+                no.
+
+Febrium
+simplici-
+uni tria
+primáq; Humoribus:
+sunt ge- & sit
+nera,vel putrida.
+enim ca Putrescit
+lor præ- autem bis
+ter natu- sariam vel
+ram ac
+cenditur
+                Pura sit tertia-
+                na exquista,
+                Marte
+        Flaua bilis
+                Pituitę mixta
+                sit s̃puria.
+                { Quæ
+                regun-
+                tur à
+                Marte
+                & Ve-
+                nere.
+
+        Extra
+        vasa, &
+        sit inter
+        mittes.
+        si enim
+        putre-
+        scit,
+                Dulcis, & sit
+                quotidianain-
+                termittés.
+                { Vtraq; Vene-
+                ris & Lunæ
+                imperio pa-
+                ret.
+        Pituita vel
+                Vitrea, & sit
+                hepiala:
+                Melancholia, & sit quar-
+                tana intermittens,
+                { Quæ Saturno sub-
+                { iacet.
+
+        Hectica
+Solidis par-
+tibus &sit,
+vel
+        Maraſmus.
+
+In curatione igitur ipsarū febrium, animaduer-
+tendum est diligenter, ne planeta morbum reges ac
+moderans, fortis in cœlo sit:sed potiùs debilis, & pla-
+neta morbo repugnans & aduersarius fortis ac sor-
+tunatus sit. Veluti in principio curationis quartaræ
+
+120
+DEMORBIS ET DIEBVS CRITIC.
+sebris. Lunæ ad Saturnum applicationes, & Saturni
+robur timendę sunt. Saturnus item neque ascenden
+tis dominus sit, nec in eo vel cœli medio collocatus.
+Verumtamen Iupiter qui illi (vt anteà dictum est)
+aduersatur, roborandus est ac fortunandus in ascen
+dente vel cæli medio, hoc est in decima domo. & si
+ascendentem regere posset, præstantior operatio fie-
+ret. Quod si id fieri, non potest, ascendentem ac eius
+dominum respiciat. Eum etiam trino aut sextili aspe
+ctu Luna aspiciat, aut his aspectibus ei applicet. A'
+malis denique & infortunijs Luna sit libera, & in sui
+incremento lumine & numero aucta. Hac igitur via
+in reliquarum febrium curatione pergere oportet.
+Vt in sebris tertianę curatione, Venus & Luna robo
+randę sunt, ac fortunandæ. quo magis autem Mars
+erit debilior, eo magis prosperior curatio erit. In
+quotidianę verò curatione ordine cõtrario est pro-
+cedendum. Luna tamen semper fortunata esse de-
+bet. Hęc si quis diligenter animaduerterit, non nisi
+prosperè ac fœliciter (sauente Deo optimo &maxi-
+mo) curatio succedet.
+
+Fragmenti de morbis & diebus criticis ex
+Aſtrorum motu cognoscendis Glau
+dio Darioto Pomarsen-
+si authore,
+FINIS.
+
+AD
+ASTR
+JUDT
+

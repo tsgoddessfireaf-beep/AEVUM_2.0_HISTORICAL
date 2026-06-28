@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibliotheca Astrologica Horaria — Aeonic Arts</title>
+<meta name="description" content="A curated digital archive of legitimate, public domain historical manuscripts concerning the art of Horary Astrology. Original native-language editions from the medieval and renaissance periods.">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+/* ── Bibliotheca-specific overrides ───────────────────────────────── */
+.bib-charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-bottom:48px}
+.bib-chart-card{background:var(--teal-panel);border:1px solid rgba(174,182,184,.16);border-radius:8px;padding:26px}
+.bib-chart-card h3{font-family:'Orbitron',sans-serif;color:var(--copper-bright);font-size:.95rem;letter-spacing:.06em;margin-bottom:6px}
+.bib-chart-card p{color:var(--silver);font-size:.82rem;margin-bottom:14px}
+.bib-chart-wrap{position:relative;width:100%;max-width:400px;margin:0 auto;height:220px}
+
+.bib-filters{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.bib-filters input,.bib-filters select{
+  font-family:'Lato',system-ui,sans-serif;font-size:.9rem;
+  background:var(--teal-panel);color:var(--bone);border:1px solid rgba(174,182,184,.22);
+  border-radius:6px;padding:10px 16px;outline:none;
+}
+.bib-filters input::placeholder{color:var(--silver);opacity:.7}
+.bib-filters input:focus,.bib-filters select:focus{border-color:var(--copper)}
+.bib-filters select option{background:var(--teal-deep);color:var(--bone)}
+
+.bib-table-wrap{overflow-x:auto;border-radius:8px;border:1px solid rgba(174,182,184,.16)}
+.bib-table{width:100%;border-collapse:collapse;text-align:left}
+.bib-table thead{background:var(--teal-deep)}
+.bib-table th{font-family:'Orbitron',sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--silver);padding:14px 18px;border-bottom:1px solid rgba(174,182,184,.18)}
+.bib-table td{padding:14px 18px;font-size:.92rem;color:var(--bone);border-bottom:1px solid rgba(174,182,184,.08)}
+.bib-table tr:hover{background:rgba(190,107,61,.06)}
+
+.bib-badge{display:inline-block;font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:20px}
+.bib-badge-lang{background:rgba(174,182,184,.15);color:var(--silver)}
+.bib-badge-pending{background:rgba(190,107,61,.2);color:var(--copper-bright)}
+.bib-badge-cleaned{background:rgba(94,173,200,.2);color:#5eadc8}
+.bib-badge-indexed{background:rgba(220,180,90,.2);color:#dcb45a}
+.bib-badge-included{background:rgba(100,200,130,.2);color:#64c882}
+
+.bib-link{color:var(--copper-bright);font-family:'Orbitron',sans-serif;font-size:.78rem;letter-spacing:.04em;font-weight:700}
+.bib-link:hover{color:var(--bone)}
+
+.bib-count{text-align:right;color:var(--silver);font-size:.85rem;margin-top:12px}
+.bib-count strong{color:var(--copper-bright)}
+
+.bib-pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:48px}
+.bib-pillar{background:var(--teal-panel);border:1px solid rgba(174,182,184,.16);border-radius:8px;padding:28px 24px}
+.bib-pillar-num{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--copper);color:var(--teal-deep);font-family:'Orbitron',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:14px}
+.bib-pillar h3{font-family:'Orbitron',sans-serif;color:var(--copper-bright);font-size:.9rem;margin-bottom:8px}
+.bib-pillar p{color:var(--silver);font-size:.88rem}
+
+@media(max-width:560px){
+  .bib-filters{flex-direction:column}
+  .bib-filters input,.bib-filters select{width:100%}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <a class="brand" href="index.html">AEONIC <span>ARTS</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="https://app.aeonicarts.com">Ask a Question</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Public Domain Archive</p>
+      <h1>Bibliotheca Astrologica Horaria</h1>
+      <p class="lead">A curated digital repository of legitimate, public domain historical manuscripts and scans concerning the art of Horary Astrology. Original native-language editions from the medieval and renaissance periods.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+
+      <!-- Analytics Charts -->
+      <div class="bib-charts">
+        <div class="bib-chart-card">
+          <h3>Linguistic Distribution</h3>
+          <p>Original languages of the identified manuscripts.</p>
+          <div class="bib-chart-wrap">
+            <canvas id="languageChart"></canvas>
+          </div>
+        </div>
+        <div class="bib-chart-card">
+          <h3>Indexing Progress</h3>
+          <p>Curation status from raw scans to indexed content.</p>
+          <div class="bib-chart-wrap">
+            <canvas id="statusChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="section-head">
+        <p class="eyebrow">Archive Registry</p>
+        <h2>Filter and search the collection</h2>
+      </div>
+
+      <div class="bib-filters">
+        <input type="text" id="searchInput" placeholder="Search by Author or Title…">
+        <select id="langFilter">
+          <option value="All">All Languages</option>
+          <option value="Latin">Latin</option>
+          <option value="English">English</option>
+          <option value="German">German</option>
+          <option value="French">French</option>
+        </select>
+      </div>
+
+      <!-- Table -->
+      <div class="bib-table-wrap">
+        <table class="bib-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Source Edition</th>
+              <th>Language</th>
+              <th>Difficulty</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="textTableBody"></tbody>
+        </table>
+      </div>
+      <div class="bib-count">Total Texts Identified: <strong id="textCount">0</strong></div>
+
+      <!-- Pillars -->
+      <div class="bib-pillars">
+        <div class="bib-pillar">
+          <div class="bib-pillar-num">1</div>
+          <h3>Authenticity First</h3>
+          <p>Every entry is verified as public domain or open access. We prioritize original scans from academic repositories like Gallica, BSB, and the Internet Archive.</p>
+        </div>
+        <div class="bib-pillar">
+          <div class="bib-pillar-num">2</div>
+          <h3>Linguistic Context</h3>
+          <p>While horary flourished in 17th-century England, its roots are Latin, Arabic, and Greek. This archive bridges the gap between regional developments.</p>
+        </div>
+        <div class="bib-pillar">
+          <div class="bib-pillar-num">3</div>
+          <h3>Curation Status</h3>
+          <p>The "Status" field tracks our efforts to clean scans (removing noise) and index them for digital searchability.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Have a question for the tradition?</h2>
+    <p>Aevum applies the methods of Lilly, Bonatti, and Dorotheus to your question — cast for the exact moment you asked it.</p>
+    <a class="btn" href="https://app.aeonicarts.com">Ask a Horary Question</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a class="brand" href="index.html">AEONIC <span>ARTS</span></a>
+    <ul class="social">
+      <li><a href="https://aeonicarts.substack.com">Substack</a></li>
+      <li><a href="https://pinterest.com/doloresaeonicarts">Pinterest</a></li>
+      <li><a href="https://instagram.com/doloresaeonicarts">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@doloresaeonicarts">TikTok</a></li>
+      <li><a href="https://x.com/aeonic_arts">X</a></li>
+    </ul>
+    <p>Bookings &amp; questions: <a class="email" href="mailto:readings@aeonicarts.com">readings@aeonicarts.com</a></p>
+    <small>&copy; 2026 Aeonic Arts. Traditional horary astrology.<br>A restoration of historical horary method, for educational and entertainment purposes — not a prediction of future events.</small>
+  </div>
+</footer>
+
+<script>
+// Archive Data
+const archiveData = [
+    { id: 1, title: "Christian Astrology", author: "William Lilly", edition: "1st Ed, 1647", url: "https://archive.org/details/ChristianAstrologyByWilliamLilly", lang: "English", difficulty: "Easy", status: "Included" },
+    { id: 2, title: "Ad Astrorum Judicia Facilis Introductio", author: "Claude Dariot", edition: "Lyon, 1557", url: "https://gallica.bnf.fr/ark:/12148/bpt6k79124v", lang: "Latin", difficulty: "Medium", status: "Cleaned" },
+    { id: 3, title: "Libellus isagogicus (Introductorium)", author: "Alchabitius", edition: "Venice, 1485", url: "https://opacplus.bsb-muenchen.de/title/bsb10198576", lang: "Latin", difficulty: "Hard", status: "Indexed" },
+    { id: 4, title: "Liber Astronomiae", author: "Guido Bonatti", edition: "Basel, 1550", url: "https://archive.org/details/guido-bonatti-liber-astronomiae", lang: "Latin", difficulty: "Hard", status: "Pending" },
+    { id: 5, title: "Tabulae Primi Mobilis", author: "Andreas Argolus", edition: "Rome, 1644", url: "https://books.google.com/books?id=uIxeAAAAcAAJ", lang: "Latin", difficulty: "Medium", status: "Included" },
+    { id: 6, title: "Enarratio elementorum astrologiae", author: "Valentin Naibod", edition: "Cologne, 1560", url: "https://books.google.com/books?id=5W88AAAAcAAJ", lang: "Latin", difficulty: "Hard", status: "Pending" },
+    { id: 7, title: "Opus Astrologicum", author: "Nicholas Culpeper", edition: "London, 1654", url: "https://archive.org/details/opusastrologicum00culp", lang: "English", difficulty: "Medium", status: "Included" },
+    { id: 8, title: "L'usage de l'astrolabe", author: "Claude de Boissière", edition: "Paris, 1552", url: "https://gallica.bnf.fr/ark:/12148/bpt6k15112108", lang: "French", difficulty: "Medium", status: "Cleaned" },
+    { id: 9, title: "The Beginning of Wisdom", author: "Abraham Ibn Ezra", edition: "Latin MS Scan", url: "https://archive.org/details/beginningofwisdo0000ibne", lang: "Latin", difficulty: "Hard", status: "Indexed" }
+];
+
+let charts = {};
+
+function initCharts() {
+    const langCtx = document.getElementById('languageChart').getContext('2d');
+    const statusCtx = document.getElementById('statusChart').getContext('2d');
+
+    const langCounts = archiveData.reduce((acc, item) => {
+        acc[item.lang] = (acc[item.lang] || 0) + 1;
+        return acc;
+    }, {});
+
+    // Brand-aligned palette: copper, silver, bone, teal variants
+    charts.lang = new Chart(langCtx, {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(langCounts),
+            datasets: [{
+                data: Object.values(langCounts),
+                backgroundColor: ['#BE6B3D', '#AEB6B8', '#EDE7D3', '#5eadc8', '#dcb45a'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { boxWidth: 12, padding: 12, color: '#AEB6B8', font: { family: 'Lato', size: 11 } }
+                }
+            }
+        }
+    });
+
+    const statusCounts = archiveData.reduce((acc, item) => {
+        acc[item.status] = (acc[item.status] || 0) + 1;
+        return acc;
+    }, {});
+    const statusOrder = ['Pending', 'Cleaned', 'Indexed', 'Included'];
+
+    charts.status = new Chart(statusCtx, {
+        type: 'bar',
+        data: {
+            labels: statusOrder,
+            datasets: [{
+                label: 'Manuscripts',
+                data: statusOrder.map(s => statusCounts[s] || 0),
+                backgroundColor: '#BE6B3D',
+                borderRadius: 4
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true, grid: { color: 'rgba(174,182,184,.1)' }, ticks: { color: '#AEB6B8' } },
+                x: { grid: { display: false }, ticks: { color: '#AEB6B8', font: { family: 'Lato', size: 11 } } }
+            },
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+}
+
+function renderTable(data) {
+    const tbody = document.getElementById('textTableBody');
+    const countSpan = document.getElementById('textCount');
+    tbody.innerHTML = '';
+
+    data.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td style="font-weight:700">${item.title}</td>
+            <td>${item.author}</td>
+            <td style="font-size:.84rem;opacity:.7;font-style:italic">${item.edition}</td>
+            <td><span class="bib-badge bib-badge-lang">${item.lang}</span></td>
+            <td style="font-size:.84rem">${item.difficulty}</td>
+            <td><span class="bib-badge bib-badge-${item.status.toLowerCase()}">${item.status}</span></td>
+            <td><a href="${item.url}" target="_blank" class="bib-link">View Scan ↗</a></td>
+        `;
+        tbody.appendChild(tr);
+    });
+    countSpan.innerText = data.length;
+}
+
+function handleFilters() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const langVal = document.getElementById('langFilter').value;
+
+    const filtered = archiveData.filter(item => {
+        const matchesSearch = item.title.toLowerCase().includes(searchTerm) || item.author.toLowerCase().includes(searchTerm);
+        const matchesLang = langVal === 'All' || item.lang === langVal;
+        return matchesSearch && matchesLang;
+    });
+    renderTable(filtered);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initCharts();
+    renderTable(archiveData);
+    document.getElementById('searchInput').addEventListener('input', handleFilters);
+    document.getElementById('langFilter').addEventListener('change', handleFilters);
+});
+</script>
+</body>
+</html>

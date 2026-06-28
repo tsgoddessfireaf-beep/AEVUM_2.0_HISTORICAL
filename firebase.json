@@ -5,29 +5,53 @@
   "storage": {
     "rules": "storage.rules"
   },
-  "hosting": {
-    "public": "client/dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "cleanUrls": true,
-    "trailingSlash": false,
-    "rewrites": [
-      {
-        "source": "/api/**",
-        "function": "api",
-        "region": "us-central1"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  "functions": {
-    "source": "functions",
-    "runtime": "nodejs22"
-  }
+  "hosting": [
+    {
+      "target": "landing",
+      "public": "site",
+      "ignore": [
+        "firebase.json",
+        "firestore.rules",
+        "firestore.indexes.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "cleanUrls": true,
+      "trailingSlash": false
+    },
+    {
+      "target": "app",
+      "public": "client/dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "rewrites": [
+        {
+          "source": "/api/**",
+          "function": "api",
+          "region": "us-central1"
+        },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs22"
+    },
+    {
+      "source": "bibliotheca_astrologica_horaria/functions",
+      "codebase": "bibliotheca_astrologica_horaria",
+      "runtime": "nodejs22"
+    }
+  ]
 }

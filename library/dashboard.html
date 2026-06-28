@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotheca Astrologica Horaria - Public Domain Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 50% 0%, #16192b 0%, #090a10 100%);
+            color: #e2e8f0;
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libre+Baskerville', serif;
+            letter-spacing: -0.02em;
+        }
+
+        .text-glow-gold {
+            text-shadow: 0 0 12px rgba(226, 184, 87, 0.4);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .glass-panel {
+            background: rgba(18, 20, 38, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 184, 87, 0.12);
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .glass-panel:hover {
+            border-color: rgba(226, 184, 87, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(226, 184, 87, 0.05);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e2b857;
+            border-radius: 10px;
+        }
+
+        /* Status Glow Badges */
+        .status-pending { 
+            background-color: rgba(239, 68, 68, 0.15); 
+            color: #fca5a5; 
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+        .status-cleaned { 
+            background-color: rgba(14, 165, 233, 0.15); 
+            color: #7dd3fc; 
+            border-color: rgba(14, 165, 233, 0.3);
+        }
+        .status-indexed { 
+            background-color: rgba(168, 85, 247, 0.15); 
+            color: #d8b4fe; 
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+        .status-included { 
+            background-color: rgba(16, 185, 129, 0.15); 
+            color: #6ee7b7; 
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #e2b857 0%, #b79147 100%);
+            color: #090a10;
+            box-shadow: 0 4px 14px 0 rgba(226, 184, 87, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-download:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px 0 rgba(226, 184, 87, 0.35);
+        }
+
+        /* Animated Progress Bar */
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; filter: drop-shadow(0 0 4px #e2b857); }
+        }
+        .progress-glow {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <header class="py-16 px-6 border-b border-stone-800/60 bg-slate-950/40 backdrop-blur-md relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(226,184,87,0.08),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 text-glow-gold">Bibliotheca Astrologica Horaria</h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light">
+                A curated digital vault of legitimate, public-domain historical manuscripts concerning Horary Astrology. 
+                Digitized, translated, and indexed using advanced AI.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-16 space-y-16">
+
+        <!-- Analytics Overview -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="glass-panel p-8 shadow-sm">
+                <h3 class="text-xl font-bold mb-2 text-white">Language Distribution</h3>
+                <p class="text-sm text-slate-400 mb-6">A breakdown of the primary languages found in the current archive registry.</p>
+                <div class="chart-container">
+                    <canvas id="languageChart"></canvas>
+                </div>
+            </div>
+            <div class="glass-panel p-8 shadow-sm">
+                <h3 class="text-xl font-bold mb-2 text-white">Curation Status</h3>
+                <p class="text-sm text-slate-400 mb-6">Tracking the processing pipeline from raw archive scans to fully indexed digital copies.</p>
+                <div class="chart-container">
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Library Registry -->
+        <section class="space-y-6">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+                <div>
+                    <h2 class="text-3xl font-bold text-white">Historical Text Registry</h2>
+                    <p class="text-slate-400">Filter through legitimate public domain scans and direct PDF downloads.</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[10px] font-bold text-amber-500/80 uppercase tracking-wider">Search</label>
+                        <input type="text" id="searchInput" placeholder="Search Title or Author..." class="px-4 py-2 rounded bg-slate-950/60 border border-stone-800/80 text-white placeholder-slate-500 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none w-full md:w-64 text-sm transition-all">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-[10px] font-bold text-amber-500/80 uppercase tracking-wider">Language</label>
+                        <select id="langFilter" class="px-4 py-2 rounded bg-slate-950/60 border border-stone-800/80 text-white outline-none text-sm focus:ring-2 focus:ring-amber-500 transition-all">
+                            <option value="All">All Languages</option>
+                            <option value="Latin">Latin</option>
+                            <option value="English">English</option>
+                            <option value="French">French</option>
+                            <option value="German">German</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel overflow-hidden border border-stone-800/60">
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-950/50 text-slate-400 uppercase text-[10px] font-bold tracking-widest border-b border-stone-800/50">
+                            <tr>
+                                <th class="px-6 py-4">Title</th>
+                                <th class="px-6 py-4">Author</th>
+                                <th class="px-6 py-4">Source Edition</th>
+                                <th class="px-6 py-4">Language</th>
+                                <th class="px-6 py-4">Difficulty</th>
+                                <th class="px-6 py-4 text-center">Status</th>
+                                <th class="px-6 py-4 text-right">Access</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registryTable" class="divide-y divide-stone-800/30 text-sm">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="flex justify-between items-center px-2">
+                <span class="text-xs text-slate-500 italic">Verify local laws regarding public domain before bulk downloading.</span>
+                <span class="text-sm font-medium text-slate-300">Displaying <span id="visibleCount">0</span> of <span id="totalCount">0</span> Records</span>
+            </div>
+        </section>
+
+        <!-- Methodological Context -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 py-12 border-t border-stone-800/40">
+            <div>
+                <h4 class="font-bold text-lg text-white mb-2 text-glow-gold">Defining "Difficulty"</h4>
+                <p class="text-slate-400 leading-relaxed font-light">
+                    The Difficulty rating evaluates the physical state of the digital scan. 
+                    <strong class="text-slate-200">Easy</strong> denotes high-resolution, modern typography or clear 17th-century English. 
+                    <strong class="text-slate-200">Hard</strong> indicates Gothic scripts, significant ink bleed, or complex Latin abbreviations requiring paleographic skills.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg text-white mb-2 text-glow-gold">Legality & Provenance</h4>
+                <p class="text-slate-400 leading-relaxed font-light">
+                    This project strictly curates links to institutions like the Bibliothèque nationale de France (Gallica), the British Library, and the Internet Archive's Open Library. No copyrighted translations are included unless explicitly released under Creative Commons.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-500 py-16 px-6 mt-16 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-white text-xl mb-1 text-glow-gold">Bibliotheca Astrologica Horaria</p>
+                <p class="text-sm text-slate-600">Historical Preservation Project &copy; 2026</p>
+            </div>
+            <div class="flex gap-6 text-xs uppercase font-bold tracking-widest text-slate-400">
+                <span class="hover:text-amber-400 cursor-pointer transition-colors">Archive Metadata</span>
+                <span class="hover:text-amber-400 cursor-pointer transition-colors">Open Access Policy</span>
+                <span class="hover:text-amber-400 cursor-pointer transition-colors">Contact Curator</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const archiveData = [
+            { 
+                title: "Anima Astrologiae (146 Considerations)", 
+                author: "Guido Bonatti", 
+                edition: "London, 1676 (Coley)", 
+                url: "https://archive.org/details/astrologersguide00lill", 
+                lang: "English", 
+                difficulty: "Medium", 
+                status: "Included" 
+            },
+            { 
+                title: "The Beginning of Wisdom", 
+                author: "Abraham Ibn Ezra", 
+                edition: "Johns Hopkins, 1939 (Original MS Scans)", 
+                url: "https://archive.org/download/beginningofwisdo0000ibne/beginningofwisdo0000ibne.pdf", 
+                lang: "Latin", 
+                difficulty: "Hard", 
+                status: "Included" 
+            },
+            { 
+                title: "L'usage de l'astrolabe", 
+                author: "Dominique Jacquinot", 
+                edition: "Paris, 1625 (ed. Moreau)", 
+                url: "https://archive.org/details/lvsagedelvnetlav00jacq", 
+                lang: "French", 
+                difficulty: "Medium", 
+                status: "Included" 
+            },
+            { 
+                title: "Christian Astrology", 
+                author: "William Lilly", 
+                edition: "1st Ed, 1647", 
+                url: "https://archive.org/details/ChristianAstrologyByWilliamLilly", 
+                lang: "English", 
+                difficulty: "Easy", 
+                status: "Included" 
+            },
+            { 
+                title: "Ad Astrorum Judicia Facilis Introductio", 
+                author: "Claude Dariot", 
+                edition: "Lyon, 1557", 
+                url: "https://gallica.bnf.fr/ark:/12148/bpt6k79124v.pdf", 
+                lang: "Latin", 
+                difficulty: "Medium", 
+                status: "Included" 
+            },
+            { 
+                title: "Libellus isagogicus", 
+                author: "Alchabitius", 
+                edition: "Venice, 1485", 
+                url: "https://opacplus.bsb-muenchen.de/title/bsb10198576", 
+                lang: "Latin", 
+                difficulty: "Hard", 
+                status: "Included" 
+            },
+            { 
+                title: "Enarratio elementorum astrologiae", 
+                author: "Valentin Naibod", 
+                edition: "Cologne, 1573", 
+                url: "https://books.google.com/books?id=5W88AAAAcAAJ", 
+                lang: "Latin", 
+                difficulty: "Hard", 
+                status: "Included" 
+            },
+            { 
+                title: "Opus Astrologicum", 
+                author: "Nicholas Culpeper", 
+                edition: "London, 1654", 
+                url: "https://archive.org/details/opusastrologicum00culp", 
+                lang: "English", 
+                difficulty: "Medium", 
+                status: "Included" 
+            }
+        ];
+
+        let charts = {};
+
+        function initCharts() {
+            const langCtx = document.getElementById('languageChart').getContext('2d');
+            const statusCtx = document.getElementById('statusChart').getContext('2d');
+
+            const langMap = archiveData.reduce((acc, item) => {
+                acc[item.lang] = (acc[item.lang] || 0) + 1;
+                return acc;
+            }, {});
+
+            charts.lang = new Chart(langCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(langMap),
+                    datasets: [{
+                        data: Object.values(langMap),
+                        backgroundColor: ['#e2b857', '#a855f7', '#0ea5e9', '#10b981'],
+                        borderWidth: 2,
+                        borderColor: '#121426',
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 11 }, padding: 20 } }
+                    }
+                }
+            });
+
+            const statuses = ['Pending', 'Cleaned', 'Indexed', 'Included'];
+            const statusCounts = statuses.map(s => archiveData.filter(d => d.status === s).length);
+
+            charts.status = new Chart(statusCtx, {
+                type: 'bar',
+                data: {
+                    labels: statuses,
+                    datasets: [{
+                        label: 'Manuscripts',
+                        data: statusCounts,
+                        backgroundColor: '#e2b857',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: { 
+                            beginAtZero: true, 
+                            grid: { color: 'rgba(255,255,255,0.05)' }, 
+                            ticks: { color: '#94a3b8', stepSize: 1 } 
+                        },
+                        y: { 
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function renderTable(data) {
+            const tbody = document.getElementById('registryTable');
+            const visibleCount = document.getElementById('visibleCount');
+            const totalCount = document.getElementById('totalCount');
+            
+            tbody.innerHTML = '';
+            data.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-900/45 border-b border-stone-800/20 transition-colors duration-200";
+                
+                const TAG_MAP = {
+                    'bonatti': 'bonatti', 'ezra': 'ibnezra', 'boissière': 'boissiere',
+                    'lilly': 'lilly', 'dariot': 'dariot', 'alchabitius': 'alchabitius',
+                    'naibod': 'naibod', 'culpeper': 'culpeper', 'jacquinot': 'jacquinot'
+                };
+                const lastWord = item.author.toLowerCase().replace(/[^a-z ]/g, '').split(' ').pop();
+                const tag = TAG_MAP[lastWord] || lastWord;
+                const progress = window[`translationProgress_${tag}`];
+                
+                let statusHtml = `
+                    <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase status-${item.status.toLowerCase()} border border-current opacity-90">
+                        ${item.status}
+                    </span>
+                `;
+                
+                if (progress && progress.status === 'PROCESSING') {
+                    statusHtml = `
+                        <div class="w-36 mx-auto text-left">
+                            <div class="flex justify-between items-center text-[10px] font-bold text-amber-400 mb-1">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="relative flex h-2 w-2">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                                    </span>
+                                    TRANSLATING
+                                </span>
+                                <span>${progress.percent.toFixed(1)}%</span>
+                            </div>
+                            <div class="w-full bg-slate-950/80 h-2 rounded-full overflow-hidden border border-stone-800/40 shadow-inner">
+                                <div class="bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 h-full rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(245,158,11,0.5)]" style="width: ${progress.percent}%"></div>
+                            </div>
+                            <div class="text-[9px] text-slate-400 mt-1 text-right font-mono">${progress.completed}/${progress.total} chunks</div>
+                        </div>
+                    `;
+                } else if (progress && progress.status === 'DONE') {
+                    statusHtml = `
+                        <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase status-included border border-current opacity-90 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
+                            Included
+                        </span>
+                    `;
+                }
+
+                tr.innerHTML = `
+                    <td class="px-6 py-4 font-bold text-slate-100">${item.title}</td>
+                    <td class="px-6 py-4 text-slate-300">${item.author}</td>
+                    <td class="px-6 py-4 text-xs text-slate-400 font-mono">${item.edition}</td>
+                    <td class="px-6 py-4"><span class="px-2 py-1 bg-slate-850 border border-stone-800/40 rounded text-[10px] font-bold text-slate-300 uppercase">${item.lang}</span></td>
+                    <td class="px-6 py-4"><span class="font-medium ${item.difficulty === 'Hard' ? 'text-red-400 text-glow-red' : 'text-slate-300'}">${item.difficulty}</span></td>
+                    <td class="px-6 py-4 text-center">
+                        ${statusHtml}
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <a href="${item.url}" target="_blank" class="px-3 py-1.5 border border-amber-500/30 text-amber-400 rounded text-xs hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-500 hover:text-slate-950 transition-all duration-300 font-bold inline-block">
+                            PDF / Scan ⎙
+                        </a>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+            visibleCount.innerText = data.length;
+            totalCount.innerText = archiveData.length;
+        }
+
+        function filterData() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const lang = document.getElementById('langFilter').value;
+
+            const filtered = archiveData.filter(item => {
+                const matchSearch = item.title.toLowerCase().includes(search) || item.author.toLowerCase().includes(search);
+                const matchLang = lang === 'All' || item.lang === lang;
+                return matchSearch && matchLang;
+            });
+            renderTable(filtered);
+        }
+
+        function pollProgress() {
+            const tags = ['dariot', 'alchabitius', 'naibod', 'ibnezra', 'jacquinot'];
+            tags.forEach(tag => {
+                const oldScript = document.getElementById(`progress-script-${tag}`);
+                if (oldScript) oldScript.remove();
+                
+                const script = document.createElement('script');
+                script.id = `progress-script-${tag}`;
+                script.src = `progress-${tag}.js?t=${Date.now()}`;
+                script.onload = () => {
+                    // Re-render table when new progress loads
+                    filterData();
+                };
+                document.body.appendChild(script);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initCharts();
+            renderTable(archiveData);
+            document.getElementById('searchInput').addEventListener('input', filterData);
+            document.getElementById('langFilter').addEventListener('change', filterData);
+            
+            // Poll progress every 3 seconds
+            pollProgress();
+            setInterval(pollProgress, 3000);
+        });
+    </script>
+</body>
+</html>

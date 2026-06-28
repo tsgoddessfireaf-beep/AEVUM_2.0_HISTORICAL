@@ -24,3 +24,7 @@ __pycache__/
 
 # Firebase deploy cache
 .firebase/
+
+# Library raw source files & temp progress
+library/shelves/*.pdf
+library/progress-*.js

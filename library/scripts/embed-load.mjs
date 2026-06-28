@@ -31,7 +31,8 @@ const vec = a => ({ mapValue: { fields: { __type__: { stringValue: '__vector__' 
 
 let n = 0;
 for (const c of cards.slice(0, max)) {
-  const e = await embed(c.translation || c.text);
+  const textToEmbed = c.translation || c.text || c.title || "[empty]";
+  const e = await embed(textToEmbed);
   const fields = {};
   for (const [k, v] of Object.entries(c)) { if (k === '_status') continue; fields[k] = fval(v); }
   fields.embedding = vec(e);
