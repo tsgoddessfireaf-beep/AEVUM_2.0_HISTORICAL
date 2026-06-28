@@ -53,7 +53,7 @@ const aiLimiter = rateLimit({
 });
 
 const { default: chatRoutes } = await import('./routes/chat.js');
-const { default: ephemerisRoutes, getCalibrationStatus } = await import('./routes/ephemeris.js');
+const { default: ephemerisRoutes, getCalibrationStatus, warmupAndCalibrate } = await import('./routes/ephemeris.js');
 const { default: stripeRoutes } = await import('./routes/stripe.js');
 const { default: bookingRoutes } = await import('./routes/booking.js');
 
@@ -68,6 +68,14 @@ app.use('/api/booking', bookingRoutes);
 
 if (process.env.SENTRY_DSN) {
   app.use(Sentry.expressErrorHandler());
+}
+
+// FUNCTION_TARGET is set only at actual Cloud Function runtime — not during the Firebase
+// CLI analysis pass that merely loads this module to discover exports. Kick off the
+// ephemeris warm-up + JPL calibration on cold start so /api/health reports `calibrated:true`
+// once the Swiss Ephemeris sidecar (EPHEMERIS_URL) is reachable and verified.
+if (process.env.FUNCTION_TARGET) {
+  warmupAndCalibrate();
 }
 
 export const api = onRequest(app);
