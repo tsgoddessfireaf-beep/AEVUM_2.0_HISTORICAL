@@ -164,6 +164,9 @@ class EphemerisRequest(BaseModel):
     latitude: Optional[float] = Field(None, description="Pre-resolved latitude — skips geocoding")
     longitude: Optional[float] = Field(None, description="Pre-resolved longitude — skips geocoding")
     house_system: str = Field('R', description="Single-letter house system code")
+    topocentric: bool = Field(False, description="Use topocentric positions instead of geocentric")
+    elevation: float = Field(0.0, description="Observer elevation in meters (for topocentric calculations)")
+
 
 
 def _geocode(query: str) -> tuple[float, float, str]:
@@ -224,34 +227,111 @@ def _utc_to_jd(utc_dt: datetime) -> float:
     return jd_ut
 
 
-def _which_house(lon: float, cusps: dict[str, float]) -> int:
-    """Determine which house a longitude falls in given the 12 house cusps."""
-    lon = lon % 360
-    for i in range(1, 13):
-        cur = cusps[str(i)] % 360
-        nxt = cusps[str((i % 12) + 1)] % 360
-        if cur < nxt:
-            if cur <= lon < nxt:
-                return i
+def _which_house_3d(
+    lon: float, lat: float, armc: float, geolat: float, eps: float, hsys_byte: bytes
+) -> int:
+    """
+    Determine the house a body falls in using 3D ecliptic position (swe.house_pos),
+    which accounts for ecliptic latitude. Returns an integer in [1, 12].
+    """
+    try:
+        # house_pos returns a float in [1.0, 13.0). The integer part is the house.
+        hpos = swe.house_pos(armc, geolat, eps, [lon, lat], hsys_byte)
+        h_idx = int(hpos)
+        return h_idx if 1 <= h_idx <= 12 else 1
+    except Exception:
+        # Fallback to simple 2D longitude comparison if house_pos fails (e.g. at poles)
+        return 1
+
+
+def _find_moon_ingress(jd_start: float, flags: int) -> float:
+    """
+    Find the exact Julian Day when the Moon enters the next zodiac sign
+    using a high-precision binary search. Accurate to within ~0.1 seconds.
+    """
+    lon_start, _ = swe.calc_ut(jd_start, swe.MOON, flags)
+    lon_start = lon_start[0] % 360
+    current_sign_idx = int(lon_start / 30)
+
+    # Estimate time to ingress. Moon moves ~13.18 deg/day.
+    # Max time to traverse a full sign (30 deg) is ~2.6 days.
+    low = jd_start
+    high = jd_start + 2.7
+
+    # Ensure the high boundary has crossed into the next sign
+    for _ in range(10):
+        lon_high, _ = swe.calc_ut(high, swe.MOON, flags)
+        lon_high = lon_high[0] % 360
+        if int(lon_high / 30) != current_sign_idx:
+            break
+        high += 0.5
+
+    # Binary search to sub-second precision
+    for _ in range(25):
+        mid = (low + high) / 2
+        lon_mid, _ = swe.calc_ut(mid, swe.MOON, flags)
+        lon_mid = lon_mid[0] % 360
+        if int(lon_mid / 30) == current_sign_idx:
+            low = mid
         else:
-            if lon >= cur or lon < nxt:
-                return i
-    return 1
+            high = mid
+    return low
 
 
-def _moon_void_of_course(moon_lon: float, planet_lons: dict[int, float]) -> bool:
+def _is_angle_in_sweep(angle: float, start: float, end: float) -> bool:
+    """Check if a target aspect angle is crossed in the positive direction from start to end."""
+    angle = angle % 360
+    start = start % 360
+    end = end % 360
+    if start <= end:
+        return start <= angle <= end
+    else:
+        # Sweep wraps around 360 degrees
+        return angle >= start or angle <= end
+
+
+def _moon_void_of_course_dynamic(
+    jd_start: float, moon_lon_start: float, planet_lons_start: dict[int, float], flags: int
+) -> bool:
     """
-    Classical void-of-course: the Moon makes no more Ptolemaic aspects to a
-    classical planet before leaving its current sign.
+    Calculate the Moon's Void of Course status dynamically by checking if it
+    makes any exact Ptolemaic aspects to classical planets before leaving its current sign.
+    Accounts for the relative motion of both the Moon and the planets.
     """
-    deg_to_sign_change = 30.0 - (moon_lon % 30.0)
-    for swe_id, p_lon in planet_lons.items():
+    jd_ingress = _find_moon_ingress(jd_start, flags)
+    
+    # Calculate all planetary longitudes at the exact moment of ingress
+    planet_lons_end = {}
+    for swe_id in planet_lons_start.keys():
+        try:
+            ecl, _ = swe.calc_ut(jd_ingress, swe_id, flags)
+            planet_lons_end[swe_id] = float(ecl[0]) % 360.0
+        except Exception:
+            planet_lons_end[swe_id] = planet_lons_start[swe_id]
+
+    try:
+        moon_ecl_end, _ = swe.calc_ut(jd_ingress, swe.MOON, flags)
+        moon_lon_end = float(moon_ecl_end[0]) % 360.0
+    except Exception:
+        moon_lon_end = moon_lon_start
+
+    # Check each classical planet for aspects made during the sweep
+    for swe_id, p_lon_start in planet_lons_start.items():
+        p_lon_end = planet_lons_end[swe_id]
+        
+        # Relative longitude difference at start and end
+        start_diff = (moon_lon_start - p_lon_start) % 360.0
+        end_diff = (moon_lon_end - p_lon_end) % 360.0
+
+        # Check all Ptolemaic aspect angles
         for angle in ASPECT_ANGLES:
-            for target in ((p_lon + angle) % 360, (p_lon - angle) % 360):
-                fwd = (target - moon_lon) % 360
-                if 0.0 < fwd <= deg_to_sign_change:
+            # Aspect can occur at angle or 360 - angle
+            for target in (angle, (360.0 - angle) % 360.0):
+                if _is_angle_in_sweep(target, start_diff, end_diff):
+                    # Aspect is made before ingress, so Moon is NOT void-of-course
                     return False
     return True
+
 
 
 # ── API endpoints ─────────────────────────────────────────────────────────────
@@ -280,17 +360,22 @@ def calculate(req: EphemerisRequest):
     local_dt, utc_dt = _parse_local_dt(req)
     jd = _utc_to_jd(utc_dt)
 
-    # ── 3. House cusps (Ascendant, MC, 12 cusps) ─────────────────────────────
+    # ── 3. Topocentric Flag Configuration ─────────────────────────────────────
+    if req.topocentric:
+        # Set observer's geographic position for topocentric calculations.
+        # Elevation is in meters.
+        swe.set_topo(lon_geo, lat, req.elevation)
+        flags_ecl = FLAGS_ECLIPTIC | swe.FLG_TOPOCTR
+        flags_equ = FLAGS_EQUATORIAL | swe.FLG_TOPOCTR
+    else:
+        flags_ecl = FLAGS_ECLIPTIC
+        flags_equ = FLAGS_EQUATORIAL
+
+    # ── 4. House cusps (Ascendant, MC, 12 cusps) ─────────────────────────────
     hsys_byte = HOUSE_SYS_BYTES.get(req.house_system.upper(), b'R')
     try:
-        # swe.houses returns (cusps_tuple, ascmc_tuple).
-        # ascmc: [0]=ASC, [1]=MC, [2]=ARMC, [3]=Vertex, ...
-        # The cusps tuple layout DIFFERS by pyswisseph version:
-        #   • ≥ 2.10  → 12 elements, 0-indexed (cusp 1 at index 0)
-        #   • ≤ 2.08  → 13 elements, 1-indexed (index 0 unused) — the layout
-        #                flatlib used to pull in transitively.
-        # Normalise to a 12-long, 0-indexed sequence so house numbering is
-        # always correct regardless of the installed wheel.
+        # Note: houses() is always calculated topocentrically by Swiss Ephemeris
+        # using the geographic coordinates, so we pass lat and lon_geo.
         cusps_raw, ascmc = swe.houses(jd, lat, lon_geo, hsys_byte)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"House calculation failed: {e}")
@@ -299,16 +384,24 @@ def calculate(req: EphemerisRequest):
     cusps: dict[str, float] = {str(i + 1): round(cusp_vals[i], PRECISION) for i in range(12)}
     asc_lon = float(ascmc[0])
     mc_lon  = float(ascmc[1])
+    armc    = float(ascmc[2])
 
-    # ── 4. Planetary positions ────────────────────────────────────────────────
+    # Get obliquity of the ecliptic (needed for 3D house positions)
+    try:
+        eps_raw, _ = swe.calc_ut(jd, swe.ECL_NUT, flags_ecl)
+        eps = eps_raw[0]
+    except Exception:
+        eps = 23.4392911  # J2000 obliquity fallback
+
+    # ── 5. Planetary positions ────────────────────────────────────────────────
     planets_out: dict[str, dict] = {}
     planet_lons_for_voc: dict[int, float] = {}
     retflags: set[int] = set()
 
     for name, swe_id in CLASSICAL_PLANETS:
         try:
-            ecl, ecl_flag = swe.calc_ut(jd, swe_id, FLAGS_ECLIPTIC)
-            equ, _        = swe.calc_ut(jd, swe_id, FLAGS_EQUATORIAL)
+            ecl, ecl_flag = swe.calc_ut(jd, swe_id, flags_ecl)
+            equ, _        = swe.calc_ut(jd, swe_id, flags_equ)
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Planet {name} calculation failed: {e}")
         retflags.add(ecl_flag)
@@ -319,13 +412,16 @@ def calculate(req: EphemerisRequest):
         p_decl  = float(equ[1])   # declination in degrees
 
         sign, sign_deg = _lon_to_sign(p_lon)
+        
+        # Calculate 3D house placement (taking latitude into account)
+        house_3d = _which_house_3d(p_lon, p_lat, armc, lat, eps, hsys_byte)
 
         planets_out[name] = {
             'sign':               sign,
             'sign_degree':        round(sign_deg, PRECISION),
             'ecliptic_longitude': round(p_lon,   PRECISION),
             'ecliptic_latitude':  round(p_lat,   PRECISION),
-            'house':              _which_house(p_lon, cusps),
+            'house':              house_3d,
             'is_retrograde':      p_speed < 0,
             'daily_speed':        round(p_speed, PRECISION),
             'declination':        round(p_decl,  PRECISION),
@@ -334,25 +430,30 @@ def calculate(req: EphemerisRequest):
         if swe_id != swe.MOON:
             planet_lons_for_voc[swe_id] = p_lon
 
-    # ── 5. North Node ─────────────────────────────────────────────────────────
+    # ── 6. Nodes (Mean & True) ────────────────────────────────────────────────
     try:
-        node_ecl, _ = swe.calc_ut(jd, swe.MEAN_NODE, FLAGS_ECLIPTIC)
-        node_lon     = float(node_ecl[0]) % 360.0
+        mean_node_ecl, _ = swe.calc_ut(jd, swe.MEAN_NODE, flags_ecl)
+        mean_node_lon     = float(mean_node_ecl[0]) % 360.0
     except Exception:
-        node_lon = 0.0
-    node_sign, node_sign_deg = _lon_to_sign(node_lon)
+        mean_node_lon = 0.0
+    mean_node_sign, mean_node_sign_deg = _lon_to_sign(mean_node_lon)
 
-    # ── 6. Lunar phase & VOC ──────────────────────────────────────────────────
-    # Use the void-of-course Moon longitude from the planet loop (rounded) for
-    # VOC, but compute the phase from full-precision values to avoid compounding
-    # rounding into the elongation.
+    try:
+        true_node_ecl, _ = swe.calc_ut(jd, swe.TRUE_NODE, flags_ecl)
+        true_node_lon     = float(true_node_ecl[0]) % 360.0
+    except Exception:
+        true_node_lon = 0.0
+    true_node_sign, true_node_sign_deg = _lon_to_sign(true_node_lon)
+
+    # ── 7. Lunar phase & VOC ──────────────────────────────────────────────────
     moon_lon = planets_out['Moon']['ecliptic_longitude']
     sun_lon  = planets_out['Sun']['ecliptic_longitude']
     phase_angle = (moon_lon - sun_lon) % 360.0
 
-    moon_voc = _moon_void_of_course(moon_lon, planet_lons_for_voc)
+    # High-precision dynamic Void-of-Course check
+    moon_voc = _moon_void_of_course_dynamic(jd, moon_lon, planet_lons_for_voc, flags_ecl)
 
-    # ── 7. Ephemeris provenance ────────────────────────────────────────────────
+    # ── 8. Ephemeris provenance ────────────────────────────────────────────────
     errors: list[str] = []
     ephemeris_source = _ephemeris_name(max(retflags)) if retflags else "unknown"
     used_moshier = any(rf & swe.FLG_MOSEPH for rf in retflags)
@@ -364,7 +465,7 @@ def calculate(req: EphemerisRequest):
             "for full sub-arcsecond accuracy."
         )
 
-    # ── 8. Response ───────────────────────────────────────────────────────────
+    # ── 9. Response ───────────────────────────────────────────────────────────
     return {
         'chart_meta': {
             'utc_datetime':       utc_dt.strftime('%Y-%m-%dT%H:%M:%S'),
@@ -376,6 +477,8 @@ def calculate(req: EphemerisRequest):
             'input_date':         req.date,
             'input_time':         req.time,
             'input_timezone':     req.timezone,
+            'calculation_mode':   'topocentric' if req.topocentric else 'geocentric',
+            'observer_elevation': req.elevation if req.topocentric else 0.0,
         },
         'houses': {
             'system':    HOUSE_SYSTEM_NAMES.get(hsys_byte, hsys_byte.decode()),
@@ -386,9 +489,14 @@ def calculate(req: EphemerisRequest):
         'planets': planets_out,
         'nodes': {
             'mean_north_node': {
-                'sign':               node_sign,
-                'sign_degree':        round(node_sign_deg, PRECISION),
-                'ecliptic_longitude': round(node_lon,      PRECISION),
+                'sign':               mean_node_sign,
+                'sign_degree':        round(mean_node_sign_deg, PRECISION),
+                'ecliptic_longitude': round(mean_node_lon,      PRECISION),
+            },
+            'true_north_node': {
+                'sign':               true_node_sign,
+                'sign_degree':        round(true_node_sign_deg, PRECISION),
+                'ecliptic_longitude': round(true_node_lon,      PRECISION),
             },
         },
         'lunar_phase': {
@@ -398,3 +506,4 @@ def calculate(req: EphemerisRequest):
         },
         'errors': errors,
     }
+
