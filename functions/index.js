@@ -13,6 +13,10 @@ setGlobalOptions({
   region: 'us-central1',
   timeoutSeconds: 540,
   memory: '1GiB',
+  // Keep one instance always warm so the ephemeris calibration (per-instance,
+  // in-memory) stays true and /api/health never flickers to calibrated:false on
+  // a cold start. Recurring cost is covered by Google Cloud credits.
+  minInstances: 1,
 });
 
 if (process.env.SENTRY_DSN) {
