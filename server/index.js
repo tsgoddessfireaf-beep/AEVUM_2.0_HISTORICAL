@@ -88,7 +88,7 @@ if (process.env.SENTRY_DSN) {
 
 // FUNCTION_TARGET is set by Firebase at actual Cloud Function runtime (not during CLI analysis).
 const isFirebaseRuntime = !!process.env.FUNCTION_TARGET;
-const isMain = process.argv[1] && process.argv[1].includes('server/index');
+const isMain = process.argv[1] && /server[/\\]index/.test(process.argv[1]);
 
 if (isMain) {
   // Local dev / Render: start server normally
