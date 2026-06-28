@@ -31,6 +31,7 @@ library/
 2. **Firestore vector index** on `library_cards.embedding`, queried with `findNearest()`.
 
 ## Current state
-- ✅ Shelf proven: `shelves/bonatti-anima-raw.txt` (full *Anima Astrologiae*, Coley 1676 / 1886 reprint).
-- ✅ Pipeline proven: `cards/bonatti-anima.draft.jsonl` (23 draft cards) — `pending_cleanup`.
-- ⏳ Next: full cleanup pass on Anima (→ 146 verified cards), then Lilly from Wikisource (no OCR needed).
+- ✅ Shelf: `shelves/bonatti-anima-raw.txt` (full *Anima Astrologiae*, Coley 1676 / 1886 reprint).
+- ✅ Cards: `cards/bonatti-anima.jsonl` — **145 of 146 considerations**, Gemini-cleaned (`gemini-2.5-flash` on Vertex), verbatim-corrected and condition-tagged (`_status: gemini_cleaned`). Cleanup engine: `scripts/gemini-clean.mjs`.
+- ⏳ Open: backfill consideration #143 (dropped at a chunk seam); improve sparse condition-key tagging (voc_moon/via_combusta under-applied — semantic search covers this regardless); add Lilly from Wikisource (no OCR needed).
+- ⏳ Then: stand up Firestore Vector Search and load the cards.
