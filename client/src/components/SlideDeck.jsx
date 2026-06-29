@@ -11,7 +11,7 @@
 //     take preview, and the suggested narration script.
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import WheelChart from './WheelChart.jsx';
+import Astrolabe from './Astrolabe.jsx';
 import { pickAudioMimeType } from '../lib/package.js';
 
 function fmtSecs(s) {
@@ -27,6 +27,7 @@ export default function SlideDeck({
   chartPrefs,
   practitioner = false,
   onSaveAudio,
+  onSlideChange,
 }) {
   const [idx, setIdx] = useState(0);
   const [savedUrls, setSavedUrls] = useState({});
@@ -96,6 +97,10 @@ export default function SlideDeck({
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (onSlideChange) onSlideChange(idx);
+  }, [idx, onSlideChange]);
 
   // ─── Recording (practitioner) ───────────────────────────────────────────────
 
@@ -186,7 +191,7 @@ export default function SlideDeck({
       </div>
 
       {/* Slide card */}
-      <div className="relative bg-teal-900/70 border border-teal-600/60 rounded-3xl px-6 py-8 sm:px-10 sm:py-10 min-h-[22rem] flex flex-col backdrop-blur-sm shadow-xl overflow-hidden">
+      <div className="relative glass-panel rounded-3xl px-6 py-8 sm:px-10 sm:py-10 min-h-[22rem] flex flex-col overflow-hidden">
         {/* subtle copper corner glow */}
         <div className="pointer-events-none absolute -top-20 -right-20 w-56 h-56 rounded-full bg-copper-400/5 blur-3xl" />
 
@@ -198,7 +203,7 @@ export default function SlideDeck({
         {slide.kind === 'chart' && ephemerisData ? (
           <div className="flex flex-col items-center gap-4">
             <div className="w-full max-w-md">
-              <WheelChart
+              <Astrolabe
                 ephemerisData={ephemerisData}
                 houseSignifications={significations}
                 skipAnimation={true}

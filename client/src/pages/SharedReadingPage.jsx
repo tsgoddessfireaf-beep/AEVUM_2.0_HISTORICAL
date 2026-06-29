@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { loadPublicReading } from '../lib/firebase.js';
-import WheelChart from '../components/WheelChart.jsx';
+import Astrolabe from '../components/Astrolabe.jsx';
 import SlideDeck from '../components/SlideDeck.jsx';
 import { parseSections, formatInline, parseBullets, parseNumbered, answerStyle } from '../lib/analysis.js';
 import { getChartWarnings, getStrictures } from '../lib/warnings.js';
@@ -206,7 +206,7 @@ export default function SharedReadingPage() {
         {/* Chart wheel */}
         {reading.ephemerisSnapshot && (
           <>
-            <WheelChart
+            <Astrolabe
               ephemerisData={reading.ephemerisSnapshot}
               houseSignifications={reading.significations}
               transitData={transitData}

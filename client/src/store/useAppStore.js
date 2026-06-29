@@ -96,8 +96,10 @@ const useAppStore = create(
       setEphemerisData: (data) => set({ ephemerisData: data }),
 
       appendAnalysis: (text) => set((s) => ({ analysis: s.analysis + text })),
-
       setAnalysis: (text) => set({ analysis: text }),
+
+      appendThinking: (text) => set((s) => ({ thinking: s.thinking + text })),
+      setThinking: (text) => set({ thinking: text }),
 
       setReadingId: (id) => set({ readingId: id }),
 

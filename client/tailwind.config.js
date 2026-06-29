@@ -11,17 +11,17 @@ export default {
           500: '#9E5228',   // copper-dark
         },
         teal: {
-          900: '#0E2C27',   // teal-deep (darkest)
-          800: '#123A33',   // teal-bg
-          700: '#16433A',   // teal-panel
-          600: '#1E5248',   // teal-border
+          900: 'rgb(var(--color-primary-900-rgb) / <alpha-value>)',
+          800: 'rgb(var(--color-primary-800-rgb) / <alpha-value>)',
+          700: 'rgb(var(--color-primary-700-rgb) / <alpha-value>)',
+          600: 'rgb(var(--color-primary-600-rgb) / <alpha-value>)',
         },
         bone:   '#EDE7D3',
         silver: '#AEB6B8',
       },
       fontFamily: {
-        serif: ['Orbitron', 'sans-serif'],           // display / headings
-        sans:  ['Lato', 'system-ui', 'sans-serif'],  // body
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans:  ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

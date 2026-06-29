@@ -4,13 +4,14 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { initAuth } from './lib/firebase.js';
+import { applyTheme } from './components/dashboard/ThemesTab.jsx';
 import LandingPage from './pages/LandingPage.jsx';
 import RequireAuth from './components/RequireAuth.jsx';
 
 const IntakePage            = lazy(() => import('./pages/IntakePage.jsx'));
 const DateTimePage          = lazy(() => import('./pages/DateTimePage.jsx'));
 const HouseSignificationPage = lazy(() => import('./pages/HouseSignificationPage.jsx'));
-const ResultsPage           = lazy(() => import('./pages/ResultsPage.jsx'));
+const DashboardPage         = lazy(() => import('./pages/DashboardPage.jsx'));
 const HistoryPage           = lazy(() => import('./pages/HistoryPage.jsx'));
 const ConsentPage           = lazy(() => import('./pages/ConsentPage.jsx'));
 const PrivacyPage           = lazy(() => import('./pages/PrivacyPage.jsx'));
@@ -21,6 +22,8 @@ const UpgradePage           = lazy(() => import('./pages/UpgradePage.jsx'));
 export default function App() {
   useEffect(() => {
     initAuth();
+    const savedTheme = localStorage.getItem('aevum_theme');
+    if (savedTheme) applyTheme(savedTheme);
   }, []);
 
   return (
@@ -40,7 +43,8 @@ export default function App() {
         <Route path="/ask"            element={<IntakePage />} />
         <Route path="/datetime"       element={<DateTimePage />} />
         <Route path="/significations" element={<HouseSignificationPage />} />
-        <Route path="/results"        element={<ResultsPage />} />
+        <Route path="/dashboard"      element={<RequireAuth><DashboardPage /></RequireAuth>} />
+        <Route path="/results"        element={<Navigate to="/dashboard" replace />} />
         <Route path="/history"        element={<RequireAuth><HistoryPage /></RequireAuth>} />
 
         <Route path="*" element={<Navigate to="/" replace />} />

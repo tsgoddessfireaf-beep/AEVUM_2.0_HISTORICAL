@@ -13,7 +13,7 @@
  * @param {(data: Object) => void} handlers.onDone - Called with the final SSE data object on completion.
  * @param {(error: string) => void} handlers.onError - Called with an error message on failure.
  */
-export async function streamSSE(url, body, { onText, onDone, onError }, extraHeaders = {}) {
+export async function streamSSE(url, body, { onText, onThinking, onDone, onError }, extraHeaders = {}) {
   let response;
   try {
     response = await fetch(url, {
@@ -61,6 +61,7 @@ export async function streamSSE(url, body, { onText, onDone, onError }, extraHea
         try {
           const data = JSON.parse(raw);
           if (data.type === 'text') onText?.(data.text);
+          else if (data.type === 'thinking') onThinking?.(data.text);
           else if (data.type === 'done') { settled = true; onDone?.(data); }
           else if (data.type === 'error') { settled = true; onError?.(data.error); }
         } catch {
