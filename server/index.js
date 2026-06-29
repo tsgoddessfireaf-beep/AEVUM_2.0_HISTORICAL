@@ -72,6 +72,7 @@ app.use('/api/chat', aiLimiter, chatRoutes);
 app.use('/api/ephemeris', aiLimiter, ephemerisRoutes);
 app.use('/api/stripe', stripeRoutes);
 app.use('/api/booking', bookingRoutes);
+app.use('/api/library', express.static(join(__dirname, '../library/shelves')));
 
 if (process.env.NODE_ENV === 'production') {
   app.set('trust proxy', 1); // trust first proxy to get correct client IP for rate limiting

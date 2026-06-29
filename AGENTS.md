@@ -59,3 +59,15 @@ production. Do not repeat this. Before creating ANY branch:
 - See `CLAUDE.md` and `ARCHITECTURE.md` for the full architecture and data flow.
 - Tests: `server/` uses vitest; client uses vitest + jsdom. CI gate is `.github/workflows/ci.yml`.
 - Default branch is `main`; production auto-deploys from it on Render.
+
+## 5. Premium UI & Design Guidelines
+
+**CRITICAL RULE:** Do NOT use flat, basic, or generic utilitarian designs. All UI components must adhere to the established "premium magical" Aevum aesthetic.
+
+- **Glassmorphism:** Use semi-transparent dark backgrounds (e.g., `bg-teal-950/40`), heavy blurring (`backdrop-blur-md`), and subtle translucent borders (`border-teal-800/30`) for containers and panels (use `.glass-panel` in index.css).
+- **Typography:** 
+  - ALWAYS use **Playfair Display** (`font-serif`) for headers, titles, and elegant text.
+  - ALWAYS use **Inter** (`font-sans`) for highly legible body copy and UI elements.
+  - Do NOT use Orbitron, Lato, or basic web-safe fonts unless explicitly requested.
+- **Color Palette:** Rely heavily on the deep teal/obsidian backdrop, with glowing copper/gold (`#D17C49`, `text-copper-400`) for accents, borders, icons, and active states. Use `text-bone` or `text-silver` for readable text.
+- **Lighting & Glow Effects:** Use drop shadows, SVG filters (`feGaussianBlur`, `feDropShadow`), and radial gradients to create luminous, magical glowing effects, especially for charts, active UI states, and the background environment.

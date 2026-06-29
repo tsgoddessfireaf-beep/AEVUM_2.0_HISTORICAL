@@ -1,13 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=Orbitron:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-deep:    #0E2C27;
-  --bg-surface: #123A33;
-  --bg-panel:   #16433A;
+  --color-primary-900: #0E2C27;
+  --color-primary-800: #123A33;
+  --color-primary-700: #16433A;
+  --color-primary-600: #1E5248;
+  
+  --color-primary-900-rgb: 14 44 39;
+  --color-primary-800-rgb: 18 58 51;
+  --color-primary-700-rgb: 22 67 58;
+  --color-primary-600-rgb: 30 82 72;
+
+  --bg-deep:    rgb(var(--color-primary-900-rgb));
+  --bg-surface: rgb(var(--color-primary-800-rgb));
+  --bg-panel:   rgb(var(--color-primary-700-rgb));
   --copper:     #BE6B3D;
   --copper-bright: #D17C49;
   --silver:     #AEB6B8;
@@ -17,27 +27,36 @@
 body {
   background-color: var(--bg-deep);
   color: var(--bone);
-  font-family: 'Lato', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Subtle star field */
+/* Subtle star field with central radiant glow */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(237,231,211,0.15) 0%, transparent 100%),
-    radial-gradient(1px 1px at 30% 70%, rgba(237,231,211,0.10) 0%, transparent 100%),
-    radial-gradient(1px 1px at 50% 40%, rgba(237,231,211,0.12) 0%, transparent 100%),
-    radial-gradient(1px 1px at 70% 10%, rgba(237,231,211,0.10) 0%, transparent 100%),
-    radial-gradient(1px 1px at 85% 55%, rgba(237,231,211,0.13) 0%, transparent 100%),
-    radial-gradient(1px 1px at 20% 90%, rgba(190,107,61,0.10) 0%, transparent 100%),
-    radial-gradient(1px 1px at 60% 80%, rgba(237,231,211,0.08) 0%, transparent 100%),
-    radial-gradient(1px 1px at 92% 35%, rgba(237,231,211,0.09) 0%, transparent 100%);
+    radial-gradient(circle at 50% 50%, rgba(190,107,61,0.2) 0%, rgba(14,44,39,0) 60%),
+    radial-gradient(1px 1px at 10% 20%, rgba(237,231,211,0.4) 0%, transparent 100%),
+    radial-gradient(2px 2px at 30% 70%, rgba(237,231,211,0.2) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 40%, rgba(237,231,211,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 10%, rgba(237,231,211,0.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 85% 55%, rgba(190,107,61,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 90%, rgba(190,107,61,0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 80%, rgba(237,231,211,0.2) 0%, transparent 100%),
+    radial-gradient(2px 2px at 92% 35%, rgba(237,231,211,0.4) 0%, transparent 100%);
   pointer-events: none;
   z-index: 0;
+}
+
+.glass-panel {
+  background: rgba(18, 58, 51, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(237, 231, 211, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
 #root {

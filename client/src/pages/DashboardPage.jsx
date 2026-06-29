@@ -5,8 +5,13 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StepIndicator from '../components/StepIndicator.jsx';
 import ChartDisplay from '../components/ChartDisplay.jsx';
-import WheelChart from '../components/WheelChart.jsx';
+import SquareChart from '../components/SquareChart.jsx';
+import Astrolabe from '../components/Astrolabe.jsx';
 import FollowUpChat from '../components/FollowUpChat.jsx';
+import DashboardTab from '../components/dashboard/DashboardTab.jsx';
+import ArchivesTab from '../components/dashboard/ArchivesTab.jsx';
+import LearningTab from '../components/dashboard/LearningTab.jsx';
+import ThemesTab from '../components/dashboard/ThemesTab.jsx';
 import JournalPanel from '../components/JournalPanel.jsx';
 import ReadingPackagePanel from '../components/ReadingPackagePanel.jsx';
 import useAppStore from '../store/useAppStore.js';
@@ -182,7 +187,7 @@ function getSignificatorDescription(name, ephemerisData, accidentalDignities, es
 export default function ResultsPage() {
   const navigate = useNavigate();
   const {
-    question, questionType, dateTimeData, houseSignifications,
+    question, questionType, dateTimeData, setDateTimeData, houseSignifications,
     ephemerisData, setEphemerisData,
     analysis, appendAnalysis, setAnalysis,
     readingId, setReadingId,
@@ -201,6 +206,7 @@ export default function ResultsPage() {
   const [showConsentNudge, setShowConsentNudge] = useState(false);
   const [shareState, setShareState] = useState('idle'); // idle | copying | copied | error
   const readingRef = useRef(null);
+  const [activeTab, setActiveTab] = useState('dashboard');
   const [currentUser, setCurrentUser] = useState(() => {
     try { return getAuth().currentUser; } catch { return null; }
   });
@@ -368,40 +374,132 @@ export default function ResultsPage() {
         if (!already) setShowConsentNudge(true);
       }
     })();
-  }, [phase, sections.answer, readingId]); // eslint-disable-line react-hooks/exhaustive-deps
+}, [phase, sections.answer, readingId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const isWaiting = phase === 'analyzing' && !sections.answer;
   const isDone = phase === 'done';
   const showReading = sections.answer != null;
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 py-6 sm:py-12 print:p-0 print:m-0 print:min-h-0 print:block">
+    <div className="min-h-screen flex font-sans text-bone print:block print:bg-white print:text-black">
       <ChartCustomizeModal open={showCustomize} onClose={() => setShowCustomize(false)} />
       
-      {/* SCREEN-ONLY INTERACTIVE INTERFACE */}
-      <div className="screen-only w-full max-w-2xl">
-        <StepIndicator current={4} />
-
-        {/* Question */}
-        <div className="text-center mb-10">
-          <p className="text-silver/70 text-xs uppercase tracking-widest mb-2">Your Petition</p>
-          <p className="text-bone/90 text-lg font-serif italic">"{question}"</p>
-          {(() => {
-            const t = getTradition(dateTimeData.tradition);
-            if (!t || t.id === 'classic') return null;
-            return (
-              <p className="mt-2 text-copper-400/70 text-xs tracking-widest">
-                {t.name} · {t.era}
-              </p>
-            );
-          })()}
+      {/* Sidebar Navigation */}
+      <aside className="w-24 border-r border-teal-800/30 flex flex-col h-screen sticky top-0 shrink-0 screen-only backdrop-blur-md bg-teal-950/40 shadow-2xl">
+        <div className="p-4 flex justify-center mb-4">
+          <div className="w-12 h-12 rounded-full border border-copper-400/50 flex items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(190,107,61,0.3)]" onClick={() => navigate('/')}>
+            <span className="text-copper-400 font-serif text-xl">✦</span>
+          </div>
         </div>
+        <nav className="flex-1 flex flex-col gap-2 w-full mt-4">
+          {[
+            { id: 'dashboard', label: 'Dashboard', icon: 'M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z' },
+            { id: 'readings', label: 'Readings', icon: 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' },
+            { id: 'archives', label: 'Daily Astro', icon: 'M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z' },
+            { id: 'learning', label: 'Community', icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z' },
+            { id: 'themes', label: 'Settings', icon: 'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.73 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.49-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z' }
+          ].map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`w-full flex flex-col items-center justify-center gap-1.5 py-4 transition-all relative ${
+                activeTab === tab.id 
+                  ? 'text-copper-400 bg-gradient-to-r from-copper-900/40 to-transparent' 
+                  : 'text-silver/60 hover:text-bone hover:bg-teal-800/30'
+              }`}
+            >
+              {activeTab === tab.id && (
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-copper-400 shadow-[0_0_10px_#BE6B3D]"></div>
+              )}
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d={tab.icon}/>
+              </svg>
+              <span className="text-[10px] uppercase tracking-wider font-medium">{tab.label}</span>
+            </button>
+          ))}
+        </nav>
+        <div className="p-4 border-t border-teal-800/30">
+          <button onClick={handleNewReading} className="w-12 h-12 mx-auto flex items-center justify-center bg-teal-800/50 hover:bg-copper-900/60 hover:text-copper-400 text-bone rounded-full transition-colors border border-teal-700/50">
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </button>
+        </div>
+      </aside>
+
+      {/* Main Content Area */}
+      <main className="flex-1 flex flex-col min-h-screen relative overflow-hidden print:p-0">
+        
+        {/* Top Header Row */}
+        <header className="w-full flex items-center justify-between px-10 py-6 screen-only border-b border-teal-800/30 bg-teal-950/20 backdrop-blur-sm z-10 shrink-0">
+          <div className="text-copper-400/80 text-sm tracking-[0.2em] uppercase font-serif">
+            Astrology Portal
+          </div>
+          <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+            <h2 className="text-2xl font-serif text-bone tracking-[0.1em] uppercase">Your Astrology Reading</h2>
+          </div>
+          <div className="flex items-center gap-6">
+            <button className="relative text-silver hover:text-bone transition-colors">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M4 19v-2h2v-7C6 6.69 8.31 4 11 4v-1h2v1c2.69 0 5 2.69 5 6v7h2v2H4zm8 3c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2z"/></svg>
+              <div className="absolute top-0 right-0 w-2 h-2 bg-copper-500 rounded-full border border-teal-950"></div>
+            </button>
+            <div className="w-8 h-8 rounded-full bg-teal-800 border-2 border-copper-400/50 flex items-center justify-center text-xs overflow-hidden cursor-pointer">
+              <svg className="w-full h-full fill-silver/50 pt-2" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+          </div>
+        </header>
+
+        {/* Scrollable Workspace */}
+        <div className="flex-1 overflow-y-auto px-10 py-6 custom-scrollbar z-0 relative">
+          {ephemerisData && (
+            <div className="w-full max-w-7xl mx-auto flex justify-center text-center mb-8">
+              <div className="inline-flex gap-2 text-silver/60 text-sm">
+                <span>Querent</span>
+                <span className="text-silver/40">|</span>
+                <span>{dateTimeData?.date} {dateTimeData?.time}</span>
+                <span className="text-silver/40">|</span>
+                <span>{dateTimeData?.location || 'Unknown Location'}</span>
+              </div>
+            </div>
+          )}
+
+          <div className="max-w-[1600px] mx-auto w-full relative">
+          
+          {activeTab === 'dashboard' && (
+            <DashboardTab 
+              question={question} 
+              sections={sections} 
+              ephemerisData={ephemerisData} 
+              houseSignifications={houseSignifications} 
+              chartPrefs={chartPrefs} 
+              isWaiting={isWaiting}
+            />
+          )}
+
+          {activeTab === 'themes' && <ThemesTab />}
+          {activeTab === 'learning' && <LearningTab ephemerisData={ephemerisData} readingId={readingId} chartPrefs={chartPrefs} houseSignifications={houseSignifications} />}
+          {activeTab === 'archives' && <ArchivesTab />}
+
+          {activeTab === 'readings' && (
+            <div className="screen-only w-full">
+              <StepIndicator current={4} />
+
+              <div className="text-center mb-10">
+                <p className="text-silver/70 text-xs uppercase tracking-widest mb-2">Your Petition</p>
+                <p className="text-bone/90 text-lg font-serif italic">"{question}"</p>
+                {(() => {
+                  const t = getTradition(dateTimeData.tradition);
+                  if (!t || t.id === 'classic') return null;
+                  return (
+                    <p className="mt-2 text-copper-400/70 text-xs tracking-widest">
+                      {t.name} · {t.era}
+                    </p>
+                  );
+                })()}
+              </div>
 
         {/* Loading: fetching chart */}
         {phase === 'fetching-chart' && <LoadingState text="Erecting the Moment of Reception…" />}
 
-        {/* Loading: Gemini is generating — show animated wheel if chart data is ready */}
         {isWaiting && ephemerisData
-          ? <WheelChart ephemerisData={ephemerisData} houseSignifications={houseSignifications} prefs={chartPrefs} />
+          ? <SquareChart ephemerisData={ephemerisData} houseSignifications={houseSignifications} prefs={chartPrefs} />
           : isWaiting && <LoadingState text="Your Case Judgment Report is being prepared…" />
         }
 
@@ -433,8 +531,8 @@ export default function ResultsPage() {
         {/* PAYWALL — shown when chart is ready, for non-practitioners */}
         {showReading && !practitioner && (
           <div className="w-full mt-4 screen-only space-y-6">
-            {/* Show the chart wheel so they can see THEIR data before paying */}
-            <WheelChart
+            {/* Show the chart square so they can see THEIR data before paying */}
+            <SquareChart
               ephemerisData={ephemerisData}
               houseSignifications={houseSignifications}
               skipAnimation={true}
@@ -651,7 +749,7 @@ export default function ResultsPage() {
                           <span className="text-emerald-400 shrink-0 mt-0.5">⟐</span>
                           <span className="text-bone/75">
                             {c.collector} collects light from {querentLord} and {quesitedLord}
-                            {' '}({querentLord} {c.querentAspect.abbr} {c.querentAspect.orb}°, {quesitedLord} {c.quesitedAspect.abbr} {c.quesitedAspect.orb}°)
+                            {' '}({querentLord} {c.querentAspect.abbr} {c.querentAspect.orb}°, {quesitedLord} {c.quesitedAspect.orb}°)
                           </span>
                         </li>
                       ))}
@@ -771,8 +869,8 @@ export default function ResultsPage() {
                 </button>
                 {showChart && (
                   <div className="px-6 py-5 bg-teal-900/30 border-t border-teal-600/30 space-y-5">
-                    {/* Static natal wheel with optional transit overlay */}
-                    <WheelChart
+                    {/* Static natal chart with optional transit overlay */}
+                    <SquareChart
                       ephemerisData={ephemerisData}
                       houseSignifications={houseSignifications}
                       skipAnimation={true}
@@ -806,20 +904,7 @@ export default function ResultsPage() {
 
                     {houseSignifications && (
                       <div>
-                        <p className="text-silver/70 text-xs uppercase tracking-widest mb-3">Significations</p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                          <div className="bg-teal-900/40 rounded-xl px-4 py-3">
-                            <div className="text-silver/70 text-xs mb-1">You (the one asking)</div>
-                            <div className="text-bone/90">House {houseSignifications.querent_house}</div>
-                          </div>
-                          <div className="bg-teal-900/40 rounded-xl px-4 py-3">
-                            <div className="text-silver/70 text-xs mb-1">{houseSignifications.quesited_label}</div>
-                            <div className="text-bone/90">House {houseSignifications.quesited_house}</div>
-                          </div>
-                        </div>
-                        {houseSignifications.additional_notes && (
-                          <p className="text-silver/70 text-xs mt-3">{houseSignifications.additional_notes}</p>
-                        )}
+                        <p className="text-silver/70 text-xs mt-3">{houseSignifications.additional_notes}</p>
                       </div>
                     )}
                     {/* Aspects */}
@@ -1013,9 +1098,9 @@ export default function ResultsPage() {
           </div>
         )}
       </div>
+    )}
 
-
-      {/* PRINT-ONLY VIEW (Ink-saving, high-contrast, structured 3-page layout) */}
+    {/* PRINT-ONLY VIEW (Ink-saving, high-contrast, structured 3-page layout) */}
       {ephemerisData && showReading && (
         <div className="hidden print:block print-only w-full">
           {/* PAGE 1: Question and Cosmic Portrait */}
@@ -1060,7 +1145,7 @@ export default function ResultsPage() {
 
               {/* Large Wheel Chart Container */}
               <div className="print-chart-container">
-                <WheelChart 
+                <Astrolabe 
                   ephemerisData={ephemerisData} 
                   houseSignifications={houseSignifications} 
                   skipAnimation={true} 
@@ -1334,6 +1419,9 @@ export default function ResultsPage() {
           </div>
         </div>
       )}
+        </div>
+        </div>
+      </main>
     </div>
   );
 }

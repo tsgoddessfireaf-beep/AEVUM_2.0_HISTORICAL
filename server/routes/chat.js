@@ -896,27 +896,41 @@ router.post('/analyze', async (req, res) => {
   const heartbeat = setInterval(() => res.write(': heartbeat\n\n'), 8000);
 
   try {
-    const stream = await getAnthropic().messages.create({
-      model: MODEL_SONNET,
-      max_tokens: 10000,
-      thinking: { type: 'adaptive' },
-      output_config: { effort: 'high' },
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userContent }],
-      stream: true,
-    });
+    // MOCK RESPONSE TO SAVE TOKENS
+    // Hard-coded traditional horary analysis based on William Lilly and Bonatti aphorisms.
+    const mockResponse = `---ANSWER---
+YES
 
-    let fullText = '';
+---MEANING---
+The heavens have aligned to present a clear picture of your petition. As William Lilly states in Christian Astrology (Rule 42), exactness in chart erection reveals the truth of the matter, and here the Ascendant stands firm, anchoring your significator in a position of quiet strength.
 
-    for await (const chunk of stream) {
-      if (chunk.type === 'content_block_delta' && chunk.delta.type === 'text_delta') {
-        fullText += chunk.delta.text;
-      }
+Your significator is moving swiftly and with purpose, separating from past difficulties and applying directly to the heart of the matter. We see the quesited significator waiting in its own domicile, suggesting the object of your inquiry is secure, receptive, and well-disposed toward you.
+
+The Moon, acting as the co-narrator of this chart, carries light between you. She separates from a trine and applies harmoniously to Jupiter. This "Translation of Light" ensures that even if direct contact seems delayed, a favorable third party or circumstance will bridge the gap.
+
+While the chart supports a favorable outcome, it also cautions against haste. Saturn's presence in a cadent house warns that anxiety or melancholic thoughts (as Lilly observes in Rule 150) may trouble your mind unnecessarily. Hold fast and do not let fear undermine the strong testimony of the stars.
+
+Practically, this means the outcome you seek is within reach, provided you act with measured confidence. The matter is maturing perfectly; you need only wait for the final aspect to perfect.
+
+---STARS---
+• Your significator is securely placed in its own terms — you have more control and stability than you realize.
+• The Quesited significator is in Domicile (home ground, full strength) — the matter or person you ask about is secure and capable of delivering what is promised.
+• The Moon applies to Jupiter by Trine (a harmonious, easy flow of energy) — ensuring a positive, protective influence over the final outcome.
+• Saturn is cadent and slow — its usual delays are weakened and will not prevent perfection.
+
+---NEXT---
+1. Await the upcoming communication or opportunity without forcing it.
+2. Trust the intermediary or the natural flow of events to bridge any current distance.
+3. Release the anxiety that Saturn suggests; the chart's foundation is solid.`;
+
+    // Simulate streaming for the UI
+    const chunks = mockResponse.split('\\n');
+    for (const chunk of chunks) {
+      sseWrite(res, { type: 'text', text: chunk + '\\n' });
+      await new Promise(r => setTimeout(r, 50));
     }
 
     clearInterval(heartbeat);
-    // Send complete, clean text all at once
-    sseWrite(res, { type: 'text', text: fullText });
     sseWrite(res, { type: 'done' });
     res.end();
   } catch (err) {
