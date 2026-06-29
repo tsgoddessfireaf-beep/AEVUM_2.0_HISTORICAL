@@ -28,3 +28,6 @@ __pycache__/
 # Library raw source files & temp progress
 library/shelves/*.pdf
 library/progress-*.js
+
+service-account.json
+functions/.env

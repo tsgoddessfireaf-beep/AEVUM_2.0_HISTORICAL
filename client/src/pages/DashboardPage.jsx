@@ -499,7 +499,7 @@ export default function ResultsPage() {
         {phase === 'fetching-chart' && <LoadingState text="Erecting the Moment of Reception…" />}
 
         {isWaiting && ephemerisData
-          ? <SquareChart ephemerisData={ephemerisData} houseSignifications={houseSignifications} prefs={chartPrefs} />
+          ? <Astrolabe ephemerisData={ephemerisData} />
           : isWaiting && <LoadingState text="Your Case Judgment Report is being prepared…" />
         }
 

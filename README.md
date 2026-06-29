@@ -15,12 +15,12 @@ A traditional **horary astrology** web application for Aeonic Arts. Ask a sincer
 
 | Layer | Technology |
 |---|---|
-| Client | React 18 + Vite + Zustand + Tailwind CSS |
-| Server | Node 22+ / Express (ESM), port 3001 |
+| Client | React 18 + Vite + Zustand + Tailwind CSS (Firebase Hosting) |
+| Server | Node 22+ Firebase Cloud Functions (`api`) |
 | AI | Anthropic Claude — `claude-haiku-4-5-20251001` (interview), `claude-sonnet-4-6` (analysis) |
-| Ephemeris | Python FastAPI sidecar calling **pyswisseph** (Swiss Ephemeris) directly against the bundled `sepl_18.se1` / `semo_18.se1` data files — 7 decimal place precision (~0.00036 arcseconds) |
+| Ephemeris | Python FastAPI containerized on **Google Cloud Run** (`ephemeris-service`). Uses **pyswisseph** (Swiss Ephemeris) — 7 decimal place precision (~0.00036 arcseconds) |
 | Cross-verification | NASA JPL Horizons DE441 — queried at exact Julian Day Number via `TLIST` mode; threshold 0.0001° |
-| Persistence | Firebase Firestore (`readings` collection per user) |
+| Persistence | Firebase Firestore (`readings` and `library_cards`) |
 | Payments | Stripe Checkout |
 | Email | Resend |
 | Glyphs | AstroScript font (Jason Davies), Unicode fallback |
@@ -56,20 +56,27 @@ The "Dual-Source Verified" badge (green) confirms all checked planets pass. The 
 
 ```bash
 npm run install:all
-# creates ephemeris-service/.venv and installs Python deps automatically
+# creates ephemeris-service/.venv, installs Python deps, and npm deps in client and functions
 
-# create server/.env (see below)
-npm run dev
-# starts: Python sidecar :8000, Express API :3001, Vite client :5173
+# Start the Firebase Emulators (includes Functions, Firestore, Hosting, etc.)
+firebase emulators:start
+# Also ensure the Ephemeris service is running locally if testing chart generation
+cd ephemeris-service && fastapi dev main.py
 ```
 
-Vite proxies `/api/*` to `http://localhost:3001`.
-
-## Build for production
+## Build & Deploy for production
 
 ```bash
-npm run build                           # Vite build → client/dist
-cd server && NODE_ENV=production npm start   # Express serves API + built client
+# Frontend
+cd client && npm run build
+firebase deploy --only hosting
+
+# Backend (Cloud Functions)
+firebase deploy --only functions:api
+
+# Ephemeris Service (Cloud Run)
+cd ephemeris-service
+gcloud run deploy ephemeris-service --source . --platform managed --allow-unauthenticated
 ```
 
 ## Environment
@@ -105,17 +112,19 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_live_...
 client/src/pages/IntakePage.jsx     — question intake + detectQuestionType()
 client/src/pages/DateTimePage.jsx   — moment capture + geocoding
 client/src/pages/HouseSignificationPage.jsx  — SSE interview (haiku)
-client/src/pages/ResultsPage.jsx    — ephemeris POST + SSE analysis (sonnet) + chart wheel
+client/src/pages/DashboardPage.jsx  — active dashboard with Astrolabe animation and readings
 client/src/components/ChartDisplay.jsx       — planet table + dual-source badge
-client/src/components/WheelChart.jsx         — SVG horary wheel
-client/src/store/useAppStore.js     — Zustand store (persisted to localStorage)
+client/src/components/SquareChart.jsx        — SVG horary square chart
+client/src/components/Astrolabe.jsx          — Animated SVG astrolabe while waiting for the AI
+client/src/store/useAppStore.js     — Zustand store
 client/src/lib/analysis.js          — parseSections / answerStyle / formatInline
 
-server/routes/chat.js               — /api/chat/house-signification + /api/chat/analyze (SSE)
-server/routes/ephemeris.js          — /api/ephemeris → Python sidecar + JPL cross-audit
-server/routes/booking.js            — Stripe Checkout session + webhook handler
+functions/routes/chat.js            — /api/chat/house-signification + /api/chat/analyze (SSE)
+functions/routes/ephemeris.js       — /api/ephemeris → Cloud Run sidecar + JPL cross-audit
+functions/routes/booking.js         — Stripe Checkout session + webhook handler
 ephemeris-service/                  — Python FastAPI + pyswisseph (Swiss Ephemeris)
 ephemeris-service/ephe/             — bundled Swiss Ephemeris data files (sepl_18.se1, semo_18.se1)
+bibliotheca_astrologica_horaria/    — Genkit flow for embedding library manuscripts using Vertex AI
 ```
 
 ## Question types

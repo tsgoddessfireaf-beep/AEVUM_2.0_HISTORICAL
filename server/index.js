@@ -5,6 +5,16 @@ import dotenv from 'dotenv';
 // override:true forces .env values over shell env vars
 dotenv.config({ override: true });
 
+import { onRequest } from 'firebase-functions/v2/https';
+import { setGlobalOptions } from 'firebase-functions/v2';
+
+setGlobalOptions({
+  region: 'us-central1',
+  timeoutSeconds: 540,
+  memory: '1GiB',
+  minInstances: 1,
+});
+
 import * as Sentry from '@sentry/node';
 if (process.env.SENTRY_DSN) {
   Sentry.init({
@@ -72,7 +82,6 @@ app.use('/api/chat', aiLimiter, chatRoutes);
 app.use('/api/ephemeris', aiLimiter, ephemerisRoutes);
 app.use('/api/stripe', stripeRoutes);
 app.use('/api/booking', bookingRoutes);
-app.use('/api/library', express.static(join(__dirname, '../library/shelves')));
 
 if (process.env.NODE_ENV === 'production') {
   app.set('trust proxy', 1); // trust first proxy to get correct client IP for rate limiting
@@ -103,4 +112,5 @@ if (isMain) {
 }
 // Firebase CLI analysis phase: just export the app, do nothing else
 
+export const api = onRequest(app);
 export default app;

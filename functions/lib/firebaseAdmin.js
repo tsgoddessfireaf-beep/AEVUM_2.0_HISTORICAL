@@ -1,27 +1,35 @@
 // Copyright (c) 2026 Dolores Puckett / Dolores Aeonic Arts. All rights reserved.
 // Aevum — proprietary software. Unauthorized use or distribution is prohibited.
 
-import { initializeApp, cert, getApps } from 'firebase-admin/app';
+import { initializeApp, getApps, cert } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 import { getAuth } from 'firebase-admin/auth';
 
-let adminDb   = null;
+let adminDb = null;
 let adminAuth = null;
 
-if (process.env.FIREBASE_SERVICE_ACCOUNT_JSON) {
-  try {
-    const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
+try {
+  const serviceAccountVar = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+  if (serviceAccountVar) {
     if (!getApps().length) {
-      initializeApp({ credential: cert(serviceAccount) });
+      const serviceAccount = JSON.parse(serviceAccountVar);
+      initializeApp({
+        credential: cert(serviceAccount)
+      });
     }
-    adminDb   = getFirestore();
+    adminDb = getFirestore();
     adminAuth = getAuth();
-    console.info('[firebase-admin] initialized — server-side auth enabled');
-  } catch (e) {
-    console.warn('[firebase-admin] init failed:', e.message);
+    console.info('[firebase-admin] initialized with service account');
+  } else {
+    if (!getApps().length) {
+      initializeApp(); // Application Default Credentials (ADC)
+    }
+    adminDb = getFirestore();
+    adminAuth = getAuth();
+    console.info('[firebase-admin] initialized with application default credentials');
   }
-} else {
-  console.info('[firebase-admin] disabled — set FIREBASE_SERVICE_ACCOUNT_JSON to enable server-side auth and quota enforcement');
+} catch (e) {
+  console.warn('[firebase-admin] init failed:', e.message);
 }
 
 export const ADMIN_ENABLED = Boolean(adminDb && adminAuth);

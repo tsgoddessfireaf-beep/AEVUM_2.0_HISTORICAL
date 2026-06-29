@@ -23,14 +23,14 @@ import { initializeApp } from 'firebase/app';
 import {
   getFirestore, collection, addDoc, doc, updateDoc, setDoc,
   arrayUnion, serverTimestamp, getDoc,
-  query, where, orderBy, getDocs,
+  query, where, orderBy, getDocs, connectFirestoreEmulator,
 } from 'firebase/firestore';
 import {
   getAuth, onAuthStateChanged,
   GoogleAuthProvider, signInWithPopup,
-  signInWithCredential, signOut,
+  signInWithCredential, signOut, connectAuthEmulator,
 } from 'firebase/auth';
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, connectStorageEmulator } from 'firebase/storage';
 
 const config = {
   apiKey:            import.meta.env.VITE_FIREBASE_API_KEY,
@@ -53,6 +53,17 @@ if (FIREBASE_ENABLED) {
     db = getFirestore(app);
     auth = getAuth(app);
     if (config.storageBucket) storage = getStorage(app);
+
+    // Connect to Firebase Emulators in development / localhost
+    if (import.meta.env.DEV || window.location.hostname === 'localhost') {
+      const host = window.location.hostname;
+      connectFirestoreEmulator(db, host, 8080);
+      connectAuthEmulator(auth, `http://${host}:9099`);
+      if (storage) {
+        connectStorageEmulator(storage, host, 9199);
+      }
+      console.info(`[firebase] Connected to emulators on ${host}`);
+    }
   } catch (err) {
     console.warn('[firebase] init failed:', err.message);
   }
@@ -360,7 +371,7 @@ export async function loadPublicReading(readingId) {
 
 /**
  * Uploads one slide's voice narration to Firebase Storage and returns a
- * playable download URL. Recordings live at readings/{readingId}/slide-{n}.{ext}.
+ * playable download URL. Recordings live at users/{userId}/readings/{readingId}/slide-{n}.{ext}.
  * @param {string} readingId
  * @param {number} slideIndex - 0-based slide position.
  * @param {Blob} blob - Audio blob from MediaRecorder.
@@ -368,11 +379,16 @@ export async function loadPublicReading(readingId) {
  */
 export async function uploadSlideAudio(readingId, slideIndex, blob) {
   if (!storage || !readingId || !blob) return null;
+  const userId = getCurrentUserId();
+  if (!userId) {
+    console.warn('[firebase] uploadSlideAudio failed: user not authenticated');
+    return null;
+  }
   const ext = blob.type.includes('mp4') ? 'm4a'
             : blob.type.includes('ogg') ? 'ogg'
             : 'webm';
   try {
-    const path = `readings/${readingId}/slide-${slideIndex}.${ext}`;
+    const path = `users/${userId}/readings/${readingId}/slide-${slideIndex}.${ext}`;
     const fileRef = storageRef(storage, path);
     await uploadBytes(fileRef, blob, { contentType: blob.type || 'audio/webm' });
     return await getDownloadURL(fileRef);
@@ -380,6 +396,21 @@ export async function uploadSlideAudio(readingId, slideIndex, blob) {
     console.warn('[firebase] uploadSlideAudio failed:', err.message);
     return null;
   }
+}
+
+/**
+ * Fetches an astrology library text file directly from Firebase Storage.
+ * @param {string} filename
+ * @returns {Promise<string>}
+ */
+export async function fetchLibraryText(filename) {
+  if (!storage) {
+    throw new Error('Firebase Storage not initialized');
+  }
+  const fileRef = storageRef(storage, `library/${filename}`);
+  const url = await getDownloadURL(fileRef);
+  const res = await fetch(url);
+  return await res.text();
 }
 
 /**

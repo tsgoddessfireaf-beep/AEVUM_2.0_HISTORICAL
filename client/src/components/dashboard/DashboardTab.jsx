@@ -1,4 +1,4 @@
-import SquareChart from '../SquareChart.jsx';
+import Astrolabe from '../Astrolabe.jsx';
 import LoadingState from '../LoadingState.jsx';
 import { formatInline, answerStyle } from '../../lib/analysis.js';
 
@@ -30,11 +30,8 @@ export default function DashboardTab({ question, sections, ephemerisData, houseS
         <div className="absolute inset-0 bg-copper-400/20 blur-[120px] rounded-full z-0"></div>
         <div className="relative z-10 glass-panel rounded-[2.5rem] p-4 pb-2 pt-4">
           {ephemerisData ? (
-            <SquareChart 
+            <Astrolabe 
               ephemerisData={ephemerisData} 
-              houseSignifications={houseSignifications} 
-              prefs={chartPrefs} 
-              skipAnimation={true}
             />
           ) : (
             <LoadingState text="Preparing Chart..." />

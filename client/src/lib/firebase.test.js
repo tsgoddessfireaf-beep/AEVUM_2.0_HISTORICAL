@@ -46,6 +46,21 @@ vi.mock('firebase/auth', () => {
   };
 });
 
+vi.mock('firebase/storage', () => {
+  const uploadBytes = vi.fn(() => Promise.resolve());
+  const getDownloadURL = vi.fn(() => Promise.resolve('https://mock-storage-url.com/file'));
+  const ref = vi.fn(() => ({}));
+  const getStorage = vi.fn(() => ({}));
+  return {
+    getStorage,
+    ref,
+    uploadBytes,
+    getDownloadURL,
+    connectStorageEmulator: vi.fn(),
+  };
+});
+
+
 describe('firebase.js', () => {
   let firebase;
 
@@ -217,6 +232,50 @@ describe('firebase.js', () => {
       const result = await firebase.loadReading('id');
       expect(result).toBeNull();
       expect(console.warn).toHaveBeenCalledWith('[firebase] loadReading failed:', 'Fetch failed');
+    });
+  });
+
+  describe('Storage functions', () => {
+    it('uploadSlideAudio uploads audio blob to correct path and returns URL', async () => {
+      const { uploadBytes, getDownloadURL, ref } = await import('firebase/storage');
+      const blob = new Blob(['audio data'], { type: 'audio/webm' });
+      
+      const url = await firebase.uploadSlideAudio('reading-123', 0, blob);
+      
+      expect(ref).toHaveBeenCalledWith(expect.anything(), 'users/test-uid/readings/reading-123/slide-0.webm');
+      expect(uploadBytes).toHaveBeenCalled();
+      expect(url).toBe('https://mock-storage-url.com/file');
+    });
+
+    it('uploadSlideAudio returns null if user is not authenticated', async () => {
+      // Temporarily mock currentUser to null
+      const originalUser = firebaseMockAuth.currentUser;
+      firebaseMockAuth.currentUser = null;
+      
+      const blob = new Blob(['audio data'], { type: 'audio/webm' });
+      const url = await firebase.uploadSlideAudio('reading-123', 0, blob);
+      
+      expect(url).toBeNull();
+      
+      firebaseMockAuth.currentUser = originalUser;
+    });
+
+    it('fetchLibraryText fetches file from storage', async () => {
+      const { getDownloadURL, ref } = await import('firebase/storage');
+      
+      // Mock fetch response
+      const globalFetch = global.fetch;
+      global.fetch = vi.fn().mockResolvedValue({
+        text: () => Promise.resolve('Mocked library text content')
+      });
+
+      const text = await firebase.fetchLibraryText('alchabitius-english.txt');
+      
+      expect(ref).toHaveBeenCalledWith(expect.anything(), 'library/alchabitius-english.txt');
+      expect(getDownloadURL).toHaveBeenCalled();
+      expect(text).toBe('Mocked library text content');
+
+      global.fetch = globalFetch;
     });
   });
 });

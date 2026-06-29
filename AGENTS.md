@@ -71,3 +71,7 @@ production. Do not repeat this. Before creating ANY branch:
   - Do NOT use Orbitron, Lato, or basic web-safe fonts unless explicitly requested.
 - **Color Palette:** Rely heavily on the deep teal/obsidian backdrop, with glowing copper/gold (`#D17C49`, `text-copper-400`) for accents, borders, icons, and active states. Use `text-bone` or `text-silver` for readable text.
 - **Lighting & Glow Effects:** Use drop shadows, SVG filters (`feGaussianBlur`, `feDropShadow`), and radial gradients to create luminous, magical glowing effects, especially for charts, active UI states, and the background environment.
+
+## 6. Progress Tracking
+
+**CRITICAL RULE:** For every action or task you are instructed to do, you MUST build and maintain a progress dashboard (e.g. a markdown artifact like `task.md` or `progress_dashboard.md`). You must provide feedback from the system on your progress towards completion at regular, frequent intervals (e.g. every ~15 seconds of execution) by updating this dashboard or logging progress, ensuring the user has real-time visibility into your execution status.

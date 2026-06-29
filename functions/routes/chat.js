@@ -898,25 +898,22 @@ router.post('/analyze', async (req, res) => {
   try {
     const stream = await getAnthropic().messages.create({
       model: MODEL_SONNET,
-      max_tokens: 10000,
-      thinking: { type: 'adaptive' },
-      output_config: { effort: 'high' },
+      max_tokens: 4000,
       system: systemPrompt,
-      messages: [{ role: 'user', content: userContent }],
+      messages: [
+        { role: 'user', content: userContent }
+      ],
       stream: true,
     });
 
-    let fullText = '';
-
     for await (const chunk of stream) {
       if (chunk.type === 'content_block_delta' && chunk.delta.type === 'text_delta') {
-        fullText += chunk.delta.text;
+        const text = chunk.delta.text;
+        sseWrite(res, { type: 'text', text });
       }
     }
 
     clearInterval(heartbeat);
-    // Send complete, clean text all at once
-    sseWrite(res, { type: 'text', text: fullText });
     sseWrite(res, { type: 'done' });
     res.end();
   } catch (err) {

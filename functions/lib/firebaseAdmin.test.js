@@ -52,12 +52,25 @@ describe('firebaseAdmin initialization', () => {
     delete process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
   });
 
-  it('logs info when FIREBASE_SERVICE_ACCOUNT_JSON is missing', async () => {
+  it('initializes with ADC when FIREBASE_SERVICE_ACCOUNT_JSON is missing and ADC succeeds', async () => {
     const consoleSpy = vi.spyOn(console, 'info').mockImplementation(() => {});
     const { ADMIN_ENABLED } = await import('./firebaseAdmin.js');
 
+    expect(ADMIN_ENABLED).toBe(true);
+    expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('[firebase-admin] initialized with application default credentials'));
+    consoleSpy.mockRestore();
+  });
+
+  it('fails initialization when FIREBASE_SERVICE_ACCOUNT_JSON is missing and ADC throws', async () => {
+    const { initializeApp } = await import('firebase-admin/app');
+    vi.mocked(initializeApp).mockImplementationOnce(() => {
+      throw new Error('ADC not available');
+    });
+    const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const { ADMIN_ENABLED } = await import('./firebaseAdmin.js');
+
     expect(ADMIN_ENABLED).toBe(false);
-    expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('disabled — set FIREBASE_SERVICE_ACCOUNT_JSON'));
+    expect(consoleSpy).toHaveBeenCalledWith('[firebase-admin] init failed:', 'ADC not available');
     consoleSpy.mockRestore();
   });
 
@@ -242,7 +255,12 @@ describe('firebaseAdmin uninitialized', () => {
     vi.resetModules();
     vi.clearAllMocks();
     delete process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+    const { initializeApp } = await import('firebase-admin/app');
+    vi.mocked(initializeApp).mockImplementation(() => {
+      throw new Error('ADC not available');
+    });
     vi.spyOn(console, 'info').mockImplementation(() => {});
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
     firebaseAdmin = await import('./firebaseAdmin.js');
   });
 
