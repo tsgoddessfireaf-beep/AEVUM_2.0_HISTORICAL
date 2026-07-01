@@ -899,6 +899,7 @@ router.post('/analyze', async (req, res) => {
     const stream = await getAnthropic().messages.create({
       model: MODEL_SONNET,
       max_tokens: 4000,
+      thinking: { type: 'enabled', budget_tokens: 1024 },
       system: systemPrompt,
       messages: [
         { role: 'user', content: userContent }
@@ -906,11 +907,22 @@ router.post('/analyze', async (req, res) => {
       stream: true,
     });
 
+    let buffer = '';
     for await (const chunk of stream) {
       if (chunk.type === 'content_block_delta' && chunk.delta.type === 'text_delta') {
-        const text = chunk.delta.text;
-        sseWrite(res, { type: 'text', text });
+        buffer += chunk.delta.text;
+        if (buffer.includes(' ')) {
+          const parts = buffer.split(' ');
+          buffer = parts.pop();
+          for (const word of parts) {
+            sseWrite(res, { type: 'text', text: word + ' ' });
+            await new Promise(resolve => setTimeout(resolve, 50));
+          }
+        }
       }
+    }
+    if (buffer) {
+      sseWrite(res, { type: 'text', text: buffer });
     }
 
     clearInterval(heartbeat);
@@ -977,19 +989,32 @@ export async function handleFollowUp(req, res) {
     const stream = await getAnthropic().messages.create({
       model: MODEL_SONNET,
       max_tokens: 1200,
+      thinking: { type: 'enabled', budget_tokens: 1024 },
       system: FOLLOWUP_SYSTEM,
       messages: anthropicMessages,
       stream: true,
     });
 
     let fullText = '';
+    let buffer = '';
 
     for await (const chunk of stream) {
       if (chunk.type === 'content_block_delta' && chunk.delta.type === 'text_delta') {
         const text = chunk.delta.text;
         fullText += text;
-        sseWrite(res, { type: 'text', text });
+        buffer += text;
+        if (buffer.includes(' ')) {
+          const parts = buffer.split(' ');
+          buffer = parts.pop();
+          for (const word of parts) {
+            sseWrite(res, { type: 'text', text: word + ' ' });
+            await new Promise(resolve => setTimeout(resolve, 50));
+          }
+        }
       }
+    }
+    if (buffer) {
+      sseWrite(res, { type: 'text', text: buffer });
     }
 
     clearInterval(heartbeat);
