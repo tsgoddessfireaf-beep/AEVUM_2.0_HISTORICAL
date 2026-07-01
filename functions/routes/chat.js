@@ -844,7 +844,6 @@ router.post('/house-signification', async (req, res) => {
     const stream = await getAnthropic().messages.create({
       model: MODEL_HAIKU,
       max_tokens: 3000,
-      thinking: { type: 'enabled', budget_tokens: 1500 },
       system: HOUSE_SIGNIFICATION_SYSTEM,
       messages: messages.map(m => ({
         role: m.role === 'assistant' ? 'assistant' : 'user',
