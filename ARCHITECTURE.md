@@ -129,10 +129,10 @@ isPractitioner(user)  // checks VITE_PRACTITIONER_EMAILS env var
 
 ## Claude API
 
-- **Interview model:** `claude-haiku-4-5` with a 1500-token thinking budget (`thinking: { type: 'enabled', budget_tokens: 1500 }`) for sharper house-indicator selection
-- **Analysis model:** `claude-sonnet-4-6` with adaptive thinking and `output_config: { effort: 'high' }`
+- **Interview model:** `claude-haiku-4-5-20251001`. The interview phase uses standard streaming with no extended thinking budget to strictly minimize token consumption and speed up the user intake process.
+- **Analysis model:** `claude-sonnet-4-6`.
 - **House signification prompt:** conducts ≤3-question interview, emits `<house_significations>` JSON block
-- **Analysis prompt:** applies Lilly's methods — significators, aspects, essential/accidental dignities, prohibitions, translations of light — writes a grounded 4–5 paragraph interpretation (no invented testimonies), structured output with `## Header` sections parsed by `client/src/lib/analysis.js`
+- **Analysis prompt:** applies Lilly's methods — significators, aspects, essential/accidental dignities, prohibitions, translations of light — writes a grounded 4–5 paragraph interpretation (no invented testimonies), structured output with `---HEADER---` sections parsed by `client/src/lib/analysis.js` using robust newline-agnostic regex.
 
 ---
 
@@ -155,8 +155,9 @@ All keys persisted to `localStorage` via Zustand `persist` middleware.
 
 ## Firebase
 
-- **Auth:** Google sign-in (optional — only needed to save readings to history)
-- **Firestore:** Reading documents — question, chart data, analysis, significations
+- **Auth:** Google sign-in (required to save readings to history)
+- **Firestore:** Reading documents — question, chart data, analysis, significations. 
+  - **Auto-Save:** User readings are automatically persisted to the `readings` collection upon completion, controlled by the `auto_save_history` preference toggle in the Data & Privacy settings (defaults to true).
 - **Storage:** Practitioner voice narration blobs per slide (writes locked to the practitioner email)
 - **Rules:** `firestore.rules`, `storage.rules` in repo root
 
@@ -205,4 +206,4 @@ Vite dev server proxies `/api/*` → `https://us-central1-flutter-ai-playground-
 
 ---
 
-*Last updated: June 13, 2026*
+*Last updated: July 1, 2026*
