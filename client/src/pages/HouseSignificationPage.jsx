@@ -62,11 +62,11 @@ export default function HouseSignificationPage() {
           setStreamingText(prev => prev + textQueueRef.current);
           textQueueRef.current = '';
         } else {
-          // Take 1 char at a time to simulate ~35 WPM (1 char every ~300ms)
+          // Take 1 char at a time to simulate ~35 WPM (1 char every ~285ms)
           const char = textQueueRef.current.charAt(0);
           textQueueRef.current = textQueueRef.current.slice(1);
           setStreamingText(prev => prev + char);
-          timeoutId = setTimeout(typeNext, 20 + Math.random() * 60); // A bit faster than 35 wpm for UX, but looks typed
+          timeoutId = setTimeout(typeNext, 250 + Math.random() * 70); // Accurately matches 35 wpm
           return;
         }
       }
