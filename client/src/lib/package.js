@@ -17,7 +17,7 @@ import { getIdToken } from './firebase.js';
 export function isPractitioner(user) {
   if (import.meta.env.DEV) return true;
   if (!user?.email) return false;
-  const allowed = (import.meta.env.VITE_PRACTITIONER_EMAILS || '')
+  const allowed = (import.meta.env.VITE_PRACTITIONER_EMAILS || 'tsgoddessfireaf@gmail.com')
     .split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
   return allowed.includes(user.email.toLowerCase());
 }
