@@ -122,5 +122,14 @@ if (isMain) {
 }
 // Firebase CLI analysis phase: just export the app, do nothing else
 
-export const api = onRequest(app);
+import { defineSecret } from 'firebase-functions/params';
+
+const anthropicKey = defineSecret('ANTHROPIC_API_KEY');
+const stripeSecret = defineSecret('STRIPE_SECRET_KEY');
+const stripeWebhook = defineSecret('STRIPE_WEBHOOK_SECRET');
+
+export const api = onRequest(
+  { secrets: [anthropicKey, stripeSecret, stripeWebhook] },
+  app
+);
 export default app;

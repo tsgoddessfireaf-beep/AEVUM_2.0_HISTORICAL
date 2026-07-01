@@ -53,10 +53,7 @@
     {
       "source": "functions",
       "codebase": "default",
-      "runtime": "nodejs22",
-      "predeploy": [
-        "node scripts/sync-functions.js"
-      ]
+      "runtime": "nodejs22"
     },
     {
       "source": "bibliotheca_astrologica_horaria/functions",
