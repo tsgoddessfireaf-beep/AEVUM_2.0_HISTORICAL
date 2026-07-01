@@ -451,6 +451,7 @@ export function parseHouseSignifications(text) {
 
 function sseWrite(res, data) {
   res.write(`data: ${JSON.stringify(data)}\n\n`);
+  if (typeof res.flush === 'function') res.flush();
 }
 
 const SIGN_MODES_SRV = {
@@ -830,6 +831,7 @@ router.post('/house-signification', async (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
+  res.setHeader('X-Accel-Buffering', 'no');
   if (typeof res.flushHeaders === 'function') res.flushHeaders();
 
   // Heartbeat keeps the SSE connection alive during the model's silent thinking
@@ -887,6 +889,7 @@ router.post('/analyze', async (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
+  res.setHeader('X-Accel-Buffering', 'no');
   res.flushHeaders();
 
   const systemPrompt = buildAnalysisSystem(tradition || 'classic', questionType || 'perfection');
@@ -969,6 +972,7 @@ export async function handleFollowUp(req, res) {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
+  res.setHeader('X-Accel-Buffering', 'no');
   if (typeof res.flushHeaders === 'function') res.flushHeaders();
 
   const chartContext = formatChartForPrompt(ephemerisData, question, houseSignifications || {});
