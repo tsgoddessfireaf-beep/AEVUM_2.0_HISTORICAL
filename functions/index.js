@@ -78,6 +78,16 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', calibrated: getCalibrationStatus() });
 });
 
+app.get('/api/test-outbound', async (req, res) => {
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', { method: 'GET' });
+    const text = await response.text();
+    res.json({ status: response.status, text });
+  } catch (err) {
+    res.status(500).json({ error: err.message, stack: err.stack });
+  }
+});
+
 app.use('/api/chat', aiLimiter, chatRoutes);
 app.use('/api/ephemeris', aiLimiter, ephemerisRoutes);
 app.use('/api/stripe', stripeRoutes);

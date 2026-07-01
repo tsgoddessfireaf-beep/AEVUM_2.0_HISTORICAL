@@ -31,3 +31,8 @@ library/progress-*.js
 
 service-account.json
 functions/.env
+
+# AI Agent Logs
+.agents/
+.claude/
+.jules/

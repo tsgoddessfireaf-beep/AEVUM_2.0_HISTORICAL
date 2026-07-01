@@ -867,7 +867,7 @@ router.post('/house-signification', async (req, res) => {
     res.end();
   } catch (err) {
     clearInterval(heartbeat);
-    console.error('[house-signification] AI error:', err?.message || err);
+    console.error('[house-signification] AI error:', err);
     sseWrite(res, { type: 'error', error: friendlyApiError(err) });
     res.end();
   }
