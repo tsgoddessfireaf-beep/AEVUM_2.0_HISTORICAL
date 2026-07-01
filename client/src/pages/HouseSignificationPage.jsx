@@ -24,11 +24,16 @@ export default function HouseSignificationPage() {
   } = useAppStore();
 
   const [input, setInput] = useState('');
-  const [streaming, setStreaming] = useState(false);
-  const [streamingText, setStreamingText] = useState('');
+  const [streaming, setStreaming] = useState(false); // Network status
+  const [isTyping, setIsTyping] = useState(false);   // UI typing status
+  const [streamingText, setStreamingText] = useState(''); // Text currently typed to screen
   const [error, setError] = useState('');
+  
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
+  
+  const textQueueRef = useRef('');
+  const finishRef = useRef(null);
 
   useEffect(() => {
     if (!question) navigate('/ask');
@@ -45,6 +50,47 @@ export default function HouseSignificationPage() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [interviewMessages, streamingText]);
 
+  // Typewriter effect loop
+  useEffect(() => {
+    if (!isTyping) return;
+    let timeoutId;
+    
+    function typeNext() {
+      if (textQueueRef.current.length > 0) {
+        // If we hit the XML block, skip typing it out (it's hidden anyway)
+        if (textQueueRef.current.startsWith('<house_significations>')) {
+          setStreamingText(prev => prev + textQueueRef.current);
+          textQueueRef.current = '';
+        } else {
+          // Take 1 char at a time to simulate ~35 WPM (1 char every ~300ms)
+          const char = textQueueRef.current.charAt(0);
+          textQueueRef.current = textQueueRef.current.slice(1);
+          setStreamingText(prev => prev + char);
+          timeoutId = setTimeout(typeNext, 20 + Math.random() * 60); // A bit faster than 35 wpm for UX, but looks typed
+          return;
+        }
+      }
+      
+      // Queue is empty
+      if (!streaming && finishRef.current) {
+        // Network done and queue drained
+        setIsTyping(false);
+        const { data, accumulated, msgs } = finishRef.current;
+        const assistantMsg = { role: 'assistant', content: accumulated };
+        setInterviewMessages([...msgs, assistantMsg]);
+        setStreamingText('');
+        if (data.significations) setHouseSignifications(data.significations);
+        finishRef.current = null;
+        setTimeout(() => inputRef.current?.focus(), 100);
+      } else {
+        // Waiting for more network chunks
+        timeoutId = setTimeout(typeNext, 50);
+      }
+    }
+    timeoutId = setTimeout(typeNext, 50);
+    return () => clearTimeout(timeoutId);
+  }, [isTyping, streaming]);
+
   async function startInterview() {
     const initialMessage = {
       role: 'user',
@@ -57,7 +103,10 @@ export default function HouseSignificationPage() {
 
   async function sendToStream(messages) {
     setStreaming(true);
+    setIsTyping(true);
     setStreamingText('');
+    textQueueRef.current = '';
+    finishRef.current = null;
     setError('');
     let accumulated = '';
 
@@ -72,14 +121,11 @@ export default function HouseSignificationPage() {
         {
           onText: (text) => {
             accumulated += text;
-            setStreamingText((t) => t + text);
+            textQueueRef.current += text;
           },
           onDone: (data) => {
-            const assistantMsg = { role: 'assistant', content: accumulated };
-            setInterviewMessages([...messages, assistantMsg]);
-            setStreamingText('');
-            if (data.significations) setHouseSignifications(data.significations);
-            setTimeout(() => inputRef.current?.focus(), 100);
+            // Signal the typewriter loop to finalize when queue is empty
+            finishRef.current = { data, accumulated, msgs: messages };
           },
           onError: (err) => {
             setError(err);
@@ -223,7 +269,7 @@ export default function HouseSignificationPage() {
             />
             <button
               onClick={handleSend}
-              disabled={streaming || !input.trim()}
+              disabled={isTyping || !input.trim()}
               className="px-4 bg-copper-400 hover:bg-copper-300 disabled:opacity-30 text-teal-900
                          font-semibold rounded-xl transition-all self-end py-3 text-sm"
             >
