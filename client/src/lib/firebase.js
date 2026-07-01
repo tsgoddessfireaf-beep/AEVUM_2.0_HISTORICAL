@@ -54,16 +54,7 @@ if (FIREBASE_ENABLED) {
     auth = getAuth(app);
     if (config.storageBucket) storage = getStorage(app);
 
-    // Connect to Firebase Emulators in development / localhost
-    if (import.meta.env.DEV || window.location.hostname === 'localhost') {
-      const host = window.location.hostname;
-      connectFirestoreEmulator(db, host, 8080);
-      connectAuthEmulator(auth, `http://${host}:9099`);
-      if (storage) {
-        connectStorageEmulator(storage, host, 9199);
-      }
-      console.info(`[firebase] Connected to emulators on ${host}`);
-    }
+
   } catch (err) {
     console.warn('[firebase] init failed:', err.message);
   }

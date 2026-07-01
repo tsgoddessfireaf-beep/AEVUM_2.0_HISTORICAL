@@ -13,11 +13,11 @@ guidance here overrides any default agent behavior.
 | LLM provider | **Anthropic (Claude)** via `@anthropic-ai/sdk`. Env var: `ANTHROPIC_API_KEY`. |
 | Models | Interview: `claude-haiku-4-5-20251001`. Analysis: `claude-sonnet-4-6`. |
 | NOT used | This app does **not** use Groq, Gemini, OpenAI, or any other LLM provider. Any reference to those is wrong — correct it. |
-| Hosting | Render (single web service). Behind a reverse proxy → `trust proxy` is required and **already set** (`server/index.js`). |
+| Hosting | Firebase (Hosting & Functions). |
 | Auth | Firebase Admin. Server-side checks gate on `ADMIN_ENABLED` (true when `FIREBASE_SERVICE_ACCOUNT_JSON` is set). |
 | Payments | Stripe, **single-use $88 booking product only** — no subscriptions/quotas. |
 | Ephemeris | Local Python sidecar using **pyswisseph** (Swiss Ephemeris). `flatlib` is **removed** — do not reintroduce it. |
-| Email | Resend. User-controlled input in HTML emails must be escaped via the existing `escapeHtml` in `server/routes/booking.js`. |
+| Email | Resend. User-controlled input in HTML emails must be escaped via the existing `escapeHtml` in `functions/routes/booking.js`. |
 
 If you find code or a log that contradicts this table, the code/log is stale —
 fix it to match reality, don't propagate the error.

@@ -1,8 +1,8 @@
 # Aevum — Architecture Blueprint
 
 **Owner:** Dolores Puckett / Aeonic Arts  
-**Stack:** React + Vite · Express · Python FastAPI · Firebase · Stripe · Resend  
-**Hosted:** Render (web service, free tier → upgrade on first booking)
+**Stack:** React + Vite · Firebase Functions · Python FastAPI · Firebase · Stripe · Resend  
+**Hosted:** Firebase (Hosting & Functions)
 
 ---
 
@@ -17,10 +17,10 @@ Aevum is a traditional horary astrology engine. A user submits a question, a cha
 ```
 AEVUM/
 ├── client/                  React + Vite SPA (port 5173 in dev)
-├── server/                  Express API (port 3001)
+├── functions/               Firebase Cloud Functions (API backend)
 ├── ephemeris-service/       Python FastAPI sidecar (port 8000)
 │   └── ephe/                Swiss Ephemeris .se1 data files (committed)
-└── package.json             Root — runs all three concurrently via npm run dev
+└── package.json             Root — runs ephemeris and client concurrently
 ```
 
 ---
@@ -99,7 +99,7 @@ UpgradePage
 
 - **No subscription.** Single-use, one-time payment only.
 - **Stripe keys:** server-side only (`STRIPE_SECRET_KEY`). No publishable key in client.
-- **Price ID:** `STRIPE_BOOKING_PRICE_ID` in `server/.env` and Render env vars.
+- **Price ID:** `STRIPE_BOOKING_PRICE_ID` in `functions/.env` or Firebase secrets.
 
 ---
 
@@ -110,7 +110,7 @@ UpgradePage
 isPractitioner(user)  // checks VITE_PRACTITIONER_EMAILS env var
 ```
 
-- Set `VITE_PRACTITIONER_EMAILS=tsgoddessfireaf@gmail.com` in Render client env
+- Set `VITE_PRACTITIONER_EMAILS=tsgoddessfireaf@gmail.com` in production client environment variables
 - Practitioners bypass the paywall and see the full reading
 - Practitioners see the **Client Package** panel on ResultsPage → generate 8 teaching slides → record per-slide voice narration → share link delivers the narrated walkthrough to the client
 
@@ -164,14 +164,12 @@ All keys persisted to `localStorage` via Zustand `persist` middleware.
 
 ## Environment Variables
 
-### `server/.env`
+### `functions/.env`
 ```
 ANTHROPIC_API_KEY=
 STRIPE_SECRET_KEY=         # live: sk_live_...
 STRIPE_BOOKING_PRICE_ID=   # live price ID for $88 product
 RESEND_API_KEY=
-PORT=3001
-NODE_ENV=development
 ```
 
 ### `client/.env.local`
@@ -187,13 +185,11 @@ VITE_PRACTITIONER_EMAILS=tsgoddessfireaf@gmail.com
 
 ---
 
-## Render Deployment
+## Firebase Deployment
 
-- **Service:** `aevum-plp9.onrender.com`
-- **Build command:** `npm run build` (builds client only)
-- **Start command:** `cd server && node index.js`
-- **Note:** Ephemeris sidecar runs as a separate process on the same dyno via `npm run dev` in production. In production, Express serves `client/dist/` and all API routes.
-- **Upgrade to $7/mo paid tier** on first live booking — eliminates 60-second cold start.
+- **Hosting:** Firebase Hosting (serves `client/dist`)
+- **Functions:** Firebase Cloud Functions (serves `/api/**`)
+- **Build & Deploy Command:** `npm run build && firebase deploy`
 
 ---
 
@@ -201,11 +197,11 @@ VITE_PRACTITIONER_EMAILS=tsgoddessfireaf@gmail.com
 
 ```bash
 npm run install:all   # install all three packages
-npm run dev           # starts ephemeris (:8000), server (:3001), client (:5173)
+npm run dev           # starts ephemeris (:8000) and client (:5173)
 npm run build         # production build (client only)
 ```
 
-Vite dev server proxies `/api/*` → `http://localhost:3001`.
+Vite dev server proxies `/api/*` → `https://us-central1-flutter-ai-playground-f880c.cloudfunctions.net/api`.
 
 ---
 
