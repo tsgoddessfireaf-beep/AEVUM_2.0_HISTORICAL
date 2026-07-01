@@ -85,6 +85,7 @@ export default function ConsentPage() {
 
   const hasAnswered    = Boolean(profile?.consent_timestamp);
   const allowTraining  = profile?.preferences_json?.allow_training_data ?? false;
+  const autoSaveHistory = profile?.preferences_json?.auto_save_history ?? true;
   const versionMismatch =
     hasAnswered && profile?.consent_version !== CURRENT_CONSENT_VERSION;
 
@@ -152,6 +153,17 @@ export default function ConsentPage() {
                 saving={saving}
                 justSaved={savedKey === 'allow_training_data'}
                 onChange={(v) => handleToggle('allow_training_data', v)}
+              />
+
+              <div className="h-px bg-teal-800/50 my-4" />
+
+              <ToggleRow
+                label="Auto-save to History"
+                description="Automatically save all completed readings to your personal History."
+                checked={autoSaveHistory}
+                saving={saving}
+                justSaved={savedKey === 'auto_save_history'}
+                onChange={(v) => handleToggle('auto_save_history', v)}
               />
             </div>
 

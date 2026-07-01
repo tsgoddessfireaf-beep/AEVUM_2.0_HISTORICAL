@@ -16,7 +16,7 @@ import JournalPanel from '../components/JournalPanel.jsx';
 import ReadingPackagePanel from '../components/ReadingPackagePanel.jsx';
 import useAppStore from '../store/useAppStore.js';
 import { buildReadingFilename } from '../lib/filename.js';
-import { saveReading, hasConsented, shareReading, getIdToken } from '../lib/firebase.js';
+import { saveReading, hasConsented, shareReading, getIdToken, loadUserProfile } from '../lib/firebase.js';
 import { streamSSE } from '../lib/sse.js';
 import { parseSections, formatInline, parseBullets, parseNumbered, answerStyle } from '../lib/analysis.js';
 import { getChartWarnings, getStrictures } from '../lib/warnings.js';
@@ -358,6 +358,11 @@ export default function ResultsPage() {
     if (!sections.answer || readingId) return;
 
     (async () => {
+      const profile = await loadUserProfile();
+      const shouldAutoSave = profile?.preferences_json?.auto_save_history ?? true;
+      
+      if (!shouldAutoSave) return;
+      
       const id = await saveReading({
         question,
         dateTime: dateTimeData,
