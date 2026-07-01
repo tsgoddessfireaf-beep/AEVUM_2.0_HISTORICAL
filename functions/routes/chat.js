@@ -899,7 +899,7 @@ router.post('/analyze', async (req, res) => {
     const stream = await getAnthropic().messages.create({
       model: MODEL_SONNET,
       max_tokens: 4000,
-      thinking: { type: 'enabled', budget_tokens: 1024 },
+      thinking: { type: 'enabled', budget_tokens: 1888 },
       system: systemPrompt,
       messages: [
         { role: 'user', content: userContent }
@@ -989,7 +989,7 @@ export async function handleFollowUp(req, res) {
     const stream = await getAnthropic().messages.create({
       model: MODEL_SONNET,
       max_tokens: 1200,
-      thinking: { type: 'enabled', budget_tokens: 1024 },
+      thinking: { type: 'enabled', budget_tokens: 1888 },
       system: FOLLOWUP_SYSTEM,
       messages: anthropicMessages,
       stream: true,
