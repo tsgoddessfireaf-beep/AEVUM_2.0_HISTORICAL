@@ -45,7 +45,7 @@ const HOW_IT_WORKS = [
  */
 export default function IntakePage() {
   const navigate = useNavigate();
-  const { question, setQuestion, resetAll, setQuestionType } = useAppStore();
+  const { question, setQuestion, resetAll, setQuestionType, clearForNewQuestion } = useAppStore();
   const { isGoogle } = useAuthState();
   const [localQuestion, setLocalQuestion] = useState(question);
   const [showOnboarding, setShowOnboarding] = useState(
@@ -66,6 +66,7 @@ export default function IntakePage() {
       setShowConditionWarning(true);
       return;
     }
+    clearForNewQuestion();
     setQuestion(trimmed);
     setQuestionType(qType);
     navigate('/datetime');
@@ -73,6 +74,7 @@ export default function IntakePage() {
 
   function handleProceedAsCondition() {
     const trimmed = localQuestion.trim();
+    clearForNewQuestion();
     setQuestion(trimmed);
     setQuestionType('condition');
     navigate('/datetime');

@@ -93,6 +93,20 @@ const useAppStore = create(
 
       setHouseSignifications: (sig) => set({ houseSignifications: sig }),
 
+      /** Clears everything downstream of the question (interview chat, significations,
+       * chart, analysis, saved reading id) so a new question never inherits stale state
+       * from a previous session. Leaves dateTimeData and chartPrefs untouched. */
+      clearForNewQuestion: () =>
+        set({
+          interviewMessages: [],
+          houseSignifications: null,
+          ephemerisData: null,
+          analysis: '',
+          readingId: null,
+          followUpMessages: [],
+          journal: null,
+        }),
+
       setEphemerisData: (data) => set({ ephemerisData: data }),
 
       appendAnalysis: (text) => set((s) => ({ analysis: s.analysis + text })),
