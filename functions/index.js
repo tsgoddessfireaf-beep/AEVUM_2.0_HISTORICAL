@@ -5,8 +5,16 @@ import dotenv from 'dotenv';
 // override:true forces .env values over shell env vars
 dotenv.config({ override: true });
 
-import { onRequest } from 'firebase-functions/v2/https';
+import { onRequest, onCallGenkit } from 'firebase-functions/v2/https';
 import { setGlobalOptions } from 'firebase-functions/v2';
+
+// --- NEW GENKIT & FIREBASE ADMIN IMPORTS ---
+import { genkit, z } from 'genkit';
+import { vertexAI, textEmbedding005 } from '@genkit-ai/vertexai';
+import { defineFirestoreRetriever } from '@genkit-ai/firebase';
+import { initializeApp, getApps, getApp } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
+// -------------------------------------------
 
 setGlobalOptions({
   region: 'us-central1',
@@ -48,8 +56,6 @@ const allowedOrigins = process.env.NODE_ENV === 'production'
       'https://aevum-app.firebaseapp.com',
       'https://flutter-ai-playground-f880c.web.app',
       'https://flutter-ai-playground-f880c.firebaseapp.com',
-      'https://gen-lang-client-0022917921.web.app',
-      'https://gen-lang-client-0022917921.firebaseapp.com',
     ]
   : true; // allow all localhost origins in dev
 
@@ -132,4 +138,49 @@ export const api = onRequest(
   { secrets: [anthropicKey, stripeSecret, stripeWebhook] },
   app
 );
+
+// ==========================================================
+// --- NEW GENKIT & VECTOR SEARCH BACKEND INITIALIZATION ---
+// ==========================================================
+
+// Safely initialize the Firebase Admin App to prevent duplication errors
+const adminApp = getApps().length === 0 ? initializeApp() : getApp();
+const db = getFirestore(adminApp);
+
+// Initialize Genkit with Vertex AI support
+const ai = genkit({ plugins: [vertexAI()] });
+
+// Create the connector to your 'library_cards' collection in Firestore
+export const libraryCardsRetriever = defineFirestoreRetriever(ai, {
+  name: 'libraryCardsRetriever',
+  firestore: db,
+  collection: 'library_cards',
+  contentField: 'textContent',
+  vectorField: 'embedding',
+  embedder: textEmbedding005,
+  distanceMeasure: 'COSINE',
+});
+
+// Expose a new Callable Cloud Function ('askLibraryFlow') for your web client
+export const askLibraryFlow = onCallGenkit(
+  ai.defineFlow(
+    {
+      name: 'libraryCardsQA',
+      inputSchema: z.string(),
+      outputSchema: z.string(),
+    },
+    async (question) => {
+      // Search Firestore using our vector search retriever
+      const docs = await ai.retrieve({
+        retriever: libraryCardsRetriever,
+        query: question,
+        options: { limit: 3 },
+      });
+      
+      // Merge the text of the matching library cards and send them back to the client
+      return docs.map((d) => d.text).join('\n\n');
+    }
+  )
+);
+
 export default app;

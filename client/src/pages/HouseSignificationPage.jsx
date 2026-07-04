@@ -34,6 +34,9 @@ export default function HouseSignificationPage() {
   
   const textQueueRef = useRef('');
   const finishRef = useRef(null);
+  const streamingRef = useRef(false); // mirrors `streaming` so the typewriter loop
+                                      // is not torn down when the network flag flips
+                                      // (deployed SSE arrives as one buffered burst)
 
   useEffect(() => {
     if (!question) navigate('/ask');
@@ -72,7 +75,7 @@ export default function HouseSignificationPage() {
       }
       
       // Queue is empty
-      if (!streaming && finishRef.current) {
+      if (!streamingRef.current && finishRef.current) {
         // Network done and queue drained
         setIsTyping(false);
         const { data, accumulated, msgs } = finishRef.current;
@@ -89,7 +92,7 @@ export default function HouseSignificationPage() {
     }
     timeoutId = setTimeout(typeNext, 50);
     return () => clearTimeout(timeoutId);
-  }, [isTyping, streaming]);
+  }, [isTyping]);
 
   async function startInterview() {
     const initialMessage = {
@@ -103,6 +106,7 @@ export default function HouseSignificationPage() {
 
   async function sendToStream(messages) {
     setStreaming(true);
+    streamingRef.current = true;
     setIsTyping(true);
     setStreamingText('');
     textQueueRef.current = '';
@@ -139,6 +143,7 @@ export default function HouseSignificationPage() {
       setStreamingText('');
     } finally {
       setStreaming(false);
+      streamingRef.current = false;
     }
   }
 
@@ -219,10 +224,10 @@ export default function HouseSignificationPage() {
           {displayMessages.map((msg, i) => (
             <ChatMessage key={i} role={msg.role} content={msg.content} />
           ))}
-          {streaming && streamingText && (
+          {(isTyping || streaming) && streamingText && (
             <ChatMessage role="assistant" content={streamingText} streaming />
           )}
-          {streaming && !streamingText && (
+          {(isTyping || streaming) && !streamingText && (
             <div className="flex gap-3">
               <div className="w-8 h-8 rounded-full bg-teal-900 border border-copper-400/30 text-copper-400 flex items-center justify-center text-sm">☽</div>
               <div className="bg-teal-900/80 border border-teal-600/50 rounded-2xl rounded-tl-sm px-4 py-3">
