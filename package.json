@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently -n ephem,client -c magenta,green \"npm run dev:ephemeris\" \"npm run dev:client\"",
     "dev:client": "cd client && npm run dev",
-    "dev:ephemeris": "cd ephemeris-service && .venv\\Scripts\\python -m uvicorn main:app --port 8000 --reload",
+    "dev:ephemeris": "cd ephemeris-service && node ../scripts/run-python.js uvicorn main:app --port 8000 --reload",
     "build": "cd client && npm run build",
     "start": "cd ephemeris-service && .venv/bin/python -m uvicorn main:app --port 8000",
     "install:all": "npm install && cd client && npm install && cd ../functions && npm install && cd ../bibliotheca_astrologica_horaria/functions && npm install && cd ../../ephemeris-service && python -m venv .venv && node ../scripts/install-python-deps.js",
