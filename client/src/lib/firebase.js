@@ -23,14 +23,14 @@ import { initializeApp } from 'firebase/app';
 import {
   getFirestore, collection, addDoc, doc, updateDoc, setDoc,
   arrayUnion, serverTimestamp, getDoc,
-  query, where, orderBy, getDocs,
+  query, where, orderBy, getDocs, connectFirestoreEmulator,
 } from 'firebase/firestore';
 import {
   getAuth, onAuthStateChanged,
   GoogleAuthProvider, signInWithPopup,
-  signInWithCredential, signOut,
+  signInWithCredential, signOut, connectAuthEmulator,
 } from 'firebase/auth';
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, connectStorageEmulator } from 'firebase/storage';
 
 const config = {
   apiKey:            import.meta.env.VITE_FIREBASE_API_KEY,
@@ -53,6 +53,8 @@ if (FIREBASE_ENABLED) {
     db = getFirestore(app);
     auth = getAuth(app);
     if (config.storageBucket) storage = getStorage(app);
+
+
   } catch (err) {
     console.warn('[firebase] init failed:', err.message);
   }
@@ -154,6 +156,7 @@ export async function signOutUser() {
 
 const READINGS = 'readings';
 const USERS    = 'users';
+const DRAFTS   = 'hora_reading_drafts';
 
 /** Bump this whenever the consent text changes — stored alongside each user's agreement. */
 export const CURRENT_CONSENT_VERSION = '1.0';
@@ -238,6 +241,73 @@ export async function loadUserReadings() {
   } catch (err) {
     console.warn('[firebase] loadUserReadings failed:', err.message);
     return [];
+  }
+}
+
+// ─── In-progress reading draft (replaces localStorage as source of truth) ────
+//
+// One document per user, id = uid, in the `hora_reading_drafts` collection. Saved on every
+// wizard step transition (question, date/time, interview messages, house
+// significations) so a session can never be silently corrupted or lost in
+// browser storage the way the old localStorage-only session was.
+
+/**
+ * Overwrites the current user's draft document with the given fields (merged).
+ * No-ops silently if Firebase isn't configured or the user isn't signed in —
+ * callers should treat this as best-effort and keep local state as the
+ * immediate source of truth for rendering.
+ * @param {Object} fields - Any subset of the draft shape to merge in.
+ * @returns {Promise<void>}
+ */
+export async function saveDraft(fields) {
+  if (!db) return;
+  const userId = getCurrentUserId();
+  if (!userId) return;
+  try {
+    await setDoc(
+      doc(db, DRAFTS, userId),
+      { ...fields, updatedAt: serverTimestamp() },
+      { merge: true },
+    );
+  } catch (err) {
+    console.warn('[firebase] saveDraft failed:', err.message);
+  }
+}
+
+/**
+ * Fetches the current user's in-progress draft, if any.
+ * @returns {Promise<Object|null>}
+ */
+export async function loadDraft() {
+  if (!db) return null;
+  const userId = getCurrentUserId();
+  if (!userId) return null;
+  try {
+    const snap = await getDoc(doc(db, DRAFTS, userId));
+    return snap.exists() ? snap.data() : null;
+  } catch (err) {
+    console.warn('[firebase] loadDraft failed:', err.message);
+    return null;
+  }
+}
+
+/**
+ * Clears the current user's draft — called when starting a new question or
+ * once a reading completes and is saved to the `readings` collection.
+ * @returns {Promise<void>}
+ */
+export async function clearDraft() {
+  if (!db) return;
+  const userId = getCurrentUserId();
+  if (!userId) return;
+  try {
+    await setDoc(doc(db, DRAFTS, userId), {
+      question: '', questionType: null, interviewMessages: [],
+      houseSignifications: null, ephemerisData: null, analysis: '',
+      updatedAt: serverTimestamp(),
+    });
+  } catch (err) {
+    console.warn('[firebase] clearDraft failed:', err.message);
   }
 }
 
@@ -360,7 +430,7 @@ export async function loadPublicReading(readingId) {
 
 /**
  * Uploads one slide's voice narration to Firebase Storage and returns a
- * playable download URL. Recordings live at readings/{readingId}/slide-{n}.{ext}.
+ * playable download URL. Recordings live at users/{userId}/readings/{readingId}/slide-{n}.{ext}.
  * @param {string} readingId
  * @param {number} slideIndex - 0-based slide position.
  * @param {Blob} blob - Audio blob from MediaRecorder.
@@ -368,11 +438,16 @@ export async function loadPublicReading(readingId) {
  */
 export async function uploadSlideAudio(readingId, slideIndex, blob) {
   if (!storage || !readingId || !blob) return null;
+  const userId = getCurrentUserId();
+  if (!userId) {
+    console.warn('[firebase] uploadSlideAudio failed: user not authenticated');
+    return null;
+  }
   const ext = blob.type.includes('mp4') ? 'm4a'
             : blob.type.includes('ogg') ? 'ogg'
             : 'webm';
   try {
-    const path = `readings/${readingId}/slide-${slideIndex}.${ext}`;
+    const path = `users/${userId}/readings/${readingId}/slide-${slideIndex}.${ext}`;
     const fileRef = storageRef(storage, path);
     await uploadBytes(fileRef, blob, { contentType: blob.type || 'audio/webm' });
     return await getDownloadURL(fileRef);
@@ -380,6 +455,21 @@ export async function uploadSlideAudio(readingId, slideIndex, blob) {
     console.warn('[firebase] uploadSlideAudio failed:', err.message);
     return null;
   }
+}
+
+/**
+ * Fetches an astrology library text file directly from Firebase Storage.
+ * @param {string} filename
+ * @returns {Promise<string>}
+ */
+export async function fetchLibraryText(filename) {
+  if (!storage) {
+    throw new Error('Firebase Storage not initialized');
+  }
+  const fileRef = storageRef(storage, `library/${filename}`);
+  const url = await getDownloadURL(fileRef);
+  const res = await fetch(url);
+  return await res.text();
 }
 
 /**

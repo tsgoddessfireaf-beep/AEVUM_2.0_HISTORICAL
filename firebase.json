@@ -36,6 +36,13 @@
           "region": "us-central1"
         },
         {
+          "source": "/ephemeris/**",
+          "run": {
+            "serviceId": "ephemeris-service",
+            "region": "us-central1"
+          }
+        },
+        {
           "source": "**",
           "destination": "/index.html"
         }
@@ -53,5 +60,26 @@
       "codebase": "bibliotheca_astrologica_horaria",
       "runtime": "nodejs22"
     }
-  ]
+  ],
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
 }

@@ -19,6 +19,15 @@ service cloud.firestore {
                         && request.auth.uid == userId;
     }
 
+    // In-progress reading draft — one document per user, keyed by their uid.
+    // Replaces localStorage as the source of truth for the wizard (question,
+    // date/time, interview messages, house significations) so a session
+    // can't get silently corrupted or lost in browser storage.
+    match /hora_reading_drafts/{userId} {
+      allow read, write: if request.auth != null
+                        && request.auth.uid == userId;
+    }
+
     match /readings/{readingId} {
       // Public readings (isPublic == true) are readable by anyone without auth
       allow read: if resource.data.isPublic == true;

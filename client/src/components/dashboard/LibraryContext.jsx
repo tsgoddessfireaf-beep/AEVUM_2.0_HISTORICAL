@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { fetchLibraryText } from '../../lib/firebase';
 
 const ASTROLOGERS = [
   { id: 'alchabitius', name: 'Alchabitius', file: 'alchabitius-english.txt', title: 'Introduction to the Art of Judgments', color: 'copper' },
@@ -9,7 +10,7 @@ const ASTROLOGERS = [
 
 /**
  * LibraryContext displays relevant astrological quotes based on the current slide's topic.
- * It fetches the texts from /api/library statically.
+ * It fetches the texts from Firebase Storage.
  */
 export default function LibraryContext({ currentSlide }) {
   const [texts, setTexts] = useState({});
@@ -22,7 +23,7 @@ export default function LibraryContext({ currentSlide }) {
     async function fetchLibrary() {
       setLoading(true);
       try {
-        const fetchPromises = ASTROLOGERS.map(a => fetch(`/api/library/${a.file}`).then(res => res.text()));
+        const fetchPromises = ASTROLOGERS.map(a => fetchLibraryText(a.file));
         const results = await Promise.all(fetchPromises);
         
         const newTexts = {};

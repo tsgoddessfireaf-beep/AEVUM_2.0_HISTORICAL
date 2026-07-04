@@ -18,6 +18,9 @@ Phases 1, 2, and 3 are complete. The horary engine is practitioner-grade, accoun
 - [ ] **Performance** *(UX)*
   Bundle audit, lazy-load heavy components, cache ephemeris responses for identical date/time/location requests.
 
+- [ ] **Wire the real library into the analysis engine** *(Grounding quality)*
+  `library/cards/*.jsonl` (Lilly, Bonatti, Culpeper, Dariot, Jacquinot, Ibn Ezra, Naibod, Alchabitius — each entry has a real `id`, `topics`, `condition_keys`) is not connected to the server at all. The live `/api/chat/analyze` endpoint only pulls from the small hardcoded `HISTORICAL_APHORISMS` set in `functions/lib/historicalTexts.js`. Needs: load the jsonl shelves server-side, match against chart conditions via `condition_keys`/`topics` (replacing or supplementing `matchHistoricalAphorisms`), inject matched cards into the analysis prompt, and return their real card IDs as structured citations (superseding the small-fix citation shape added for the hardcoded set).
+
 ---
 
 ## Completed ✓ — Phase 5 Launch Ready

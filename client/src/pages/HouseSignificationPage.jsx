@@ -24,11 +24,19 @@ export default function HouseSignificationPage() {
   } = useAppStore();
 
   const [input, setInput] = useState('');
-  const [streaming, setStreaming] = useState(false);
-  const [streamingText, setStreamingText] = useState('');
+  const [streaming, setStreaming] = useState(false); // Network status
+  const [isTyping, setIsTyping] = useState(false);   // UI typing status
+  const [streamingText, setStreamingText] = useState(''); // Text currently typed to screen
   const [error, setError] = useState('');
+  
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
+  
+  const textQueueRef = useRef('');
+  const finishRef = useRef(null);
+  const streamingRef = useRef(false); // mirrors `streaming` so the typewriter loop
+                                      // is not torn down when the network flag flips
+                                      // (deployed SSE arrives as one buffered burst)
 
   useEffect(() => {
     if (!question) navigate('/ask');
@@ -45,6 +53,55 @@ export default function HouseSignificationPage() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [interviewMessages, streamingText]);
 
+  // Typewriter effect loop
+  useEffect(() => {
+    if (!isTyping) return;
+    let timeoutId;
+    
+    function typeNext() {
+      if (textQueueRef.current.length > 0) {
+        // If we hit the XML block, skip typing it out (it's hidden anyway)
+        if (textQueueRef.current.startsWith('<house_significations>')) {
+          setStreamingText(prev => prev + textQueueRef.current);
+          textQueueRef.current = '';
+        } else {
+          // Take 1 char at a time — ~3x faster than 35 WPM (1 char every ~95ms → ~105 WPM)
+          const char = textQueueRef.current.charAt(0);
+          textQueueRef.current = textQueueRef.current.slice(1);
+          setStreamingText(prev => prev + char);
+          timeoutId = setTimeout(typeNext, 83 + Math.random() * 23); // 3x faster typing
+          return;
+        }
+      }
+      
+      // Queue is empty
+      if (!streamingRef.current && finishRef.current) {
+        // Network done and queue drained
+        setIsTyping(false);
+        const { data, accumulated, msgs } = finishRef.current;
+        const assistantMsg = { role: 'assistant', content: accumulated };
+        setInterviewMessages([...msgs, assistantMsg]);
+        setStreamingText('');
+        if (data.significations) setHouseSignifications(data.significations);
+        finishRef.current = null;
+        setTimeout(() => inputRef.current?.focus(), 100);
+      } else {
+        // Waiting for more network chunks
+        timeoutId = setTimeout(typeNext, 50);
+      }
+    }
+    timeoutId = setTimeout(typeNext, 50);
+    return () => clearTimeout(timeoutId);
+  }, [isTyping]);
+
+  // Skip the typewriter — dump the remaining queue instantly so the user can answer now
+  function revealNow() {
+    if (textQueueRef.current.length > 0) {
+      setStreamingText(prev => prev + textQueueRef.current);
+      textQueueRef.current = '';
+    }
+  }
+
   async function startInterview() {
     const initialMessage = {
       role: 'user',
@@ -57,7 +114,11 @@ export default function HouseSignificationPage() {
 
   async function sendToStream(messages) {
     setStreaming(true);
+    streamingRef.current = true;
+    setIsTyping(true);
     setStreamingText('');
+    textQueueRef.current = '';
+    finishRef.current = null;
     setError('');
     let accumulated = '';
 
@@ -72,14 +133,11 @@ export default function HouseSignificationPage() {
         {
           onText: (text) => {
             accumulated += text;
-            setStreamingText((t) => t + text);
+            textQueueRef.current += text;
           },
           onDone: (data) => {
-            const assistantMsg = { role: 'assistant', content: accumulated };
-            setInterviewMessages([...messages, assistantMsg]);
-            setStreamingText('');
-            if (data.significations) setHouseSignifications(data.significations);
-            setTimeout(() => inputRef.current?.focus(), 100);
+            // Signal the typewriter loop to finalize when queue is empty
+            finishRef.current = { data, accumulated, msgs: messages };
           },
           onError: (err) => {
             setError(err);
@@ -93,6 +151,7 @@ export default function HouseSignificationPage() {
       setStreamingText('');
     } finally {
       setStreaming(false);
+      streamingRef.current = false;
     }
   }
 
@@ -173,10 +232,10 @@ export default function HouseSignificationPage() {
           {displayMessages.map((msg, i) => (
             <ChatMessage key={i} role={msg.role} content={msg.content} />
           ))}
-          {streaming && streamingText && (
+          {(isTyping || streaming) && streamingText && (
             <ChatMessage role="assistant" content={streamingText} streaming />
           )}
-          {streaming && !streamingText && (
+          {(isTyping || streaming) && !streamingText && (
             <div className="flex gap-3">
               <div className="w-8 h-8 rounded-full bg-teal-900 border border-copper-400/30 text-copper-400 flex items-center justify-center text-sm">☽</div>
               <div className="bg-teal-900/80 border border-teal-600/50 rounded-2xl rounded-tl-sm px-4 py-3">
@@ -206,6 +265,19 @@ export default function HouseSignificationPage() {
           <div ref={bottomRef} />
         </div>
 
+        {/* Skip typewriter — jump straight to answering */}
+        {isTyping && textQueueRef.current.length > 0 && (
+          <div className="flex justify-center -mt-2 mb-3">
+            <button
+              onClick={revealNow}
+              className="px-3 py-1.5 text-xs text-copper-400 hover:text-copper-300 border border-copper-400/40
+                         hover:border-copper-300/60 rounded-full transition-colors"
+            >
+              Answer now ↓
+            </button>
+          </div>
+        )}
+
         {/* Input — always visible so user can reply even if significations were already found */}
         <div className="flex gap-2">
             <textarea
@@ -223,7 +295,7 @@ export default function HouseSignificationPage() {
             />
             <button
               onClick={handleSend}
-              disabled={streaming || !input.trim()}
+              disabled={isTyping || !input.trim()}
               className="px-4 bg-copper-400 hover:bg-copper-300 disabled:opacity-30 text-teal-900
                          font-semibold rounded-xl transition-all self-end py-3 text-sm"
             >

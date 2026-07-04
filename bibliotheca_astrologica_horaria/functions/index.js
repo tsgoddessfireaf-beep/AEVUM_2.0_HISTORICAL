@@ -5,12 +5,10 @@
 // Project:  flutter-ai-playground-f880c
 
 import { onCallGenkit } from 'firebase-functions/https';
-import { genkit } from 'genkit';
+import { genkit, z } from 'genkit';
 import { vertexAI, textEmbedding004 } from '@genkit-ai/vertexai';
 import { getFirestore, FieldValue } from 'firebase-admin/firestore';
 import { initializeApp } from 'firebase-admin/app';
-import { defineFlow, defineSchema } from 'genkit';
-import { z } from 'genkit';
 
 // ── Firebase Admin ──────────────────────────────────────────────────────────
 initializeApp();

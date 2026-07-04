@@ -1,12 +1,13 @@
 // Copyright (c) 2026 Dolores Puckett / Dolores Aeonic Arts. All rights reserved.
 // Aevum — proprietary software. Unauthorized use or distribution is prohibited.
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StepIndicator from '../components/StepIndicator.jsx';
 import AccountButton from '../components/AccountButton.jsx';
 import useAppStore from '../store/useAppStore.js';
 import { useAuthState } from '../hooks/useAuthState.js';
+import { loadDraft } from '../lib/firebase.js';
 
 /**
  * Deterministically classifies a question as a 'condition' (character/motivation/why)
@@ -45,13 +46,26 @@ const HOW_IT_WORKS = [
  */
 export default function IntakePage() {
   const navigate = useNavigate();
-  const { question, setQuestion, resetAll, setQuestionType } = useAppStore();
+  const { question, setQuestion, resetAll, setQuestionType, clearForNewQuestion, hydrateFromDraft } = useAppStore();
   const { isGoogle } = useAuthState();
   const [localQuestion, setLocalQuestion] = useState(question);
   const [showOnboarding, setShowOnboarding] = useState(
     () => !localStorage.getItem('aevum-visited') && !question
   );
   const [showConditionWarning, setShowConditionWarning] = useState(false);
+
+  // Recover an in-progress session from Firestore if localStorage came up empty
+  // (cleared, glitched, or a different device) but the user has a saved draft.
+  useEffect(() => {
+    if (question || !isGoogle) return;
+    (async () => {
+      const draft = await loadDraft();
+      if (draft?.question) {
+        hydrateFromDraft(draft);
+        setLocalQuestion(draft.question);
+      }
+    })();
+  }, [isGoogle]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function dismissOnboarding() {
     localStorage.setItem('aevum-visited', '1');
@@ -66,6 +80,7 @@ export default function IntakePage() {
       setShowConditionWarning(true);
       return;
     }
+    clearForNewQuestion();
     setQuestion(trimmed);
     setQuestionType(qType);
     navigate('/datetime');
@@ -73,6 +88,7 @@ export default function IntakePage() {
 
   function handleProceedAsCondition() {
     const trimmed = localQuestion.trim();
+    clearForNewQuestion();
     setQuestion(trimmed);
     setQuestionType('condition');
     navigate('/datetime');

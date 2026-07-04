@@ -10,7 +10,7 @@ export function parseSections(text) {
   const result = { answer: null, meaning: null, stars: null, next: null };
   if (!text) return result;
 
-  const parts = text.split(/^---(\w+)---\s*$/m);
+  const parts = text.split(/(?:[\r\n]*\*{0,2}---([A-Z_]+)---\*{0,2}[\r\n]*)/);
   for (let i = 1; i < parts.length - 1; i += 2) {
     const key = parts[i].toLowerCase();
     const value = (parts[i + 1] || '').trim();

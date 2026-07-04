@@ -16,7 +16,7 @@ import JournalPanel from '../components/JournalPanel.jsx';
 import ReadingPackagePanel from '../components/ReadingPackagePanel.jsx';
 import useAppStore from '../store/useAppStore.js';
 import { buildReadingFilename } from '../lib/filename.js';
-import { saveReading, hasConsented, shareReading, getIdToken } from '../lib/firebase.js';
+import { saveReading, hasConsented, shareReading, getIdToken, clearDraft } from '../lib/firebase.js';
 import { streamSSE } from '../lib/sse.js';
 import { parseSections, formatInline, parseBullets, parseNumbered, answerStyle } from '../lib/analysis.js';
 import { getChartWarnings, getStrictures } from '../lib/warnings.js';
@@ -205,6 +205,7 @@ export default function ResultsPage() {
   const [stage, setStage] = useState(0);
   const [showConsentNudge, setShowConsentNudge] = useState(false);
   const [shareState, setShareState] = useState('idle'); // idle | copying | copied | error
+  const [citations, setCitations] = useState([]);
   const readingRef = useRef(null);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [currentUser, setCurrentUser] = useState(() => {
@@ -316,7 +317,7 @@ export default function ResultsPage() {
       { question, houseSignifications, ephemerisData: chartData, tradition: dateTimeData.tradition || 'classic', questionType: questionType || 'perfection' },
       {
         onText: (text) => appendAnalysis(text),
-        onDone: () => setPhase('done'),
+        onDone: (data) => { setCitations(data?.citations || []); setPhase('done'); },
         onError: (err) => { setError(err); setPhase('error'); },
       },
       idToken ? { Authorization: `Bearer ${idToken}` } : {}
@@ -358,6 +359,7 @@ export default function ResultsPage() {
     if (!sections.answer || readingId) return;
 
     (async () => {
+      // Single-user mode for now — always save, no opt-in/out gate.
       const id = await saveReading({
         question,
         dateTime: dateTimeData,
@@ -366,9 +368,12 @@ export default function ResultsPage() {
         answer: sections.answer,
         fullAnalysis: analysis,
         ephemerisSnapshot: ephemerisData,
+        citations,
       });
       if (id) {
         setReadingId(id);
+        // Reading is durably saved now — the in-progress draft is no longer needed.
+        clearDraft();
         // Nudge user toward consent settings if they haven't seen it yet
         const already = await hasConsented();
         if (!already) setShowConsentNudge(true);
@@ -379,6 +384,20 @@ export default function ResultsPage() {
   const isWaiting = phase === 'analyzing' && !sections.answer;
   const isDone = phase === 'done';
   const showReading = sections.answer != null;
+
+  // Simple full-page loader while the chart/analysis is being prepared, before
+  // the dashboard chrome (sidebar, header, tabs) mounts. Errors still fall
+  // through to the dashboard so the existing error UI in the workspace shows.
+  if (phase === 'idle' || phase === 'fetching-chart' || (phase === 'analyzing' && !sections.answer)) {
+    return (
+      <div className="min-h-screen flex items-center justify-center font-sans text-bone">
+        <p className="text-silver text-sm tracking-wide">
+          {phase === 'fetching-chart' ? 'Erecting the Moment of Reception…' : 'Judgment is being prepared…'}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex font-sans text-bone print:block print:bg-white print:text-black">
       <ChartCustomizeModal open={showCustomize} onClose={() => setShowCustomize(false)} />
@@ -394,7 +413,7 @@ export default function ResultsPage() {
           {[
             { id: 'dashboard', label: 'Dashboard', icon: 'M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z' },
             { id: 'readings', label: 'Readings', icon: 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' },
-            { id: 'archives', label: 'Daily Astro', icon: 'M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z' },
+            { id: 'archives', label: '[change later]', icon: 'M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z' },
             { id: 'learning', label: 'Community', icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z' },
             { id: 'themes', label: 'Settings', icon: 'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.73 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.49-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z' }
           ].map(tab => (
@@ -499,7 +518,7 @@ export default function ResultsPage() {
         {phase === 'fetching-chart' && <LoadingState text="Erecting the Moment of Reception…" />}
 
         {isWaiting && ephemerisData
-          ? <SquareChart ephemerisData={ephemerisData} houseSignifications={houseSignifications} prefs={chartPrefs} />
+          ? <Astrolabe ephemerisData={ephemerisData} />
           : isWaiting && <LoadingState text="Your Case Judgment Report is being prepared…" />
         }
 

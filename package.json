@@ -4,16 +4,18 @@
   "type": "module",
   "main": "functions/index.js",
   "scripts": {
-    "dev": "concurrently -n ephem,server,client -c magenta,cyan,green \"npm run dev:ephemeris\" \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:server": "cd server && npm run dev",
+    "dev": "concurrently -n ephem,client -c magenta,green \"npm run dev:ephemeris\" \"npm run dev:client\"",
     "dev:client": "cd client && npm run dev",
     "dev:ephemeris": "cd ephemeris-service && node ../scripts/run-python.js uvicorn main:app --port 8000 --reload",
     "build": "cd client && npm run build",
-    "start": "node scripts/start-all.js",
-    "install:all": "npm install && cd server && npm install && cd ../client && npm install && cd ../ephemeris-service && python -m venv .venv && node ../scripts/install-python-deps.js"
+    "start": "cd ephemeris-service && .venv/bin/python -m uvicorn main:app --port 8000",
+    "install:all": "npm install && cd client && npm install && cd ../functions && npm install && cd ../bibliotheca_astrologica_horaria/functions && npm install && cd ../../ephemeris-service && python -m venv .venv && node ../scripts/install-python-deps.js",
+    "emulator:setup": "node scripts/upload-library.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.102.0",
+    "@genkit-ai/firebase": "^1.39.0",
+    "@genkit-ai/vertexai": "^1.39.0",
     "@sentry/node": "^10.53.1",
     "compression": "^1.8.1",
     "cors": "^2.8.5",
@@ -22,6 +24,7 @@
     "express-rate-limit": "^8.5.2",
     "firebase-admin": "^13.10.0",
     "firebase-functions": "^6.0.0",
+    "genkit": "^1.39.0",
     "node-fetch": "^3.3.2",
     "resend": "^6.12.4",
     "stripe": "^22.1.1"
@@ -29,5 +32,7 @@
   "devDependencies": {
     "concurrently": "^9.1.2"
   },
-  "engines": { "node": "22" }
+  "engines": {
+    "node": "22"
+  }
 }

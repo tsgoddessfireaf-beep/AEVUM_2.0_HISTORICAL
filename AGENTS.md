@@ -13,11 +13,11 @@ guidance here overrides any default agent behavior.
 | LLM provider | **Anthropic (Claude)** via `@anthropic-ai/sdk`. Env var: `ANTHROPIC_API_KEY`. |
 | Models | Interview: `claude-haiku-4-5-20251001`. Analysis: `claude-sonnet-4-6`. |
 | NOT used | This app does **not** use Groq, Gemini, OpenAI, or any other LLM provider. Any reference to those is wrong — correct it. |
-| Hosting | Render (single web service). Behind a reverse proxy → `trust proxy` is required and **already set** (`server/index.js`). |
+| Hosting | Firebase (Hosting & Functions). |
 | Auth | Firebase Admin. Server-side checks gate on `ADMIN_ENABLED` (true when `FIREBASE_SERVICE_ACCOUNT_JSON` is set). |
 | Payments | Stripe, **single-use $88 booking product only** — no subscriptions/quotas. |
 | Ephemeris | Local Python sidecar using **pyswisseph** (Swiss Ephemeris). `flatlib` is **removed** — do not reintroduce it. |
-| Email | Resend. User-controlled input in HTML emails must be escaped via the existing `escapeHtml` in `server/routes/booking.js`. |
+| Email | Resend. User-controlled input in HTML emails must be escaped via the existing `escapeHtml` in `functions/routes/booking.js`. |
 
 If you find code or a log that contradicts this table, the code/log is stale —
 fix it to match reality, don't propagate the error.
@@ -71,3 +71,7 @@ production. Do not repeat this. Before creating ANY branch:
   - Do NOT use Orbitron, Lato, or basic web-safe fonts unless explicitly requested.
 - **Color Palette:** Rely heavily on the deep teal/obsidian backdrop, with glowing copper/gold (`#D17C49`, `text-copper-400`) for accents, borders, icons, and active states. Use `text-bone` or `text-silver` for readable text.
 - **Lighting & Glow Effects:** Use drop shadows, SVG filters (`feGaussianBlur`, `feDropShadow`), and radial gradients to create luminous, magical glowing effects, especially for charts, active UI states, and the background environment.
+
+## 6. Progress Tracking
+
+**CRITICAL RULE:** For every action or task you are instructed to do, you MUST build and maintain a progress dashboard (e.g. a markdown artifact like `task.md` or `progress_dashboard.md`). You must provide feedback from the system on your progress towards completion at regular, frequent intervals (e.g. every ~15 seconds of execution) by updating this dashboard or logging progress, ensuring the user has real-time visibility into your execution status.
