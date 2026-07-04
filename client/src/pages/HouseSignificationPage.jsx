@@ -65,11 +65,11 @@ export default function HouseSignificationPage() {
           setStreamingText(prev => prev + textQueueRef.current);
           textQueueRef.current = '';
         } else {
-          // Take 1 char at a time to simulate ~35 WPM (1 char every ~285ms)
+          // Take 1 char at a time — ~3x faster than 35 WPM (1 char every ~95ms → ~105 WPM)
           const char = textQueueRef.current.charAt(0);
           textQueueRef.current = textQueueRef.current.slice(1);
           setStreamingText(prev => prev + char);
-          timeoutId = setTimeout(typeNext, 250 + Math.random() * 70); // Accurately matches 35 wpm
+          timeoutId = setTimeout(typeNext, 83 + Math.random() * 23); // 3x faster typing
           return;
         }
       }
@@ -93,6 +93,14 @@ export default function HouseSignificationPage() {
     timeoutId = setTimeout(typeNext, 50);
     return () => clearTimeout(timeoutId);
   }, [isTyping]);
+
+  // Skip the typewriter — dump the remaining queue instantly so the user can answer now
+  function revealNow() {
+    if (textQueueRef.current.length > 0) {
+      setStreamingText(prev => prev + textQueueRef.current);
+      textQueueRef.current = '';
+    }
+  }
 
   async function startInterview() {
     const initialMessage = {
@@ -256,6 +264,19 @@ export default function HouseSignificationPage() {
           )}
           <div ref={bottomRef} />
         </div>
+
+        {/* Skip typewriter — jump straight to answering */}
+        {isTyping && textQueueRef.current.length > 0 && (
+          <div className="flex justify-center -mt-2 mb-3">
+            <button
+              onClick={revealNow}
+              className="px-3 py-1.5 text-xs text-copper-400 hover:text-copper-300 border border-copper-400/40
+                         hover:border-copper-300/60 rounded-full transition-colors"
+            >
+              Answer now ↓
+            </button>
+          </div>
+        )}
 
         {/* Input — always visible so user can reply even if significations were already found */}
         <div className="flex gap-2">
