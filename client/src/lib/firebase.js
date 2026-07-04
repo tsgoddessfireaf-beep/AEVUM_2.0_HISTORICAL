@@ -156,6 +156,7 @@ export async function signOutUser() {
 
 const READINGS = 'readings';
 const USERS    = 'users';
+const DRAFTS   = 'hora_reading_drafts';
 
 /** Bump this whenever the consent text changes — stored alongside each user's agreement. */
 export const CURRENT_CONSENT_VERSION = '1.0';
@@ -240,6 +241,73 @@ export async function loadUserReadings() {
   } catch (err) {
     console.warn('[firebase] loadUserReadings failed:', err.message);
     return [];
+  }
+}
+
+// ─── In-progress reading draft (replaces localStorage as source of truth) ────
+//
+// One document per user, id = uid, in the `hora_reading_drafts` collection. Saved on every
+// wizard step transition (question, date/time, interview messages, house
+// significations) so a session can never be silently corrupted or lost in
+// browser storage the way the old localStorage-only session was.
+
+/**
+ * Overwrites the current user's draft document with the given fields (merged).
+ * No-ops silently if Firebase isn't configured or the user isn't signed in —
+ * callers should treat this as best-effort and keep local state as the
+ * immediate source of truth for rendering.
+ * @param {Object} fields - Any subset of the draft shape to merge in.
+ * @returns {Promise<void>}
+ */
+export async function saveDraft(fields) {
+  if (!db) return;
+  const userId = getCurrentUserId();
+  if (!userId) return;
+  try {
+    await setDoc(
+      doc(db, DRAFTS, userId),
+      { ...fields, updatedAt: serverTimestamp() },
+      { merge: true },
+    );
+  } catch (err) {
+    console.warn('[firebase] saveDraft failed:', err.message);
+  }
+}
+
+/**
+ * Fetches the current user's in-progress draft, if any.
+ * @returns {Promise<Object|null>}
+ */
+export async function loadDraft() {
+  if (!db) return null;
+  const userId = getCurrentUserId();
+  if (!userId) return null;
+  try {
+    const snap = await getDoc(doc(db, DRAFTS, userId));
+    return snap.exists() ? snap.data() : null;
+  } catch (err) {
+    console.warn('[firebase] loadDraft failed:', err.message);
+    return null;
+  }
+}
+
+/**
+ * Clears the current user's draft — called when starting a new question or
+ * once a reading completes and is saved to the `readings` collection.
+ * @returns {Promise<void>}
+ */
+export async function clearDraft() {
+  if (!db) return;
+  const userId = getCurrentUserId();
+  if (!userId) return;
+  try {
+    await setDoc(doc(db, DRAFTS, userId), {
+      question: '', questionType: null, interviewMessages: [],
+      houseSignifications: null, ephemerisData: null, analysis: '',
+      updatedAt: serverTimestamp(),
+    });
+  } catch (err) {
+    console.warn('[firebase] clearDraft failed:', err.message);
   }
 }
 

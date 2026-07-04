@@ -19,6 +19,7 @@
  */
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { saveDraft, clearDraft } from '../lib/firebase.js';
 
 const useAppStore = create(
   persist(
@@ -80,23 +81,31 @@ const useAppStore = create(
       journal: null,          // { notes, outcome, accuracyRating, outcomeNotes, updatedAt }
 
       // Actions
-      setQuestion: (question) => set({ question }),
-      setQuestionType: (questionType) => set({ questionType }),
+      // Backend draft saves (Firestore, keyed to the signed-in user) are fired
+      // fire-and-forget alongside every local mutation below — Firestore is now
+      // the durable source of truth for an in-progress session; localStorage
+      // just keeps the UI instantly responsive between reloads.
+      setQuestion: (question) => { set({ question }); saveDraft({ question }); },
+      setQuestionType: (questionType) => { set({ questionType }); saveDraft({ questionType }); },
 
-      setDateTimeData: (data) =>
-        set((s) => ({ dateTimeData: { ...s.dateTimeData, ...data } })),
+      setDateTimeData: (data) => {
+        set((s) => ({ dateTimeData: { ...s.dateTimeData, ...data } }));
+        saveDraft({ dateTimeData: get().dateTimeData });
+      },
 
-      addInterviewMessage: (msg) =>
-        set((s) => ({ interviewMessages: [...s.interviewMessages, msg] })),
+      addInterviewMessage: (msg) => {
+        set((s) => ({ interviewMessages: [...s.interviewMessages, msg] }));
+        saveDraft({ interviewMessages: get().interviewMessages });
+      },
 
-      setInterviewMessages: (msgs) => set({ interviewMessages: msgs }),
+      setInterviewMessages: (msgs) => { set({ interviewMessages: msgs }); saveDraft({ interviewMessages: msgs }); },
 
-      setHouseSignifications: (sig) => set({ houseSignifications: sig }),
+      setHouseSignifications: (sig) => { set({ houseSignifications: sig }); saveDraft({ houseSignifications: sig }); },
 
       /** Clears everything downstream of the question (interview chat, significations,
        * chart, analysis, saved reading id) so a new question never inherits stale state
        * from a previous session. Leaves dateTimeData and chartPrefs untouched. */
-      clearForNewQuestion: () =>
+      clearForNewQuestion: () => {
         set({
           interviewMessages: [],
           houseSignifications: null,
@@ -105,9 +114,11 @@ const useAppStore = create(
           readingId: null,
           followUpMessages: [],
           journal: null,
-        }),
+        });
+        clearDraft();
+      },
 
-      setEphemerisData: (data) => set({ ephemerisData: data }),
+      setEphemerisData: (data) => { set({ ephemerisData: data }); saveDraft({ ephemerisData: data }); },
 
       appendAnalysis: (text) => set((s) => ({ analysis: s.analysis + text })),
       setAnalysis: (text) => set({ analysis: text }),
@@ -138,6 +149,23 @@ const useAppStore = create(
           },
         }),
 
+      /** Hydrates in-progress wizard fields from the user's Firestore draft
+       * (see lib/firebase.js saveDraft/loadDraft). Called once on Step 1 mount
+       * so a session survives a cleared/glitched localStorage as long as the
+       * user is signed in. Does not touch chartPrefs. */
+      hydrateFromDraft: (draft) => {
+        if (!draft) return;
+        set({
+          question:            draft.question             ?? '',
+          questionType:        draft.questionType          ?? null,
+          dateTimeData:        draft.dateTimeData          ?? get().dateTimeData,
+          interviewMessages:   draft.interviewMessages     ?? [],
+          houseSignifications: draft.houseSignifications   ?? null,
+          ephemerisData:       draft.ephemerisData         ?? null,
+          analysis:            draft.analysis              ?? '',
+        });
+      },
+
       /** Restores all session fields from a saved Firestore reading document. */
       loadFromReading: (reading) =>
         set({
@@ -152,7 +180,7 @@ const useAppStore = create(
           journal:            reading.journal        ?? null,
         }),
 
-      resetAll: () =>
+      resetAll: () => {
         set({
           question: '',
           questionType: null,
@@ -171,7 +199,9 @@ const useAppStore = create(
           readingId: null,
           followUpMessages: [],
           journal: null,
-        }),
+        });
+        clearDraft();
+      },
     }),
     {
       name: 'aevum-session',

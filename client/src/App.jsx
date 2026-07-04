@@ -39,10 +39,10 @@ export default function App() {
         <Route path="/reading/:id" element={<SharedReadingPage />} />
         <Route path="/font-calibrate" element={<FontCalibratePage />} />
 
-        {/* Booking flow — public, no auth required */}
-        <Route path="/ask"            element={<IntakePage />} />
-        <Route path="/datetime"       element={<DateTimePage />} />
-        <Route path="/significations" element={<HouseSignificationPage />} />
+        {/* Reading wizard — sign-in required from Step 1 so drafts save to Firestore, not just localStorage */}
+        <Route path="/ask"            element={<RequireAuth><IntakePage /></RequireAuth>} />
+        <Route path="/datetime"       element={<RequireAuth><DateTimePage /></RequireAuth>} />
+        <Route path="/significations" element={<RequireAuth><HouseSignificationPage /></RequireAuth>} />
         <Route path="/dashboard"      element={<RequireAuth><DashboardPage /></RequireAuth>} />
         <Route path="/results"        element={<Navigate to="/dashboard" replace />} />
         <Route path="/history"        element={<RequireAuth><HistoryPage /></RequireAuth>} />

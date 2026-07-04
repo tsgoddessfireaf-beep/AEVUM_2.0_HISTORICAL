@@ -16,7 +16,7 @@ import JournalPanel from '../components/JournalPanel.jsx';
 import ReadingPackagePanel from '../components/ReadingPackagePanel.jsx';
 import useAppStore from '../store/useAppStore.js';
 import { buildReadingFilename } from '../lib/filename.js';
-import { saveReading, hasConsented, shareReading, getIdToken } from '../lib/firebase.js';
+import { saveReading, hasConsented, shareReading, getIdToken, clearDraft } from '../lib/firebase.js';
 import { streamSSE } from '../lib/sse.js';
 import { parseSections, formatInline, parseBullets, parseNumbered, answerStyle } from '../lib/analysis.js';
 import { getChartWarnings, getStrictures } from '../lib/warnings.js';
@@ -372,6 +372,8 @@ export default function ResultsPage() {
       });
       if (id) {
         setReadingId(id);
+        // Reading is durably saved now — the in-progress draft is no longer needed.
+        clearDraft();
         // Nudge user toward consent settings if they haven't seen it yet
         const already = await hasConsented();
         if (!already) setShowConsentNudge(true);
