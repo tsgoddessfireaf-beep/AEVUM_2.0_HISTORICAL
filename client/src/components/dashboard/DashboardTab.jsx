@@ -47,7 +47,7 @@ export default function DashboardTab({ question, sections, ephemerisData, houseS
           <p className="text-bone/70 italic text-sm mb-6">"{question}"</p>
           
           {!sections?.answer ? (
-            <LoadingState text="Judgment is being prepared…" />
+            <p className="text-silver text-sm tracking-wide text-center py-20">Judgment is being prepared…</p>
           ) : (
             <div className="text-center mt-4">
               <p className={`text-5xl font-serif font-bold tracking-wider drop-shadow-lg ${style?.text}`}>

@@ -389,54 +389,87 @@ function buildAnalysisSystem(traditionId, questionType = 'perfection') {
 // Keep a default for backward compatibility (e.g., /analyze calls without tradition)
 const ANALYSIS_SYSTEM = buildAnalysisSystem('classic');
 
+// Builds a structured citation object from a (tradition, category, key) triple so
+// each fired aphorism can be traced back to its source and saved with the reading.
+function citeAphorism(traditionKey, category, key, extra = '') {
+  const trad = HISTORICAL_APHORISMS[traditionKey];
+  const text = trad?.[category]?.[key];
+  if (!text) return null;
+  return {
+    id: `${traditionKey}.${category}.${key}`,
+    author: trad.author,
+    source: trad.source,
+    text: extra ? `${extra}: ${text}` : text,
+  };
+}
+
+/**
+ * Matches chart conditions against the small hardcoded HISTORICAL_APHORISMS set
+ * and returns both the prompt-ready text block and the structured list of
+ * citations that fired, so the caller can save the citations with the reading.
+ * @returns {{ promptText: string, citations: Array<{id:string, author:string, source:string, text:string}> }}
+ */
 export function matchHistoricalAphorisms(ephemerisData, traditionId) {
-  const matching = [];
-  
-  if (!ephemerisData || !ephemerisData.planets) return '';
+  const citations = [];
+
+  if (!ephemerisData || !ephemerisData.planets) return { promptText: '', citations };
 
   const { houses, planets, lunar_phase } = ephemerisData;
   const ascLon = parseFloat(houses?.ascendant) || 0;
   const ascDeg = ((ascLon % 30) + 30) % 30;
-  
+
   // 1. Check strictures
   if (ascDeg < 3) {
-    if (HISTORICAL_APHORISMS.lilly.strictures.asc_early) matching.push(HISTORICAL_APHORISMS.lilly.strictures.asc_early);
+    const c = citeAphorism('lilly', 'strictures', 'asc_early');
+    if (c) citations.push(c);
   }
   if (ascDeg > 27) {
-    if (HISTORICAL_APHORISMS.lilly.strictures.asc_late) matching.push(HISTORICAL_APHORISMS.lilly.strictures.asc_late);
+    const c = citeAphorism('lilly', 'strictures', 'asc_late');
+    if (c) citations.push(c);
   }
-  
+
   const saturnHouse = planets.Saturn?.house;
   if (saturnHouse === 1 || saturnHouse === '1') {
-    if (HISTORICAL_APHORISMS.lilly.strictures.saturn_1st) matching.push(HISTORICAL_APHORISMS.lilly.strictures.saturn_1st);
+    const c = citeAphorism('lilly', 'strictures', 'saturn_1st');
+    if (c) citations.push(c);
   }
   if (saturnHouse === 7 || saturnHouse === '7') {
-    if (HISTORICAL_APHORISMS.lilly.strictures.saturn_7th) matching.push(HISTORICAL_APHORISMS.lilly.strictures.saturn_7th);
-    if (HISTORICAL_APHORISMS.bonatti.strictures.saturn_7th) matching.push(HISTORICAL_APHORISMS.bonatti.strictures.saturn_7th);
+    const c1 = citeAphorism('lilly', 'strictures', 'saturn_7th');
+    if (c1) citations.push(c1);
+    const c2 = citeAphorism('bonatti', 'strictures', 'saturn_7th');
+    if (c2) citations.push(c2);
   }
 
   const moonLon = planets.Moon ? (planets.Moon.ecliptic_longitude || 0) : -1;
   const viaCombusta = moonLon >= 195 && moonLon <= 225;
   if (viaCombusta) {
-    if (HISTORICAL_APHORISMS.lilly.strictures.via_combusta) matching.push(HISTORICAL_APHORISMS.lilly.strictures.via_combusta);
-    if (HISTORICAL_APHORISMS.bonatti.strictures.via_combusta) matching.push(HISTORICAL_APHORISMS.bonatti.strictures.via_combusta);
+    const c1 = citeAphorism('lilly', 'strictures', 'via_combusta');
+    if (c1) citations.push(c1);
+    const c2 = citeAphorism('bonatti', 'strictures', 'via_combusta');
+    if (c2) citations.push(c2);
   }
 
   if (lunar_phase?.moon_is_void) {
-    if (HISTORICAL_APHORISMS.lilly.strictures.voc_moon) matching.push(HISTORICAL_APHORISMS.lilly.strictures.voc_moon);
-    if (HISTORICAL_APHORISMS.bonatti.strictures.voc_moon) matching.push(HISTORICAL_APHORISMS.bonatti.strictures.voc_moon);
-    if (HISTORICAL_APHORISMS.dorotheus.strictures.voc_moon) matching.push(HISTORICAL_APHORISMS.dorotheus.strictures.voc_moon);
+    const c1 = citeAphorism('lilly', 'strictures', 'voc_moon');
+    if (c1) citations.push(c1);
+    const c2 = citeAphorism('bonatti', 'strictures', 'voc_moon');
+    if (c2) citations.push(c2);
+    const c3 = citeAphorism('dorotheus', 'strictures', 'voc_moon');
+    if (c3) citations.push(c3);
   }
 
   // 2. Check retrograde planets
   for (const [name, p] of Object.entries(planets)) {
     if (p.is_retrograde) {
-      matching.push(`Regarding ${name}: ${HISTORICAL_APHORISMS.lilly.placements.retrograde}`);
+      const c = citeAphorism('lilly', 'placements', 'retrograde', `Regarding ${name}`);
+      if (c) citations.push(c);
     }
   }
 
-  if (matching.length === 0) return '';
-  return `\n\nHISTORICAL REFERENCE TEXTS (You must quote or reference these where applicable in your analysis):\n` + matching.map(q => `- ${q}`).join('\n');
+  if (citations.length === 0) return { promptText: '', citations };
+  const promptText = `\n\nHISTORICAL REFERENCE TEXTS (You must quote or reference these where applicable in your analysis):\n`
+    + citations.map(c => `- ${c.text}`).join('\n');
+  return { promptText, citations };
 }
 
 export function parseHouseSignifications(text) {
@@ -892,7 +925,8 @@ router.post('/analyze', async (req, res) => {
   res.flushHeaders();
 
   const systemPrompt = buildAnalysisSystem(tradition || 'classic', questionType || 'perfection');
-  const userContent = formatChartForPrompt(ephemerisData, question, houseSignifications) + matchHistoricalAphorisms(ephemerisData, tradition || 'classic');
+  const { promptText: historicalPromptText, citations } = matchHistoricalAphorisms(ephemerisData, tradition || 'classic');
+  const userContent = formatChartForPrompt(ephemerisData, question, houseSignifications) + historicalPromptText;
 
   // Heartbeat keeps the SSE connection alive while AI generates (can take 15-30s)
   const heartbeat = setInterval(() => res.write(': heartbeat\n\n'), 8000);
@@ -928,7 +962,7 @@ router.post('/analyze', async (req, res) => {
     }
 
     clearInterval(heartbeat);
-    sseWrite(res, { type: 'done' });
+    sseWrite(res, { type: 'done', citations });
     res.end();
   } catch (err) {
     clearInterval(heartbeat);
