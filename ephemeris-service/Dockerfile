@@ -1,4 +1,5 @@
-FROM python:3.11-slim
+# Keep in sync with local dev venv (install:all pins py -3.13)
+FROM python:3.13-slim
 
 WORKDIR /app
 

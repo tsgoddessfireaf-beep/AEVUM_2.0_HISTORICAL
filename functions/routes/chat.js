@@ -22,7 +22,13 @@ async function rejectIfNotPractitioner(req, res) {
   if (!decoded) { res.status(401).json({ error: 'Unauthorized.' }); return true; }
   const allowed = (process.env.PRACTITIONER_EMAILS || '')
     .split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
-  if (allowed.length && !allowed.includes((decoded.email || '').toLowerCase())) {
+  // FAIL CLOSED: an empty allowlist means nobody passes. Previously an empty
+  // list skipped the check entirely, letting ANY signed-in user through.
+  if (!allowed.length) {
+    res.status(503).json({ error: 'Practitioner access is not configured. Set PRACTITIONER_EMAILS.' });
+    return true;
+  }
+  if (!allowed.includes((decoded.email || '').toLowerCase())) {
     res.status(403).json({ error: 'Full readings are reserved for the practitioner account.' });
     return true;
   }

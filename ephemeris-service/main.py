@@ -37,8 +37,10 @@ PRECISION = 7
 # arcsec for the Moon over the modern era) — so the path must be set explicitly
 # and the actually-used ephemeris must be reported back, never assumed.
 #
-# Install the files (1800–2400 CE block is enough for horary):
-#   sepl_18.se1, semo_18.se1, seas_18.se1  →  ephemeris-service/ephe/
+# Install the files (1800–2400 CE block is enough for horary).
+# Only two are required — this service computes classical planets + nodes only
+# (seas_18.se1 would only be needed for asteroids/Chiron):
+#   sepl_18.se1, semo_18.se1  →  ephemeris-service/ephe/
 # from https://github.com/aloistr/swisseph/tree/master/ephe (or astro.com/ftp/swisseph/ephe)
 # Override the location with SE_EPHE_PATH.
 EPHE_PATH = os.environ.get(

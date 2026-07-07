@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEVUM-2.0 Error Area Audit</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #e0e7ff;
+    padding: 20px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .summary-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .summary-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #6366f1;
+    margin-bottom: 8px;
+  }
+  .summary-label {
+    font-size: 12px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .audit-grid {
+    display: grid;
+    gap: 20px;
+  }
+  .audit-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  .audit-card:hover {
+    border-color: #6366f1;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .card-number {
+    background: #312e81;
+    color: #c4b5fd;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    flex: 1;
+    min-width: 250px;
+  }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .status-not-started {
+    background: #475569;
+    color: #cbd5e1;
+  }
+  .status-in-progress {
+    background: #f59e0b;
+    color: #78350f;
+  }
+  .status-complete {
+    background: #10b981;
+    color: #064e3b;
+  }
+  .status-issue {
+    background: #ef4444;
+    color: #7f1d1d;
+  }
+  .risk-badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .risk-critical {
+    background: #7f1d1d;
+    color: #fca5a5;
+  }
+  .risk-high {
+    background: #7c2d12;
+    color: #fed7aa;
+  }
+  .risk-medium {
+    background: #78350f;
+    color: #fcd34d;
+  }
+  .card-description {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    padding-left: 40px;
+  }
+  .checklist {
+    background: #0f172a;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    padding-left: 40px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+    padding: 4px 0;
+  }
+  .check-item:last-child {
+    margin-bottom: 0;
+  }
+  .check-icon {
+    color: #6366f1;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .progress-container {
+    padding-left: 40px;
+    margin-top: 16px;
+  }
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #1e293b;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    transition: width 0.3s ease;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    color: #64748b;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 AEVUM-2.0 Error Area Audit</h1>
+
+    <div class="summary">
+      <div class="summary-card">
+        <div class="summary-number">5</div>
+        <div class="summary-label">Total Areas</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-number" id="started">0</div>
+        <div class="summary-label">Started</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-number" id="complete">0</div>
+        <div class="summary-label">Complete</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-number" id="issues">0</div>
+        <div class="summary-label">Issues Found</div>
+      </div>
+    </div>
+
+    <div class="audit-grid" id="grid"></div>
+
+    <div class="footer">
+      Live audit dashboard — Updates as investigations complete
+    </div>
+  </div>
+
+  <script>
+    const areas = [
+      {
+        id: 1,
+        title: "Ephemeris Service Initialization",
+        risk: "CRITICAL",
+        status: "complete",
+        description: "REPAIRED ✅ Core was already solid. Stale seas_18.se1 comment corrected (1.1).",
+        checks: [
+          "✅ SE_EPHE_PATH defaults + per-request re-assert",
+          "✅ semo_18.se1 and sepl_18.se1 present",
+          "✅ Moshier fallback detected & surfaced in errors",
+          "✅ 1.1: comment now lists only the two required files"
+        ]
+      },
+      {
+        id: 2,
+        title: "Environment Variables Missing in CI",
+        risk: "CRITICAL",
+        status: "complete",
+        description: "REPAIRED ✅ Gate now fails closed; PRACTITIONER_EMAILS set; RESEND_API_KEY bound; CI build vars added; deploy workflow built. Dolores: create 2 secrets (see AUDIT_FINDINGS).",
+        checks: [
+          "✅ 2.1: gate fails CLOSED — empty allowlist now rejects everyone",
+          "✅ 2.2: deploy job added to ci.yml (needs FIREBASE_SERVICE_ACCOUNT secret)",
+          "✅ 2.3: functions/.env stays tracked (deliberate — CI deploys need it); header hardened",
+          "✅ 2.4: RESEND_API_KEY bound — run firebase functions:secrets:set RESEND_API_KEY",
+          "✅ 2.5: VITE_PRACTITIONER_EMAILS + VITE_SENTRY_DSN wired into CI builds"
+        ]
+      },
+      {
+        id: 3,
+        title: "Firestore & Storage Rules Mismatch",
+        risk: "HIGH",
+        status: "complete",
+        description: "REPAIRED ✅ Composite index codified in firestore.indexes.json + referenced from firebase.json; stale path comments fixed.",
+        checks: [
+          "✅ 3 collections all covered; deny-all catch-all present",
+          "✅ Storage paths match code; practitioner-only writes enforced",
+          "✅ 3.1: readings userId+createdAt index codified & wired to deploys",
+          "✅ 3.2: storage.rules + CLAUDE.md path comments corrected"
+        ]
+      },
+      {
+        id: 4,
+        title: "Python Version Mismatch",
+        risk: "HIGH",
+        status: "complete",
+        description: "REPAIRED ✅ install:all now pins py -3.13; Dockerfile bumped to python:3.13-slim; tzdata floor-pinned ≥2025.1. Dolores: rebuild the venv (see AUDIT_FINDINGS).",
+        checks: [
+          "✅ 4.1: install:all uses py -3.13; Dockerfile python:3.13-slim",
+          "✅ 4.2: tzdata>=2025.1 floor pin — pulls current DST rules",
+          "🟡 4.3: CI smoke-test for Python service — deferred (optional)",
+          "⚠️ Action: delete old .venv and re-run npm run install:all"
+        ]
+      },
+      {
+        id: 5,
+        title: "Monorepo Dependency Conflicts",
+        risk: "MEDIUM",
+        status: "complete",
+        description: "REPAIRED ✅ Landmine moved to 'to delete after Dolores Review/'; root deps trimmed to what root scripts use; firebase versions aligned.",
+        checks: [
+          "✅ 5.1: sync-functions.js quarantined (nothing referenced it)",
+          "✅ 5.2: root keeps only anthropic/firebase-admin/node-fetch/concurrently",
+          "✅ 5.3: bibliotheca aligned to firebase-functions ^6 / admin ^13.10",
+          "🟡 5.4: npm workspaces — deferred (optional)"
+        ]
+      }
+    ];
+
+    function renderArea(area) {
+      const statusClass = `status-${area.status}`;
+      const riskClass = `risk-${area.risk.toLowerCase()}`;
+      const progress = area.status === 'not-started' ? 0 : area.status === 'in-progress' ? 50 : 100;
+
+      return `
+        <div class="audit-card">
+          <div class="card-header">
+            <div class="card-number">${area.id}</div>
+            <div class="card-title">${area.title}</div>
+            <span class="risk-badge ${riskClass}">Risk: ${area.risk}</span>
+            <span class="status-badge ${statusClass}">${area.status.replace('-', ' ').toUpperCase()}</span>
+          </div>
+          <div class="card-description">${area.description}</div>
+          <div class="checklist">
+            ${area.checks.map(check => `
+              <div class="check-item">
+                <span class="check-icon">▢</span>
+                <span>${check}</span>
+              </div>
+            `).join('')}
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: ${progress}%"></div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function render() {
+      const grid = document.getElementById('grid');
+      grid.innerHTML = areas.map(renderArea).join('');
+
+      const started = areas.filter(a => a.status !== 'not-started').length;
+      const complete = areas.filter(a => a.status === 'complete').length;
+      const issues = areas.filter(a => a.status === 'issue').length;
+
+      document.getElementById('started').textContent = started;
+      document.getElementById('complete').textContent = complete;
+      document.getElementById('issues').textContent = issues;
+    }
+
+    window.updateArea = function(id, status) {
+      const area = areas.find(a => a.id === id);
+      if (area) {
+        area.status = status;
+        render();
+      }
+    };
+
+    render();
+  </script>
+</body>
+</html>

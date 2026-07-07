@@ -74,5 +74,62 @@ jobs:
           VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
           VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_PRACTITIONER_EMAILS: ${{ secrets.VITE_PRACTITIONER_EMAILS }}
+          VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
           # If secrets are absent, Firebase is disabled and the build still succeeds
+
+  # ── Deploy to Firebase (main branch only, after all checks pass) ──────────
+  # Requires two GitHub secrets:
+  #   FIREBASE_SERVICE_ACCOUNT — JSON key from Firebase console → Project
+  #     settings → Service accounts → Generate new private key
+  #   (plus the VITE_* secrets above for the production client build)
+  # NOTE: functions/index.js binds the RESEND_API_KEY secret. Run
+  #   firebase functions:secrets:set RESEND_API_KEY
+  # once before the first deploy, or the functions deploy will fail.
+  deploy:
+    name: Deploy to Firebase
+    runs-on: ubuntu-latest
+    needs: [test-client, test-server, build]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    concurrency:
+      group: firebase-deploy
+      cancel-in-progress: false
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+
+      - name: Build production client
+        working-directory: client
+        run: |
+          npm ci
+          npm run build
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_PRACTITIONER_EMAILS: ${{ secrets.VITE_PRACTITIONER_EMAILS }}
+          VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Deploy hosting, functions, rules & indexes
+        run: >
+          npx firebase-tools deploy
+          --only hosting,functions,firestore,storage
+          --project flutter-ai-playground-f880c
+          --non-interactive --force
 

@@ -82,7 +82,7 @@ Both chat routes use SSE with `data: {"type":"text","text":"..."}` frames, termi
 Booked readings ($88 booking flow) are fulfilled by the practitioner inside the normal wizard, then upgraded into a premium package on the Results page:
 
 1. The practitioner (signed in with an email listed in `VITE_PRACTITIONER_EMAILS`) sees the **Client Package** panel on ResultsPage → "Generate teaching slides" calls `/api/chat/slides`, which returns 8 structured slides (`kind/kicker/title/body[]/teach/script`) saved to the reading doc as `packageSlides`.
-2. The **narration studio** in `SlideDeck.jsx` records the practitioner's voice per slide via MediaRecorder; blobs upload to Firebase Storage (`readings/{id}/slide-{n}.{ext}`, rules in `storage.rules`) and download URLs persist as `packageAudio.{index}`.
+2. The **narration studio** in `SlideDeck.jsx` records the practitioner's voice per slide via MediaRecorder; blobs upload to Firebase Storage (`users/{uid}/readings/{id}/slide-{n}.{ext}`, rules in `storage.rules`) and download URLs persist as `packageAudio.{index}`.
 3. Sharing the reading (existing `isPublic` flow) gives the client a link where `SharedReadingPage` renders the deck with per-slide audio and a "Play my reading" auto-advancing narrated walkthrough.
 
 ### Ephemeris sidecar (`ephemeris-service/`)

@@ -3,4 +3,7 @@ uvicorn[standard]==0.34.0
 pydantic==2.10.4
 pyswisseph==2.10.3.2
 geopy==2.4.1
-tzdata==2024.2
+# Timezone/DST rule database — floor pin so installs always pull current rules.
+# A stale tzdata means WRONG chart times for any zone whose DST rules changed.
+# Refresh the venv periodically: pip install --upgrade tzdata
+tzdata>=2025.1

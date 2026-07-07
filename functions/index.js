@@ -133,9 +133,12 @@ import { defineSecret } from 'firebase-functions/params';
 const anthropicKey = defineSecret('ANTHROPIC_API_KEY');
 const stripeSecret = defineSecret('STRIPE_SECRET_KEY');
 const stripeWebhook = defineSecret('STRIPE_WEBHOOK_SECRET');
+// Booking confirmation emails. Create the secret BEFORE the next deploy:
+//   firebase functions:secrets:set RESEND_API_KEY
+const resendKey = defineSecret('RESEND_API_KEY');
 
 export const api = onRequest(
-  { secrets: [anthropicKey, stripeSecret, stripeWebhook] },
+  { secrets: [anthropicKey, stripeSecret, stripeWebhook, resendKey] },
   app
 );
 
