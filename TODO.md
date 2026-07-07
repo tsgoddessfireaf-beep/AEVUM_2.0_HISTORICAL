@@ -34,7 +34,7 @@ Phases 1, 2, and 3 are complete. The horary engine is practitioner-grade, accoun
 
 ## Completed ✓ — Phase 4 Production Infrastructure
 
-- [x] **CI/CD** — GitHub Actions runs client + server tests on every push/PR; build gate requires both; auto-deploy to Render on merge to main
+- [x] **CI/CD** — GitHub Actions runs client + server tests on every push/PR; build gate requires both; deploys to Firebase Cloud Functions
 - [x] **Error Monitoring** — Sentry initialized on both client (`@sentry/react`) and server (`@sentry/node`), gated on `SENTRY_DSN` / `VITE_SENTRY_DSN` env vars
 - [x] **Rate Limiting** — `express-rate-limit` applied to `/api/chat` and `/api/ephemeris` at 30 req/15 min per IP
 - [x] **Graceful Gemini degradation** — `friendlyApiError()` maps overload/rate-limit/timeout/connection errors to plain-English messages; unexpected errors captured to Sentry

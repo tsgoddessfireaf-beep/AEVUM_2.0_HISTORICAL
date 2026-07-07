@@ -137,11 +137,11 @@ export default function PrivacyPage() {
               </p>
             </div>
             <div>
-              <p className="text-bone/75 font-medium">Render</p>
+              <p className="text-bone/75 font-medium">Firebase</p>
               <p>
-                The Aevum server runs on Render (Oregon, US). Render may retain request
-                logs for operational purposes. See{' '}
-                <span className="text-silver/70">render.com/privacy</span>.
+                The Aevum backend runs on Firebase Cloud Functions (US). Firebase may retain
+                request logs for operational purposes. See{' '}
+                <span className="text-silver/70">firebase.google.com/support/privacy</span>.
               </p>
             </div>
           </div>

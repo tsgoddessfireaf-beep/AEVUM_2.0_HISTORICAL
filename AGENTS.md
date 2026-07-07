@@ -55,10 +55,10 @@ production. Do not repeat this. Before creating ANY branch:
 
 ## 4. Project facts worth knowing
 
-- Monorepo: `server/` (Express, ESM), `client/` (React + Vite), `ephemeris-service/` (Python FastAPI).
+- Monorepo: `functions/` (Express, ESM), `client/` (React + Vite), `ephemeris-service/` (Python FastAPI).
 - See `CLAUDE.md` and `ARCHITECTURE.md` for the full architecture and data flow.
-- Tests: `server/` uses vitest; client uses vitest + jsdom. CI gate is `.github/workflows/ci.yml`.
-- Default branch is `main`; production auto-deploys from it on Render.
+- Tests: `functions/` uses vitest; client uses vitest + jsdom. CI gate is `.github/workflows/ci.yml`.
+- Default branch is `main`; production deploys via Firebase Cloud Functions.
 
 ## 5. Premium UI & Design Guidelines
 

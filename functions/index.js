@@ -8,13 +8,13 @@ dotenv.config({ override: true });
 import { onRequest, onCallGenkit } from 'firebase-functions/v2/https';
 import { setGlobalOptions } from 'firebase-functions/v2';
 
-// --- NEW GENKIT & FIREBASE ADMIN IMPORTS ---
+// --- GENKIT & FIREBASE ADMIN IMPORTS ---
 import { genkit, z } from 'genkit';
 import { vertexAI, textEmbedding005 } from '@genkit-ai/vertexai';
 import { defineFirestoreRetriever } from '@genkit-ai/firebase';
 import { initializeApp, getApps, getApp } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
-// -------------------------------------------
+// ---------------------------------------
 
 setGlobalOptions({
   region: 'us-central1',
@@ -117,7 +117,7 @@ const isFirebaseRuntime = !!process.env.FUNCTION_TARGET;
 const isMain = process.argv[1] && /server[/\\]index/.test(process.argv[1]);
 
 if (isMain) {
-  // Local dev / Render: start server normally
+  // Local dev: start server normally
   app.listen(PORT, () => {
     console.log(`Aevum server running on http://localhost:${PORT}`);
     warmupAndCalibrate();
@@ -139,18 +139,12 @@ export const api = onRequest(
   app
 );
 
-// ==========================================================
-// --- NEW GENKIT & VECTOR SEARCH BACKEND INITIALIZATION ---
-// ==========================================================
-
-// Safely initialize the Firebase Admin App to prevent duplication errors
+// --- GENKIT & VECTOR SEARCH BACKEND INITIALIZATION ---
 const adminApp = getApps().length === 0 ? initializeApp() : getApp();
 const db = getFirestore(adminApp);
 
-// Initialize Genkit with Vertex AI support
 const ai = genkit({ plugins: [vertexAI()] });
 
-// Create the connector to your 'library_cards' collection in Firestore
 export const libraryCardsRetriever = defineFirestoreRetriever(ai, {
   name: 'libraryCardsRetriever',
   firestore: db,
@@ -161,7 +155,7 @@ export const libraryCardsRetriever = defineFirestoreRetriever(ai, {
   distanceMeasure: 'COSINE',
 });
 
-// Expose a new Callable Cloud Function ('askLibraryFlow') for your web client
+// Callable Function for our Web frontend
 export const askLibraryFlow = onCallGenkit(
   ai.defineFlow(
     {
@@ -170,14 +164,11 @@ export const askLibraryFlow = onCallGenkit(
       outputSchema: z.string(),
     },
     async (question) => {
-      // Search Firestore using our vector search retriever
       const docs = await ai.retrieve({
         retriever: libraryCardsRetriever,
         query: question,
         options: { limit: 3 },
       });
-      
-      // Merge the text of the matching library cards and send them back to the client
       return docs.map((d) => d.text).join('\n\n');
     }
   )

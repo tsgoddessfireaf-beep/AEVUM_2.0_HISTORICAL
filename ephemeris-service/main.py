@@ -346,7 +346,7 @@ def health():
 @app.post("/calculate")
 def calculate(req: EphemerisRequest):
     # ── 0. Re-assert the ephemeris search path per request ────────────────────
-    # On Render the Swiss path registered at import is lost by request time
+    # Some deployment environments may lose the Swiss path by request time
     # (import-time test calc returns SWISS, request-time returns Moshier in the
     # same process). set_ephe_path is idempotent and cheap; re-asserting it here,
     # before any calc_ut/houses call, guarantees full Swiss precision per request.

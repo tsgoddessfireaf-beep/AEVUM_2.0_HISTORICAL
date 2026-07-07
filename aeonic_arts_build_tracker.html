@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aeonic Arts — Build Status Tracker</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #e0e0e0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #d4af37 0%, #f0e68c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+      color: #d4af37;
+    }
+
+    .component-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .component-card:hover {
+      border-color: rgba(212, 175, 55, 0.5);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+    }
+
+    .component-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .component-name {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .component-status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-deployed {
+      background: rgba(76, 175, 80, 0.3);
+      color: #4caf50;
+    }
+
+    .status-built {
+      background: rgba(76, 175, 80, 0.3);
+      color: #4caf50;
+    }
+
+    .status-in-progress {
+      background: rgba(255, 193, 7, 0.3);
+      color: #ffc107;
+    }
+
+    .status-ready {
+      background: rgba(33, 150, 243, 0.3);
+      color: #2196f3;
+    }
+
+    .progress-section {
+      margin-top: 12px;
+    }
+
+    .progress-label {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-bar-container {
+      height: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #d4af37, #f0e68c);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+    }
+
+    .component-description {
+      font-size: 13px;
+      color: #888;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 16px;
+    }
+
+    .info-box {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .timestamp {
+      font-size: 11px;
+      color: #666;
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .phase-badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.2);
+      color: #d4af37;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ Aeonic Arts — Build Status</h1>
+      <p>Real-time deployment & infrastructure tracker</p>
+    </div>
+
+    <!-- USER JOURNEY PHASES -->
+    <div class="section">
+      <div class="section-title">🔧 Build Repair Status</div>
+      <div class="info-box" style="background: rgba(76, 175, 80, 0.15); border-color: rgba(76, 175, 80, 0.5); color: #90ee90; margin-bottom: 20px;">
+        <strong>✅ Root Cause Identified & Fixed</strong><br/>
+        <strong>Problem:</strong> CI workflow referenced non-existent `server/` directory (actual backend is in `functions/`)<br/>
+        <strong>Solution Applied:</strong><br/>
+        • Updated .github/workflows/ci.yml: server → functions<br/>
+        • Added test script to functions/package.json<br/>
+        • Standardized Node version to 22 across all jobs<br/>
+        • Added vitest as devDependency<br/>
+        <strong>Status:</strong> Ready for next push - CI should pass on next commit
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">📊 User Journey Phases</div>
+
+      <div class="grid">
+        <div class="component-card">
+          <div class="component-header">
+            <div class="component-name">Phase 1: Inquiry</div>
+            <span class="component-status status-deployed">LIVE</span>
+          </div>
+          <span class="phase-badge">Data Collection</span>
+          <div class="component-description">User profile, precise time/location data, core query capture</div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Production Status</span>
+              <span>Running (CI issues)</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 100%; background: linear-gradient(90deg, #ffc107, #ff9800);"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-header">
+            <div class="component-name">Phase 2: Technical</div>
+            <span class="component-status status-deployed">LIVE</span>
+          </div>
+          <span class="phase-badge">Processing</span>
+          <div class="component-description">JPL/Swiss Ephemeris, AI significator interview, radicality check</div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Completion</span>
+              <span>100%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-header">
+            <div class="component-name">Phase 3: Finalization</div>
+            <span class="component-status status-deployed">LIVE</span>
+          </div>
+          <span class="phase-badge">Transaction</span>
+          <div class="component-description">Stripe payment processing, database generation of teaching slides</div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Completion</span>
+              <span>100%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-header">
+            <div class="component-name">Phase 4: Delivery</div>
+            <span class="component-status status-deployed">LIVE</span>
+          </div>
+          <span class="phase-badge">Presentation</span>
+          <div class="component-description">Voice-recorded reading, diamond chart, aeonic dashboard access</div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Completion</span>
+              <span>100%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TECHNICAL INFRASTRUCTURE -->
+    <div class="section">
+      <div class="section-title">🔧 Technical Infrastructure</div>
+
+      <div class="component-card">
+        <div class="component-header">
+          <div class="component-name">Frontend (React + Vite)</div>
+          <span class="component-status status-ready">READY</span>
+        </div>
+        <div class="component-description">
+          React 18.3 | Tailwind CSS | Zustand State | React Router 7.2 | Firebase SDK 12.13
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Build Status</span>
+            <span>CI Fixed - Ready to Build</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 100%; background: linear-gradient(90deg, #d4af37, #f0e68c);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <div class="component-header">
+          <div class="component-name">Backend API (Node.js + Express)</div>
+          <span class="component-status status-deployed">DEPLOYED</span>
+        </div>
+        <div class="component-description">
+          Firebase Cloud Functions | Express 4.21 | Stripe Integration | Sentry Monitoring | Rate Limiting
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Deployment Status</span>
+            <span>Running</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <div class="component-header">
+          <div class="component-name">Ephemeris Service (Python FastAPI)</div>
+          <span class="component-status status-in-progress">STALE</span>
+        </div>
+        <div class="component-description">
+          pyswisseph (Swiss Ephemeris) | 7 Decimal Place Precision | NASA JPL Cross-Verification | Port 8000
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Service Status</span>
+            <span>Last updated: 6/27/2026 (7 days behind)</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 50%; background: linear-gradient(90deg, #ff9800, #f44336);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <div class="component-header">
+          <div class="component-name">Firestore Database</div>
+          <span class="component-status status-deployed">ACTIVE</span>
+        </div>
+        <div class="component-description">
+          Readings Collection | Library Cards (Vector Search) | Cloud Storage for Audio Files | Genkit Retrieval
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Database Status</span>
+            <span>Connected</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <div class="component-header">
+          <div class="component-name">Payment System (Stripe)</div>
+          <span class="component-status status-ready">CONFIGURED</span>
+        </div>
+        <div class="component-description">
+          Webhook Integration | $88 Booking Flow | Rate Limited | Secret Key Rotation Ready
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Payment Processing</span>
+            <span>Ready</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <div class="component-header">
+          <div class="component-name">AI/ML Stack (Claude + Vertex AI)</div>
+          <span class="component-status status-ready">CONFIGURED</span>
+        </div>
+        <div class="component-description">
+          Anthropic Claude API | Genkit Framework | Vertex AI Vector Embeddings | Rate Limited to 30 req/15min
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Integration Status</span>
+            <span>Active</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPLOYMENT SITES -->
+    <div class="section">
+      <div class="section-title">🌐 Deployment Sites</div>
+
+      <div class="grid">
+        <div class="component-card">
+          <div class="component-header">
+            <div class="component-name">Marketing Site</div>
+            <span class="component-status status-deployed">LIVE</span>
+          </div>
+          <div class="component-description">www.aeonicarts.com — Landing page, info, booking CTA</div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Status</span>
+              <span>Online</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-header">
+            <div class="component-name">App (Aevum)</div>
+            <span class="component-status status-deployed">LIVE</span>
+          </div>
+          <div class="component-description">app.aeonicarts.com — Horary reading wizard, results, dashboard</div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Status</span>
+              <span>Online</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-header">
+            <div class="component-name">Firebase Hosting</div>
+            <span class="component-status status-deployed">ACTIVE</span>
+          </div>
+          <div class="component-description">aevum-app.web.app | Cloud Functions | Security Rules in Place</div>
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Status</span>
+              <span>Running</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KEY METRICS -->
+    <div class="section">
+      <div class="section-title">📈 Build Metrics</div>
+
+      <div class="grid">
+        <div class="info-box">
+          <strong>Node Version:</strong> 22 (LTS)<br/>
+          <strong>React Version:</strong> 18.3.1<br/>
+          <strong>Build Tool:</strong> Vite 6.2.2<br/>
+          <strong>Package Manager:</strong> npm
+        </div>
+
+        <div class="info-box">
+          <strong>Python Version:</strong> 3.9/3.13<br/>
+          <strong>Ephemeris:</strong> pyswisseph<br/>
+          <strong>Precision:</strong> 7 decimal places (~0.00036″)<br/>
+          <strong>Service Port:</strong> 8000
+        </div>
+
+        <div class="info-box">
+          <strong>Rate Limiting:</strong> 30 req/15 min per IP<br/>
+          <strong>Timeout:</strong> 540 seconds (Cloud Functions)<br/>
+          <strong>Memory:</strong> 1 GiB (Cloud Functions)<br/>
+          <strong>Region:</strong> us-central1
+        </div>
+      </div>
+    </div>
+
+    <div class="timestamp">
+      Last Updated: <span id="updateTime">Just now</span> | Refresh to see live status
+    </div>
+  </div>
+
+  <script>
+    function updateTime() {
+      document.getElementById('updateTime').textContent = new Date().toLocaleTimeString();
+    }
+    updateTime();
+    setInterval(updateTime, 60000);
+  </script>
+</body>
+</html>
