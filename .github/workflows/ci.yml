@@ -79,13 +79,12 @@ jobs:
           # If secrets are absent, Firebase is disabled and the build still succeeds
 
   # ── Deploy to Firebase (main branch only, after all checks pass) ──────────
-  # Requires two GitHub secrets:
-  #   FIREBASE_SERVICE_ACCOUNT — JSON key from Firebase console → Project
-  #     settings → Service accounts → Generate new private key
-  #   (plus the VITE_* secrets above for the production client build)
-  # NOTE: functions/index.js binds the RESEND_API_KEY secret. Run
-  #   firebase functions:secrets:set RESEND_API_KEY
-  # once before the first deploy, or the functions deploy will fail.
+  # Auth: Workload Identity Federation — no key file, no long-lived secret.
+  # GitHub's OIDC token is exchanged for short-lived Google credentials via
+  # the github-actions-pool / github-provider set up in GCP. Scoped to only
+  # this repo (tsgoddessfireaf-beep/AEVUM_2.0_HISTORICAL) via attribute-condition.
+  # NOTE: functions/index.js binds the RESEND_API_KEY secret. Already set in
+  # Secret Manager — nothing to do here unless it's rotated.
   deploy:
     name: Deploy to Firebase
     runs-on: ubuntu-latest
@@ -94,6 +93,9 @@ jobs:
     concurrency:
       group: firebase-deploy
       cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write   # required for Workload Identity Federation
     defaults:
       run:
         working-directory: .
@@ -124,7 +126,8 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          workload_identity_provider: projects/720107337435/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
+          service_account: github-action-1272176989@flutter-ai-playground-f880c.iam.gserviceaccount.com
 
       - name: Deploy hosting, functions, rules & indexes
         run: >
