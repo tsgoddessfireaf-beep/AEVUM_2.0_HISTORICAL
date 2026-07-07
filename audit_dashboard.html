@@ -252,7 +252,9 @@
           "✅ 2.2: deploy job added to ci.yml (needs FIREBASE_SERVICE_ACCOUNT secret)",
           "✅ 2.3: functions/.env stays tracked (deliberate — CI deploys need it); header hardened",
           "✅ 2.4: RESEND_API_KEY bound — run firebase functions:secrets:set RESEND_API_KEY",
-          "✅ 2.5: VITE_PRACTITIONER_EMAILS + VITE_SENTRY_DSN wired into CI builds"
+          "✅ 2.5: VITE_PRACTITIONER_EMAILS + VITE_SENTRY_DSN wired into CI builds",
+          "✅ RESEND_API_KEY: found already in Secret Manager — no new key needed",
+          "✅ Deploy auth: Workload Identity Federation — no key file ever exists"
         ]
       },
       {
