@@ -221,6 +221,39 @@
 
     <div class="audit-grid" id="grid"></div>
 
+    <h1 style="margin-top:50px;font-size:22px;">🚶 Pre-Walkthrough Risk Areas (Unverified)</h1>
+    <div class="summary">
+      <div class="summary-card">
+        <div class="summary-number">10</div>
+        <div class="summary-label">Flagged</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-number" id="w-started">0</div>
+        <div class="summary-label">In Progress</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-number" id="w-complete">0</div>
+        <div class="summary-label">Resolved</div>
+      </div>
+    </div>
+    <div class="audit-grid" id="walkthrough-grid"></div>
+
+    <div class="audit-card" style="margin-top:30px;">
+      <div class="card-header">
+        <div class="card-title">⏱️ Claude Usage Window (self-tracked — not live data)</div>
+      </div>
+      <div class="card-description" style="padding-left:0;">
+        Anthropic's usage allotment resets on a rolling 5-hour window from your first message in it.
+        I have no API access to your real quota — this is a manual note, not a live meter.
+      </div>
+      <div style="padding-left:0;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+        <label style="font-size:13px;color:#94a3b8;">Session start:</label>
+        <input type="time" id="usage-start" style="background:#0f172a;color:#e0e7ff;border:1px solid #334155;border-radius:4px;padding:6px 10px;">
+        <button onclick="setUsageStart()" style="background:#312e81;color:#c4b5fd;border:none;border-radius:4px;padding:6px 14px;cursor:pointer;font-size:13px;">Set</button>
+        <span id="usage-reset-display" style="font-size:13px;color:#10b981;"></span>
+      </div>
+    </div>
+
     <div class="footer">
       Live audit dashboard — Updates as investigations complete
     </div>
@@ -298,6 +331,180 @@
       }
     ];
 
+    const walkthroughRisks = [
+      {
+        id: "W1",
+        title: "8 slides / script may never appear",
+        risk: "CRITICAL",
+        status: "issue",
+        description: "VITE_PRACTITIONER_EMAILS confirmed missing from GitHub secrets — client build won't render the Client Package panel at all.",
+        checks: [
+          "Step hit: view 8 slides, view script",
+          "Fix: add GitHub secret VITE_PRACTITIONER_EMAILS = tsgoddessfireaf@gmail.com",
+          "Dolores action required — I cannot set GitHub secrets remotely"
+        ]
+      },
+      {
+        id: "W2",
+        title: "WheelChart import/render failure",
+        risk: "CRITICAL",
+        status: "issue",
+        description: "CI caught 'Failed to resolve import ./WheelChart.jsx' — test was skipped, not fixed. Real component bug likely.",
+        checks: [
+          "Step hit: view chart data, view diamond chart",
+          "Fix: read WheelChart.jsx directly, find the real bug, un-skip the test"
+        ]
+      },
+      {
+        id: "W3",
+        title: "Firestore composite index still building",
+        risk: "MEDIUM",
+        status: "issue",
+        description: "Index for readings (userId+createdAt) was just added this session — Firestore builds new indexes asynchronously.",
+        checks: [
+          "Step hit: dashboard entry, reading history",
+          "Fix: check Firestore Console → Indexes → status is Enabled before testing; just wait if still Building"
+        ]
+      },
+      {
+        id: "W4",
+        title: "Practitioner gate's NODE_ENV dependency unverified",
+        risk: "HIGH",
+        status: "issue",
+        description: "Fail-closed fix only engages when NODE_ENV isn't 'development' — never confirmed Firebase sets this automatically in production.",
+        checks: [
+          "Step hit: reading analysis, 8 slides",
+          "Fix: add NODE_ENV=production explicitly to functions/.env — don't rely on Firebase's default"
+        ]
+      },
+      {
+        id: "W5",
+        title: "Ephemeris Cloud Run not redeployed",
+        risk: "HIGH",
+        status: "issue",
+        description: "CI/CD only deploys hosting,functions,firestore,storage — Cloud Run is separate. Python 3.13 + tzdata fix isn't live yet.",
+        checks: [
+          "Step hit: ephemeris input",
+          "Fix: gcloud run deploy manually now, or add a Cloud Run step to ci.yml (needs run.developer role, currently only run.viewer)"
+        ]
+      },
+      {
+        id: "W6",
+        title: "Landing page may be on a stale, separate deploy path",
+        risk: "MEDIUM",
+        status: "issue",
+        description: "site/ has its own .firebaserc + PR-only workflow requiring a different, never-verified secret. Unclear if new CI/CD actually touches it.",
+        checks: [
+          "Step hit: entry into landing page (first thing you'll see)",
+          "Fix: check landing site's last-deploy timestamp in Firebase Console; quarantine the redundant site/ workflow if confirmed superseded"
+        ]
+      },
+      {
+        id: "W7",
+        title: "Chart-type fallback logic may be the real bug",
+        risk: "HIGH",
+        status: "issue",
+        description: "You described square/diamond appearing IN PLACE OF wheel, not an error — suggests silent fallback logic, a separate bug from W2.",
+        checks: [
+          "Step hit: view chart data, view diamond chart",
+          "Fix: read the chart-selection logic (ChartDisplay.jsx or display-preference toggle) separately from fixing WheelChart itself"
+        ]
+      },
+      {
+        id: "W8",
+        title: "Model name drift",
+        risk: "MEDIUM",
+        status: "issue",
+        description: "claude-haiku-4-5 and claude-sonnet-4-6 are hardcoded. Not verified as still valid/available today.",
+        checks: [
+          "Step hit: significator interview, reading analysis",
+          "Fix: verify against Anthropic's current model list; add clearer error surfacing on 404"
+        ]
+      },
+      {
+        id: "W9",
+        title: "Practitioner email mismatch at sign-in",
+        risk: "LOW",
+        status: "issue",
+        description: "Gate only allows tsgoddessfireaf@gmail.com. Wrong account/profile = 403 unrelated to any real bug.",
+        checks: [
+          "Step hit: reading analysis, 8 slides",
+          "Fix: no code change — sign in with the practitioner email before testing those steps"
+        ]
+      },
+      {
+        id: "W10",
+        title: "Radicality check unaudited",
+        risk: "MEDIUM",
+        status: "issue",
+        description: "Never opened this code path this session. TODO.md marks it done, but unverified end-to-end.",
+        checks: [
+          "Step hit: radicality advised",
+          "Fix: dedicated read-through of the strictures-against-judgment module against Lilly's actual rules"
+        ]
+      }
+    ];
+
+    function renderWalkthroughArea(area) {
+      const statusClass = `status-${area.status}`;
+      const riskClass = `risk-${area.risk.toLowerCase()}`;
+      return `
+        <div class="audit-card">
+          <div class="card-header">
+            <div class="card-number">${area.id}</div>
+            <div class="card-title">${area.title}</div>
+            <span class="risk-badge ${riskClass}">Risk: ${area.risk}</span>
+            <span class="status-badge ${statusClass}">${area.status.toUpperCase()}</span>
+          </div>
+          <div class="card-description">${area.description}</div>
+          <div class="checklist">
+            ${area.checks.map(check => `
+              <div class="check-item">
+                <span class="check-icon">▢</span>
+                <span>${check}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderWalkthrough() {
+      const grid = document.getElementById('walkthrough-grid');
+      grid.innerHTML = walkthroughRisks.map(renderWalkthroughArea).join('');
+      document.getElementById('w-started').textContent = walkthroughRisks.filter(a => a.status === 'in-progress').length;
+      document.getElementById('w-complete').textContent = walkthroughRisks.filter(a => a.status === 'complete').length;
+    }
+
+    window.updateWalkthroughArea = function(id, status) {
+      const area = walkthroughRisks.find(a => a.id === id);
+      if (area) { area.status = status; renderWalkthrough(); }
+    };
+
+    function setUsageStart() {
+      const val = document.getElementById('usage-start').value;
+      if (!val) return;
+      localStorage.setItem('aevum_usage_start', val);
+      showUsageReset(val);
+    }
+
+    function showUsageReset(val) {
+      const [h, m] = val.split(':').map(Number);
+      const start = new Date();
+      start.setHours(h, m, 0, 0);
+      const reset = new Date(start.getTime() + 5 * 60 * 60 * 1000);
+      const resetStr = reset.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      document.getElementById('usage-reset-display').textContent = `Estimated window resets ~${resetStr} (self-reported, not live)`;
+    }
+
+    (function initUsage() {
+      const saved = localStorage.getItem('aevum_usage_start');
+      if (saved) {
+        document.getElementById('usage-start').value = saved;
+        showUsageReset(saved);
+      }
+    })();
+
     function renderArea(area) {
       const statusClass = `status-${area.status}`;
       const riskClass = `risk-${area.risk.toLowerCase()}`;
@@ -351,6 +558,7 @@
     };
 
     render();
+    renderWalkthrough();
   </script>
 </body>
 </html>
