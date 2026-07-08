@@ -19,6 +19,13 @@ import LoadingProgress from '../components/LoadingProgress.jsx';
 // with strictures present, with appropriate care. This page reflects that:
 // it always allows the user to continue, but never lets them miss the
 // warning first.
+//
+// Practitioner override: when strictures are present, a hidden override
+// button lets the practitioner proceed to judgment anyway. It renders only
+// when localStorage 'aevum_practitioner' === '1' (or in Vite dev mode).
+// Enable once per browser via DevTools console:
+//   localStorage.setItem('aevum_practitioner', '1')
+// Disable: localStorage.removeItem('aevum_practitioner')
 export default function RadicalityPage() {
   const navigate = useNavigate();
   const { question, houseSignifications, ephemerisData, resetAll } = useAppStore();
@@ -39,6 +46,12 @@ export default function RadicalityPage() {
   const strictures = getStrictures(ephemerisData);
   const fitToJudge = strictures.length === 0;
 
+  // Practitioner-only: hidden from all normal users. True in local dev, or
+  // when the per-browser practitioner flag has been set in localStorage.
+  const isPractitioner =
+    import.meta.env.DEV ||
+    window.localStorage.getItem('aevum_practitioner') === '1';
+
   function handleAskNewQuestion() {
     resetAll();
     navigate('/ask');
@@ -46,6 +59,13 @@ export default function RadicalityPage() {
 
   function handleContinue() {
     navigate('/dashboard');
+  }
+
+  function handlePractitionerOverride() {
+    // stricturesOverride travels in router state so the dashboard/report can
+    // later annotate that this judgment was rendered under strictures by
+    // practitioner override (Lilly noted strictures and judged with care).
+    navigate('/dashboard', { state: { stricturesOverride: true } });
   }
 
   return (
@@ -116,6 +136,16 @@ export default function RadicalityPage() {
             >
               Ask a New Question Later
             </button>
+            {isPractitioner && (
+              <button
+                onClick={handlePractitionerOverride}
+                className="w-full py-3 bg-transparent hover:bg-red-900/20 border border-red-800/40
+                           text-silver/70 hover:text-bone rounded-xl text-xs tracking-wide
+                           transition-colors"
+              >
+                ⚖ Practitioner Override — Judge Under Strictures
+              </button>
+            )}
           </div>
         )}
       </div>
