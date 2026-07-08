@@ -10,7 +10,7 @@
 //   4. Enable Anonymous Authentication and Google in Auth → Sign-in methods
 //   5. Update Firestore Rules to use request.auth.uid (see firestore.rules)
 //   6. Paste the config into client/.env.local (see .env.local.example)
-//   7. Add aevum-plp9.onrender.com to Auth → Settings → Authorized domains
+//   7. Add app.aeonicarts.com to Auth → Settings → Authorized domains
 //
 // ON APP LOAD:
 //   Call initAuth() to subscribe to auth state. Google sign-in is required

@@ -313,7 +313,7 @@ export default function HouseSignificationPage() {
             ← Back
           </button>
           <button
-            onClick={() => navigate('/results')}
+            onClick={() => navigate('/radicality')}
             disabled={!houseSignifications}
             className="flex-1 bg-copper-400 hover:bg-copper-300 disabled:opacity-30 disabled:cursor-not-allowed
                        text-teal-900 font-semibold py-3 rounded-xl transition-all text-sm"

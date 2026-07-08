@@ -7,6 +7,7 @@ import StepIndicator from '../components/StepIndicator.jsx';
 import ChartDisplay from '../components/ChartDisplay.jsx';
 import SquareChart from '../components/SquareChart.jsx';
 import Astrolabe from '../components/Astrolabe.jsx';
+import LoadingProgress from '../components/LoadingProgress.jsx';
 import FollowUpChat from '../components/FollowUpChat.jsx';
 import DashboardTab from '../components/dashboard/DashboardTab.jsx';
 import ArchivesTab from '../components/dashboard/ArchivesTab.jsx';
@@ -29,7 +30,6 @@ import { getTiming, SIGN_MODES, MODE_UNITS } from '../lib/timing.js';
 import { getFixedStarHits } from '../lib/fixedstars.js';
 import { isDayChart, getHayz } from '../lib/sect.js';
 import { getAntiscia } from '../lib/antiscia.js';
-import LoadingState from '../components/LoadingState.jsx';
 import ChartCustomizeModal from '../components/ChartCustomizeModal.jsx';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { isPractitioner } from '../lib/package.js';
@@ -385,16 +385,15 @@ export default function ResultsPage() {
   const isDone = phase === 'done';
   const showReading = sections.answer != null;
 
-  // Simple full-page loader while the chart/analysis is being prepared, before
-  // the dashboard chrome (sidebar, header, tabs) mounts. Errors still fall
-  // through to the dashboard so the existing error UI in the workspace shows.
+  // Full-page loader while the chart/analysis is being prepared, before the
+  // dashboard chrome (sidebar, header, tabs) mounts. No animation — a static
+  // progress bar with rotating astrologer phrases (Dolores's directive).
+  // Errors still fall through to the dashboard so the existing error UI shows.
   if (phase === 'idle' || phase === 'fetching-chart' || (phase === 'analyzing' && !sections.answer)) {
     return (
-      <div className="min-h-screen flex items-center justify-center font-sans text-bone">
-        <p className="text-silver text-sm tracking-wide">
-          {phase === 'fetching-chart' ? 'Erecting the Moment of Reception…' : 'Judgment is being prepared…'}
-        </p>
-      </div>
+      <LoadingProgress
+        label={phase === 'fetching-chart' ? 'Erecting the Moment of Reception…' : 'Judgment is being prepared…'}
+      />
     );
   }
 
@@ -514,13 +513,11 @@ export default function ResultsPage() {
                 })()}
               </div>
 
-        {/* Loading: fetching chart */}
-        {phase === 'fetching-chart' && <LoadingState text="Erecting the Moment of Reception…" />}
-
-        {isWaiting && ephemerisData
-          ? <Astrolabe ephemerisData={ephemerisData} />
-          : isWaiting && <LoadingState text="Your Case Judgment Report is being prepared…" />
-        }
+        {/* NOTE: phase === 'fetching-chart' and isWaiting (analyzing && !answer) never
+            reach this point — the early-return LoadingProgress screen above the main
+            return handles both. This dead branch (previously rendering Astrolabe as a
+            "loading animation") was removed; Astrolabe is still used for the print-only
+            wheel-chart view further below. */}
 
         {/* Error state */}
         {phase === 'error' && (

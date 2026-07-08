@@ -39,7 +39,7 @@ import compression from 'compression';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import chatRoutes from './routes/chat.js';
-import ephemerisRoutes, { getCalibrationStatus, warmupAndCalibrate } from './routes/ephemeris.js';
+import ephemerisRoutes, { getCalibrationStatus, warmupAndCalibrate, pingEphemerisHealth } from './routes/ephemeris.js';
 import stripeRoutes from './routes/stripe.js';
 import bookingRoutes from './routes/booking.js';
 
@@ -82,6 +82,19 @@ const aiLimiter = rateLimit({
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', calibrated: getCalibrationStatus() });
+});
+
+// Fired by the client on every app load (not gated by aiLimiter — this isn't
+// an AI-cost action, it's a Cloud Run wake-up ping) so the ephemeris sidecar
+// is warm well before the user finishes the question/moment/significations
+// steps and clicks into the reading itself.
+app.get('/api/ephemeris/warmup', async (req, res) => {
+  try {
+    const result = await pingEphemerisHealth();
+    res.json(result);
+  } catch (err) {
+    res.status(502).json({ warmed: false, error: err.message });
+  }
 });
 
 app.get('/api/test-outbound', async (req, res) => {

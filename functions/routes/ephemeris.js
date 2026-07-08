@@ -185,6 +185,25 @@ export async function performJplVerification(data) {
   }
 }
 
+// Cheap ping fired the moment Aevum loads (App.jsx mount), to wake a
+// scaled-to-zero/cold Cloud Run ephemeris container *before* the user reaches
+// "Book a Reading". Hits the Python sidecar's plain GET /health (no swe calc,
+// no JPL call) rather than /calculate, so it's fast and free of side effects.
+// Exported (not a router route) so index.js can mount it OUTSIDE the aiLimiter
+// rate limit — this fires on every page load, not just AI-cost actions, so it
+// must not share the 30-req/15min budget with real ephemeris/chat requests.
+export async function pingEphemerisHealth() {
+  const healthUrl = EPHEMERIS_URL.replace(/\/calculate\/?$/, '/health');
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 20000); // Cloud Run cold start can take several seconds
+  try {
+    const response = await fetch(healthUrl, { signal: ctrl.signal });
+    return { warmed: response.ok, status: response.status };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 router.post('/', async (req, res) => {
   const { date, time, timezone, location, house_system } = req.body || {};
   if (!date || !time || !timezone || !location) {

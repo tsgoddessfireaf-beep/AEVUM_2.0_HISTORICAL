@@ -102,7 +102,7 @@ export default function DateTimePage() {
             `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
             { headers: {
                 'Accept-Language': 'en',
-                'User-Agent': 'Aevum/1.0 (https://aevum-plp9.onrender.com)',
+                'User-Agent': 'Aevum/1.0 (https://app.aeonicarts.com)',
               }
             }
           );
@@ -159,7 +159,46 @@ export default function DateTimePage() {
     setReadingId(null);
     setFollowUpMessages([]);
     setJournal(null);
+    prefetchEphemeris(form);
     navigate('/significations');
+  }
+
+  // Fires the chart calculation the instant the moment/location are confirmed,
+  // instead of waiting until the results page. Runs in the background while
+  // the house-signification interview proceeds, so by the time the user
+  // reaches DashboardPage, ephemerisData is already populated and its own
+  // fetch (in run()) is skipped. Fire-and-forget from the caller's
+  // perspective — a failure here doesn't block navigation; DashboardPage's
+  // run() will simply retry the fetch itself if ephemerisData never arrived.
+  async function prefetchEphemeris(snapshot) {
+    try {
+      const res = await fetch('/api/ephemeris', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          date: snapshot.date,
+          time: snapshot.time + ':00',
+          timezone: snapshot.timezone,
+          location: snapshot.location,
+          latitude: snapshot.latitude || null,
+          longitude: snapshot.longitude || null,
+          topocentric: true,
+          elevation: 0.0,
+          house_system: snapshot.houseSystem || 'Regiomontanus',
+        }),
+      });
+      if (!res.ok) return; // silent — DashboardPage.run() re-fetches on arrival
+      const chartData = await res.json();
+      setEphemerisData(chartData);
+      if (chartData.chart_meta?.resolved_latitude && chartData.chart_meta?.resolved_longitude) {
+        setDateTimeData({
+          latitude: chartData.chart_meta.resolved_latitude,
+          longitude: chartData.chart_meta.resolved_longitude,
+        });
+      }
+    } catch {
+      // Silent — DashboardPage.run() falls back to fetching it itself.
+    }
   }
 
   const valid = form.date && form.time && form.location.trim();

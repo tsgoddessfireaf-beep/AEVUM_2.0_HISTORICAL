@@ -145,14 +145,13 @@ VITE_SENTRY_DSN=...                            # optional
 client/src/pages/IntakePage.jsx              — question intake + detectQuestionType()
 client/src/pages/DateTimePage.jsx            — moment capture + geocoding
 client/src/pages/HouseSignificationPage.jsx  — SSE interview (haiku)
-client/src/pages/DashboardPage.jsx           — active dashboard with Astrolabe animation and readings
+client/src/pages/DashboardPage.jsx           — active dashboard, reading display, paywall/practitioner gate
 client/src/pages/HistoryPage.jsx             — Firestore reading history
 client/src/pages/UpgradePage.jsx             — Stripe paid tier checkout/portal
 client/src/pages/SharedReadingPage.jsx       — public read-only reading link + Client Package deck
 client/src/components/ChartDisplay.jsx       — planet table + dual-source badge
-client/src/components/SquareChart.jsx        — SVG horary square chart
-client/src/components/WheelChart.jsx         — SVG chart wheel
-client/src/components/Astrolabe.jsx          — animated SVG astrolabe while waiting for the AI
+client/src/components/SquareChart.jsx        — SVG horary square ("diamond") chart — the only chart display in use
+client/src/components/Astrolabe.jsx          — SVG chart-wheel renderer, used in the print-only report view (skipAnimation)
 client/src/components/ReadingPackagePanel.jsx — practitioner-only: generate the 8-slide Client Package
 client/src/components/SlideDeck.jsx          — slide renderer + narration studio (MediaRecorder → Storage)
 client/src/store/useAppStore.js              — Zustand store

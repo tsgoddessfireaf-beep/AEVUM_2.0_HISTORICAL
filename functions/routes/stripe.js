@@ -29,7 +29,7 @@ export function stripeEnabled(res) {
   return true;
 }
 
-const getBaseUrl = (req) => process.env.NODE_ENV === 'production' ? 'https://aevum-plp9.onrender.com' : (req.headers.origin || 'http://localhost:3000');
+const getBaseUrl = (req) => process.env.NODE_ENV === 'production' ? 'https://app.aeonicarts.com' : (req.headers.origin || 'http://localhost:3000');
 
 // POST /api/stripe/create-checkout-session
 export async function createCheckoutSession(req, res) {

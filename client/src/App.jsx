@@ -11,6 +11,7 @@ import RequireAuth from './components/RequireAuth.jsx';
 const IntakePage            = lazy(() => import('./pages/IntakePage.jsx'));
 const DateTimePage          = lazy(() => import('./pages/DateTimePage.jsx'));
 const HouseSignificationPage = lazy(() => import('./pages/HouseSignificationPage.jsx'));
+const RadicalityPage        = lazy(() => import('./pages/RadicalityPage.jsx'));
 const DashboardPage         = lazy(() => import('./pages/DashboardPage.jsx'));
 const HistoryPage           = lazy(() => import('./pages/HistoryPage.jsx'));
 const ConsentPage           = lazy(() => import('./pages/ConsentPage.jsx'));
@@ -24,6 +25,13 @@ export default function App() {
     initAuth();
     const savedTheme = localStorage.getItem('aevum_theme');
     if (savedTheme) applyTheme(savedTheme);
+
+    // Wake the ephemeris Cloud Run sidecar the moment Aevum loads, so it's
+    // warm well before the user finishes question → moment → significations
+    // and reaches the actual chart calculation. Fire-and-forget: no loading
+    // state depends on this, and a failure here is not user-facing (the real
+    // /api/ephemeris call still runs its own retry/error path later).
+    fetch('/api/ephemeris/warmup').catch(() => {});
   }, []);
 
   return (
@@ -43,6 +51,7 @@ export default function App() {
         <Route path="/ask"            element={<RequireAuth><IntakePage /></RequireAuth>} />
         <Route path="/datetime"       element={<RequireAuth><DateTimePage /></RequireAuth>} />
         <Route path="/significations" element={<RequireAuth><HouseSignificationPage /></RequireAuth>} />
+        <Route path="/radicality"     element={<RequireAuth><RadicalityPage /></RequireAuth>} />
         <Route path="/dashboard"      element={<RequireAuth><DashboardPage /></RequireAuth>} />
         <Route path="/results"        element={<Navigate to="/dashboard" replace />} />
         <Route path="/history"        element={<RequireAuth><HistoryPage /></RequireAuth>} />

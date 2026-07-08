@@ -348,11 +348,12 @@
         id: "W2",
         title: "WheelChart import/render failure",
         risk: "CRITICAL",
-        status: "issue",
-        description: "CI caught 'Failed to resolve import ./WheelChart.jsx' — test was skipped, not fixed. Real component bug likely.",
+        status: "complete",
+        description: "Resolved by removal, per Dolores's directive (\"wheel chart is out completely\"). WheelChart.jsx never existed on disk in this checkout — only the orphaned test file imported it, which is why CI failed. DashboardPage.jsx already only imports SquareChart (diamond). Quarantined WheelChart.test.js to 'to delete after Dolores Review/'.",
         checks: [
           "Step hit: view chart data, view diamond chart",
-          "Fix: read WheelChart.jsx directly, find the real bug, un-skip the test"
+          "Confirmed: grep for WheelChart across client/src found zero live imports outside the dead test file",
+          "Fixed: test file quarantined, README.md architecture map corrected"
         ]
       },
       {
@@ -370,11 +371,11 @@
         id: "W4",
         title: "Practitioner gate's NODE_ENV dependency unverified",
         risk: "HIGH",
-        status: "issue",
-        description: "Fail-closed fix only engages when NODE_ENV isn't 'development' — never confirmed Firebase sets this automatically in production.",
+        status: "complete",
+        description: "Fixed: NODE_ENV=production added explicitly to functions/.env, committed to git. No longer relies on Firebase's implicit default.",
         checks: [
           "Step hit: reading analysis, 8 slides",
-          "Fix: add NODE_ENV=production explicitly to functions/.env — don't rely on Firebase's default"
+          "Fixed: functions/.env now sets NODE_ENV=production directly"
         ]
       },
       {
@@ -403,11 +404,11 @@
         id: "W7",
         title: "Chart-type fallback logic may be the real bug",
         risk: "HIGH",
-        status: "issue",
-        description: "You described square/diamond appearing IN PLACE OF wheel, not an error — suggests silent fallback logic, a separate bug from W2.",
+        status: "complete",
+        description: "Not a fallback bug — there was never a live chart-type toggle. DashboardPage.jsx has always imported only SquareChart for the on-screen chart. Astrolabe.jsx is a separate component used only in the print-only report view (skipAnimation=true, labeled 'Large Wheel Chart Container'), not user-selectable. No dead code to fix here.",
         checks: [
           "Step hit: view chart data, view diamond chart",
-          "Fix: read the chart-selection logic (ChartDisplay.jsx or display-preference toggle) separately from fixing WheelChart itself"
+          "Confirmed by reading DashboardPage.jsx imports directly — SquareChart is the sole interactive chart"
         ]
       },
       {

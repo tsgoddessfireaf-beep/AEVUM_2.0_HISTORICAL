@@ -30,7 +30,7 @@ function getResend() {
 
 const getBaseUrl = (req) =>
   process.env.NODE_ENV === 'production'
-    ? 'https://aevum-plp9.onrender.com'
+    ? 'https://app.aeonicarts.com'
     : (req.headers.origin || 'http://localhost:3000');
 
 // POST /api/booking/create-session
