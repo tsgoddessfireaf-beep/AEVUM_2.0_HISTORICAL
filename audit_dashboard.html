@@ -380,14 +380,15 @@
       },
       {
         id: "W5",
-        title: "Ephemeris Cloud Run not redeployed",
+        title: "Ephemeris Cloud Run redeployed (Python 3.13 / tzdata live)",
         risk: "HIGH",
-        status: "issue",
-        description: "CI/CD only deploys hosting,functions,firestore,storage — Cloud Run is separate. Python 3.13 + tzdata fix isn't live yet, and the new /health warm-up ping (W12) needs the container redeployed to answer. Next manual step: gcloud run deploy from ephemeris-service/. gcloud is authenticated locally as tsgoddessfireaf@gmail.com.",
+        status: "complete",
+        description: "Redeployed via gcloud run deploy --source. First build FAILED and surfaced a real regression the Python 3.13 bump (this engagement's W5 code change) had introduced: pyswisseph ships no 3.13 wheel, so pip compiled libswe from C source, but python:3.13-slim has no gcc → 'command gcc failed: No such file or directory'. Fixed the Dockerfile: install build-essential, compile pyswisseph, then purge the toolchain in the same layer (runtime image stays lean; the compiled .so only needs libc/libm). Rebuild SUCCEEDED (Cloud Build f86b3cdd) and the new revision ephemeris-service-00003-7mb is serving. The EPHEMERIS_URL in functions/.env points to this same service, so production now uses the fixed container, and the W12 warm-up ping has a live /health to hit.",
         checks: [
           "Step hit: ephemeris input",
-          "Fix: gcloud run deploy ephemeris-service --source . --region us-central1 from ephemeris-service/",
-          "Pending: not yet run this session (queued after the CI deploy IAM blocker W11 is understood)"
+          "Build fixed: Dockerfile now installs+purges build-essential so pyswisseph compiles on 3.13",
+          "Deployed: Cloud Build f86b3cdd SUCCESS, revision ephemeris-service-00003-7mb Ready",
+          "Verified: gcloud run services describe returns the live URL + latestReadyRevisionName"
         ]
       },
       {
@@ -448,16 +449,16 @@
       },
       {
         id: "W11",
-        title: "CI deploy — service account IAM (RESOLVED) + functions-deps CI gap (fix pushed)",
+        title: "CI deploy — fully green (IAM provisioned + functions-deps CI gap fixed)",
         risk: "CRITICAL",
-        status: "in-progress",
-        description: "Two distinct problems, both now addressed. (1) IAM — the WIF service account had AUTH but no deploy ROLES. Granted, in order, and confirmed via gcloud get-iam-policy: iam.serviceAccountUser (on App Engine SA) + firebase.admin, cloudfunctions.admin, artifactregistry.admin, run.admin, cloudbuild.builds.editor, serviceusage.serviceUsageConsumer (project-level; the SA also inherited firebasehosting.admin/firebaserules.admin/etc.). After that the deploy cleared EVERY permission + API + rules-compile check — no more 403s. (2) The deploy then failed on a real CI-config gap, NOT permissions: 'Couldn't find firebase-functions package in your source code' — the deploy job installed client deps but never ran npm install in the functions codebases. Fixed ci.yml: added an 'Install functions dependencies' step (npm ci functions/ + npm install bibliotheca/functions) before the deploy. Pushed; a fresh CI run is validating it now.",
+        status: "complete",
+        description: "RESOLVED end-to-end. Run 28914220503 deployed successfully (Deploy-to-Firebase ✓ in 6m22s; all 4 jobs green). Root cause was a WIF service account that had AUTH but no deploy work. Fixed in layers, each verified against the next failing run: (1) roles/iam.serviceAccountUser on the App Engine SA — cleared the first ActAs error; (2) project-level firebase.admin, cloudfunctions.admin, artifactregistry.admin, run.admin, cloudbuild.builds.editor, serviceusage.serviceUsageConsumer — cleared the storage/rules/API 403s; (3) roles/secretmanager.admin — cleared the ANTHROPIC_API_KEY secretmanager.secrets.get 403 (functions bind secrets via defineSecret); (4) roles/iam.serviceAccountUser on the COMPUTE default SA (720107337435-compute@) — gen2 functions RUN as the compute SA, distinct from #1; cleared the final function-create/update 403. Plus a real ci.yml gap (not IAM): the deploy job never installed functions deps, so firebase couldn't find firebase-functions — fixed with an 'Install functions dependencies' step (committed 95e2f6a).",
         checks: [
-          "Step hit: entire live site",
-          "RESOLVED: all IAM/403 errors — CI SA now holds the full Firebase gen2 deploy role set (verified via gcloud get-iam-policy)",
-          "RESOLVED: storage.defaultBucket.get, firestore rules, storage rules, API-enable checks all pass",
-          "FIX PUSHED: ci.yml now installs functions deps before deploy",
-          "Watching: fresh CI run on the ci.yml push for a fully green deploy"
+          "Deployed: hosting, api + bibliotheca (embedPassage/searchLibrary/askLibraryFlow) functions, firestore rules+indexes, storage rules",
+          "IAM grants verified via gcloud (etags) and by each subsequent run clearing the prior 403",
+          "ci.yml: 'Install functions dependencies' step added before deploy (commit 95e2f6a)",
+          "Green run: 28914220503 — Deploy to Firebase ✓ 6m22s",
+          "Remaining (cosmetic): Node 20 deprecation warning on GH-hosted actions — non-blocking"
         ]
       },
       {
