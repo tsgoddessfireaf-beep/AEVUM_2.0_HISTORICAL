@@ -123,6 +123,20 @@ jobs:
           VITE_PRACTITIONER_EMAILS: ${{ secrets.VITE_PRACTITIONER_EMAILS }}
           VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
 
+      # Firebase analyzes each functions codebase's SOURCE at deploy time, which
+      # requires firebase-functions to be installed in that codebase's node_modules.
+      # The client build above only installs client deps, so without this step the
+      # deploy fails with "Couldn't find firebase-functions package in your source
+      # code." Both codebases in firebase.json (default = functions/, plus
+      # bibliotheca_astrologica_horaria/functions) need their deps present.
+      # bibliotheca uses `npm install` (not ci) because its package.json deps were
+      # realigned (firebase-functions ^7→^6, firebase-admin ^13.6→^13.10) and its
+      # lockfile may not be regenerated yet — npm ci would hard-fail on that skew.
+      - name: Install functions dependencies
+        run: |
+          npm ci --prefix functions
+          npm install --prefix bibliotheca_astrologica_horaria/functions
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:

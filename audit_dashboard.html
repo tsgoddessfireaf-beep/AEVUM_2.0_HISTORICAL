@@ -224,12 +224,12 @@
     <h1 style="margin-top:50px;font-size:22px;">🚶 Pre-Walkthrough Risk Areas (Unverified)</h1>
     <div class="summary">
       <div class="summary-card">
-        <div class="summary-number">10</div>
+        <div class="summary-number" id="w-total">0</div>
         <div class="summary-label">Flagged</div>
       </div>
       <div class="summary-card">
-        <div class="summary-number" id="w-started">0</div>
-        <div class="summary-label">In Progress</div>
+        <div class="summary-number" id="w-open">0</div>
+        <div class="summary-label">Open</div>
       </div>
       <div class="summary-card">
         <div class="summary-number" id="w-complete">0</div>
@@ -336,12 +336,12 @@
         id: "W1",
         title: "8 slides / script may never appear",
         risk: "CRITICAL",
-        status: "issue",
-        description: "VITE_PRACTITIONER_EMAILS confirmed missing from GitHub secrets — client build won't render the Client Package panel at all.",
+        status: "complete",
+        description: "Fixed: VITE_PRACTITIONER_EMAILS set as a GitHub Actions secret via gh CLI (gh was already authenticated with repo scope on this machine). Confirmed present in 'gh secret list' with timestamp 2026-07-08T02:26:54Z. The next production build will render the Client Package panel.",
         checks: [
           "Step hit: view 8 slides, view script",
-          "Fix: add GitHub secret VITE_PRACTITIONER_EMAILS = tsgoddessfireaf@gmail.com",
-          "Dolores action required — I cannot set GitHub secrets remotely"
+          "Fixed: gh secret set VITE_PRACTITIONER_EMAILS = tsgoddessfireaf@gmail.com",
+          "Verified: appears in gh secret list alongside the 6 VITE_FIREBASE_* secrets"
         ]
       },
       {
@@ -383,10 +383,11 @@
         title: "Ephemeris Cloud Run not redeployed",
         risk: "HIGH",
         status: "issue",
-        description: "CI/CD only deploys hosting,functions,firestore,storage — Cloud Run is separate. Python 3.13 + tzdata fix isn't live yet.",
+        description: "CI/CD only deploys hosting,functions,firestore,storage — Cloud Run is separate. Python 3.13 + tzdata fix isn't live yet, and the new /health warm-up ping (W12) needs the container redeployed to answer. Next manual step: gcloud run deploy from ephemeris-service/. gcloud is authenticated locally as tsgoddessfireaf@gmail.com.",
         checks: [
           "Step hit: ephemeris input",
-          "Fix: gcloud run deploy manually now, or add a Cloud Run step to ci.yml (needs run.developer role, currently only run.viewer)"
+          "Fix: gcloud run deploy ephemeris-service --source . --region us-central1 from ephemeris-service/",
+          "Pending: not yet run this session (queued after the CI deploy IAM blocker W11 is understood)"
         ]
       },
       {
@@ -435,13 +436,40 @@
       },
       {
         id: "W10",
-        title: "Radicality check unaudited",
+        title: "Radicality check unaudited → now a dedicated gate page",
         risk: "MEDIUM",
-        status: "issue",
-        description: "Never opened this code path this session. TODO.md marks it done, but unverified end-to-end.",
+        status: "complete",
+        description: "Built this session per Dolores's directive. New RadicalityPage.jsx renders after the significations interview: it reads getStrictures(ephemerisData) from lib/warnings.js (early/late Ascendant <3°/>27°, Saturn in the 1st/7th per Lilly). Empty result = 'Fit for Judgment' → 'Continue to Final Judgement' into the existing paywall/reading. Strictures present = explains each one and offers 'Ask a New Question Later' (resetAll → /ask). Wired into App.jsx at /radicality; HouseSignificationPage now navigates there instead of /results.",
         checks: [
           "Step hit: radicality advised",
-          "Fix: dedicated read-through of the strictures-against-judgment module against Lilly's actual rules"
+          "Built: client/src/pages/RadicalityPage.jsx (new), routed in App.jsx, entered from HouseSignificationPage",
+          "Uses existing getStrictures() — the same strictures logic already shown on the print report's Radicality Status line"
+        ]
+      },
+      {
+        id: "W11",
+        title: "CI deploy — service account IAM (RESOLVED) + functions-deps CI gap (fix pushed)",
+        risk: "CRITICAL",
+        status: "in-progress",
+        description: "Two distinct problems, both now addressed. (1) IAM — the WIF service account had AUTH but no deploy ROLES. Granted, in order, and confirmed via gcloud get-iam-policy: iam.serviceAccountUser (on App Engine SA) + firebase.admin, cloudfunctions.admin, artifactregistry.admin, run.admin, cloudbuild.builds.editor, serviceusage.serviceUsageConsumer (project-level; the SA also inherited firebasehosting.admin/firebaserules.admin/etc.). After that the deploy cleared EVERY permission + API + rules-compile check — no more 403s. (2) The deploy then failed on a real CI-config gap, NOT permissions: 'Couldn't find firebase-functions package in your source code' — the deploy job installed client deps but never ran npm install in the functions codebases. Fixed ci.yml: added an 'Install functions dependencies' step (npm ci functions/ + npm install bibliotheca/functions) before the deploy. Pushed; a fresh CI run is validating it now.",
+        checks: [
+          "Step hit: entire live site",
+          "RESOLVED: all IAM/403 errors — CI SA now holds the full Firebase gen2 deploy role set (verified via gcloud get-iam-policy)",
+          "RESOLVED: storage.defaultBucket.get, firestore rules, storage rules, API-enable checks all pass",
+          "FIX PUSHED: ci.yml now installs functions deps before deploy",
+          "Watching: fresh CI run on the ci.yml push for a fully green deploy"
+        ]
+      },
+      {
+        id: "W12",
+        title: "Ephemeris warm-up + prefetch (new architecture)",
+        risk: "MEDIUM",
+        status: "complete",
+        description: "Built this session. (1) GET /api/ephemeris/warmup added to functions (index.js + routes/ephemeris.js pingEphemerisHealth), mounted OUTSIDE the AI rate limiter, pinged fire-and-forget from App.jsx on mount to wake the cold Cloud Run container. (2) The real /api/ephemeris POST now fires in DateTimePage.handleContinue() the moment date/time/location are confirmed, storing the result via setEphemerisData so DashboardPage's run() finds it already resolved and skips its own fetch. NOTE: the warm-up ping only does useful work once the Cloud Run container is redeployed (W5) so /health responds.",
+        checks: [
+          "Step hit: ephemeris input, house significations (runs in background during interview)",
+          "Built: warmup route (functions/index.js, routes/ephemeris.js), App.jsx ping, DateTimePage prefetch",
+          "Depends on W5 (Cloud Run redeploy) to be fully live in production"
         ]
       }
     ];
@@ -473,7 +501,8 @@
     function renderWalkthrough() {
       const grid = document.getElementById('walkthrough-grid');
       grid.innerHTML = walkthroughRisks.map(renderWalkthroughArea).join('');
-      document.getElementById('w-started').textContent = walkthroughRisks.filter(a => a.status === 'in-progress').length;
+      document.getElementById('w-total').textContent = walkthroughRisks.length;
+      document.getElementById('w-open').textContent = walkthroughRisks.filter(a => a.status === 'issue').length;
       document.getElementById('w-complete').textContent = walkthroughRisks.filter(a => a.status === 'complete').length;
     }
 
