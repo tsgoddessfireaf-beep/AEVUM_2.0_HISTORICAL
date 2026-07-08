@@ -1,25 +1,26 @@
 # Aevum
 
-A traditional **horary astrology** web application for Aeonic Arts. Ask a sincere question, capture the exact moment, and receive a structured reading following William Lilly's classical method — complete with a full chart wheel, dignities, aspects, and Arabic Parts.
+A traditional **horary astrology** web application for Aeonic Arts. Ask a sincere question, capture the exact moment, and receive a structured reading following William Lilly's classical method — complete with the traditional square ("diamond") chart, dignities, aspects, and Arabic Parts.
 
 ## What it does
 
 1. **Question** — state a sincere question; the app detects whether it's an outcome question (perfection) or a character/motivation question (condition) and routes accordingly
-2. **Moment** — capture the exact date, time, and place (with one-click geolocation); precision here is the chart
+2. **Moment** — capture the exact date, time, and place (with one-click geolocation); precision here is the chart. As soon as the moment is confirmed the chart calculation begins in the background, so it's ready by the time the interview finishes
 3. **Significations** — a brief AI interview maps the people and things in your question to their houses
-4. **Reading** — the chart is cast at 7-decimal-place precision, cross-verified against NASA JPL, then Claude analyzes it using traditional rulerships, dignities, and aspects; verdict is YES / NO / MAYBE / WAIT / CHARACTER READ
-5. **History** — past readings save to Firestore and are accessible from any device (Google sign-in required)
-6. **Booking** — Stripe-powered session booking with Resend confirmation email
-7. **Client Package** *(practitioner-only)* — generates an 8-slide teaching deck per reading (`ReadingPackagePanel` / `SlideDeck`), with per-slide practitioner voice narration, delivered to the client via a shareable link (`SharedReadingPage`)
+4. **Radicality** — before any judgment, a gate page runs William Lilly's radicality check (`getStrictures`): if the chart is fit to judge it offers **Continue to Final Judgement**; if strictures are present (early/late Ascendant, Saturn in the 1st/7th) it explains why and steers you to ask again later
+5. **Reading** — the chart is cast at 7-decimal-place precision, cross-verified against NASA JPL, then Claude analyzes it using traditional rulerships, dignities, and aspects; verdict is YES / NO / MAYBE / WAIT / CHARACTER READ. While it works, a progress bar with rotating astrologer phrases fills in (no animation, target < 20s)
+6. **History** — past readings save to Firestore and are accessible from any device (Google sign-in required)
+7. **Booking** — Stripe-powered session booking with Resend confirmation email
+8. **Client Package** *(practitioner-only)* — generates an 8-slide teaching deck per reading (`ReadingPackagePanel` / `SlideDeck`), with per-slide practitioner voice narration, delivered to the client via a shareable link (`SharedReadingPage`)
 
 ## Stack
 
 | Layer | Technology |
 |---|---|
 | Client (app) | React 18 + Vite + Zustand + Tailwind CSS — Firebase Hosting target `app` |
-| Marketing site | Static HTML/CSS in `site/` — Firebase Hosting target `landing` (separate Firebase project config, see note below) |
+| Marketing site | Static HTML/CSS in `site/` — Firebase Hosting target `landing` (site `flutter-ai-playground-f880c`), deployed by the same root pipeline as the app |
 | Server | Node 22, Express wrapped in a Firebase Cloud Functions (gen2) `onRequest` export (`api`) |
-| AI | Anthropic Claude — `claude-haiku-4-5` (house-signification interview, thinking budget), `claude-sonnet-4-6` (chart analysis, adaptive thinking / high effort) |
+| AI | Anthropic Claude — `claude-haiku-4-5-20251001` (house-signification interview, thinking budget), `claude-sonnet-4-6` (chart analysis, adaptive thinking / high effort). Both IDs verified current as of Jul 2026 |
 | Ephemeris | Python 3.13 + FastAPI, containerized on **Google Cloud Run** (`ephemeris-service`). Uses **pyswisseph** (Swiss Ephemeris) — 7 decimal place precision (~0.00036 arcseconds) |
 | Cross-verification | NASA JPL Horizons DE441 — queried at exact Julian Day Number via `TLIST` mode; threshold 0.0001° |
 | Persistence | Firebase Firestore (`readings`, `users`, `hora_reading_drafts`, `library_cards`) |
@@ -29,7 +30,7 @@ A traditional **horary astrology** web application for Aeonic Arts. Ask a sincer
 | Error monitoring | Sentry (`@sentry/react` client, `@sentry/node` server), gated on `SENTRY_DSN` / `VITE_SENTRY_DSN` |
 | Glyphs | AstroScript font (Jason Davies), Unicode fallback |
 
-> **Note:** `site/.firebaserc` currently points at project `flutter-ai-playground`, while every other Firebase config in this repo (`.firebaserc`, `functions/.env`, CI) uses `flutter-ai-playground-f880c`. This looks like drift, not intentional — verify before deploying the marketing site.
+> **Hosting layout.** The root `firebase.json` defines **both** hosting targets — `landing` (`public: site/`) and `app` (`public: client/dist`) — and the root `.firebaserc` maps them (`landing` → site `flutter-ai-playground-f880c`, `app` → site `aevum-app`). A single `firebase deploy --only hosting` from the repo root therefore ships the marketing site and the app together; that's what CI does. The `site/` subfolder also contains its own `.firebaserc` and a `site/.github/workflows/firebase-hosting-pull-request.yml` — these are leftovers from a `firebase init hosting:github` run inside `site/` and only produce **PR preview channels**, not production deploys. `site/.firebaserc` says `flutter-ai-playground`, which is the same GCP project as `flutter-ai-playground-f880c` (Google shows a project *name* and a project *id*); it is not drift. The redundant `site/` workflow can be removed if you want to avoid confusion.
 
 ## CI/CD
 
@@ -38,11 +39,17 @@ A traditional **horary astrology** web application for Aeonic Arts. Ask a sincer
 1. **test-client** — Vitest, client package
 2. **test-server** — Vitest, `functions/` package
 3. **build** — production client build (gate: both test jobs must pass)
-4. **deploy** *(main branch pushes only)* — rebuilds the client with production env vars, then `firebase deploy --only hosting,functions,firestore,storage`
+4. **deploy** *(main branch pushes only)* — rebuilds the client with production env vars, installs each functions codebase's dependencies, then `firebase deploy --only hosting,functions,firestore,storage`
 
-Deploy authentication uses **Workload Identity Federation** — GitHub's OIDC token is exchanged for short-lived Google credentials scoped to this exact repo (`github-actions-pool` / `github-provider`, bound to `github-action-1272176989@flutter-ai-playground-f880c.iam.gserviceaccount.com`). There is no service-account key file anywhere, checked in or otherwise — key creation is blocked by GCP org policy on this project, which is why WIF is used instead of a stored secret.
+**Deploy authentication** uses **Workload Identity Federation** — GitHub's OIDC token is exchanged for short-lived Google credentials scoped to this exact repo (`github-actions-pool` / `github-provider`, bound to `github-action-1272176989@flutter-ai-playground-f880c.iam.gserviceaccount.com`). There is no service-account key file anywhere, checked in or otherwise — key creation is blocked by GCP org policy on this project, which is why WIF is used instead of a stored secret.
+
+**Service-account roles.** WIF only handles *authentication*; the deploy account also needs *authorization*. `github-action-1272176989@` is granted, at the project level, `roles/firebase.admin`, `roles/cloudfunctions.admin`, `roles/run.admin`, `roles/artifactregistry.admin`, `roles/cloudbuild.builds.editor`, `roles/serviceusage.serviceUsageConsumer`, and `roles/secretmanager.admin` (functions bind secrets via `defineSecret`), plus `roles/iam.serviceAccountUser` on **both** runtime service accounts it must act as — the App Engine SA (`…@appspot`) and the Compute Engine default SA (`…-compute@developer`), since gen2 functions run as the latter. Missing any of these makes `firebase deploy` fail partway with a 403 pointing at the specific permission.
+
+**Functions dependencies must be installed before deploy.** Firebase analyzes each functions codebase's source at deploy time and needs `firebase-functions` present in its `node_modules`, so the deploy job runs `npm ci --prefix functions` and `npm install --prefix bibliotheca_astrologica_horaria/functions` before `firebase deploy`. Without this it fails with *"Couldn't find firebase-functions package in your source code."*
 
 `bibliotheca_astrologica_horaria/` deploys as a second Functions codebase from the same `firebase deploy --only functions` call (see `firebase.json` → `functions[]`).
+
+> The Cloud Run **ephemeris service is not part of `firebase deploy`** — it deploys separately with `gcloud run deploy` (see below). CI does not touch it.
 
 ## Ephemeris accuracy
 
@@ -104,8 +111,10 @@ firebase deploy --only hosting,functions,firestore,storage
 
 # Ephemeris Service (Cloud Run) — not part of the Firebase deploy
 cd ephemeris-service
-gcloud run deploy ephemeris-service --source . --platform managed --allow-unauthenticated
+gcloud run deploy ephemeris-service --source . --region us-central1 --platform managed
 ```
+
+> **Container build note.** `pyswisseph` ships no prebuilt wheel for Python 3.13, so pip compiles its C extension (`libswe`) from source at image-build time. The `Dockerfile` installs `build-essential` before `pip install` and purges it in the same layer afterward — without a compiler the Cloud Run build fails with *"command 'gcc' failed: No such file or directory."* The compiled extension links only against `libc`/`libm`, so the runtime image stays slim.
 
 ## Environment
 
@@ -142,23 +151,27 @@ VITE_SENTRY_DSN=...                            # optional
 ## Architecture
 
 ```
+client/src/App.jsx                           — routes; pings /api/ephemeris/warmup on load to wake Cloud Run
 client/src/pages/IntakePage.jsx              — question intake + detectQuestionType()
-client/src/pages/DateTimePage.jsx            — moment capture + geocoding
+client/src/pages/DateTimePage.jsx            — moment capture + geocoding; prefetches the chart on Continue
 client/src/pages/HouseSignificationPage.jsx  — SSE interview (haiku)
+client/src/pages/RadicalityPage.jsx          — radicality gate (/radicality) — getStrictures → judge or ask-again
 client/src/pages/DashboardPage.jsx           — active dashboard, reading display, paywall/practitioner gate
 client/src/pages/HistoryPage.jsx             — Firestore reading history
 client/src/pages/UpgradePage.jsx             — Stripe paid tier checkout/portal
 client/src/pages/SharedReadingPage.jsx       — public read-only reading link + Client Package deck
 client/src/components/ChartDisplay.jsx       — planet table + dual-source badge
 client/src/components/SquareChart.jsx        — SVG horary square ("diamond") chart — the only chart display in use
+client/src/components/LoadingProgress.jsx    — static progress bar + rotating astrologer phrases (reading wait)
 client/src/components/Astrolabe.jsx          — SVG chart-wheel renderer, used in the print-only report view (skipAnimation)
 client/src/components/ReadingPackagePanel.jsx — practitioner-only: generate the 8-slide Client Package
 client/src/components/SlideDeck.jsx          — slide renderer + narration studio (MediaRecorder → Storage)
 client/src/store/useAppStore.js              — Zustand store
+client/src/lib/warnings.js                   — getChartWarnings (VOC, combustion…) + getStrictures (radicality)
 client/src/lib/analysis.js                   — parseSections / answerStyle / formatInline
 
 functions/routes/chat.js                     — /api/chat/house-signification, /analyze, /follow-up, /slides (SSE)
-functions/routes/ephemeris.js                — /api/ephemeris → Cloud Run sidecar + JPL cross-audit
+functions/routes/ephemeris.js                — /api/ephemeris → Cloud Run sidecar + JPL cross-audit; warmup ping
 functions/routes/booking.js                  — Stripe Checkout session + webhook handler
 functions/routes/stripe.js                   — subscription checkout/portal routes
 
@@ -170,7 +183,7 @@ bibliotheca_astrologica_horaria/             — Genkit flow (2nd Functions code
 library/                                     — the manuscript corpus (Lilly, Bonatti, Culpeper, Dariot,
                                                 Jacquinot, Ibn Ezra, Naibod, Alchabitius) + ingestion scripts
 
-site/                                        — static marketing site, separate Firebase Hosting target
+site/                                        — static marketing site (Hosting target `landing`, deployed by root CI)
 ```
 
 ## Question types

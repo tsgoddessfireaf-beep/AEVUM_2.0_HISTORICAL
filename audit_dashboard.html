@@ -358,13 +358,14 @@
       },
       {
         id: "W3",
-        title: "Firestore composite index still building",
+        title: "Firestore composite index — built and READY",
         risk: "MEDIUM",
-        status: "issue",
-        description: "Index for readings (userId+createdAt) was just added this session — Firestore builds new indexes asynchronously.",
+        status: "complete",
+        description: "Verified live: gcloud firestore indexes composite list shows one composite index, state READY (not BUILDING). describe confirms its fields are userId + createdAt + __name__ — exactly the readings index loadUserReadings() needs. Reading history will return results, not a failed-precondition error.",
         checks: [
           "Step hit: dashboard entry, reading history",
-          "Fix: check Firestore Console → Indexes → status is Enabled before testing; just wait if still Building"
+          "Verified: gcloud firestore indexes composite describe CICAgJim14AK → state READY, fields userId/createdAt",
+          "Deployed via CI (--only firestore includes indexes)"
         ]
       },
       {
@@ -393,13 +394,15 @@
       },
       {
         id: "W6",
-        title: "Landing page may be on a stale, separate deploy path",
+        title: "Landing page deploy path — confirmed handled by main pipeline",
         risk: "MEDIUM",
-        status: "issue",
-        description: "site/ has its own .firebaserc + PR-only workflow requiring a different, never-verified secret. Unclear if new CI/CD actually touches it.",
+        status: "complete",
+        description: "Resolved by verification. Root firebase.json defines BOTH hosting targets: 'landing' (public: site/) and 'app' (public: client/dist). Root .firebaserc maps landing → site flutter-ai-playground-f880c and app → site aevum-app. The main CI deploy runs 'firebase deploy --only hosting,...', which ships BOTH targets in one pass — the green run already deployed the landing page. site/.github/workflows/ contains ONLY firebase-hosting-pull-request.yml (a PR-preview-channel workflow, a leftover from a `firebase init hosting:github` inside site/); there is NO production/merge workflow there, so nothing competes with the main deploy. site/.firebaserc pointing at 'flutter-ai-playground' is the same project (Google's dual project name/id), NOT drift.",
         checks: [
-          "Step hit: entry into landing page (first thing you'll see)",
-          "Fix: check landing site's last-deploy timestamp in Firebase Console; quarantine the redundant site/ workflow if confirmed superseded"
+          "Step hit: entry into landing page",
+          "Verified: root firebase.json 'landing' target + .firebaserc mapping to site flutter-ai-playground-f880c",
+          "Verified: site/.github/workflows has only a PR-preview file — no production deploy path",
+          "Optional cleanup: the redundant site/ PR-preview workflow could be quarantined to avoid confusion (harmless if left)"
         ]
       },
       {
@@ -415,13 +418,14 @@
       },
       {
         id: "W8",
-        title: "Model name drift",
+        title: "Model names — verified current",
         risk: "MEDIUM",
-        status: "issue",
-        description: "claude-haiku-4-5 and claude-sonnet-4-6 are hardcoded. Not verified as still valid/available today.",
+        status: "complete",
+        description: "Verified against Anthropic's live model list (web, July 2026). functions/routes/chat.js uses MODEL_HAIKU='claude-haiku-4-5-20251001' (interview) and MODEL_SONNET='claude-sonnet-4-6' (reading). Both are current, available model IDs as of now — claude-sonnet-4-6 and claude-haiku-4-5 are both in the shipping lineup (alongside the higher tiers claude-opus-4-8 and claude-fable-5). No 404/deprecation risk; no change needed.",
         checks: [
           "Step hit: significator interview, reading analysis",
-          "Fix: verify against Anthropic's current model list; add clearer error surfacing on 404"
+          "Verified: web check of Anthropic model list confirms claude-sonnet-4-6 + claude-haiku-4-5 are current",
+          "No change needed — the pinned IDs resolve"
         ]
       },
       {
