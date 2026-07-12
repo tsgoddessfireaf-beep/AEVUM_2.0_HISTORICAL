@@ -1,6 +1,8 @@
 // Copyright (c) 2026 Dolores Puckett / Dolores Aeonic Arts. All rights reserved.
 // Aevum — proprietary software. Unauthorized use or distribution is prohibited.
 
+import { apiUrl } from './api.js';
+
 /**
  * Shared SSE streaming utility used by all three chat endpoints.
  * Reads a Server-Sent Events stream from a POST endpoint and dispatches
@@ -16,7 +18,7 @@
 export async function streamSSE(url, body, { onText, onThinking, onDone, onError }, extraHeaders = {}) {
   let response;
   try {
-    response = await fetch(url, {
+    response = await fetch(apiUrl(url), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...extraHeaders },
       body: JSON.stringify(body),
