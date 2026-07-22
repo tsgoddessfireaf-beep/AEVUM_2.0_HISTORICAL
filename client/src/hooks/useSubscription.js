@@ -6,8 +6,11 @@ import { loadUserProfile, FIREBASE_ENABLED } from '../lib/firebase.js';
 import { useAuthState } from './useAuthState.js';
 
 /**
- * Returns the current user's subscription plan from their Firestore profile.
- * Defaults to 'free' when Firebase is unavailable or the field is absent.
+ * Returns the current user's subscription plan from their Firestore profile
+ * (`users/{uid}.plan`, set by the Stripe webhook on successful subscription
+ * checkout — see functions/routes/stripe.js `setUserPlan`).
+ * Defaults to 'free' when signed out, Firebase is unavailable, or the field
+ * is absent — i.e. fails closed, unpaid users do not get paid features.
  *
  * @returns {{ plan: 'free'|'paid', isPaid: boolean, loading: boolean }}
  */
@@ -18,14 +21,14 @@ export function useSubscription() {
 
   useEffect(() => {
     if (!isGoogle || !FIREBASE_ENABLED) {
-      setPlan('paid'); // Granted for beta test
+      setPlan('free');
       setLoading(false);
       return;
     }
     setLoading(true);
     loadUserProfile()
-      .then((profile) => { setPlan('paid'); }) // Forced paid for beta
-      .catch(() => { setPlan('paid'); })
+      .then((profile) => { setPlan(profile?.plan === 'paid' ? 'paid' : 'free'); })
+      .catch(() => { setPlan('free'); })
       .finally(() => setLoading(false));
   }, [isGoogle, user?.uid]);
 

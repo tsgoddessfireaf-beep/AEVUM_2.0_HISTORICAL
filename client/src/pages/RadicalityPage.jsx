@@ -78,6 +78,12 @@ export default function RadicalityPage() {
           "{question}"
         </h1>
 
+        <div className="flex justify-center mb-4" aria-hidden="true">
+          <span className={`text-6xl leading-none ${fitToJudge ? 'text-emerald-400' : 'text-red-500'}`}>
+            {fitToJudge ? '✅' : '❎'}
+          </span>
+        </div>
+
         <div
           className={`rounded-2xl border p-6 mb-8 ${
             fitToJudge

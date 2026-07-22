@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import StepIndicator from '../components/StepIndicator.jsx';
 import useAppStore from '../store/useAppStore.js';
 import { TRADITIONS } from '../lib/traditions.js';
+import { useSubscription } from '../hooks/useSubscription.js';
+import { useAuthState } from '../hooks/useAuthState.js';
+import { isPractitioner } from '../lib/package.js';
 
 const TIMEZONES = [
   { group: 'Americas', zones: [
@@ -57,6 +60,9 @@ function earlierTimeStr(hoursBack = 2) {
 export default function DateTimePage() {
   const navigate = useNavigate();
   const { question, dateTimeData, setDateTimeData, setInterviewMessages, setHouseSignifications, setReadingId, setFollowUpMessages, setJournal, setAnalysis, setEphemerisData } = useAppStore();
+  const { user } = useAuthState();
+  const { isPaid } = useSubscription();
+  const unlocked = isPaid || isPractitioner(user); // practitioner testing on own account isn't gated
 
   const [form, setForm] = useState({
     date: dateTimeData.date || todayStr(),
@@ -353,36 +359,54 @@ export default function DateTimePage() {
             <p className="text-silver/40 text-xs mt-1">City name is geocoded automatically</p>
           </div>
 
-          {/* Interpretive Tradition */}
+          {/* Interpretive Tradition — Classic is free with every reading;
+              named-author traditions (Lilly, Bonatti, Arabic, Dorotheus) are
+              a subscriber feature, gated on useSubscription().isPaid. */}
           <div>
             <label className="text-silver text-xs uppercase tracking-wide block mb-2">
               Interpretive Tradition
             </label>
             <div className="space-y-1.5">
-              {TRADITIONS.map((t) => (
-                <button
-                  key={t.id}
-                  type="button"
-                  onClick={() => {
-                    patch('tradition', t.id);
-                    patch('houseSystem', t.houseSystem);
-                  }}
-                  className={`w-full text-left rounded-xl px-4 py-3 border transition-all
-                    ${form.tradition === t.id
-                      ? 'border-copper-400/60 bg-copper-400/8 ring-1 ring-copper-400/20'
-                      : 'border-teal-600 bg-teal-900/40 hover:border-teal-600'}`}
-                >
-                  <div className="flex items-center justify-between mb-0.5">
-                    <span className={`text-sm font-medium ${form.tradition === t.id ? 'text-bone' : 'text-bone/75'}`}>
-                      {t.name}
-                    </span>
-                    <span className="text-copper-400/60 text-xs shrink-0 ml-2">{t.era}</span>
-                  </div>
-                  <p className="text-xs text-silver/70 leading-snug">{t.description}</p>
-                </button>
-              ))}
+              {TRADITIONS.map((t) => {
+                const locked = t.id !== 'classic' && !unlocked;
+                return (
+                  <button
+                    key={t.id}
+                    type="button"
+                    onClick={() => {
+                      if (locked) {
+                        navigate('/upgrade');
+                        return;
+                      }
+                      patch('tradition', t.id);
+                      patch('houseSystem', t.houseSystem);
+                    }}
+                    aria-disabled={locked}
+                    className={`w-full text-left rounded-xl px-4 py-3 border transition-all
+                      ${form.tradition === t.id
+                        ? 'border-copper-400/60 bg-copper-400/8 ring-1 ring-copper-400/20'
+                        : locked
+                          ? 'border-teal-600 bg-teal-900/20 opacity-60 hover:opacity-90'
+                          : 'border-teal-600 bg-teal-900/40 hover:border-teal-600'}`}
+                  >
+                    <div className="flex items-center justify-between mb-0.5">
+                      <span className={`text-sm font-medium flex items-center gap-1.5 ${form.tradition === t.id ? 'text-bone' : 'text-bone/75'}`}>
+                        {locked && <span aria-hidden="true">🔒</span>}
+                        {t.name}
+                      </span>
+                      <span className="text-copper-400/60 text-xs shrink-0 ml-2">{t.era}</span>
+                    </div>
+                    <p className="text-xs text-silver/70 leading-snug">{t.description}</p>
+                  </button>
+                );
+              })}
             </div>
             <p className="text-silver/40 text-xs mt-1.5">Selecting a tradition also sets the default house system</p>
+            {!unlocked && (
+              <p className="text-copper-400/80 text-xs mt-1.5">
+                🔒 Named-author traditions are a subscriber feature — <button type="button" onClick={() => navigate('/upgrade')} className="underline underline-offset-2 hover:text-copper-300">upgrade to unlock</button>.
+              </p>
+            )}
           </div>
 
           {/* House System */}
