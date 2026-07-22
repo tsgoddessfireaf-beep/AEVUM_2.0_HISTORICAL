@@ -126,13 +126,13 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── Choose your Astrologer ── */}
+      {/* ── Interpretive Traditions ── */}
       <section className="px-6 pb-20 max-w-4xl mx-auto">
         <p className="text-copper-400 text-xs uppercase tracking-widest text-center mb-2">
-          Select an Astrological Authority & Tradition
+          Interpretive Traditions
         </p>
         <p className="text-silver/70 text-xs text-center mb-8 max-w-md mx-auto">
-          Select a historical framework to evaluate the petition. Each tradition models the celestial sphere using its own strict rules of judgment.
+          Each tradition models the celestial sphere using its own strict historical rules of judgment. Classic is included with every reading — named-author traditions unlock with a subscription.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {TRADITIONS.map((t) => {
